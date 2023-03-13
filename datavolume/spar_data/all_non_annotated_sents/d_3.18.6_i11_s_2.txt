@@ -1,0 +1,1 @@
+Bends and offsets should only be formed with factory-made components.

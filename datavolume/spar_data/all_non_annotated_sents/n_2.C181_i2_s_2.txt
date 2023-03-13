@@ -1,0 +1,1 @@
+The type of sprinkler head should be a `quick response' type with a response time index (RTI) of not more than 50 (m.s)1/2.

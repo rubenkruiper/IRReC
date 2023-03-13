@@ -1,0 +1,1 @@
+Thermal cut-out - a temperature-operated, non self-resetting, energy cut-out should be fitted to the vessel.

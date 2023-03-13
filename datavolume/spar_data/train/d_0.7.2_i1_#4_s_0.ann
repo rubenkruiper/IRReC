@@ -1,0 +1,64 @@
+T1	Discourse_span 0 2	In
+T3	Discourse_span 29 31	or
+T5	Discourse_span 38 42	from
+T6	Object_span 43 49	ground
+T7	Discourse_span 50 55	which
+T8	Action_span 56 58	is
+T9	Functional_span 59 62	not
+T10	Object_span 63 68	level
+T11	Object_span 69 72;73 79	the height
+T12	Discourse_span 80 82	or
+T13	Object_span 69 72;83 88	the depth
+T14	Action_span 89 109	shall be taken to be
+T17	Discourse_span 126 128	or
+T18	Object_span 110 113;129 134	the depth
+T19	Discourse_span 134 135	,
+T20	Discourse_span 136 147	except that
+T21	Discourse_span 147 148	:
+T25	Object_span 171 176;177 178	types 1
+T26	Object_span 171 176;180 181	types 2
+T27	Object_span 171 176;183 184	types 3
+T28	Object_span 171 176;186 187	types 4
+T29	Object_span 171 176;189 190	types 5
+T30	Object_span 171 176;192 194	types 18
+T31	Object_span 171 176;198 200	types 19
+T32	Discourse_span 178 179	,
+T33	Discourse_span 181 182	,
+T34	Discourse_span 184 185	,
+T35	Discourse_span 187 188	,
+T36	Discourse_span 190 191	,
+T37	Discourse_span 195 197	or
+T38	Discourse_span 201 203	of
+T39	Object_span 204 214	schedule 3
+T40	Discourse_span 214 215	,
+T41	Discourse_span 216 219	and
+T44	Discourse_span 242 247	where
+T45	Object_span 248 262	the difference
+T46	Discourse_span 263 265	in
+T47	Object_span 266 271	level
+T48	Action_span 272 274	is
+T49	Functional_span 275 284	more than
+T50	Object_span 285 289	2.5m
+T51	Object_span 290 293;294 300	the height
+T52	Discourse_span 301 303	or
+T53	Object_span 290 293;304 309	the depth
+T54	Action_span 310 330	shall be taken to be
+T57	Discourse_span 351 353	or
+T58	Object_span 331 334;344 350	the height
+T59	Discourse_span 359 360	.
+T22	Object_span 331 334;354 359	the depth
+T23	Functional_span 335 343	greatest
+T16	Object_span 110 113;119 125	the height
+T24	Functional_span 114 118	mean
+T55	Discourse_span 19 21	of
+T2	Object_span 22 28;3 6	height the
+T4	Object_span 3 6;32 37	the depth
+T43	Action_span 7 18	measurement
+#1	AnnotatorNotes T43	when 'measuring' the height or depth...
+T15	Discourse_span 152 155	for
+T56	Object_span 156 167	the purpose
+T60	Discourse_span 168 170	of
+T42	Discourse_span 220 223	for
+T61	Functional_span 224 227	any
+T62	Functional_span 228 233	other
+T63	Object_span 234 241	purpose

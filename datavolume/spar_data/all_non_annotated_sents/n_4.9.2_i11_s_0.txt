@@ -1,0 +1,1 @@
+On directly heated vessels or where an indirectly heated vessel has an alternative direct method of water heating fitted, a non self-resetting thermal cut-out device should be provided for each direct source.

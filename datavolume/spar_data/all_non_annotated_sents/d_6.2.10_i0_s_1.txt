@@ -1,0 +1,1 @@
+Calculation of heat loss from linear thermal bridging is not necessary unless the SAP methodology is being used to demonstrate compliance.

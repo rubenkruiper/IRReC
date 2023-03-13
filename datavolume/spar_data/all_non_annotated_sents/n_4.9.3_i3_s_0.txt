@@ -1,0 +1,1 @@
+Where the system has a power input greater than 45kW, safety devices should include an appropriate number of temperature or combined temperature/pressure relief valves:

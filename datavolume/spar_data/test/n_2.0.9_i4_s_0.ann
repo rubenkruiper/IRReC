@@ -1,0 +1,18 @@
+T1	Object_span 0 13	The intention
+T2	Action_span 14 16	is
+T3	Action_span 17 24	to help
+T4	Object_span 25 34	designers
+T5	Discourse_span 35 38	and
+T6	Object_span 39 48	verifiers
+T7	Action_span 49 53	find
+T8	Object_span 54 69	the information
+T9	Discourse_span 70 74	they
+T10	Action_span 75 82	require
+T11	Functional_span 83 90	quickly
+T12	Discourse_span 91 95	when
+T13	Action_span 96 105	designing
+T14	Discourse_span 106 108	or
+T15	Action_span 109 116	vetting
+T16	Discourse_span 117 121	such
+T17	Object_span 122 131	buildings
+T18	Discourse_span 131 132	.

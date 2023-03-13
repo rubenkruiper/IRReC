@@ -1,0 +1,1 @@
+Appropriate capacity - to assist the verifier and designer establish the width of an escape stair, it is necessary to establish the number of escape stairs and the number of occupants who will access them on each storey.

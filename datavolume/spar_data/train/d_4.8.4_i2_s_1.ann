@@ -1,0 +1,12 @@
+T1	Functional_span 0 3	All
+T2	Object_span 4 12	guarding
+T3	Action_span 13 22;35 40	should be fixed
+T4	Functional_span 23 34	permanently
+T5	Discourse_span 41 44	and
+T6	Action_span 45 51;56 69	should be detachable
+T7	Functional_span 52 55	not
+T8	Discourse_span 70 72	to
+T9	Action_span 73 79	permit
+T10	Object_span 80 87	windows
+T11	Action_span 88 95	to open
+T12	Discourse_span 95 96	.

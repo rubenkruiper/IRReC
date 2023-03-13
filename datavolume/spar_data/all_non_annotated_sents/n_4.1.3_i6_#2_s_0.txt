@@ -1,0 +1,1 @@
+ramped, with a gradient of more than 1 in 20 and not more than 1 in 12

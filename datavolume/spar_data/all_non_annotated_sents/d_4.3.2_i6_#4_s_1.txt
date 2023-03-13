@@ -1,0 +1,1 @@
+For example, stairs provided with the minimum going of 250mm would result in rises of at least 150mm.

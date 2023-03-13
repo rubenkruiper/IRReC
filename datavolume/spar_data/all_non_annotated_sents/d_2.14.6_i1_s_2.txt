@@ -1,0 +1,1 @@
+In the case of an escape stair and fire-fighting stair, a local control should also be provided at the topmost storey.

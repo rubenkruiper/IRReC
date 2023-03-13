@@ -1,0 +1,1 @@
+Where a combined heat and power installation is present, metering should be provided which measures the hours run, electricity generated, and the fuel supplied to the unit.

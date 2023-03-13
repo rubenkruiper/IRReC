@@ -1,0 +1,1 @@
+for densities, self-weight and imposed loadings, BS EN 1991-1-1: 2002 (Eurocode 1)

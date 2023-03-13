@@ -1,0 +1,1 @@
+the escape route width available from the adjoining compartment is sufficient for the sum of the occupancy capacities of both compartments.

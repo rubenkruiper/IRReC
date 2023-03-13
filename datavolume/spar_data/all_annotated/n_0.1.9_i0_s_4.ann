@@ -1,0 +1,10 @@
+T1	Object_span 0 13	Regulation 16
+T2	Action_span 14 25	establishes
+T3	Discourse_span 26 31	which
+T4	Object_span 32 43	regulations
+T5	Action_span 56 66	be relaxed
+T6	Functional_span 51 55	ever
+T7	Discourse_span 67 69	by
+T8	Object_span 70 88	Scottish Ministers
+T9	Discourse_span 88 89	.
+T10	Functional_span 44 50	cannot

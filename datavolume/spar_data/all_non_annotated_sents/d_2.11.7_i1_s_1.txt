@@ -1,0 +1,1 @@
+Smoke alarms are designed to produce a sound output of 85 dB(A) at 3m.

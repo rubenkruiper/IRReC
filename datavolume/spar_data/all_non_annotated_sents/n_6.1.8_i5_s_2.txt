@@ -1,0 +1,1 @@
+In demonstrating this, the same edition of the NCM used for the shell building calculation may be used for the BER calculation for the final building.

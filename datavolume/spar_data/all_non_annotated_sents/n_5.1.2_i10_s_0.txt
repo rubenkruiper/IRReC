@@ -1,0 +1,1 @@
+These methods are to be used in conjunction with the testing arrangements (see clause 5.1.7 to 5.1.9).

@@ -1,0 +1,1 @@
+The properties of some materials can change in certain environmental conditions.

@@ -1,0 +1,1 @@
+each shop having a frontage to the mall should be provided with an alternative escape route that is not through the mall

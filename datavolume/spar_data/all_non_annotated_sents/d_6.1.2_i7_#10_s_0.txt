@@ -1,0 +1,1 @@
+ If total exposed facade area is less than 25% of the floor area, the area of windows, doors and roofs should be taken as the area of the total exposed facade area.

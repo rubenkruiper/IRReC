@@ -1,0 +1,1 @@
+Recommended storage capacity to meet 100% of the space and DHW heating demand assuming storage capacity is 25% larger than delivery size.

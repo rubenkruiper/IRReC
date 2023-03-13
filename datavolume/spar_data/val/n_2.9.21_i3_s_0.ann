@@ -1,0 +1,25 @@
+T1	Discourse_span 0 5	Where
+T2	Action_span 6 15	installed
+T3	Discourse_span 16 18	in
+T4	Object_span 19 28	buildings
+T5	Discourse_span 29 33	that
+T6	Action_span 34 41	feature
+T9	Discourse_span 70 71	,
+T10	Discourse_span 72 76	they
+T11	Action_span 77 91	should operate
+T12	Functional_span 92 111	in conjunction with
+T13	Object_span 112 131	a fire alarm system
+T14	Discourse_span 131 132	,
+T15	Object_span 133 143	the design
+T16	Discourse_span 144 146	of
+T17	Discourse_span 147 152	which
+T18	Action_span 153 173	should be determined
+T19	Discourse_span 174 176	by
+T20	Object_span 177 199	a fire risk assessment
+T21	Discourse_span 200 201	(
+T22	Action_span 201 204	see
+T23	Object_span 205 217	clause 2.0.8
+T24	Discourse_span 217 218	)
+T25	Discourse_span 218 219	.
+T7	Object_span 42 70	fail unlocked electric locks
+#1	AnnotatorNotes T12	describes a manner / way (treating as adverbial MWE)

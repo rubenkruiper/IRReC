@@ -1,0 +1,8 @@
+Sentence:
+window or door) should be measured internally from ingo to ingo and from head to sill or threshold.
+
+Object identified:
+window door
+
+Document id:
+n_6.0.12_i1_#3_s_1

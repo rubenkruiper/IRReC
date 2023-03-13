@@ -1,0 +1,1 @@
+Areas of windows, doors and rooflights - where additional windows, doors and rooflights are being created, the total area (including existing) of these elements should not exceed 25% of the total dwelling floor area.

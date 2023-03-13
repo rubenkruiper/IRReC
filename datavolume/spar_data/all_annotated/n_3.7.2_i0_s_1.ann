@@ -1,0 +1,26 @@
+T1	Object_span 0 10	Wastewater
+T2	Discourse_span 11 15	from
+T3	Object_span 16 35	sanitary appliances
+T4	Discourse_span 36 39	and
+T5	Object_span 40 53	floor gullies
+T6	Discourse_span 54 59	below
+T7	Object_span 60 71	flood level
+T8	Action_span 72 89	should be drained
+T9	Discourse_span 90 92	by
+T10	Object_span 93 118	wastewater lifting plants
+T12	Discourse_span 119 121	or
+T13	Discourse_span 121 122	,
+T14	Discourse_span 123 128	where
+T15	Discourse_span 129 134	there
+T16	Action_span 135 137;147 152	is to be
+T17	Functional_span 138 146	unlikely
+T18	Object_span 153 159	a risk
+T19	Discourse_span 160 162	to
+T20	Object_span 163 170	persons
+T21	Functional_span 171 178	such as
+T22	Discourse_span 179 181	in
+T23	Object_span 182 192	a car park
+T24	Discourse_span 192 193	,
+T25	Discourse_span 194 197	via
+T26	Object_span 198 221	an anti-flooding device
+T27	Discourse_span 221 222	.

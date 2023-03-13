@@ -1,0 +1,1 @@
+However where the designer intends to use low fabric infiltration air rates of less than 5m#SUP#3#SUP#/h/m#SUP#2#SUP#@ 50 Pa in the SAP calculations (see Section 6 Energy) the areas of trickle ventilation shown may not suffice to maintain air quality and therefore an alternative ventilation solution should be adopted (see clause 3.14.11).

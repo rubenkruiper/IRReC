@@ -1,0 +1,1 @@
+a compartment should be taken to be the total floor area of all storeys within that compartment

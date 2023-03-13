@@ -1,0 +1,1 @@
+Occupancy capacity of shopsWhen calculating the occupancy capacity of the individual shops (or other use tenancies) the occupancy load factors in the table to clause 2.9.2 should be used as appropriate.

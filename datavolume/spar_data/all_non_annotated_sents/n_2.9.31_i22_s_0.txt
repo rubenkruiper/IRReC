@@ -1,0 +1,1 @@
+Calculation of effective width - based on the above principles for simultaneous and phased evacuation, the effective width of every escape stair in mm can be calculated by the following formula:

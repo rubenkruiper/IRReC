@@ -1,0 +1,1 @@
+For floorings, fire is seen to grow in the room of origin, creating a heat flux on the floorings in an adjacent room or corridor, through a door opening, and

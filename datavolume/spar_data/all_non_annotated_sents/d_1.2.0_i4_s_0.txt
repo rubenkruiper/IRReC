@@ -1,0 +1,1 @@
+Storey height is the distance from the underside of one floor to the underside of the floor immediately above.

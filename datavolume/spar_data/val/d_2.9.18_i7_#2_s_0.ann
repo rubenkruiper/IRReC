@@ -1,0 +1,11 @@
+T1	Object_span 1 9	the pipe
+T2	Discourse_span 10 12	or
+T3	Object_span 13 18	pipes
+T4	Action_span 19 32	are contained
+T5	Discourse_span 33 39	within
+T6	Object_span 40 55	a service shaft
+T7	Action_span 56 62	having
+T8	Functional_span 65 71	medium
+T9	Object_span 63 64;72 96	a fire resistance duration
+T10	Discourse_span 96 97	,
+T11	Discourse_span 98 101	and

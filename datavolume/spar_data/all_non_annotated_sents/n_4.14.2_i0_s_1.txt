@@ -1,0 +1,1 @@
+In such instances in-building physical infrastructure suitable for satellite or wireless communications should be provided in place of the infrastructure for cable or fibre where a minimum network speed of 30 Mbps is, or will be, available.

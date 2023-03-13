@@ -1,0 +1,1 @@
+Each storey has 300 occupants and the escape routes on the ground storey do not communicate with the escape stairs.

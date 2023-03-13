@@ -1,0 +1,1 @@
+Practical advice on procedure for pressure testing is given in the ATTMA publication `Measuring Air Permeability of Building Envelopes'.

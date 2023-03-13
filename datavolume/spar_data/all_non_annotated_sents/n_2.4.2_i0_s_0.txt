@@ -1,0 +1,1 @@
+Cavities should be measured either horizontally or vertically, as the case maybe, along the centre-line of the cavity and not diagonally.

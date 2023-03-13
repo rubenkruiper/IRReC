@@ -1,0 +1,1 @@
+Therefore, in addition to minimising gradients where possible, as recommended in clause 4.1.3, the length of an accessible route to an accessible entrance of a building should be limited to 45m.

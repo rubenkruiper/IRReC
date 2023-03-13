@@ -1,0 +1,10 @@
+T1	Discourse_span 0 6	Unless
+T2	Functional_span 7 16	otherwise
+T3	Action_span 17 26	indicated
+T4	Discourse_span 27 29	by
+T5	Object_span 30 46	the manufacturer
+T6	Discourse_span 46 47	,
+T7	Object_span 48 73	carbon monoxide detectors
+T8	Action_span 74 83	should be
+T9	Discourse_span 84 90	either
+T10	Discourse_span 90 91	:

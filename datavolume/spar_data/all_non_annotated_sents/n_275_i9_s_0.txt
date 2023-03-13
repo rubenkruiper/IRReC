@@ -1,0 +1,1 @@
+When designing window apertures it is worth considering that the window area below the working plane does not significantly increase the amount of daylight falling onto the working plane.

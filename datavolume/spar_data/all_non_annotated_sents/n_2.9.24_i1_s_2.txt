@@ -1,0 +1,1 @@
+Every door in the wall of a protected zone should be a self-closing fire door with a medium fire resistance duration.

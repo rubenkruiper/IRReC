@@ -1,0 +1,1 @@
+A unit or package should have a minimum of 2 independent safety devices.

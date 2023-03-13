@@ -1,0 +1,1 @@
+Establishing the thermal conductivity of materials in a building element forming part of the insulation envelope will enable the thermal transmittance of the element to be calculated.

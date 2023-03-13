@@ -1,0 +1,1 @@
+Junctions with walls - where a compartment wall or compartment floor (including a fire resisting ceiling, see clause 2.1.16) forms a junction with an external wall, a separating wall, another compartment wall or a wall or screen used to protect routes of escape (see clause 2.0.6), the junction should maintain the fire resistance of the compartment wall or compartment floor.

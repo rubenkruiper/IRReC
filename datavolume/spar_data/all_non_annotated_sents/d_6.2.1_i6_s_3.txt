@@ -1,0 +1,1 @@
+Further reduction in heat loss can be achieved where the cavity separating wall is also fully filled with a material that limits air movement, allowing a U-value of 0.0 to be assigned.

@@ -1,0 +1,1 @@
+This is because 'Robust Details (Scotland)' are designed and constructed to be an average of 5dB better than the test levels in clause 5.1.8 above.

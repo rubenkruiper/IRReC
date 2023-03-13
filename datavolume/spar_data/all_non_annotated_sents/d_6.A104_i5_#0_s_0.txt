@@ -1,0 +1,1 @@
+Note that although the windows and rooflights have the same U-value, for the purpose of calculation the rooflight value is 0.3W/m#SUP#2#SUP#K poorer due to inclination from the vertical plane (see BR 443 - 'Conventions for U-value Calculations' http://www.bre.co.uk./filelibrary/pdf/rpts/br_443_(2006_edition).pdf).

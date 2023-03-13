@@ -1,0 +1,14 @@
+T1	Discourse_span 0 4	This
+T2	Action_span 5 7	is
+T4	Object_span 19 38	Technical Handbooks
+T5	Discourse_span 38 39	,
+T6	Discourse_span 40 43	one
+T7	Action_span 44 52	covering
+T8	Object_span 53 71	domestic buildings
+T9	Discourse_span 72 75	and
+T10	Discourse_span 76 85	the other
+T11	Object_span 86 108	non-domestic buildings
+T12	Discourse_span 108 109	.
+T3	Object_span 8 11	one
+T13	Discourse_span 12 14	of
+T14	Object_span 15 18	two

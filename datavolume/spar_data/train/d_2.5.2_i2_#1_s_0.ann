@@ -1,0 +1,13 @@
+T1	Discourse_span 1 4	any
+T4	Object_span 13 22	a ceiling
+T5	Discourse_span 23 28	which
+T6	Action_span 29 35	slopes
+T7	Discourse_span 36 38	at
+T8	Discourse_span 48 50	of
+T9	Functional_span 51 60	more than
+T10	Object_span 61 71	70 degrees
+T11	Discourse_span 73 75	to
+T12	Object_span 76 90	the horizontal
+T13	Discourse_span 90 91	.
+T14	Object_span 39 47	an angle
+T2	Functional_span 5 12	part of

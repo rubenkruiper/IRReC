@@ -1,0 +1,1 @@
+Protected lobbies should be designed that smoke entering one protected lobby should not spread to other protected lobbies.

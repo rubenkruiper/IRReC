@@ -1,0 +1,1 @@
+Powered doors should be controlled by either an automatic sensor, such as a motion detector, or by a manual activation device, such as push-pad.

@@ -1,0 +1,10 @@
+T1	Discourse_span 0 4	This
+T2	Action_span 5 21	may be desirable
+A1	Confidence T2
+#1	AnnotatorNotes T2	act[may be] func[desirable] ? treating as "we desire ... in case ..."
+T3	Discourse_span 22 24	if
+T4	Functional_span 25 34	more than
+T5	Object_span 35 38	one
+T6	Object_span 39 52	detector head
+T7	Action_span 53 65	is installed
+T8	Discourse_span 65 66	.

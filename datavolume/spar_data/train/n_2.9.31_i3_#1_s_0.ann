@@ -1,0 +1,12 @@
+T1	Object_span 0 6	1000mm
+T2	Discourse_span 7 12	where
+T3	Object_span 13 23	the number
+T4	Discourse_span 24 26	of
+T5	Object_span 27 36	occupants
+T6	Action_span 37 42	using
+T7	Object_span 43 52	the stair
+T8	Action_span 53 55	is
+T9	Functional_span 56 59	not
+T10	Functional_span 60 69	more than
+T11	Object_span 70 73	100
+T12	Discourse_span 73 74	.

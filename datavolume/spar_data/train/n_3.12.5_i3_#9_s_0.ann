@@ -1,0 +1,10 @@
+T1	Object_span 1 14	Public houses
+T2	Discourse_span 15 19	with
+T3	Object_span 20 31	restaurants
+T4	Action_span 32 50	should be provided
+T5	Discourse_span 51 55	with
+T6	Object_span 56 75	sanitary facilities
+T7	Discourse_span 76 78	as
+T9	Object_span 83 96	licensed bars
+T8	Discourse_span 79 82	for
+T10	Discourse_span 96 97	.

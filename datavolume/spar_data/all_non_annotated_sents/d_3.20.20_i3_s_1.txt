@@ -1,0 +1,1 @@
+The detector should incorporate a warning device to alert the users when its working life is due to expire.

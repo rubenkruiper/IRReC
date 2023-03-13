@@ -1,0 +1,1 @@
+'Compensatory approach' using a notional extension - a compensatory approach allows U-values for the elements involved in the work to be varied provided that the resulting overall heat loss for an extension is not greater than that of a `notional' extension.

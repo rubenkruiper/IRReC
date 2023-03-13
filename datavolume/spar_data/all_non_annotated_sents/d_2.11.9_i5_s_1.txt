@@ -1,0 +1,1 @@
+This should include a limitation on the number of smoke alarms and heat alarms which may be interconnected.

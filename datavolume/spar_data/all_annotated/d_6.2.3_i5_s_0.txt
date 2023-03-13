@@ -1,0 +1,1 @@
+To determine the value for heat loss arising from non-repeating thermal bridging (transmission heat transfer coefficient or H#SUB#tb#SUB#) for the proposed dwelling, designers should identify the presence of junctions listed in Appendix K of SAP 2012 and assign PSI values to each junction, based upon the following options:

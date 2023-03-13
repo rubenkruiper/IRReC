@@ -1,0 +1,1 @@
+the distance from a compartmentexit to an escape stair is not more than 32m.

@@ -1,0 +1,1 @@
+A cooker should have an activity space to allow access to, and safe use of, an oven, as shown in the diagram above.

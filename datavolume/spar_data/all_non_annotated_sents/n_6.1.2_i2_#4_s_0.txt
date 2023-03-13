@@ -1,0 +1,1 @@
+If, following full specification of the actual building, the BER is not more than the TER, then compliance with this standard is achieved.

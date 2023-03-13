@@ -1,0 +1,1 @@
+In multi-occupancy buildings the in-building physical infrastructure should be taken to an individual network termination point within each building unit in different occupation.

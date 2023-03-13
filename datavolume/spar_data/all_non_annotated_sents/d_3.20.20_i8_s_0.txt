@@ -1,0 +1,1 @@
+A carbon monoxide detection system to alert occupants to the presence of carbon monoxide should consist of at least:

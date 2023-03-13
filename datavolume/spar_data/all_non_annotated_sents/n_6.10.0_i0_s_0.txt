@@ -1,0 +1,1 @@
+To enable building operators to measure and manage energy use within a building effectively, a building should be fitted with meters to allow the use of fuel and power to be monitored.

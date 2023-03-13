@@ -1,0 +1,1 @@
+For new buildings the zone by zone approach explained in the guidance to Standard 6.1 allows designers the flexibility to assign cooling only to those zones of an otherwise heated only building, where heating and cooling is required, therefore reducing the overall energy use and carbon dioxide emissions of the building.

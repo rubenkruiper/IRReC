@@ -1,0 +1,1 @@
+The letter height of all text should be at least 50mm.

@@ -1,0 +1,1 @@
+This will determine the appropriate hazard classification and form the basis of the automatic fire suppression system design.

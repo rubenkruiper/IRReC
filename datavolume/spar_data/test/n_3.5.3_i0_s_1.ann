@@ -1,0 +1,21 @@
+T1	Discourse_span 0 2	If
+T2	Discourse_span 3 5	in
+T3	Functional_span 6 10	poor
+T4	Object_span 11 20	condition
+T5	Discourse_span 21 27	and/or
+T6	Functional_span 28 38	relatively
+T7	Object_span 39 46	shallow
+T8	Discourse_span 47 51	then
+T9	Object_span 52 65	consideration
+T10	Action_span 66 81	should be given
+A1	Confidence T9
+#1	AnnotatorNotes T9	could be treated as gerund
+T11	Discourse_span 82 84	to
+T12	Action_span 85 100	re-construction
+T13	Discourse_span 101 103	if
+T14	Action_span 104 114	re-routing
+T15	Action_span 115 117	is
+T16	Functional_span 118 121	not
+T17	Functional_span 122 132	reasonably
+T18	Object_span 133 144	practicable
+T19	Discourse_span 144 145	.

@@ -1,0 +1,8 @@
+Sentence:
+Specialist advice from approved certifiers of design, chartered engineers or other appropriately qualified persons should be sought if the designer is in any doubt about the loads acting on a building or how these loads can be accommodated by the structure and safely transmitted to the ground.
+
+Object identified:
+the loads
+
+Document id:
+d_1.1.1_i2_s_0

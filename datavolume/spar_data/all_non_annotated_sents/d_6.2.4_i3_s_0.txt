@@ -1,0 +1,1 @@
+The infiltration rate used for the TER calculation is 7m#SUP#3#SUP#/h.m#SUP#2#SUP# @ 50 Pa (see clause 6.1.2).

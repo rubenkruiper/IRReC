@@ -1,0 +1,1 @@
+point fire detectors and separate sounders.

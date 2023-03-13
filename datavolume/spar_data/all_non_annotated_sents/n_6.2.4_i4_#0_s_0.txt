@@ -1,0 +1,1 @@
+Excluding separating walls and separating floors between heated areas where thermal transmittance need not be assessed, provided measures are taken to limit heat loss arising from air movement within a cavity separating wall (see clause 6.2.1).

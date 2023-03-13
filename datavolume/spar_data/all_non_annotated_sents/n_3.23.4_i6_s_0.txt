@@ -1,0 +1,1 @@
+Storage containers for wood pellets, where they are to be pumped from a transporter to the container, should include a protective rubber mat over the wall to reduce the damage to the pellets when they hit the wall.

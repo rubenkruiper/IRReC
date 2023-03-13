@@ -1,0 +1,14 @@
+T1	Functional_span 0 19	For the purposes of
+T2	Discourse_span 20 24	this
+T3	Object_span 25 43	Technical Handbook
+T4	Discourse_span 43 44	,
+T5	Object_span 45 57	clause 3.1.0
+T6	Action_span 58 66	provides
+T7	Object_span 67 75	guidance
+T8	Discourse_span 76 78	on
+T9	Discourse_span 79 83	what
+T10	Object_span 105 115;84 91	substances harmful
+T11	Discourse_span 92 94	or
+T12	Object_span 105 115;95 104	substances dangerous
+T13	Action_span 116 130	may consist of
+T14	Discourse_span 130 131	.

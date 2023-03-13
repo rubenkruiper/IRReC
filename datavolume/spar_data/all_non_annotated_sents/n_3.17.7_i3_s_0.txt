@@ -1,0 +1,1 @@
+Labels should be located in a position that will not easily be obscured such as adjacent to:

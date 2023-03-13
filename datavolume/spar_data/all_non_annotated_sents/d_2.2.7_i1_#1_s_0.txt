@@ -1,0 +1,1 @@
+separating floor and open access balcony should have a long fire resistance duration, and

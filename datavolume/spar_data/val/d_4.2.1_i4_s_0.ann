@@ -1,0 +1,33 @@
+T1	Action_span 0 8	To allow
+T2	Object_span 9 26	manoeuvring space
+T3	Discourse_span 27 30	for
+T4	Functional_span 31 35	both
+T5	Object_span 36 42	people
+T6	Discourse_span 43 46	and
+T7	Object_span 47 56	furniture
+T8	Discourse_span 56 57	,
+T9	Object_span 58 64	routes
+T10	Action_span 65 82	should be widened
+T11	Functional_span 83 90	locally
+T12	Discourse_span 90 91	,
+T13	Discourse_span 92 94	at
+T14	Object_span 95 115	changes of direction
+T15	Discourse_span 115 116	,
+T16	Object_span 117 126	junctions
+T17	Discourse_span 127 130	and
+T18	Discourse_span 131 133	at
+T19	Object_span 134 145	the landing
+T20	Discourse_span 146 148	of
+T21	Functional_span 149 152	any
+T22	Object_span 153 157	lift
+T23	Discourse_span 157 158	,
+T24	Action_span 159 173	to accommodate
+T25	Discourse_span 173 174	,
+T26	Object_span 175 183	clear of
+T27	Functional_span 184 187	any
+T28	Object_span 188 199	obstruction
+A1	Confidence T26
+T29	Discourse_span 199 200	,
+T30	Object_span 201 202;208 222	a turning circle
+T31	Object_span 203 207	1.5m
+T32	Discourse_span 222 223	.

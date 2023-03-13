@@ -1,0 +1,1 @@
+Where an element of structure provides support to a compartment wall or compartment floor which attracts a higher fire resistance duration, the supporting element of structure should have at least the same period of fire resistance.

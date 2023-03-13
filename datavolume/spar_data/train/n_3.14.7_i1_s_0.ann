@@ -1,0 +1,19 @@
+T1	Discourse_span 0 7	However
+T2	Functional_span 8 10	no
+T3	Object_span 11 15	room
+T4	Action_span 16 26	containing
+T5	Object_span 27 46	sanitary facilities
+T6	Action_span 47 65	should communicate
+T7	Functional_span 66 74	directly
+T8	Discourse_span 75 79	with
+T9	Object_span 80 86	a room
+T10	Discourse_span 87 90	for
+T11	Discourse_span 91 94	the
+A1	Confidence T11
+#1	AnnotatorNotes T11	determiner identifies start of a VP.. ?
+T12	Action_span 95 106	preparation
+T13	Discourse_span 107 109	or
+T14	Action_span 110 121	consumption
+T15	Discourse_span 122 124	of
+T16	Object_span 125 129	food
+T17	Discourse_span 129 130	.

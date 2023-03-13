@@ -1,0 +1,14 @@
+T1	Discourse_span 0 10	Previously
+T2	Discourse_span 10 11	,
+T3	Object_span 12 33	thermal transmittance
+T4	Discourse_span 34 41	through
+T5	Object_span 42 58	separating walls
+T6	Discourse_span 59 61	or
+T7	Object_span 62 79	separating floors
+T8	Discourse_span 80 87	between
+T9	Object_span 88 100	heated parts
+T10	Discourse_span 101 103	of
+T11	Object_span 104 107;113 121	the building
+T12	Functional_span 108 112	same
+T13	Discourse_span 122 123	(
+T14	Functional_span 123 127	e.g.

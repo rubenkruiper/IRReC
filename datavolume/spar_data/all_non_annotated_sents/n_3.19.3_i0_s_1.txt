@@ -1,0 +1,1 @@
+This is specified, as part of the designation string for a System chimneys when used for oil or gas, as (Gxx), where xx is the distance in mm.

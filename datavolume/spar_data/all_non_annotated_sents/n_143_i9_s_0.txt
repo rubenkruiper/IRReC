@@ -1,0 +1,1 @@
+In determining the number of storeys in a building, basement storeys may be excluded provided such basement storeys fulfil the robustness of risk group 2B buildings.

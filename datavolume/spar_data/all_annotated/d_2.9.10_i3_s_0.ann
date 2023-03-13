@@ -1,0 +1,16 @@
+T1	Discourse_span 0 5	There
+T2	Action_span 23 32;6 9	available are
+T3	Functional_span 10 14	many
+T4	Object_span 15 22	options
+T5	Discourse_span 33 35	to
+T6	Object_span 36 45	designers
+T7	Discourse_span 46 50	when
+T8	Action_span 51 62	considering
+T9	Object_span 63 76	escape routes
+T10	Discourse_span 77 79	in
+T11	Object_span 80 89	buildings
+T12	Action_span 90 100	containing
+T13	Object_span 101 106	flats
+T14	Discourse_span 107 110	and
+T15	Object_span 111 122	maisonettes
+T16	Discourse_span 122 123	.

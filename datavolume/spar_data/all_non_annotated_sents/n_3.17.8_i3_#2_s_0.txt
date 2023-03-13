@@ -1,0 +1,1 @@
+for a gas-fired appliance, where a kitchen contains an open-flued appliance, the extract rate of the kitchen extract fan should not exceed 20 litres/second.

@@ -1,0 +1,1 @@
+having a public counter and providing services directly to the public

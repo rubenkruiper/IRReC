@@ -1,0 +1,1 @@
+Where a building has a basement storey, the floor of the ground storey should be a compartment floor.

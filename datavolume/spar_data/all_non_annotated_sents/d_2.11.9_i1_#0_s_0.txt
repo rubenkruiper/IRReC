@@ -1,0 +1,1 @@
+an independent circuit at the main distribution board, in which case no other electrical equipment should be connected to this circuit (other than a dedicated monitoring device installed to indicate failure of the mains supply to the alarms), or

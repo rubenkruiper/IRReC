@@ -1,0 +1,1 @@
+A visual indicator or warning signal should be provided to alert the occupant that there is a fault with the system.

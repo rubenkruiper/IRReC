@@ -1,0 +1,14 @@
+T1	Functional_span 0 3	Any
+T2	Object_span 4 11	barrier
+T3	Action_span 12 27	should minimise
+T4	Object_span 28 36	the risk
+T5	Discourse_span 37 39	of
+T6	Object_span 40 47	persons
+T7	Action_span 48 55	falling
+T8	Discourse_span 56 58	or
+T9	Action_span 59 67	slipping
+T10	Discourse_span 68 75	through
+T11	Object_span 76 80	gaps
+T12	Discourse_span 81 83	in
+T13	Object_span 84 95	the barrier
+T14	Discourse_span 95 96	.

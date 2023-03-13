@@ -1,0 +1,8 @@
+Sentence:
+Young children are often adept at climbing within their reach.
+
+Object identified:
+Young children
+
+Document id:
+d_4.4.0_i2_s_0

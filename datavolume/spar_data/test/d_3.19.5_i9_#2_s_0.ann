@@ -1,0 +1,5 @@
+T1	Functional_span 0 8	At least
+T2	Object_span 9 14	225mm
+T3	Discourse_span 15 18	for
+T4	Object_span 19 37	a closed appliance
+T5	Discourse_span 37 38	.

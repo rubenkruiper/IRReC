@@ -1,0 +1,9 @@
+scipy
+scikit-learn==0.24.2
+tqdm
+json5
+Levenshtein
+fastapi
+uvicorn
+transformers
+torch

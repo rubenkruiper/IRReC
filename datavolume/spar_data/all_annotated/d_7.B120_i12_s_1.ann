@@ -1,0 +1,16 @@
+T1	Functional_span 0 6	Simple
+T2	Object_span 7 15	diagrams
+T3	Action_span 16 28	illustrating
+T4	Functional_span 29 32	how
+A1	Confidence T4
+#1	AnnotatorNotes T4	adverb - denotes a mannerism?
+T5	Object_span 33 45	the building
+T6	Action_span 46 48	is
+T7	Action_span 49 59	ventilated
+T8	Discourse_span 60 62	in
+T9	Object_span 63 69	winter
+T10	Discourse_span 70 73	and
+T11	Object_span 74 80	summer
+T12	Action_span 81 84	are
+T13	Object_span 85 91	useful
+T14	Discourse_span 91 92	.

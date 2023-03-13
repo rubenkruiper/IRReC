@@ -1,0 +1,14 @@
+T1	Object_span 0 13	Accessibility
+T2	Discourse_span 14 15	-
+T3	Object_span 16 25	buildings
+T4	Action_span 26 44	should be designed
+T5	Discourse_span 45 47	to
+T6	Action_span 48 55	address
+T7	Object_span 56 62	safety
+T8	Discourse_span 63 66	and
+T9	Object_span 67 70;71 78	the welfare
+T10	Discourse_span 79 82	and
+T11	Object_span 67 70;83 94	the convenience
+T12	Discourse_span 95 97	of
+T13	Object_span 98 112	building users
+T14	Discourse_span 112 113	.

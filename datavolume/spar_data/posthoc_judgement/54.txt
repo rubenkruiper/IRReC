@@ -1,0 +1,8 @@
+Sentence:
+Domestic use of detergents and disinfectants is not detrimental but excessive use may have a harmful effect on the performance of the sewage treatment works.
+
+Object identified:
+Domestic
+
+Document id:
+d_3.8.1_i3_s_0

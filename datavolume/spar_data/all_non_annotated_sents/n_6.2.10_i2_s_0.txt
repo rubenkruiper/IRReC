@@ -1,0 +1,1 @@
+For all buildings, it would be advisable to consider the feasibility of upgrading fabric to at least the U-values given in column (b) in clause 6.2.11 (individual element U-values).

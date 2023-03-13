@@ -1,0 +1,12 @@
+T1	Discourse_span 0 5	These
+T2	Action_span 6 18	can be mixed
+T3	Discourse_span 19 26	because
+T4	Object_span 27 38	consistency
+T5	Discourse_span 39 41	in
+T6	Object_span 42 47	style
+T7	Action_span 48 50	is
+T8	Functional_span 51 55	less
+T9	Object_span 56 65	important
+T10	Discourse_span 66 70	than
+T11	Object_span 71 78	content
+T12	Discourse_span 78 79	.

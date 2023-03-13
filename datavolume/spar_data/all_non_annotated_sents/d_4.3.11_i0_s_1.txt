@@ -1,0 +1,1 @@
+Gradients of more than 1 in 12 are considered too steep to negotiate safely and are not recommended.

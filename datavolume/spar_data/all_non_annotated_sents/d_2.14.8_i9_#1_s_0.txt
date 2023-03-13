@@ -1,0 +1,1 @@
+The data network should be fault tolerant, such that, in the event of a single open or short circuit fault on the network cable, the system should continue to operate fully in accordance with the recommendations of BS 8629: 2019, while giving an audible and visual fault indication at central EAS control equipment;

@@ -1,5 +1,36 @@
+# Data for my containers
+# (! means we DO want to keep it)
+# SPaR 
+!datavolume/spar_data/*
+datavolume/spar_trained_models/*
+!datavolume/spar_trained_models/.gitkeep
+
+# clustering
+datavolume/classifier_data/*
+!datavolume/classifier_data/*IDF.json
+# indexing
+datavolume/ir_data/*
+!datavolume/ir_data/.gitkeep
+datavolume/indexes/*
+!datavolume/indexes/.gitkeep
+
+# tests and their data
+tests/*
+
+# my cache dir for pretrained embeddings
+datavolume/pretrained_embeddings_cache/*
+!datavolume/pretrained_embeddings_cache/.gitkeep
+
+
+### haystack standard gitignore stuff
+# Local run files
+qa.db
+**/qa.db
+**/*qa*.db
+**/test-reports
+
 # Byte-compiled / optimized / DLL files
-__pycache__/
+**/_pycache__/
 *.py[cod]
 *$py.class
 
@@ -75,7 +106,7 @@ docs/_build/
 target/
 
 # Jupyter Notebook
-.ipynb_checkpoints
+**/.ipynb_checkpoints
 
 # IPython
 profile_default/
@@ -91,7 +122,7 @@ ipython_config.py
 #   install all needed dependencies.
 #Pipfile.lock
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+# pyflow
 __pypackages__/
 
 # Celery stuff
@@ -127,3 +158,25 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# PyCharm
+.idea
+
+# VSCode
+.vscode
+
+# Retrieval files
+Retrieval/document_store/qa.db
+data
+**/mlruns/**
+src
+tutorials/cache
+tutorials/mlruns
+tutorials/model
+models
+saved_models
+*_build
+custom_rest_api/file-upload/*
+**/feedback_squad_direct.json
+.DS_Store
+

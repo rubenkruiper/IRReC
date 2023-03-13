@@ -1,0 +1,1 @@
+Where a compartment wall or sub-compartment wall meets an external wall, there should be a 1m wide strip of the external wall which has the same level of fire resistance duration as the compartment wall or sub-compartment wall, to prevent lateral fire spread.

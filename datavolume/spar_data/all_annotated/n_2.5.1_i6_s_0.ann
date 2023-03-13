@@ -1,0 +1,19 @@
+T1	Discourse_span 0 2	In
+T2	Object_span 3 13	a building
+T3	Functional_span 14 20	solely
+T4	Action_span 21 28	housing
+T5	Object_span 29 38	livestock
+T6	Discourse_span 38 39	,
+T7	Object_span 40 52	the surfaces
+T8	Discourse_span 53 55	of
+T9	Object_span 56 73	unprotected zones
+A1	Confidence T9
+#1	AnnotatorNotes T9	idiosyncratic, but I feel like this should be a MWE
+T10	Action_span 74 82	may have
+T11	Functional_span 83 86	any
+T12	Object_span 87 101	classification
+T13	Discourse_span 102 104	of
+T14	Object_span 105 113	reaction
+T15	Discourse_span 114 116	to
+T16	Object_span 117 121	fire
+T17	Discourse_span 121 122	.

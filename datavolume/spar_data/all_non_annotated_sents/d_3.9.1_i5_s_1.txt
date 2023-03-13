@@ -1,0 +1,1 @@
+This trial hole will enable the sub-soil type to be determined.

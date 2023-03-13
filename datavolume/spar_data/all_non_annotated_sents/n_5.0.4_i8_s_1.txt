@@ -1,0 +1,1 @@
+A single-number quantity (weighted) to characterise the impact sound insulation of floors, in accordance with BS EN ISO 717-2: 1997.

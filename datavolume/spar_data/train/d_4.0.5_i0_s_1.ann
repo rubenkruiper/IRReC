@@ -1,0 +1,19 @@
+T1	Functional_span 0 4	Such
+T2	Object_span 5 12	schemes
+T3	Action_span 13 25	are approved
+T4	Functional_span 26 43	on the basis that
+A1	Confidence T4
+T5	Object_span 44 58	the procedures
+T6	Action_span 59 66	adopted
+T7	Discourse_span 67 69	by
+T8	Object_span 70 80	the scheme
+T9	Action_span 81 101	will take account of
+T10	Object_span 102 110	the need
+T11	Action_span 111 125	to co-ordinate
+T12	Object_span 126 134	the work
+T13	Discourse_span 135 137	of
+T14	Functional_span 138 145	various
+T15	Object_span 146 155	designers
+T16	Discourse_span 156 159	and
+T17	Object_span 160 182	specialist contractors
+T18	Discourse_span 182 183	.

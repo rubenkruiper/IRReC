@@ -1,0 +1,1 @@
+T400 P2 D V3 (or Vm - Lxxxxx) Gxx where it serves an oil-firing appliance producing a flue gas temperature of not more than 400 degrees C, e.g.

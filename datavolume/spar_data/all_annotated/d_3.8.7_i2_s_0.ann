@@ -1,0 +1,12 @@
+T1	Object_span 0 9	The label
+T2	Action_span 10 27	should be located
+T3	Functional_span 28 36	adjacent
+T4	Discourse_span 37 39	to
+T5	Object_span 40 47;63 76	the gas consumer unit
+T6	Object_span 40 43;51 76	the electricity consumer unit
+T7	Discourse_span 48 50	or
+T8	Discourse_span 77 79	or
+T9	Object_span 80 98	the water stopcock
+T10	Discourse_span 98 99	.
+A1	Confidence T5
+#1	AnnotatorNotes T5	Issue here with current annotation scheme?

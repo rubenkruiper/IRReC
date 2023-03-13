@@ -1,0 +1,1 @@
+In the interests of transparency, key information on the specification used to create the 'notional' building (whether user defined or embedded in SBEM calculation tool) is summarised in the following clauses.

@@ -1,0 +1,24 @@
+T1	Functional_span 0 12	Non-domestic
+T2	Action_span 13 16	use
+T3	Discourse_span 17 23	within
+T4	Object_span 24 33	dwellings
+T5	Discourse_span 34 35	-
+T6	Object_span 36 49	accommodation
+T7	Functional_span 50 55	up to
+T8	Object_span 56 70	50m#SUP#2#SUP#
+T9	Action_span 71 78	used by
+T10	Object_span 79 90	an occupant
+T11	Discourse_span 91 93	of
+T12	Object_span 94 104	a dwelling
+T13	Discourse_span 105 107	in
+T14	Discourse_span 108 113	their
+T15	Object_span 114 126;139 147	professional capacity
+T16	Discourse_span 127 129	or
+T17	Object_span 130 138;139 147	business capacity
+T18	Action_span 148 168	should be considered
+T19	Discourse_span 169 171	as
+T20	Functional_span 172 181	a part of
+T21	Object_span 182 194	the dwelling
+T22	Discourse_span 194 195	.
+A1	Confidence T20
+#1	AnnotatorNotes T20	Not sure how consistent I am with this

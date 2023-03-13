@@ -1,0 +1,1 @@
+provided with a monitored fail-safe system for opening the door from any position in the event of mains supply failure and also in the event of failure of the opening sensing device, and

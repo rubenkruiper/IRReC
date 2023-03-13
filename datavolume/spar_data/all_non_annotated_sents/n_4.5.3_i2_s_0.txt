@@ -1,0 +1,1 @@
+A fireman's switch, in a conspicuous position, should be provided to any circuit supplying exterior electrical installations or internal discharge lighting installations (including luminous tube signage) operating at a voltage exceeding low voltage.

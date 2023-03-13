@@ -1,0 +1,9 @@
+T1	Object_span 0 6	Drains
+T2	Action_span 17 28;7 16	constructed should be
+T3	Discourse_span 29 32	and
+T4	Action_span 33 37;7 16	laid should be
+T5	Discourse_span 38 56	in accordance with
+T6	Object_span 57 76	the recommendations
+T7	Discourse_span 77 79	of
+T8	Object_span 80 96	BS EN 1610: 1998
+T9	Discourse_span 96 97	.

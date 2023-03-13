@@ -1,0 +1,20 @@
+T1	Object_span 0 24	CO2 monitoring equipment
+T2	Action_span 25 43	should be provided
+T3	Discourse_span 44 46	in
+T4	Object_span 47 60	the apartment
+T5	Action_span 61 75	expected to be
+T6	Object_span 76 79;98 105	the bedroom
+T7	Discourse_span 85 87	or
+T8	Functional_span 80 84	main
+T9	Functional_span 88 97	principal
+T10	Discourse_span 106 108	in
+T11	Object_span 109 119	a dwelling
+T12	Discourse_span 120 125	where
+T13	Object_span 126 148	infiltrating air rates
+T14	Action_span 149 152	are
+T15	Functional_span 153 162	less than
+T16	Object_span 163 193	15m#SUP#3#SUP#/hr/m#SUP#2#SUP#
+T17	Discourse_span 194 195	@
+T18	Object_span 196 201	50 Pa
+T19	Discourse_span 201 202	.
+#1	AnnotatorNotes T16	15m^3/hr/m^2

@@ -1,0 +1,8 @@
+Sentence:
+The form and fabric of the building should mitigate solar gains and result in minimum installed capacity of mechanical ventilation and cooling equipment.
+
+Object identified:
+The form
+
+Document id:
+n_6.6.1_i0_s_0

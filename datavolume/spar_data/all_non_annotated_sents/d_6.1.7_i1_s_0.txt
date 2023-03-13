@@ -1,0 +1,1 @@
+For conservatories and other ancillary stand-alone buildings of 50m#SUP#2#SUP# or more subject to Standard 6.1, a SBEM calculation using the methodology and guidance to Standard 6.1 for non-domestic buildings should be provided, applying the standards set for domestic buildings in all other respects.

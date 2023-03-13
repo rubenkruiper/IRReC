@@ -1,0 +1,1 @@
+For the source room measurements, the difference between the average sound pressure levels in adjacent one-third-octave bands should be not more than 6dB.

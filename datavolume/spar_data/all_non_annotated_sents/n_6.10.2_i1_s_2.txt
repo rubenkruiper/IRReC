@@ -1,0 +1,1 @@
+A metering strategy should consider the cost, practicality, and value of the information gained by detailed metering against potential future energy savings.

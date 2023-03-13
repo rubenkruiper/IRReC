@@ -1,0 +1,11 @@
+T1	Object_span 0 9	Buildings
+T2	Action_span 10 20	containing
+T3	Object_span 21 43	sleeping accommodation
+T4	Action_span 44 48	pose
+T6	Object_span 49 51;65 84	an risk to life safety
+T7	Functional_span 52 64	even greater
+T5	Discourse_span 85 88	and
+T8	Action_span 89 95	demand
+T9	Object_span 105 130;96 97	level of fire precautions a
+T10	Discourse_span 130 131	.
+T11	Functional_span 98 104	higher

@@ -1,0 +1,1 @@
+Specifying windows with a U-value of 1.5W/m#SUP#2#SUP#K can achieve this, as shown by the following calculation:

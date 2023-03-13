@@ -1,0 +1,69 @@
+{
+  "foreground_corpus_dir": "/data/ir_data/foreground_pdf/",
+  "foreground_conversion_type": "pdf",
+  "background_corpus_dir": "/data/ir_data/background_html/",
+  "background_conversion_type": "html",
+  "bert_model": "whaleloops/phrase-bert",
+  "cache_dir": "/data/pretrained_embeddings_cache/",
+  "classifier_dir": "/data/classifier_data/",
+  "IDF_path": "/data/classifier_data/IDF_values.json",
+  "retrieval": {
+    "ner_url": "http://spar:8501/",
+    "clustering_url": "http://cluster:8502/",
+    "top_k": 10
+  },
+  "filtering": {
+      "regex_filter": "yes", // Yes, Y, yes or y means the regex filter will run (recommended)
+  },
+  "indexing": {
+    "indexing_type": "hybrid", // `sparse`, `hybrid` or `dense`
+    "recreate_index":  true,
+    "fields_to_index_and_weights": {
+      "content": 2,
+      "doc_title":  1.0,
+      "SPaR_labels":  1.0,
+      "filtered_SPaR_labels":  1.0,
+      "cluster_filtered":  1.0,
+      "cluster_neighbours":  1.0
+    },
+    "sparse_settings": {
+      "type": "bm25f",  // bm25f with "bm25f", otherwise regular bm25
+      "index_name": "20k_clusters",
+      "recreate_index": true
+    },
+    "dense_settings": {
+      "weigh_fields": true,
+      "model_format": "transformers",
+      "hidden_dims": 768,
+      "faiss_index": "Flat",
+      "query_embedding_model": "facebook/dpr-question_encoder-single-nq-base",
+      "passage_embedding_model": "facebook/dpr-ctx_encoder-single-nq-base",
+      "max_seq_len_query": 64, // in tokens
+      "max_seq_len_passage": 256, // in tokens
+      "batch_size": 16,
+      "use_gpu": "if_available", // can be overriden with `no`
+      "embed_title": "true",
+      "use_fast_tokenizers": "true"
+    }
+  },
+  "embedding_settings": {
+    "embedding_folder_name": "euclidean_20k",
+    "layers_to_use": [12], // which of the 12 layers to use
+    "layer_combination": "avg", // how to combine layers if multiple are used
+    "idf_threshold": 0.1, // avoid value of 0, this may lead to omitting all tokens for a span and a zero-division
+    "idf_weight_factor": 2.0, // modify the influence of IDF weighting
+    "not_found_idf_value": 0.5 // # IDF value for tokens that weren't seen during IDF computation
+  },
+  "classifier_settings": {
+    "num_neighbours": 500,
+    "tfidf_cutoff": 0.6,
+    "num_neighbours_cutoff": 250,
+    "foreground_corpus_terms": "foreground_objects.pkl",
+    "background_corpus_terms": "background_objects.pkl"
+  },
+  "query_expansion": {
+      "concept_extraction": "spar", // currently not providing other options
+      "nearest_neighours": "yes", // simply yes no?
+      "pseudo_relevance_feedback" : "no" // `yes` or `no`
+  }
+}

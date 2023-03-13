@@ -1,0 +1,1 @@
+Fire performance tests are critical as BS 8458 relies on this data to determine the system design.

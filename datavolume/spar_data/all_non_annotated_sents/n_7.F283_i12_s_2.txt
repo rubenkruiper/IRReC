@@ -1,0 +1,1 @@
+Briefly describe how hot water generation is controlled.

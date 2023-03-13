@@ -1,0 +1,25 @@
+T1	Discourse_span 0 5	Where
+T2	Object_span 6 25	the travel distance
+T3	Action_span 26 37	is measured
+T4	Discourse_span 38 40	to
+T5	Object_span 41 57	a protected door
+T6	Discourse_span 58 60	in
+T7	Object_span 61 62;63 79	a compartment wall
+T8	Discourse_span 80 82	or
+T9	Object_span 61 62;83 103	a sub-compartment wall
+T10	Discourse_span 104 106	in
+T11	Object_span 107 134	a residential care building
+T12	Discourse_span 134 135	,
+T13	Object_span 136 152	the escape route
+T14	Action_span 153 159;164 168	should pass
+T15	Functional_span 160 163	not
+T16	Discourse_span 169 176	through
+T17	Functional_span 177 180	any
+T18	Discourse_span 181 183	of
+T19	Object_span 184 205	the fire hazard rooms
+A1	Confidence T19
+#1	AnnotatorNotes T19	I believe this is a specific term
+T20	Action_span 206 212	listed
+T21	Discourse_span 213 215	in
+T22	Object_span 216 228	clause 2.A.1
+T23	Discourse_span 228 229	.

@@ -1,0 +1,1 @@
+Whilst there is no requirement for the actual building to include LCE, designers should be aware that other aspects of building specification would require to be improved should such an element be absent.

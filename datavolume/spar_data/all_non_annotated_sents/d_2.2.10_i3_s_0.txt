@@ -1,0 +1,1 @@
+Junctions with roofs - where a separating wall forms a junction with a roof, the junction should maintain the fire resistance duration of the separating wall in accordance with the following:

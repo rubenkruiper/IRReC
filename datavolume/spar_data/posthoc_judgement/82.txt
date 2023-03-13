@@ -1,0 +1,8 @@
+Sentence:
+Power supply cables may comprise cables of standard, or enhanced, fire resistance.
+
+Object identified:
+Power supply cables
+
+Document id:
+d_2.14.8_i7_s_1

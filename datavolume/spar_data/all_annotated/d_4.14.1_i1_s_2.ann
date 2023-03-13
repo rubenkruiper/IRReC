@@ -1,0 +1,29 @@
+T1	Functional_span 0 10	Horizontal
+T2	Object_span 11 19	ductwork
+T3	Discourse_span 20 27	through
+T4	Object_span 28 42	external walls
+T5	Action_span 43 55	should slope
+T6	Object_span 56 65	downwards
+T7	Discourse_span 66 68	to
+T8	Object_span 69 80	the outside
+T9	Action_span 81 91	to prevent
+T10	Object_span 92 107	the possibility
+T11	Discourse_span 108 110	of
+T12	Object_span 111 124	water ingress
+T13	Discourse_span 125 128	and
+T14	Object_span 129 143	be fitted with
+#1	AnnotatorNotes T14	to fit with seems more specific than to fit, with the broader concept not applicable here
+A1	Confidence T14
+T15	Functional_span 144 152	suitable
+T16	Functional_span 153 162	temporary
+T17	Object_span 163 168	seals
+T18	Discourse_span 169 171	at
+T19	Functional_span 172 176	both
+T20	Object_span 177 181	ends
+T21	Discourse_span 181 182	,
+T22	Functional_span 192 196	easy
+T23	Action_span 183 191;197 203	to allow access
+T24	Discourse_span 204 207	for
+T25	Object_span 208 213	cable
+T26	Action_span 214 226	installation
+T27	Discourse_span 226 227	.

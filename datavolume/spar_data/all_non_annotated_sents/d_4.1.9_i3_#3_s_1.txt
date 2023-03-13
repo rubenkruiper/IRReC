@@ -1,0 +1,1 @@
+A threshold piece should have a height of not more than 15mm, with any vertical element of more than 5mm height being pencil-rounded or chamfered to an angle of not more than 45 degrees from the horizontal

@@ -1,0 +1,1 @@
+Non-repeating thermal bridging at the junctions of building elements and around openings in the building envelope form part of the calculation of energy performance in the SBEM calculation tool (refer to clause 6.1.1).

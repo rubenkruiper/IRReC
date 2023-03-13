@@ -1,0 +1,19 @@
+T1	Action_span 0 11	Explanation
+T2	Discourse_span 12 14	of
+T3	Object_span 15 20	terms
+T4	Discourse_span 21 22	-
+T5	Functional_span 27 36	following
+T6	Object_span 23 26;37 42	the terms
+T7	Action_span 43 55	are included
+T8	Discourse_span 56 58	to
+T9	Action_span 59 66	provide
+T10	Object_span 67 74	clarity
+T11	Discourse_span 75 77	to
+T12	Discourse_span 78 83	their
+T13	Object_span 84 91	meaning
+T14	Discourse_span 92 94	in
+T15	Object_span 95 107	the guidance
+T16	Discourse_span 108 110	to
+T17	Discourse_span 111 115	this
+T18	Object_span 116 124	standard
+T19	Discourse_span 124 125	.

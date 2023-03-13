@@ -1,0 +1,1 @@
+The following flowchart will assist designers and verifiers to determine the measures which should be applied to a modular or portable building to demonstrate compliance with Standards 6.1 and 6.2.

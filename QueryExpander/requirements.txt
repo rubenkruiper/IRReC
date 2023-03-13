@@ -1,0 +1,6 @@
+textblob
+SPARQLWrapper
+json5
+requests
+fastapi
+uvicorn

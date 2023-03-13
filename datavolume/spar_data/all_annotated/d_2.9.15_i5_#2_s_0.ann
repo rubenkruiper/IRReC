@@ -1,0 +1,13 @@
+T1	Object_span 0 15	the smoke shaft
+T2	Action_span 16 27	should have
+T3	Functional_span 28 36	at least
+T4	Object_span 37 38;46 70	a fire resistance duration
+T5	Functional_span 39 45	medium
+T6	Discourse_span 71 74	and
+T7	Functional_span 75 78	all
+T8	Object_span 79 90	ventilators
+T9	Action_span 91 102	should have
+T10	Object_span 103 104;111 135	a fire resistance duration
+T11	Functional_span 105 110	short
+T12	Discourse_span 135 136	,
+T13	Discourse_span 137 140	and

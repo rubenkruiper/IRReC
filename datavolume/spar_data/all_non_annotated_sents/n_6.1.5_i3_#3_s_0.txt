@@ -1,0 +1,1 @@
+thermal bridge heat loss is based upon the same geometry as for the actual building.

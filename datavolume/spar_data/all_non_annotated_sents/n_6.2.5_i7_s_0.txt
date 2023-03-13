@@ -1,0 +1,1 @@
+Note that a combination of PSI values from (b), (c) & (d) can be used to produce the calculated heat loss.

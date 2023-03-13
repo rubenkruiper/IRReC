@@ -1,0 +1,1 @@
+test the suitability of the ground in accordance with the percolation test method in clause 3.9.1.

@@ -1,0 +1,25 @@
+{
+  "sparql_endpoint": "http://host.docker.internal:7200/repositories/BRE",
+  "haystack_endpoint": "http://haystack:8500/",
+  "spar_endpoint": "http://spar:8501/",
+  "cluster_endpoint": "http://cluster:8502/",
+  "qe_candidates": {
+    "prf_weight": 0,
+    "kg_broader_weight": 0,
+    "kg_narrower_weight": 0,
+    "kg_alternatives_weight": 0,
+    "nn_weight": 2
+  },
+  "retrieval_settings": {
+      "indexing_type": "hybrid",
+      "sparse_type": "multi_match",
+      "content": 2,
+      "doc_title":  1,
+      "SPaR_labels": 1,
+      "filtered_SPaR_labels":  1,
+      "cluster_filtered":  1,
+      "cluster_neighbours": 1,
+      "bm25": 6,
+      "top_k": 50
+      }
+}

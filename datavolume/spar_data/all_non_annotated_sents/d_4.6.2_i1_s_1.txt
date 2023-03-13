@@ -1,0 +1,1 @@
+Lighting should not present sources of glare and should avoid creation of areas of strong shadow that may cause confusion or miss-step.

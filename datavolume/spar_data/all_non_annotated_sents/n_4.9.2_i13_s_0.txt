@@ -1,0 +1,1 @@
+The relief valve should have a discharge capacity rating at least equal to the rate of energy (power in kilowatts) input to the heat source.

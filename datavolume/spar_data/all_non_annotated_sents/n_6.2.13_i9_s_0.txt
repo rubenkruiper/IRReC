@@ -1,0 +1,1 @@
+However, where this occurs at a boundary, no upgrading is necessary if the element is a wall that is exclusively the property of the adjoining building.

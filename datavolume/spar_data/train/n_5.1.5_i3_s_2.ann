@@ -1,0 +1,14 @@
+T1	Discourse_span 0 3	For
+T2	Discourse_span 4 8	this
+T3	Object_span 9 15	reason
+T4	Discourse_span 15 16	,
+T5	Functional_span 17 25	specific
+T6	Functional_span 26 38	prescriptive
+T7	Object_span 39 47	guidance
+T8	Discourse_span 48 50	on
+T9	Discourse_span 51 55	such
+T10	Object_span 56 65	buildings
+T11	Action_span 66 68	is
+T12	Functional_span 69 72	not
+T13	Object_span 73 84	appropriate
+T14	Discourse_span 84 85	.

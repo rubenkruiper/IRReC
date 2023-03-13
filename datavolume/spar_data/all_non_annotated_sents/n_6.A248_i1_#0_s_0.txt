@@ -1,0 +1,1 @@
+where it is not possible to input the individual U-values for all the windows, doors and roof-lights for the proposed new building into the calculation methodology

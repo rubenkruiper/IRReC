@@ -1,0 +1,1 @@
+Collisions with glazing are very common as it can, if transparent, be difficult to see and may create confusing lighting effects, presenting particular difficulties for a person with a visual or cognitive impairment.

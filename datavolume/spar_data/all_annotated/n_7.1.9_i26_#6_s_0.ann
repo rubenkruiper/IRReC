@@ -1,0 +1,8 @@
+T1	Object_span 0 6	a door
+T2	Discourse_span 7 11	with
+T3	Functional_span 14 21	minimum
+T4	Functional_span 22 27	clear
+T5	Object_span 12 13;28 41	a opening width
+T6	Discourse_span 42 44	of
+T7	Object_span 45 47	1m
+T8	Discourse_span 47 48	.

@@ -1,0 +1,1 @@
+the heating fuel(s) specified for the actual building are applied to the `notional' building

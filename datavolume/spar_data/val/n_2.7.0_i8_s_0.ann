@@ -1,0 +1,25 @@
+T1	Action_span 0 8	To align
+T2	Discourse_span 9 13	with
+T3	Object_span 14 24	the advice
+T4	Discourse_span 25 30	above
+T5	Discourse_span 30 31	,
+T6	Object_span 32 40	guidance
+T7	Discourse_span 41 43	to
+T8	Discourse_span 44 48	this
+T9	Object_span 49 57	standard
+T10	Action_span 58 68	is amended
+T11	Discourse_span 68 69	,
+T12	Action_span 70 82	recommending
+T13	Discourse_span 83 87	that
+T14	Object_span 88 98	Category 3
+T15	Object_span 99 123	Metal Composite Material
+T16	Discourse_span 124 125	(
+T17	Object_span 125 128	MCM
+T18	Discourse_span 128 129	)
+T19	Object_span 130 138	cladding
+T20	Action_span 139 145;150 157	should be used
+T21	Functional_span 146 149	not
+T22	Discourse_span 158 160	in
+T23	Functional_span 161 164	any
+T24	Object_span 165 174	situation
+T25	Discourse_span 174 175	.

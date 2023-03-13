@@ -1,0 +1,1 @@
+Avoid non-essential images (e.g.

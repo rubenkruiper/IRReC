@@ -1,0 +1,1 @@
+For example, an acceptable material code for solid fuel, oil or gas, would be Vm - L50040 representing a material type 50 with a thickness of 0.40mm.
