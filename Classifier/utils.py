@@ -50,7 +50,7 @@ class ToBeClustered:
         # placeholders for cluster_ID and neighbours
         self.cluster_id = -1
         self.distance_to_centroid = math.inf
-        self.all_neighbours = [] # TODO; change to kNN graph approach!
+        self.all_neighbours = []    # TODO; change to kNN graph approach!
 
         self.idf_threshold = embedder.idf_threshold
 

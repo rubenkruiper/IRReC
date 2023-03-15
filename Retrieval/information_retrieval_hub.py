@@ -48,6 +48,7 @@ class InformationRetrievalHub:
         self.IDF_path = Path(configs["IDF_path"])
         self.idf_computer = IdfComputer(Path(configs["IDF_path"]))
         self.classifier_dir = Path(configs["classifier_dir"])
+        self.embedding_dir = Path(configs["embedding_settings"]['embedding_folder_name'])
 
         # urls for SPaR and Classifier APIs
         self.ner_url = configs["retrieval"]["ner_url"]
@@ -136,20 +137,18 @@ class InformationRetrievalHub:
         self.preprocess_inputs(self.foreground_output_dir, self.classifier_dir.joinpath("foreground_terms.pkl"))
         self.preprocess_inputs(self.background_output_dir, self.classifier_dir.joinpath("background_terms.pkl"))
 
-        # (4) SPaR.txt is done, at this stage we want to prepare the domain classification
-        # do I want to pass specific settings here? json= {'num_neighbours':x, etc...}
+        # (4) SPaR.txt is done, we'll do some domain classification and find NNs
+        # todo; do I want to pass specific settings here? json= {'num_neighbours':x, etc...}
         requests.post(f"{self.classifier_url}train/")
-
-        # (5) Once the classifier is trained, prep the KG?
-
+        self.expand_documents(self.foreground_output_dir)
 
     def preprocess_inputs(self,
                           converted_documents_dir: Path,
                           term_output_path: Path = Path("/data/classifier_data/foreground_terms.pkl"),
                           split_length: int = 100) -> List[CustomDocument]:
         """
-        Takes the text found in pdfs during the conversion step, splits it into passages and
-        reformats for indexing.
+        Splits and labels the text found in pdfs during the conversion step. Splits long texts into passages and
+        sorts out which NER labels occur in the splits for indexing.
 
         :param converted_documents_dir: Directory where `CustomDocument` have been written to during conversion.
         :param term_output_path:    The outputpath to store all the foreground or background terms.
@@ -202,13 +201,11 @@ class InformationRetrievalHub:
                     if content.NER_labels:
                         # update the document in place
                         only_keep_filtered = [l for l in content.NER_labels if l in filtered_labels]
-                        processed_document.all_contents[idx].set_filtered_NER_labels(only_keep_filtered)
+                        processed_document.all_contents[idx].set_filtered_ner_labels(only_keep_filtered)
                 # update stored file
                 processed_document.write_document()
 
-    def identify_similar_labels(self,
-                                converted_documents_dir: Path,
-                                term_output_path: Path = Path("/data/classifier_data/foreground_terms.pkl")):
+    def expand_documents(self, converted_documents_dir: Path):
         """
         We want to keep track of the filtered and classified terms in a CustomDocument's contents. This simply updates
         the converted document at it's file location.
@@ -216,83 +213,30 @@ class InformationRetrievalHub:
         :param converted_documents_dir:    The path where we can find out converted documents.
         :param term_output_path:    The path where all the filtered terms for this corpus are stored.
         """
-        preprocessed_document_filepaths = glob.glob(self.converted_documents_dir + '*json')
+        # grab the converted documents (at this stage expecting pre-processed)
+        converted_document_filepaths = [filepath for filepath in converted_documents_dir.glob("*.json")]
 
-
-        # (2) identify the X most similar labels, IF within domain?
         if self.classifier_url not in ["no", "No", "None", "none", ""]:
-            if not self.clusters_to_filter:
-                self.clusters_to_filter = requests.get(self.classifier_url +
-                                                       "get_clusters_to_filter/").json()["clusters_to_filter"]
+            for converted_document_filepath in converted_document_filepaths:
+                converted_document = CustomDocument.load_document(converted_document_filepath)
+                new_contents = []
+                for content in converted_document.all_contents:
+                    if content.filtered_NER_labels:
+                        domain_spans = requests.post(f"{self.classifier_url}filter_non_domain_spans/",
+                                                     json={"spans": content.filtered_NER_labels})
+                        content.set_filtered_ner_label_domains(domain_spans)
+                        neighbours = requests.post(f"{self.classifier_url}get_neighbours/",
+                                                   json={"spans": content.filtered_NER_labels})
+                        content.set_neighbours(neighbours)
+                    new_contents.append(content)
 
-            for fp in tqdm(preprocessed_document_fps):
-                processed_document = CustomDocument.load_document(fp)
-                if any([len(c.cluster_neighbours) > 1 for c in processed_document.all_contents]):
-                    logger.info(
-                        "[Cluster Labels] Skipping cluster labelling, since cluster labels found in: {}".format(
-                            processed_document.output_fp
-                        ))
-                else:
-                    # We want to assign a cluster to all filtered NER labels in a document (collection of passages)
-                    content_and_labels_tracking_dict = {}
-                    num_unique_label_ids = 0
-                    doc_labels = []
-                    for idx, content in enumerate(processed_document.all_contents):
-                        current_content_labels = content.filtered_NER_labels
-                        doc_labels += current_content_labels
-                        content_and_labels_tracking_dict[idx] = [x for x in range(num_unique_label_ids,
-                                                                                  num_unique_label_ids +
-                                                                                  len(current_content_labels))]
-                        num_unique_label_ids += len(current_content_labels)
-
-                    # We assign in batches of size num.clusters; don't remember why, I thought kmcuda runs into issues
-                    num_clusters = requests.get(self.classifier_url + "get_num_clusters/").json()["num_clusters"]
-                    doc_label_splits = split_list(doc_labels, num_clusters)
-                    doc_cluster_ids = []
-                    doc_cluster_neighbours = []
-                    for objects_to_assign_id in doc_label_splits:
-                        # Assign a cluster ID and identify close neighbours for the objects in a give slice
-                        # todo - ability to change the cosine sim threshold and the nr of results to be stored
-                        params = {"data": objects_to_assign_id,
-                                  "cosine_sim_threshold": 0.7,
-                                  "max_results": 3}
-                        response = requests.post(self.classifier_url + "get_neighbours/", json=params).json()
-                        doc_cluster_ids += response['assigned_ids']
-                        doc_cluster_neighbours += response['neighbours']
-
-                    # Now we make sure the ids and neighbours are assigned to the right contents again.
-                    for idx, label_ids in content_and_labels_tracking_dict.items():
-                        nested_cluster_ids = [i for i in doc_cluster_ids[label_ids[0]:label_ids[-1] + 1] if i != -1]
-                        if not nested_cluster_ids:
-                            logger.info(f"[Clustering] Issue with assigned IDs: {nested_cluster_ids}")
-                            assigned_neighbours = []
-                            assigned_cluster_ids = []
-                        elif any(type(cid) != int for cid in nested_cluster_ids):
-                            # expecting a nested list [[1,2,3],[4,5,...]]
-                            assigned_cluster_ids = list(itertools.chain(*nested_cluster_ids))
-                            nested_neighbours = doc_cluster_neighbours[label_ids[0]:label_ids[-1] + 1]
-                            assigned_neighbours = list(itertools.chain(*nested_neighbours))
-                        else:
-                            # expecting a list of assigned cluster ids [1,2,3,...]
-                            assigned_cluster_ids = nested_cluster_ids
-                            assigned_neighbours = doc_cluster_neighbours[label_ids[0]:label_ids[-1] + 1]
-
-                        processed_document.all_contents[idx].set_cluster_neighbours(assigned_neighbours)
-
-                        filtered_neighbours = []
-                        for n, a in zip(assigned_neighbours, assigned_cluster_ids):
-                            if a not in self.clusters_to_filter:
-                                filtered_neighbours.append(n)
-
-                        processed_document.all_contents[idx].set_cluster_filtered(filtered_neighbours)
-
-                    # update stored file
-                    processed_document.write_document()
-
+                # update the CustomDocument and save changes to file
+                converted_document.replace_contents(new_contents)
+                converted_document.write_document()
 
     def initialize_sparse_docstore(self, index_name: str):
         fields = ["content", "doc_title", "SPaR_labels", "filtered_SPaR_labels",
-                  "cluster_filtered", "cluster_neighbours"]
+                  "filtered_SPaR_labels_domain", "neighbours"]
 
         # 'skip', 'overwrite' or 'fail'
         duplicate_documents = 'overwrite' if self.recreate_index else 'skip'
@@ -302,7 +246,7 @@ class InformationRetrievalHub:
                                                            index=index_name,
                                                            search_fields=fields,
                                                            content_field="content",
-                                                           recreate_index=recreate_index,
+                                                           recreate_index=self.recreate_index,
                                                            duplicate_documents=duplicate_documents)
         return sparse_document_store
 
@@ -312,8 +256,8 @@ class InformationRetrievalHub:
                       f"doc_title^{self.fields_and_weights['doc_title']}",
                       f"SPaR_labels^{self.fields_and_weights['SPaR_labels']}",
                       f"filtered_SPaR_labels^{self.fields_and_weights['filtered_SPaR_labels']}",
-                      f"cluster_filtered^{self.fields_and_weights['cluster_filtered']}",
-                      f"cluster_neighbours^{self.fields_and_weights['cluster_neighbours']}"]
+                      f"filtered_SPaR_labels_domain^{self.fields_and_weights['filtered_SPaR_labels_domain']}",
+                      f"neighbours^{self.fields_and_weights['neighbours']}"]
 
             custom_query = {
                 "query": {
@@ -398,10 +342,7 @@ class InformationRetrievalHub:
             save_updated_document_store = True
 
             # Preprocessing inputs where necessary
-            self.convert_inputs()
-            # todo ; decide if I want to pass split_length here (just sticking to 100 for now)
-            self.preprocess_inputs()
-            self.filtered_and_classified()
+            self.prepare_pipeline_inputs()
 
             # Create the document store
             sql_doc_store = f"sqlite:///{faiss_sql_doc_store}"

@@ -37,8 +37,8 @@ class Content(object):
         self.sentences = []
         self.NER_labels = []
         self.filtered_NER_labels = []
-        self.cluster_filtered = []
-        self.cluster_neighbours = []
+        self.filtered_NER_labels_domains = []
+        self.neighbours = []
 
     @classmethod
     def from_dict(cls, haystack_dict):
@@ -58,15 +58,15 @@ class Content(object):
         content.sentences = haystack_dict['meta']['sentences'].split("###")
         content.NER_labels = haystack_dict['meta']['SPaR_labels'].split(", ")
         content.filtered_NER_labels = haystack_dict['meta']['filtered_SPaR_labels'].split(", ")
-        content.cluster_filtered = haystack_dict['meta']['cluster_filtered'].split(", ")
-        content.cluster_neighbours = haystack_dict['meta']['cluster_neighbours'].split(", ")
+        content.filtered_NER_labels_domains = haystack_dict['meta']['filtered_SPaR_labels_domain'].split(", ")
+        content.neighbours = haystack_dict['meta']['neighbours'].split(", ")
         return content
 
     def to_dict(self):
-        if any(type(a) == list for a in self.cluster_filtered):
-            self.cluster_filtered = list(itertools.chain(*self.cluster_filtered))
-        if any(type(a) == list for a in self.cluster_neighbours):
-            self.cluster_neighbours = list(itertools.chain(*self.cluster_neighbours))
+        if any(type(a) == list for a in self.filtered_NER_labels_domains):
+            self.filtered_NER_labels_domains = list(itertools.chain(*self.filtered_NER_labels_domains))
+        if any(type(a) == list for a in self.neighbours):
+            self.neighbours = list(itertools.chain(*self.neighbours))
 
         haystack_dict = {
             "content": self.text,
@@ -82,8 +82,8 @@ class Content(object):
                 "sentences": '###'.join(self.sentences),
                 "SPaR_labels": ', '.join(self.NER_labels),
                 "filtered_SPaR_labels": ', '.join(self.filtered_NER_labels),
-                "cluster_filtered": ', '.join(self.cluster_filtered),
-                "cluster_neighbours": ', '.join(self.cluster_neighbours),
+                "filtered_SPaR_labels_domain": ', '.join(self.filtered_NER_labels_domains),
+                "neighbours": ', '.join(self.neighbours),
             }
         }
         return haystack_dict
@@ -94,17 +94,17 @@ class Content(object):
     def set_id(self, new_id):
         self.id = new_id
 
-    def set_NER_labels(self, labels: List = [str]):
+    def set_ner_labels(self, labels: List = [str]):
         self.NER_labels = labels
 
-    def set_filtered_NER_labels(self, filtered_labels: List = [str]):
+    def set_filtered_ner_labels(self, filtered_labels: List = [str]):
         self.filtered_NER_labels = filtered_labels
 
-    def set_cluster_filtered(self, cluster_filtered: List = [str]):
-        self.cluster_filtered = cluster_filtered
+    def set_filtered_ner_label_domains(self, NER_label_domains: List = [str]):
+        self.filtered_NER_labels_domains = NER_label_domains
 
-    def set_cluster_neighbours(self, cluster_neighbours: List = [str]):
-        self.cluster_neighbours = cluster_neighbours
+    def set_neighbours(self, neighbours: List = [str]):
+        self.neighbours = neighbours
 
 
 class CustomDocument(object):

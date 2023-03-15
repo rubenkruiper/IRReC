@@ -13,8 +13,8 @@ class RetrievalSettings(BaseModel):
     doc_title: float = 1.0
     SPaR_labels: float = 1.0
     filtered_SPaR_labels: float = 1.0
-    cluster_filtered: float = 1.0
-    cluster_neighbours: float = 1.0
+    filtered_SPaR_labels_domain: float = 1.0
+    neighbours: float = 1.0
     bm25: float = 2.0
     top_k: int = 10
 
@@ -40,14 +40,16 @@ def search(input_str: Optional[str] = Query(default=Required, max_length=1000)):
 
 @Retrieval_api.post("/set_field_weights/")
 def set_field_weights(retrieval_settings: RetrievalSettings):
-
+    """
+    Takes new settings from the api and re-initializes the sparse Haystack Pipeline with these settings.
+    """
     new_fields_and_weights = {
         "content": retrieval_settings.content,
         "doc_title": retrieval_settings.doc_title,
         "SPaR_labels": retrieval_settings.SPaR_labels,
         "filtered_SPaR_labels": retrieval_settings.filtered_SPaR_labels,
-        "cluster_filtered": retrieval_settings.cluster_filtered,
-        "cluster_neighbours": retrieval_settings.cluster_neighbours,
+        "filtered_SPaR_labels_domain": retrieval_settings.filtered_SPaR_labels_domain,
+        "neighbours": retrieval_settings.neighbours,
         "bm25": retrieval_settings.bm25,
         "top_k": retrieval_settings.top_k
     }

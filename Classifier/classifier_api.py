@@ -31,7 +31,8 @@ class Settings(BaseSettings):
     num_neighbours_cutoff: Optional[float] = 250
     foreground_corpus_terms: Optional[str] = "foreground_objects.pkl"
     background_corpus_terms: Optional[str] = "background_objects.pkl"
-
+    top_k_semantically_similar: Optional[int] = 5
+    metric: Optional[str] = "cosine"
 
     # Some basic additional validation
     @validator('cache_dir', 'cluster_dir') #, 'IDF_path') >> we now allow creating IDF paths from scratch
@@ -56,9 +57,7 @@ class Settings(BaseSettings):
 
 
 class ToPredict(BaseModel):
-    data: Union[List[str], str]
-    cosine_sim_threshold: Optional[float] = 0.7
-    max_results: Optional[int] = 3
+    spans: Union[List[str], str]
 
 
 class EmbeddingHub:
@@ -143,7 +142,7 @@ class EmbeddingHub:
         self.classifier = Classifier(self.embedder,
                                      self.foreground_term_filepath,
                                      self.background_term_filepath,
-
+                                     settings.top_k_semantically_similar
                                      )
         return settings
 
@@ -170,12 +169,24 @@ def train_classifier(classifier_settings: Dict[str, Any] = None):
     if not hub.classifier:
         hub.initialize_classifier_from_settings()
 
-    num_neighbours = classifier_settings['num_neighbours'] if classifier_settings else 500
+    classifier_nr_neighbours = classifier_settings['classifier_nr_neighbours'] if classifier_settings else 500
     tfidf_cutoff = classifier_settings['tfidf_cutoff'] if classifier_settings else .6
     num_neighbours_cutoff = classifier_settings['num_neighbours_cutoff'] if classifier_settings else 250
-    hub.classifier.train_classifier_from_heuristics(n_neighbours=num_neighbours,
+    hub.classifier.train_classifier_from_heuristics(n_neighbours=classifier_nr_neighbours,
                                                     min_tfidf_value=tfidf_cutoff,
                                                     min_num_foreground_neighbours=num_neighbours_cutoff)
+
+
+@Cluster_api.post("/filter_non_domain_spans/")
+def filter_non_domain_spans(to_be_predicted: ToPredict) -> Dict[str, str]:
+    """
+    Returns a `list` of terms from the assigned cluster.
+    """
+    if to_be_predicted.spans:
+        domain_spans = hub.classifier.predict_domains(to_be_predicted.spans)
+        return {'domain_spans': domain_spans}
+    # If the input is None, simply return an empty list
+    return {'domain_spans': []}
 
 
 @Cluster_api.post("/get_neighbours/")
@@ -183,15 +194,11 @@ def get_neighbours(to_be_predicted: ToPredict) -> Dict[str, str]:
     """
     Returns a `list` of terms from the assigned cluster.
     """
-    if to_be_predicted.data:
-        cluster_objects = cluster_obj.model.kmeans_predict(to_be_predicted.data)
-        assigned_ids = [c.cluster_id for c in cluster_objects]
-        neighbours = [c.get_top_k_neighbours(cluster_obj.model.uniques_dict,
-                                             to_be_predicted.cosine_sim_threshold,
-                                             to_be_predicted.max_results) for c in cluster_objects]
-        return {'neighbours': neighbours, 'assigned_ids': assigned_ids}
-    # If the input is None, or too long, return an empty list
-    return {'neighbours': [], 'assigned_ids': []}
+    if to_be_predicted.spans:
+        neighbours = hub.classifier.get_nearest_neighbours(to_be_predicted.spans)
+        return {'neighbours': neighbours}
+    # If the input is None, simply return an empty list
+    return {'neighbours': []}
 
 
 @Cluster_api.get("/get_idf_weights/{input_str}")
@@ -200,25 +207,15 @@ def get_idf_weights(input_str: Optional[str] = Query(default=Required, max_lengt
     Returns the query and it's corresponding idf_weights
     """
     if input_str:
-        tokens, indices = cluster_obj.model.embedder.prepare_tokens(input_str)
-        idf_weights = cluster_obj.model.embedder.get_idf_weights_for_indices(tokens, indices).tolist()
+        tokens, indices = hub.embedder.prepare_tokens(input_str)
+        idf_weights = hub.embedder.get_idf_weights_for_indices(tokens, indices).tolist()
         return {"idf_weights": idf_weights}
     return {"idf_weights": []}
 
 
-@Cluster_api.get("/get_clusters_to_filter/")
-def get_clusters_to_filter():
-    with open(path_to_settings) as f:
-        all_settings = json5.load(f)
-
-    s = Settings(**all_settings["clustering"])
-    clusters_to_filter = pickle.load(open(s.cluster_dir + s.embedding_folder_name + "/clusters_to_filter.pkl", 'rb'))
-    return {"clusters_to_filter": clusters_to_filter}
-
-
-# Would need to pass the new settings as params={}
+# Would need to pass the new settings as params={}, reading from file for now
 @Cluster_api.post("/update_settings/")
 def update_settings(new_settings: Settings) -> None:
-    cluster_obj.initialize_classifier_from_settings(new_settings)
-    return cluster_obj.settings
+    hub.initialize_classifier_from_settings(new_settings)
+    return hub.settings
 

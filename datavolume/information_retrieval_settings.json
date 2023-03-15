@@ -23,8 +23,8 @@
       "doc_title":  1.0,
       "SPaR_labels":  1.0,
       "filtered_SPaR_labels":  1.0,
-      "cluster_filtered":  1.0,
-      "cluster_neighbours":  1.0
+      "filtered_SPaR_labels_domain":  1.0,
+      "neighbours":  1.0
     },
     "sparse_settings": {
       "type": "bm25f",  // bm25f with "bm25f", otherwise regular bm25
@@ -47,7 +47,7 @@
     }
   },
   "embedding_settings": {
-    "embedding_folder_name": "euclidean_20k",
+    "embedding_folder_name": "standard_settings",
     "layers_to_use": [12], // which of the 12 layers to use
     "layer_combination": "avg", // how to combine layers if multiple are used
     "idf_threshold": 0.1, // avoid value of 0, this may lead to omitting all tokens for a span and a zero-division
@@ -55,11 +55,13 @@
     "not_found_idf_value": 0.5 // # IDF value for tokens that weren't seen during IDF computation
   },
   "classifier_settings": {
-    "num_neighbours": 500,
+    "classifier_nr_neighbours": 500,
     "tfidf_cutoff": 0.6,
     "num_neighbours_cutoff": 250,
     "foreground_corpus_terms": "foreground_objects.pkl",
-    "background_corpus_terms": "background_objects.pkl"
+    "background_corpus_terms": "background_objects.pkl",
+    "top_k_semantically_similar": 5,
+    "metric": "cosine"
   },
   "query_expansion": {
       "concept_extraction": "spar", // currently not providing other options
