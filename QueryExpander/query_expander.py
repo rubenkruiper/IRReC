@@ -15,7 +15,7 @@ from sparql_utils import get_results_for_queries
 class QueryExpander:
     def __init__(self,
                  sparql_endpoint: str,
-                 cluster_url: str,
+                 classifier_url: str,
                  spar_url: str,
                  prf_weight=0,
                  kg_broader_weight=0,
@@ -24,8 +24,7 @@ class QueryExpander:
                  nn_weight=0):
         # todo - allow a user to set which candidates to collect?
         self.spar = spar_url
-        self.cluster = cluster_url
-        self.cluster_dict = None
+        self.classifier = classifier_url
 
         self.prf_weight = prf_weight
         self.kg_broader_weight = kg_broader_weight

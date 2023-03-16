@@ -1,4 +1,5 @@
 scipy
+textblob==0.15.3
 scikit-learn==0.24.2
 tqdm
 json5

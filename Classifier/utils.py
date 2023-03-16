@@ -34,7 +34,7 @@ def subword_insight(subword_units: List[str],
 
 
 ############################################################################################################
-###### classifier_data containers
+###### classifier_data containers [deprecated?]
 class ToBeClustered:
     def __init__(self, text: str, embedder: Embedder):
         """

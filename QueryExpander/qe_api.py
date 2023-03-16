@@ -17,8 +17,8 @@ class FieldsAndWeights(BaseSettings):
     doc_title: float = 1.0
     SPaR_labels: float = 0.0
     filtered_SPaR_labels: float = 0.0
-    cluster_filtered: float = 1.0
-    cluster_neighbours: float = 0.0
+    filtered_SPaR_labels_domain: float = 1.0
+    neighbours: float = 0.0
     bm25: float = 1.0
     top_k: int = 50
 
