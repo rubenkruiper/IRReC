@@ -1,4 +1,5 @@
-FROM nvidia/cuda:11.4.2-base-ubuntu18.04
+#FROM nvidia/cuda:11.4.2-base-ubuntu18.04
+FROM python:3.8
 
 RUN apt-get update
 

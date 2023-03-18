@@ -10,12 +10,12 @@ services:
       - ./datavolume:/data/
     networks:
       - my_network
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - capabilities: [ gpu ]
-              driver: nvidia
+#    deploy:
+#      resources:
+#        reservations:
+#          devices:
+#            - capabilities: [ gpu ]
+#              driver: nvidia
   cluster:
     build: Classifier
     ports:
@@ -26,12 +26,12 @@ services:
     - NVIDIA_VISIBLE_DEVICES=1
     networks:
       - my_network
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - capabilities: [ gpu ]
-              driver: nvidia
+#    deploy:
+#      resources:
+#        reservations:
+#          devices:
+#            - capabilities: [ gpu ]
+#              driver: nvidia
   haystack:
     build: ./Retrieval
     ports:
@@ -43,12 +43,12 @@ services:
     networks:
       - my_network
       - host_network
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - capabilities: [ gpu ]
-              driver: nvidia
+#    deploy:
+#      resources:
+#        reservations:
+#          devices:
+#            - capabilities: [ gpu ]
+#              driver: nvidia
   query_expansion:
     build: ./QueryExpander
     ports:
