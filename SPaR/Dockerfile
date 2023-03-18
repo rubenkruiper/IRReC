@@ -5,7 +5,7 @@ RUN apt-get update
 
 # install Python, pip and requirements
 # RUN apt-get install python3.8 -y  python3-pip build-essential libssl-dev libffi-dev python3.8-dev
-RUN apt-get install python3-pip build-essential libssl-dev libffi-dev python3.8-dev
+RUN apt-get install python3-pip -y build-essential libssl-dev libffi-dev python3.8-dev
 RUN python3.8 -m pip install  pip --upgrade
 COPY requirements.txt app/
 RUN python3.8 -m pip install -r ./app/requirements.txt

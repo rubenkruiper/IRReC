@@ -11,7 +11,7 @@ RUN wget --no-check-certificate https://dl.xpdfreader.com/xpdf-tools-linux-4.04.
 # install Python, pip and requirements
 RUN wget https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 # RUN apt-get install python3.8 -y python3-pip
-RUN apt-get install python3-pip
+RUN apt-get install python3-pip  -y
 RUN python3.8 -m pip install pip --upgrade
 COPY requirements.txt app/
 RUN python3.8 -m pip install -r ./app/requirements.txt
