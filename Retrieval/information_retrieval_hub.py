@@ -14,10 +14,10 @@ from pathlib import Path
 
 # my utilities
 from Retrieval.utils import spar_utils, cleaning_utils
-from Retrieval.utils.IDF_computer import IdfComputer
-from Retrieval.utils.customdocument import CustomDocument
-from Retrieval.utils.conversion_utils import convert_inputs
-from Retrieval.utils.preprocessor_spartxt import SparPreProcessor
+from utils.IDF_computer import IdfComputer
+from utils.customdocument import CustomDocument
+from utils.conversion_utils import convert_inputs
+from utils.preprocessor_spartxt import SparPreProcessor
 
 # Haystack imports
 from haystack.document_stores import ElasticsearchDocumentStore, FAISSDocumentStore
