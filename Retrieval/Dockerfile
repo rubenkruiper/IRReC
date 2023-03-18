@@ -1,6 +1,5 @@
-#FROM nvidia/cuda:11.4.2-base-ubuntu18.04
 FROM python:3.8
-
+#FROM nvidia/cuda:11.4.2-base-ubuntu18.04
 
 RUN apt-get update && \
     apt-get install --no-install-recommends -y wget libfontconfig1 -y
@@ -11,7 +10,8 @@ RUN wget --no-check-certificate https://dl.xpdfreader.com/xpdf-tools-linux-4.04.
 
 # install Python, pip and requirements
 RUN wget https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-RUN apt-get install python3.8 -y python3-pip
+# RUN apt-get install python3.8 -y python3-pip
+RUN apt-get install python3-pip
 RUN python3.8 -m pip install pip --upgrade
 COPY requirements.txt app/
 RUN python3.8 -m pip install -r ./app/requirements.txt
