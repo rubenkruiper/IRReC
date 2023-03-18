@@ -28,7 +28,7 @@
     },
     "sparse_settings": {
       "type": "bm25f",  // bm25f with "bm25f", otherwise regular bm25
-      "index_name": "20k_clusters",
+      "index_name": "bm25f_",
       "recreate_index": true
     },
     "dense_settings": {
@@ -57,7 +57,7 @@
   "classifier_settings": {
     "classifier_nr_neighbours": 500,
     "tfidf_cutoff": 0.6,
-    "num_neighbours_cutoff": 250,
+    "num_neighbours_cutoff": 375,
     "foreground_corpus_terms": "foreground_objects.pkl",
     "background_corpus_terms": "background_objects.pkl",
     "top_k_semantically_similar": 5,
