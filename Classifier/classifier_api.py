@@ -35,16 +35,10 @@ class Settings(BaseSettings):
     metric: Optional[str] = "cosine"
 
     # Some basic additional validation
-    @validator('cache_dir', 'cluster_dir') #, 'IDF_path') >> we now allow creating IDF paths from scratch
+    @validator('cache_dir', 'classifier_dir') #, 'IDF_path') >> we now allow creating IDF paths from scratch
     def validate_paths(cls, v):
         if not Path(v).exists():
             raise ValueError(f"Path doesn't exist, check again: {v}")
-        return v
-
-    @validator('num_clusters')
-    def validate_num_clusters(cls, v):
-        if not 1 < v < 30000:
-            raise ValueError("In the api the max value for K is set to 30.000")
         return v
 
     # @validator('gpu')
@@ -200,7 +194,7 @@ def get_neighbours(to_be_predicted: ToPredict) -> Dict[str, str]:
     return {'neighbours': []}
 
 
-@Classifier_api.get("/get_idf_weights/{input_str}")
+@Classifier_api.get("/get_idf_weights/")
 def get_idf_weights(input_str: Optional[str] = Query(default=Required, max_length=1000)):
     """
     Returns the query and it's corresponding idf_weights

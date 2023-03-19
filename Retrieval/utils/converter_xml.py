@@ -1,19 +1,14 @@
-from typing import List, Optional, Dict, Any, Generator, Set
-from functools import partial, reduce
-from itertools import chain
-
-import os, glob, json
+from typing import List, Optional, Dict
+import os, glob
 import logging
 import subprocess
 from pathlib import Path
 
 from bs4 import BeautifulSoup
-from custom_haystack_nodes.other.customdocument import CustomDocument
-from haystack.nodes.file_converter import BaseConverter
-from textblob import TextBlob
-
 from transformers import BertTokenizer
+from haystack.nodes.file_converter import BaseConverter
 
+from utils.customdocument import CustomDocument
 
 logger = logging.getLogger(__name__)
 

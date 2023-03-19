@@ -13,7 +13,6 @@ from typing import List, Dict
 from pathlib import Path
 
 # my utilities
-from Retrieval.utils import spar_utils, cleaning_utils
 from utils.IDF_computer import IdfComputer
 from utils.customdocument import CustomDocument
 from utils.conversion_utils import convert_inputs

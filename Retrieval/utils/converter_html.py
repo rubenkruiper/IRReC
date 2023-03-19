@@ -3,8 +3,8 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 from tqdm import tqdm
-from Retrieval.utils import cleaning_utils
-from Retrieval.utils.customdocument import CustomDocument
+from utils import cleaning_utils
+from utils.customdocument import CustomDocument
 
 logger = logging.getLogger(__name__)
 

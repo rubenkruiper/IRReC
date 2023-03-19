@@ -11,7 +11,7 @@ from functools import partial, reduce
 from itertools import chain
 from collections import Counter
 
-from Retrieval.utils import cleaning_utils
+from utils import cleaning_utils
 from haystack.nodes.preprocessor import BasePreProcessor
 
 logger = logging.getLogger(__name__)

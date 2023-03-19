@@ -1,8 +1,8 @@
 from typing import List
 from pathlib import Path
-from Retrieval.utils.customdocument import CustomDocument
-from Retrieval.utils.converter_pdf import process_pdf_files_in_directory
-from Retrieval.utils.converter_html import process_html_files_in_directory
+from utils.customdocument import CustomDocument
+from utils.converter_pdf import process_pdf_files_in_directory
+from utils.converter_html import process_html_files_in_directory
 # from Retrieval.utils.converter_xml import process_xml_files_in_directory
 
 

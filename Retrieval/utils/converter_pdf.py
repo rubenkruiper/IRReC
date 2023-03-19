@@ -6,7 +6,7 @@ import subprocess
 from tqdm import tqdm
 from pathlib import Path
 
-from customdocument import CustomDocument
+from utils.customdocument import CustomDocument
 
 logger = logging.getLogger(__name__)
 
