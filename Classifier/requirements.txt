@@ -7,4 +7,5 @@ Levenshtein
 fastapi
 uvicorn
 transformers
+torch
 pandas
