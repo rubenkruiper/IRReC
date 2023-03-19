@@ -12,7 +12,7 @@ from allennlp.data.dataset_readers.dataset_utils.span_utils import (
     TypedStringSpan,
 )
 
-from lib.readers.reader_utils.my_read_utils import discontiguous_tags_to_spans
+from spar_lib.readers.reader_utils.my_read_utils import discontiguous_tags_to_spans
 
 
 TAGS_TO_SPANS_FUNCTION_TYPE = Callable[[List[str], Optional[List[str]]], List[TypedStringSpan]]

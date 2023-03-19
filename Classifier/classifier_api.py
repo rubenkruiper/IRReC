@@ -4,7 +4,7 @@ import json5, pickle
 from pathlib import Path
 from fastapi import FastAPI, HTTPException, Query
 from pydantic import validator, BaseSettings, BaseModel, Required
-from torch.cuda import is_available, device_count
+# from torch.cuda import is_available, device_count
 from transformers import BertModel, BertTokenizer
 
 from embedder import Embedder
@@ -47,13 +47,13 @@ class Settings(BaseSettings):
             raise ValueError("In the api the max value for K is set to 30.000")
         return v
 
-    @validator('gpu')
-    def check_gpu_exists(cls, v):
-        if is_available():
-            devs = device_count()
-            if not v <= devs:
-                raise ValueError(f"Selected gpu ({v}) not available, number of Nvidia gpus: {devs}")
-        return v
+    # @validator('gpu')
+    # def check_gpu_exists(cls, v):
+    #     if is_available():
+    #         devs = device_count()
+    #         if not v <= devs:
+    #             raise ValueError(f"Selected gpu ({v}) not available, number of Nvidia gpus: {devs}")
+    #     return v
 
 
 class ToPredict(BaseModel):

@@ -2,7 +2,7 @@ import json, glob
 from typing import List, Dict, Any
 from allennlp.data.tokenizers import PretrainedTransformerTokenizer
 
-from lib.readers.reader_utils.my_read_utils import *
+from spar_lib.readers.reader_utils.my_read_utils import *
 from sklearn import metrics
 
 

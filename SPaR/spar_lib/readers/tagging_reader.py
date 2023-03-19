@@ -1,5 +1,5 @@
 import glob, json
-from lib.readers.reader_utils.my_read_utils import *
+from spar_lib.readers.reader_utils.my_read_utils import *
 
 from typing import Dict, List, Optional, Sequence, Iterable, Any
 import logging
