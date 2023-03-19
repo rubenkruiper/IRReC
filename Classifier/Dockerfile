@@ -21,4 +21,4 @@ EXPOSE 8502
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 # uvicorn cluster_api:Cluster_api --host 0.0.0.0 --port 8505 --reload
-CMD ["uvicorn", "cluster_api:Cluster_api", "--host", "0.0.0.0", "--port", "8502", "--reload"]
+CMD ["uvicorn", "classifier_api:Classifier_api", "--host", "0.0.0.0", "--port", "8502", "--reload"]

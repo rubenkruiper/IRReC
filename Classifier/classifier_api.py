@@ -132,7 +132,6 @@ class EmbeddingHub:
                 max_num_cpu_threads, subset_size, prefix, list_of_terms
             )
 
-
     def initialize_classifier_from_settings(self):
         """ Initializes a Classifier model, may need training. """
         # Grab the latest version of settings/configuration
@@ -149,11 +148,11 @@ class EmbeddingHub:
 
 ## Set up the Cluster_model and API
 path_to_settings = "/data/information_retrieval_settings.json"
-Cluster_api = FastAPI()
+Classifier_api = FastAPI()
 hub = EmbeddingHub()
 
 
-@Cluster_api.get("/", status_code=200)
+@Classifier_api.get("/", status_code=200)
 def root() -> dict:
     """
     The 'index' page shows the settings for the current cluster model
@@ -161,7 +160,7 @@ def root() -> dict:
     return hub.settings
 
 
-@Cluster_api.post("/train/")
+@Classifier_api.post("/train/")
 def train_classifier(classifier_settings: Dict[str, Any] = None):
     if not hub.embedder:
         hub.initialize_embeddings_from_settings()
@@ -177,7 +176,7 @@ def train_classifier(classifier_settings: Dict[str, Any] = None):
                                                     min_num_foreground_neighbours=num_neighbours_cutoff)
 
 
-@Cluster_api.post("/filter_non_domain_spans/")
+@Classifier_api.post("/filter_non_domain_spans/")
 def filter_non_domain_spans(to_be_predicted: ToPredict) -> Dict[str, str]:
     """
     Returns a `list` of terms from the assigned cluster.
@@ -189,7 +188,7 @@ def filter_non_domain_spans(to_be_predicted: ToPredict) -> Dict[str, str]:
     return {'domain_spans': []}
 
 
-@Cluster_api.post("/get_neighbours/")
+@Classifier_api.post("/get_neighbours/")
 def get_neighbours(to_be_predicted: ToPredict) -> Dict[str, str]:
     """
     Returns a `list` of terms from the assigned cluster.
@@ -201,7 +200,7 @@ def get_neighbours(to_be_predicted: ToPredict) -> Dict[str, str]:
     return {'neighbours': []}
 
 
-@Cluster_api.get("/get_idf_weights/{input_str}")
+@Classifier_api.get("/get_idf_weights/{input_str}")
 def get_idf_weights(input_str: Optional[str] = Query(default=Required, max_length=1000)):
     """
     Returns the query and it's corresponding idf_weights
@@ -214,7 +213,7 @@ def get_idf_weights(input_str: Optional[str] = Query(default=Required, max_lengt
 
 
 # Would need to pass the new settings as params={}, reading from file for now
-@Cluster_api.post("/update_settings/")
+@Classifier_api.post("/update_settings/")
 def update_settings(new_settings: Settings) -> None:
     hub.initialize_classifier_from_settings(new_settings)
     return hub.settings
