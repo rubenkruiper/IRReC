@@ -6,7 +6,7 @@ from allennlp.common.util import import_module_and_submodules
 import spar_serving_utils as su
 
 
-import_module_and_submodules("lib")
+import_module_and_submodules("spar_lib")
 default_path = "../datavolume/spar_trained_models/debugger_train/model.tar.gz"
 
 if os.path.exists(default_path):

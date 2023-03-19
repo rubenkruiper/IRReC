@@ -8,7 +8,7 @@ from allennlp.common.util import import_module_and_submodules
 import spar_serving_utils as su
 
 # Set up a SPaR.txt predictor
-import_module_and_submodules("lib")
+import_module_and_submodules("spar_lib")
 default_path = "/data/spar_trained_models/debugger_train/model.tar.gz"
 
 spar_predictor = SparPredictor(default_path)

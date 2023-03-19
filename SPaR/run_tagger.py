@@ -1,11 +1,11 @@
 import json, os, shutil, sys, torch
 from argparse import ArgumentParser
 from allennlp.commands import main
-from lib.evaluation_script import SimpleEvaluator
+from spar_lib.evaluation_script import SimpleEvaluator
 
 
 if __name__ == "__main__":
-    argparse = ArgumentParser(description='lib semantic chunking')
+    argparse = ArgumentParser(description='spar_lib semantic chunking')
     argparse.add_argument('-c', "--config_file", type=str, default="/data/spar_data/experiments/attention_tagger.json")
     argparse.add_argument('-m', "--model_path", default="/data/spar_trained_models/debugger_train")
     argparse.add_argument('-i', "--input_file_path", default="")
@@ -27,7 +27,7 @@ if __name__ == "__main__":
             serialization_dir,
             args.input_file_path,
             "--predictor", "span_tagger",
-            "--include-package", "lib",
+            "--include-package", "spar_lib",
             "--use-dataset-reader",
             "--batch-size", str(args.batchsize)
         ]
@@ -58,7 +58,7 @@ if __name__ == "__main__":
             args.input_file_path,
             "--predictor", "span_tagger",
             "--output-file", predictions_output,
-            "--include-package", "lib",
+            "--include-package", "spar_lib",
             "--use-dataset-reader",
             "--batch-size", str(args.batchsize)
         ]
@@ -82,7 +82,7 @@ if __name__ == "__main__":
             "train",
             config_file,
             "-s", serialization_dir,
-            "--include-package", "lib"
+            "--include-package", "spar_lib"
         ]
 
         # Simple overrides to train on CPU if no GPU available, with a possibly smaller batch_size

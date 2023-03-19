@@ -8,9 +8,9 @@ import sys, os
 
 
 # ToDo; consider removing the below code, not sure if this trimmed down version is necessary with new folder structure
-cwd = os.getcwd()
-sys.path.insert(0, cwd + "/SPaR")
-import_module_and_submodules("lib")
+# cwd = os.getcwd()
+# sys.path.insert(0, cwd + "/SPaR")
+import_module_and_submodules("spar_lib")
 
 
 class SparPredictor:
@@ -30,7 +30,7 @@ class SparPredictor:
                 "train",
                 default_config_file,
                 "-s", serialization_dir,
-                "--include-package", "lib"
+                "--include-package", "spar_lib"
             ]
 
             # Simple overrides to train on CPU if no GPU available, with a possibly smaller batch_size
