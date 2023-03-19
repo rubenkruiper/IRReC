@@ -16,7 +16,7 @@ services:
 #          devices:
 #            - capabilities: [ gpu ]
 #              driver: nvidia
-  cluster:
+  classifier:
     build: Classifier
     ports:
       - 8502:8502
