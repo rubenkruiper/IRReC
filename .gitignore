@@ -2,6 +2,7 @@
 # (! means we DO want to keep it)
 # SPaR 
 !datavolume/spar_data/*
+!SPaR/spar_lib/*
 datavolume/spar_trained_models/*
 !datavolume/spar_trained_models/.gitkeep
 
