@@ -292,10 +292,8 @@ class InformationRetrievalHub:
         :param recreate_index:  Whether to recreate the ElasticSearch index from scratch (default=False). Useful for
                                 debugging.
         """
-        sparse_document_store_plain = self.initialize_sparse_docstore(self.sparse_index_name + "_bm25",
-                                                                      recreate_index)
-        sparse_document_store_multimatch = self.initialize_sparse_docstore(self.sparse_index_name + "_bm25f",
-                                                                           recreate_index)
+        sparse_document_store_plain = self.initialize_sparse_docstore(self.sparse_index_name + "_bm25")
+        sparse_document_store_multimatch = self.initialize_sparse_docstore(self.sparse_index_name + "_bm25f")
 
         # TODO: very first step; check if index already exists and then simply load it, without initialising models
         if sparse_document_store_plain.client.indices.exists(self.sparse_index_name + "_bm25") and \
@@ -372,7 +370,7 @@ class InformationRetrievalHub:
             logger.info("[DENSE] Writing {} to dense document store".format(field_to_index))
             dense_document_store.write_documents(documents_to_write)
 
-        # -- Dense Retriever(FAISS)
+        # -- Dense Retriever(FAISS) https://docs.haystack.deepset.ai/reference/document-store-api#faissdocumentstore
         retriever = DensePassageRetriever(
             document_store=dense_document_store,
             query_embedding_model="facebook/dpr-question_encoder-single-nq-base",

@@ -2,7 +2,7 @@ cffi
 bs4
 farm-haystack==1.2.0
 sacremoses
-faiss-gpu>=1.6.3,<2
+faiss-cpu>=1.6.3,<2
 sqlalchemy>=1.4.2,<2
 sqlalchemy_utils
 textblob
@@ -17,3 +17,4 @@ dill
 fastapi
 uvicorn
 protobuf==3.20.*
+numpy==1.23.4
