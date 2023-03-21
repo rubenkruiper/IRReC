@@ -9,7 +9,7 @@
   "IDF_path": "/data/classifier_data/IDF_values.json",
   "retrieval": {
     "ner_url": "http://spar:8501/",
-    "clustering_url": "http://cluster:8502/",
+    "classifier_url": "http://classifier:8502/",
     "top_k": 10
   },
   "filtering": {

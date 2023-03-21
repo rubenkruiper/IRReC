@@ -59,7 +59,7 @@ class InformationRetrievalHub:
 
         # urls for SPaR and Classifier APIs
         self.ner_url = configs["retrieval"]["ner_url"]
-        self.classifier_url = configs["retrieval"]["clustering_url"]
+        self.classifier_url = configs["retrieval"]["classifier_url"]
 
         # SPaR.txt preprocessor
         self.preprocessor = SparPreProcessor(self.ner_url, configs['filtering']['regex_filter'])
