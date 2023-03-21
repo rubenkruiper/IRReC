@@ -139,7 +139,7 @@ class CustomDocument(object):
         try:
             # index to first nonempty dict
             i = next(idx for idx, d in enumerate(all_contents) if d)
-            doc = cls(all_contents[i].output_filepath, all_contents[i].source_filepath, all_contents[i].split_size)
+            doc = cls(output_fp, all_contents[i].source_filepath, all_contents[i].split_size)
             doc.add_contents(all_contents)
             return doc
         except StopIteration:
