@@ -92,7 +92,8 @@ class EmbeddingHub:
         self.bert_model = BertModel.from_pretrained(settings.bert_model,
                                                     output_hidden_states=True,
                                                     cache_dir=settings.cache_dir)
-        self.embeddings_dir = Path(settings.classifier_dir).joinpath(settings.embedding_folder_name).mkdir(exist_ok=True)
+        self.embeddings_dir = Path(settings.classifier_dir).joinpath(settings.embedding_folder_name)
+        self.embeddings_dir.mkdir(exist_ok=True)
         self.embedder = Embedder(self.tokenizer, self.bert_model,
                                  IDF_dict=json5.load(open(settings.IDF_path)),
                                  embedding_dir=self.embeddings_dir,
