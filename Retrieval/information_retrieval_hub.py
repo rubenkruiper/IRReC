@@ -168,9 +168,9 @@ class InformationRetrievalHub:
                     raise Exception(f"Issue loading converted document: {converted_document_filepath}")
 
                 if any([len(c.NER_labels) > 1 for c in converted_document.all_contents]):
-                    logger.info(f"[Preprocessor] skipping, NER outputs already found in: {converted_document_filepath}")
+                    print(f"[Preprocessor] skipping, NER outputs already found in: {converted_document_filepath}")
                 else:
-                    logger.info(f"[Preprocessor] Preprocessing classifier_data for: {converted_document_filepath}")
+                    print(f"[Preprocessor] Preprocessing classifier_data for: {converted_document_filepath}")
                     processed_list_of_dicts = self.preprocessor.process(converted_document.to_list_of_dicts())
                     converted_document.replace_contents(processed_list_of_dicts)
                     converted_document.write_document()

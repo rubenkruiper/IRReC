@@ -56,9 +56,9 @@ class Content(object):
                       )
         content.doc_title = haystack_dict['meta']['doc_title']
         content.sentences = haystack_dict['meta']['sentences'].split("###")
-        content.NER_labels = haystack_dict['meta']['SPaR_labels'].split(", ")
-        content.filtered_NER_labels = haystack_dict['meta']['filtered_SPaR_labels'].split(", ")
-        content.filtered_NER_labels_domains = haystack_dict['meta']['filtered_SPaR_labels_domain'].split(", ")
+        content.NER_labels = haystack_dict['meta']['NER_labels'].split(", ")
+        content.filtered_NER_labels = haystack_dict['meta']['filtered_NER_labels'].split(", ")
+        content.filtered_NER_labels_domains = haystack_dict['meta']['filtered_NER_labels_domains'].split(", ")
         content.neighbours = haystack_dict['meta']['neighbours'].split(", ")
         return content
 
@@ -80,9 +80,9 @@ class Content(object):
                 "source_filepath": str(self.source_filepath),  # convert Path obj to str
                 "output_filepath": str(self.output_filepath),
                 "sentences": '###'.join(self.sentences),
-                "SPaR_labels": ', '.join(self.NER_labels),
-                "filtered_SPaR_labels": ', '.join(self.filtered_NER_labels),
-                "filtered_SPaR_labels_domain": ', '.join(self.filtered_NER_labels_domains),
+                "NER_labels": ', '.join(self.NER_labels),
+                "filtered_NER_labels": ', '.join(self.filtered_NER_labels),
+                "filtered_NER_labels_domains": ', '.join(self.filtered_NER_labels_domains),
                 "neighbours": ', '.join(self.neighbours),
             }
         }
