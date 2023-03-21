@@ -28,7 +28,7 @@ class QueryExpansionWeights(BaseSettings):
 
 class Settings(BaseSettings):
     haystack_endpoint: str = 'http://haystack:8500/'
-    spar_endpoint: str = 'http://spar:8501/'
+    ner_endpoint: str = 'http://spar:8501/'
     classifier_endpoint: str = 'http://classifier:8502/'
     indexing_type: str = "hybrid"
     sparse_type: str = "bm25f"
@@ -113,7 +113,7 @@ def update_weights(pydantic_settings: Settings = None) -> dict:
         # TODO; change this dict! so it makes senese...
         settings = {
             'haystack_endpoint': pydantic_settings.haystack_endpoint,
-            'spar_endpoint': pydantic_settings.spar_endpoint,
+            'ner_endpoint': pydantic_settings.ner_endpoint,
             'classifier_endpoint': pydantic_settings.classifier_endpoint,
             'indexing_type': pydantic_settings.indexing_type,
             'sparse_type': pydantic_settings.sparse_type,

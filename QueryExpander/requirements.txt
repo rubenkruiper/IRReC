@@ -4,3 +4,4 @@ json5
 requests
 fastapi
 uvicorn
+networkx==3.0
