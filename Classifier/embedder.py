@@ -202,7 +202,7 @@ class Embedder:
         except RuntimeError:
             # can happen if the tensor for the span is empty or causes issues somehow
             print(f"Empty tensor! Not sure why, but will drop the span: {span}")
-            return None
+            return None, None
 
     def normalise_embeddings(self):
         """

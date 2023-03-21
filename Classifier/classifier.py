@@ -148,8 +148,10 @@ class Classifier:
             if type(spans_to_predict) == str:
                 spans_to_predict = [spans_to_predict]
             for span in spans_to_predict:
-                normalised_embedding = self.embedder.embed_and_normalise_span(span).reshape(1, -1)
-                if self.knn_classifier.predict(normalised_embedding)[0] == 'y':
+                span, normalised_embedding = self.embedder.embed_and_normalise_span(span)
+                if not span:
+                    continue
+                elif self.knn_classifier.predict(normalised_embedding.reshape(1, -1))[0] == 'y':
                     domain_spans.append(span)
         return domain_spans
 
