@@ -423,10 +423,10 @@ class SparPreProcessor(BasePreProcessor):
             if "meta" not in doc.keys() or doc["meta"] is None:
                 doc["meta"] = {
                     # don't think I can pass a list of strings, so comma separated it is
-                    "SPaR_labels": ', '.join(tags)
+                    "NER_labels": ', '.join(tags)
                 }
             else:
-                doc["meta"]["SPaR_labels"] = ', '.join(tags)
+                doc["meta"]["NER_labels"] = ', '.join(tags)
 
             doc["meta"]["split_id"] = i
             doc["meta"]["split_size"] = split_length
