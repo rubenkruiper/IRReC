@@ -232,10 +232,10 @@ class InformationRetrievalHub:
                     if content.filtered_NER_labels:
                         domain_spans = requests.post(f"{self.classifier_url}filter_non_domain_spans/",
                                                      json={"spans": content.filtered_NER_labels})
-                        content.set_filtered_ner_label_domains(domain_spans)
+                        content.set_filtered_ner_label_domains(domain_spans["domain_spans"])
                         neighbours = requests.post(f"{self.classifier_url}get_neighbours/",
                                                    json={"spans": content.filtered_NER_labels})
-                        content.set_neighbours(neighbours)
+                        content.set_neighbours(neighbours["neighbours"])
                     new_contents.append(content)
 
                 # update the CustomDocument and save changes to file
