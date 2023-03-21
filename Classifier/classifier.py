@@ -134,7 +134,7 @@ class Classifier:
 
             # set up the classifier and save it
             self.knn_classifier.fit(knn_X, knn_y)
-            pickle.dump(open(self.classifier_path, 'wb'))
+            pickle.dump(self.knn_classifier, open(self.classifier_path, 'wb'))
 
     def predict_domains(self, spans_to_predict: Union[List[str], str] = None) -> List[str]:
         """
