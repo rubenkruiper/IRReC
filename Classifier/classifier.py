@@ -222,7 +222,7 @@ class Classifier:
         neighbours_lists = []
         for span in span_list:
             _, embedding = self.embedder.embed_and_normalise_span(span)
-            neighbour_indices = self.nearest_neighbours.kneighbors(embedding.reshape(-1, 1),
+            neighbour_indices = self.nearest_neighbours.kneighbors(embedding.reshape(1, -1),
                                                                    self.top_k_semantic_similarity,
                                                                    return_distance=False)
             neighbour_spans = [self.unique_spans[idx] for idx in neighbour_indices]

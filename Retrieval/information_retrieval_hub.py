@@ -214,7 +214,6 @@ class InformationRetrievalHub:
                         # update the document in place
                         only_keep_filtered = [l for l in content.NER_labels if l in filtered_labels]
                         processed_document.all_contents[idx].set_filtered_ner_labels(only_keep_filtered)
-                        print("[DOUBLECHECK: ", only_keep_filtered)
                 # update stored file
                 processed_document.write_document()
 
