@@ -26,9 +26,9 @@ class Settings(BaseSettings):
     idf_threshold: float = 0.1  # actually, if we omit all tokens due to the idf_threshold we run into an error
     idf_weight_factor: float = 1.0
     not_found_idf_value: float = 0.5
-    num_neighbours: Optional[int] = 500
+    classifier_nr_neighbours: Optional[int] = 500
     tfidf_cutoff: Optional[float] = 0.6
-    num_neighbours_cutoff: Optional[float] = 250
+    num_neighbours_cutoff: Optional[float] = 375
     foreground_corpus_terms: Optional[str] = "foreground_objects.pkl"
     background_corpus_terms: Optional[str] = "background_objects.pkl"
     top_k_semantically_similar: Optional[int] = 5
