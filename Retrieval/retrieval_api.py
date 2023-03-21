@@ -11,11 +11,11 @@ class RetrievalSettings(BaseModel):
     sparse_type: str = "bm25f"
     content: float = 2.0
     doc_title: float = 1.0
-    SPaR_labels: float = 1.0
-    filtered_SPaR_labels: float = 1.0
-    filtered_SPaR_labels_domain: float = 1.0
+    NER_labels: float = 1.0
+    filtered_NER_labels: float = 1.0
+    filtered_NER_labels_domains: float = 1.0
     neighbours: float = 1.0
-    bm25: float = 2.0
+    bm25: float = 1.0
     top_k: int = 10
 
 
@@ -46,9 +46,9 @@ def set_field_weights(retrieval_settings: RetrievalSettings):
     new_fields_and_weights = {
         "content": retrieval_settings.content,
         "doc_title": retrieval_settings.doc_title,
-        "SPaR_labels": retrieval_settings.SPaR_labels,
-        "filtered_SPaR_labels": retrieval_settings.filtered_SPaR_labels,
-        "filtered_SPaR_labels_domain": retrieval_settings.filtered_SPaR_labels_domain,
+        "NER_labels": retrieval_settings.NER_labels,
+        "filtered_NER_labels": retrieval_settings.filtered_NER_labels,
+        "filtered_NER_labels_domains": retrieval_settings.filtered_NER_labels_domains,
         "neighbours": retrieval_settings.neighbours,
         "bm25": retrieval_settings.bm25,
         "top_k": retrieval_settings.top_k

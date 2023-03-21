@@ -64,8 +64,8 @@ class QueryExanderFromSettings:
         self.haystack_endpoint = settings["query_expansion"]["haystack_endpoint"]
         self.spar_endpoint = settings["retrieval"]["ner_url"]
         self.classifier_endpoint = settings["retrieval"]["classifier_url"]
-        self.indexing_type = settings["indexing"]["indexing_type"]
-        self.recreate_index = settings["indexing"]["recreate_index"]
+        self.indexing_type = settings["indexing"]["sparse_settings"]["type"]
+        self.recreate_index = settings["indexing"]["sparse_settings"]["recreate_index"]
 
         self.fields_and_weights = settings["indexing"]["fields_to_index_and_weights"]
         self.prf_weight = settings["query_expansion"]["prf_weight"]
@@ -76,7 +76,8 @@ class QueryExanderFromSettings:
         self.QE_obj = QueryExpander(self.sparql_endpoint, self.cluster_endpoint, self.spar_endpoint,
                                     prf_weight=self.prf_weight,
                                     kg_weight=self.kg_weight,
-                                    nn_weight=self.nn_weight)
+                                    nn_weight=self.nn_weight,
+                                    bm25_weight=self.bm25_weight)
 
 
 # Set up the Cluster_model and API
@@ -104,7 +105,7 @@ def update_weights(pydantic_settings: Settings = None) -> dict:
     if not pydantic_settings:
         QE_s.update_from_file()
     else:
-        # TODO; change this dict! so it makes senese...
+        # TODO; change this dict! so it makes senese... or just load from file
         # TODO; change this dict! so it makes senese...
         # TODO; change this dict! so it makes senese...
         # TODO; change this dict! so it makes senese...
