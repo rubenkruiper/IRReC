@@ -22,7 +22,14 @@ from haystack.document_stores import ElasticsearchDocumentStore, FAISSDocumentSt
 from haystack.nodes import ElasticsearchRetriever, DensePassageRetriever
 from haystack.pipelines import DocumentSearchPipeline
 
-logging.basicConfig(filename=Path("/data/latest.log"), level=logging.INFO)
+# Set up a logger to keep track of where/when the system crashes
+logger = logging.getLogger("IRReC")
+logger.setLevel(logging.INFO)
+ch = logging.StreamHandler()
+ch.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+ch.setFormatter(formatter)
+logger.addHandler(ch)
 
 
 class InformationRetrievalHub:
@@ -160,16 +167,16 @@ class InformationRetrievalHub:
         # (1) identify NER labels
         if self.ner_url not in ["no", "No", "None", "none", ""]:
             all_NER_labels = []
-            logging.info("[Preprocessor] Running SPaR.txt to collect potential NER labels.")
+            logger.info("[Preprocessor] Running SPaR.txt to collect potential NER labels.")
             for converted_document_filepath in tqdm(converted_document_filepaths):
                 converted_document = CustomDocument.load_document(converted_document_filepath)
                 if not converted_document:
                     raise Exception(f"Issue loading converted document: {converted_document_filepath}")
 
                 if any([len(c.NER_labels) > 1 for c in converted_document.all_contents]):
-                    logging.info(f"[Preprocessor] skipping, NER outputs already found in: {converted_document_filepath}")
+                    logger.info(f"[Preprocessor] skipping, NER outputs already found in: {converted_document_filepath}")
                 else:
-                    logging.info(f"[Preprocessor] Identifying NER labels for: {converted_document_filepath}")
+                    logger.info(f"[Preprocessor] Identifying NER labels for: {converted_document_filepath}")
                     processed_list_of_dicts = self.preprocessor.process(converted_document.to_list_of_dicts())
                     converted_document.replace_contents(processed_list_of_dicts)
                     converted_document.write_document()
@@ -185,15 +192,15 @@ class InformationRetrievalHub:
             filtered_labels = set(pickle.load(open(term_output_path, 'rb')))
 
         # (2) identify which NER labels remain after cleaning
-        logging.info("[Preprocessor] Retaining the filtered/cleaned SPaR.txt labels separately.")
+        logger.info("[Preprocessor] Retaining the filtered/cleaned SPaR.txt labels separately.")
         for filepath in tqdm(converted_document_filepaths):
             processed_document = CustomDocument.load_document(filepath)
             if any([len(c.filtered_NER_labels) > 1 for c in processed_document.all_contents]):
-                logging.info("[Filtering] Skipping filtering, since filtered labels found in: {}".format(
+                logger.info("[Filtering] Skipping filtering, since filtered labels found in: {}".format(
                     processed_document.output_fp
                 ))
             else:
-                logging.info("[Filtering] Running regex and IDF-based filters on SPaR labels.")
+                logger.info("[Filtering] Running regex and IDF-based filters on SPaR labels.")
                 # Filtering based on regex and IDF
                 for idx, content in enumerate(processed_document.all_contents):
                     if content.NER_labels:
@@ -299,17 +306,17 @@ class InformationRetrievalHub:
                 sparse_document_store_plain.client.indices.exists(self.sparse_index_name + "_bm25f") and \
                 not recreate_index:
             # don't load up the clusterer and SPaR
-            logging.info('[DocumentStore] Using existing indices')
+            logger.info('[DocumentStore] Using existing indices')
         else:
             # prepare documents to be stored in the document store
             self.prepare_pipeline_inputs()
             # write documents to document store
             documents_to_write = []
             processed_document_fps = glob.glob(self.converted_output_dir + "*.json")
-            logging.info("[DocumentStore] converting to ElasticSearch indexable passages.")
+            logger.info("[DocumentStore] converting to ElasticSearch indexable passages.")
             for doc_fp in tqdm(processed_document_fps):
                 documents_to_write += CustomDocument.load_document(doc_fp).to_list_of_dicts()
-            logging.info(
+            logger.info(
                 '[DocumentStore] Index and classifier_data will be created from scratch -- this will take a long time, \n'
                 '                but only has to be done once.')
             sparse_document_store_plain.write_documents(documents_to_write)
@@ -366,7 +373,7 @@ class InformationRetrievalHub:
 
                 documents_to_write += flat_content_list
 
-            logging.info("[DENSE] Writing {} to dense document store".format(field_to_index))
+            logger.info("[DENSE] Writing {} to dense document store".format(field_to_index))
             dense_document_store.write_documents(documents_to_write)
 
         # -- Dense Retriever(FAISS) https://docs.haystack.deepset.ai/reference/document-store-api#faissdocumentstore
@@ -383,7 +390,7 @@ class InformationRetrievalHub:
         )
         # Seems like we always have to update the embeddings after the DPR retriever init (takes a couple of minutes)
         # - https://haystack.deepset.ai/tutorials/dense-passage-retrieval
-        logging.info("[Document Store] updating retriever embeddings for field:", field_to_index)
+        logger.info("[Document Store] updating retriever embeddings for field:", field_to_index)
         dense_document_store.update_embeddings(retriever)
 
         if save_updated_document_store:
