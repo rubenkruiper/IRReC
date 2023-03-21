@@ -226,8 +226,8 @@ class Embedder:
                 # standardise the unique clustering data, as suggested by https://github.com/wtimkey/rogue-dimensions
                 self.emb_mean = unique_clustering_data.mean(axis=0)
                 self.emb_std = unique_clustering_data.std(axis=0)
-                pickle.dump(self.emb_mean, open(self.embedding_fp.joinpath("standardisation_mean.pkl"), 'wb'))
-                pickle.dump(self.emb_std, open(self.embedding_fp.joinpath("standardisation_std.pkl"), 'wb'))
+                pickle.dump(self.emb_mean, open(self.embedding_dir.joinpath("standardisation_mean.pkl"), 'wb'))
+                pickle.dump(self.emb_std, open(self.embedding_dir.joinpath("standardisation_std.pkl"), 'wb'))
 
                 self.standardised_embedding_data = (unique_clustering_data - self.emb_mean) / self.emb_std
                 pickle.dump(self.standardised_embedding_data, f)
@@ -289,7 +289,7 @@ class Embedder:
             embedding_files = [f for f in self.embedding_dir.glob(f'{prefix}*.pkl')]
             for e in embedding_files:
                 self.span_and_embedding_pairs += pickle.load(open(e, 'rb'))
-        
+
         self.normalise_embeddings()
 
     def embed_large_number_of_new_terms(self,
