@@ -229,7 +229,8 @@ class Embedder:
                 pickle.dump(self.emb_mean, open(self.embedding_dir.joinpath("standardisation_mean.pkl"), 'wb'))
                 pickle.dump(self.emb_std, open(self.embedding_dir.joinpath("standardisation_std.pkl"), 'wb'))
 
-                self.standardised_embedding_data = (unique_clustering_data - self.emb_mean) / self.emb_std
+                normalised_embeddings = (unique_clustering_data - self.emb_mean) / self.emb_std
+                self.standardised_embedding_data = [(s, e) for s, e in zip(unique_spans, normalised_embeddings)]
                 pickle.dump(self.standardised_embedding_data, f)
 
             # Store the standardised embeddings for reuse; could remove all the embedding files (keeping them though)
