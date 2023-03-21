@@ -40,7 +40,7 @@ class Settings(BaseSettings):
 
 class QueryExanderFromSettings:
     def __init__(self):
-        self.haystack_endpoint, self.spar_endpoint, self.classifier_endpoint = None, None, None
+        self.haystack_endpoint, self.ner_endpoint, self.classifier_endpoint = None, None, None
         self.indexing_type = "hybrid"
         self.recreate_index = False
         self.fields_and_weights = {}
@@ -51,7 +51,7 @@ class QueryExanderFromSettings:
         self.bm25_weight = 1        # relative influence of BM25 results
 
         self.update_from_file()
-        self.QE_obj = QueryExpander(self.cluster_endpoint, self.spar_endpoint,
+        self.QE_obj = QueryExpander(self.classifier_endpoint, self.ner_endpoint,
                                     prf_weight=self.prf_weight,
                                     kg_weight=self.kg_weight,
                                     nn_weight=self.nn_weight,
@@ -64,7 +64,7 @@ class QueryExanderFromSettings:
 
     def update_from_dict(self, settings):
         self.haystack_endpoint = settings["query_expansion"]["haystack_endpoint"]
-        self.spar_endpoint = settings["retrieval"]["ner_url"]
+        self.ner_endpoint = settings["retrieval"]["ner_url"]
         self.classifier_endpoint = settings["retrieval"]["classifier_url"]
         self.indexing_type = settings["indexing"]["sparse_settings"]["type"]
         self.recreate_index = settings["indexing"]["sparse_settings"]["recreate_index"]
@@ -75,14 +75,14 @@ class QueryExanderFromSettings:
         self.nn_weight = settings["query_expansion"]["nn_weight"]
         self.bm25_weight = settings["query_expansion"]["bm25_weight"]
 
-        self.QE_obj = QueryExpander(self.cluster_endpoint, self.spar_endpoint,
+        self.QE_obj = QueryExpander(self.classifier_endpoint, self.ner_endpoint,
                                     prf_weight=self.prf_weight,
                                     kg_weight=self.kg_weight,
                                     nn_weight=self.nn_weight,
                                     bm25_weight=self.bm25_weight)
 
 
-# Set up the Cluster_model and API
+# Set up the Query Expander object from settings file, as well as the API
 QE_s = QueryExanderFromSettings()
 QE_api = FastAPI()
 #
