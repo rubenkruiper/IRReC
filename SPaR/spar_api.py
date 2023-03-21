@@ -24,7 +24,7 @@ SPaR_api = FastAPI()
 
 
 @SPaR_api.post("/predict_objects/{input_str}")
-def predict_objects(input_str: Optional[str] = Query(default=Required, max_length=1000)):
+def predict_objects(input_str: Optional[str]):
     """
     Predict the object in a given string (expecting a single sentence usually).
     """
