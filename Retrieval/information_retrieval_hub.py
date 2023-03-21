@@ -186,7 +186,7 @@ class InformationRetrievalHub:
             # group all the (cleaned) terms extracted for a corpus and store for classification later
             cleaned_terms = self.preprocessor.cleaning_helper(all_NER_labels)
             with open(term_output_path, 'wb') as f:
-                pickle.dump(f, cleaned_terms)
+                pickle.dump(cleaned_terms, f)
             filtered_labels = set(cleaned_terms)
         else:
             filtered_labels = set(pickle.load(open(term_output_path, 'rb')))
