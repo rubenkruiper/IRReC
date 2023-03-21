@@ -79,7 +79,8 @@ class Classifier:
             self.ood_terms = set(pickle.load(open(self.embedder.embedding_dir.joinpath('ood_terms.pkl'), 'rb')))
         else:
             # (1) compute the knn graph for the standardised embedding data [(span, embedding), (span, embedding), ...]
-            knn_graph = kneighbors_graph(self.standardised_embedding_data,
+            spans, embeddings = zip(*self.standardised_embedding_data)
+            knn_graph = kneighbors_graph(embeddings
                                          classifier_nr_neighbours,
                                          metric=self.metric,
                                          n_jobs=8)
@@ -102,7 +103,7 @@ class Classifier:
             cleaned_foreground_terms_c = Counter(self.foreground_terms)
             cleaned_background_terms_c = Counter(self.background_terms)
 
-            for span, _ in self.standardised_embedding_data:
+            for span in spans:
                 foreground_cnt = cleaned_foreground_terms_c[span]
                 background_cnt = cleaned_background_terms_c[span]
                 TF_fore_back = np.log(1 + (foreground_cnt / (foreground_cnt + background_cnt)))
