@@ -213,22 +213,21 @@ class Classifier:
         if not self.nearest_neighbours:
             self.prep_nearest_neighbours()
 
-        if not self.knn_sim_dict:
-            self.prep_semantic_similarity()
+        # if not self.knn_sim_dict: # todo, could use pre-computed similarity to speed up
+        #     self.prep_semantic_similarity()
 
         if type(span_list) == str:
             span_list = [span_list]
 
         neighbours_lists = []
         for span in span_list:
-            if span in self.knn_sim_dict:
-                embedding = self.embedder.embed_and_normalise_span(span)
-                neighbour_indices = self.nearest_neighbours.kneighbors(embedding,
-                                                                       self.top_k_semantic_similarity,
-                                                                       return_distance=False)
-                neighbour_spans = [self.unique_spans[idx] for idx in neighbour_indices]
-                neighbours_lists.append(neighbour_spans)
-            else:
-                neighbours_lists.append([])
+            _, embedding = self.embedder.embed_and_normalise_span(span)
+            neighbour_indices = self.nearest_neighbours.kneighbors(embedding,
+                                                                   self.top_k_semantic_similarity,
+                                                                   return_distance=False)
+            neighbour_spans = [self.unique_spans[idx] for idx in neighbour_indices]
+            neighbours_lists.append(neighbour_spans)
+        else:
+            neighbours_lists.append([])
 
         return neighbours_lists
