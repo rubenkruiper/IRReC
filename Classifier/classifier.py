@@ -156,7 +156,7 @@ class Classifier:
         return domain_spans
 
     def prep_semantic_similarity(self):
-        """ # todo; deprecated // not used
+        """
         Prepares a dictionary that holds the top_k nearest neighbours for each span that is present in (1) the
         domain spans extracted from the foreground corpus, and (2) any domain-spans found in definitions of the KG.
         """
@@ -212,6 +212,9 @@ class Classifier:
         """
         if not self.nearest_neighbours:
             self.prep_nearest_neighbours()
+
+        if not self.knn_sim_dict:
+            self.prep_semantic_similarity()
 
         if type(span_list) == str:
             span_list = [span_list]

@@ -92,7 +92,7 @@ class InformationRetrievalHub:
         if self.indexing_type in ['hybrid', 'sparse']:
             self.sparse_type = configs["indexing"]["sparse_settings"]["type"]  # multi_match or plain
             self.sparse_index_name = configs["indexing"]["sparse_settings"]["index_name"]
-            self.recreate_index = configs["indexing"]["sparse_settings"]["recreate_index"]
+            self.recreate_sparse_index = configs["indexing"]["sparse_settings"]["recreate_index"]
 
         # whether to apply weights to the fields indexed with FAISS
         self.dense_field_weights = configs["indexing"]["dense_settings"]["weigh_fields"]
@@ -114,7 +114,7 @@ class InformationRetrievalHub:
         Helper function to call the setup functions for each pipeline that has been specified in `configs.indexing`.
         """
         if self.indexing_type in ['sparse', 'hybrid']:
-            self.pipelines['bm25'], self.pipelines['bm25f'] = self.set_up_sparse_pipelines(self.recreate_index)
+            self.pipelines['bm25'], self.pipelines['bm25f'] = self.set_up_sparse_pipelines(self.recreate_sparse_index)
 
         if self.indexing_type in ['dense', 'hybrid']:
             for field_to_index in self.fields_and_weights.keys():
@@ -258,14 +258,14 @@ class InformationRetrievalHub:
                   "filtered_SPaR_labels_domain", "neighbours"]
 
         # 'skip', 'overwrite' or 'fail'
-        duplicate_documents = 'overwrite' if self.recreate_index else 'skip'
+        duplicate_documents = 'overwrite' if self.recreate_sparse_index else 'skip'
 
         # Start Elasticsearch using Docker via the Haystack utility function
         sparse_document_store = ElasticsearchDocumentStore(host="host.docker.internal",
                                                            index=index_name,
                                                            search_fields=fields,
                                                            content_field="content",
-                                                           recreate_index=self.recreate_index,
+                                                           recreate_index=self.recreate_sparse_index,
                                                            duplicate_documents=duplicate_documents)
         return sparse_document_store
 
@@ -307,9 +307,9 @@ class InformationRetrievalHub:
         sparse_retriever = self.initialize_sparse_retriever(self.sparse_type, sparse_document_store)
         self.pipelines[sparse_type] = DocumentSearchPipeline(sparse_retriever)
 
-    def set_up_sparse_pipelines(self, recreate_index: bool = False) -> (DocumentSearchPipeline, DocumentSearchPipeline):
+    def set_up_sparse_pipelines(self, recreate_sparse_index: bool = False) -> (DocumentSearchPipeline, DocumentSearchPipeline):
         """
-        :param recreate_index:  Whether to recreate the ElasticSearch index from scratch (default=False). Useful for
+        :param recreate_sparse_index:  Whether to recreate the ElasticSearch index from scratch (default=False). Useful for
                                 debugging.
         """
         sparse_document_store_plain = self.initialize_sparse_docstore(self.sparse_index_name + "_bm25")
@@ -318,7 +318,7 @@ class InformationRetrievalHub:
         # TODO: very first step; check if index already exists and then simply load it, without initialising models
         if sparse_document_store_plain.client.indices.exists(self.sparse_index_name + "_bm25") and \
                 sparse_document_store_plain.client.indices.exists(self.sparse_index_name + "_bm25f") and \
-                not recreate_index:
+                not recreate_sparse_index:
             # don't load up the clusterer and SPaR
             logger.info('[DocumentStore] Using existing indices')
         else:
@@ -341,18 +341,16 @@ class InformationRetrievalHub:
         bm25f_retriever = self.initialize_sparse_retriever("multi_match", sparse_document_store_multimatch)
         return DocumentSearchPipeline(bm25_retriever), DocumentSearchPipeline(bm25f_retriever)
 
-    def set_up_dense_pipeline(self,
-                              field_to_index: str = "context",
-                              recreate_index: bool = False) -> DocumentSearchPipeline:
+    def set_up_dense_pipeline(self, field_to_index: str = "context") -> DocumentSearchPipeline:
         """
         Set up the various Retrieval nodes that are defined in the configuration.
         """
         # Prepare filepaths for storing the FAISS index
-        faiss_index_path = f'/data/indexes/faiss/{self.foreground_conversion_type}_{field_to_index}_index'
-        faiss_sql_doc_store = f'/data/indexes/faiss/{self.foreground_conversion_type}_{field_to_index}_document_store.db'
+        faiss_index_path = f'/data/indexes/faiss/{field_to_index}_index'
+        faiss_sql_doc_store = f'/data/indexes/faiss/{field_to_index}_document_store.db'
 
         # Prepare FAISS DocumentStore for dense indexing
-        if os.path.exists(faiss_index_path) and not recreate_index:
+        if os.path.exists(faiss_index_path) and not self.recreate_index:
             save_updated_document_store = False
             dense_document_store = FAISSDocumentStore.load(index_path=faiss_index_path)
         else:
