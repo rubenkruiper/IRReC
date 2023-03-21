@@ -21,9 +21,9 @@
     "fields_to_index_and_weights": {
       "content": 2,
       "doc_title":  1.0,
-      "SPaR_labels":  1.0,
-      "filtered_SPaR_labels":  1.0,
-      "filtered_SPaR_labels_domain":  1.0,
+      "NER_labels":  1.0,
+      "filtered_NER_labels":  1.0,
+      "filtered_NER_labels_domains":  1.0,
       "neighbours":  1.0
     },
     "sparse_settings": {
@@ -64,8 +64,13 @@
     "metric": "cosine"
   },
   "query_expansion": {
+      "haystack_endpoint": "http://haystack:8500/",
       "concept_extraction": "spar", // currently not providing other options
       "nearest_neighours": "yes", // simply yes no?
       "pseudo_relevance_feedback" : "no" // `yes` or `no`
+      "prf_weight": 0,
+      "kg_weight": 0,
+      "nn_weight": 2,
+      "bm25_weight": 1
   }
 }

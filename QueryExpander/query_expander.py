@@ -18,19 +18,17 @@ class QueryExpander:
                  classifier_url: str,
                  spar_url: str,
                  prf_weight=0,
-                 kg_broader_weight=0,
-                 kg_narrower_weight=0,
-                 kg_alternatives_weight=0,
-                 nn_weight=0):
+                 kg_weight=0,
+                 nn_weight=0,
+                 bm25_weight=1):
         # todo - allow a user to set which candidates to collect?
         self.spar = spar_url
         self.classifier = classifier_url
 
         self.prf_weight = prf_weight
-        self.kg_broader_weight = kg_broader_weight
-        self.kg_narrower_weight = kg_narrower_weight
-        self.kg_alternatives_weight = kg_alternatives_weight
+        self.kg_weight = kg_weight
         self.nn_weight = nn_weight
+        self.bm25_weight = bm25_weight
 
         # set up connection to GraphDB sparql endpoint and retrieve a list of nodes (concepts in the graph)
         try:

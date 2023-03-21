@@ -231,10 +231,10 @@ class InformationRetrievalHub:
                 for content in converted_document.all_contents:
                     if content.filtered_NER_labels:
                         domain_spans = requests.post(f"{self.classifier_url}filter_non_domain_spans/",
-                                                     json={"spans": content.filtered_NER_labels})
+                                                     json={"spans": content.filtered_NER_labels}).json()
                         content.set_filtered_ner_label_domains(domain_spans["domain_spans"])
                         neighbours = requests.post(f"{self.classifier_url}get_neighbours/",
-                                                   json={"spans": content.filtered_NER_labels})
+                                                   json={"spans": content.filtered_NER_labels}).json()
                         content.set_neighbours(neighbours["neighbours"])
                     new_contents.append(content)
 
