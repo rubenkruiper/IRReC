@@ -8,6 +8,7 @@ from collections import Counter
 from sklearn.neighbors import kneighbors_graph, KNeighborsClassifier, NearestNeighbors
 
 from embedder import Embedder
+# todo; add logging to the classifier and embedder?
 
 
 class Classifier:
@@ -90,7 +91,7 @@ class Classifier:
             for span_idx, (span, _) in enumerate(self.standardised_embedding_data):
                 number_of_background_corpus_neighbours = 0
                 for neighbour_idx in knn_graph[span_idx].indices:
-                    if self.standardised_embedding_data[neighbour_idx][0] in self.ood_terms:
+                    if self.standardised_embedding_data[neighbour_idx][0] in self.background_terms:
                         number_of_background_corpus_neighbours += 1
 
                 span_df_dict[span] = {
