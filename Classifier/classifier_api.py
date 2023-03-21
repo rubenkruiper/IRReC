@@ -173,7 +173,7 @@ def train_classifier(classifier_settings: Dict[str, Any] = None):
 
 
 @Classifier_api.post("/filter_non_domain_spans/")
-def filter_non_domain_spans(to_be_predicted: ToPredict) -> Dict[str, str]:
+def filter_non_domain_spans(to_be_predicted: ToPredict):
     """
     Returns a `list` of terms from the assigned cluster.
     """
@@ -185,7 +185,7 @@ def filter_non_domain_spans(to_be_predicted: ToPredict) -> Dict[str, str]:
 
 
 @Classifier_api.post("/get_neighbours/")
-def get_neighbours(to_be_predicted: ToPredict) -> Dict[str, str]:
+def get_neighbours(to_be_predicted: ToPredict):
     """
     Returns a `list` of terms from the assigned cluster.
     """

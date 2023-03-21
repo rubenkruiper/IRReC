@@ -173,7 +173,8 @@ class InformationRetrievalHub:
             for converted_document_filepath in tqdm(converted_document_filepaths):
                 converted_document = CustomDocument.load_document(converted_document_filepath)
                 if not converted_document:
-                    raise Exception(f"Issue loading converted document: {converted_document_filepath}")
+                    logger.info(f"Issue loading converted document: {converted_document_filepath}")
+                    continue
 
                 if any([len(c.NER_labels) > 1 for c in converted_document.all_contents]):
                     logger.info(f"[Preprocessor] skipping, NER outputs already found in: {converted_document_filepath}")
