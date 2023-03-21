@@ -10,6 +10,8 @@ services:
       - ./datavolume:/data/
     networks:
       - my_network
+    container_name: irrec_spar
+    image: spar
 #    deploy:
 #      resources:
 #        reservations:
@@ -26,6 +28,8 @@ services:
     - NVIDIA_VISIBLE_DEVICES=1
     networks:
       - my_network
+    container_name: irrec_classifier
+    image: classifier
 #    deploy:
 #      resources:
 #        reservations:
@@ -43,6 +47,8 @@ services:
     networks:
       - my_network
       - host_network
+    container_name: irrec_haystack
+    image: haystack
 #    deploy:
 #      resources:
 #        reservations:
@@ -60,6 +66,8 @@ services:
     networks:
       - my_network
       - host_network
+    container_name: irrec_qe
+    image: qe
 
 networks:
   my_network:
