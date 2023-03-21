@@ -73,11 +73,11 @@ class EmbeddingHub:
 
     def grab_settings(self):
         with open(self.path_to_settings) as f:
-            all_settings = json5.load(f)
+            s = json5.load(f)
         keys_to_keep = ["bert_model", "cache_dir", "classifier_dir", "IDF_path"]
-        selected_settings = {k:v for k, v in all_settings.items() if k in keys_to_keep}
+        selected_settings = {k:v for k, v in s.items() if k in keys_to_keep}
         group_to_keep = ["embedding_settings", "classifier_settings"]
-        selected_settings += {sub_k: sub_v for k, v in all_settings for sub_k, sub_v in v.items() if k in group_to_keep}
+        selected_settings += {sub_k: sub_v for k in s if k in group_to_keep for sub_k, sub_v in s[k].items()}
         return Settings(**selected_settings)
 
     def initialize_embeddings_from_settings(self):
