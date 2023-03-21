@@ -263,10 +263,10 @@ class Embedder:
 
         embedding_files = [f for f in self.embedding_dir.glob(f'{prefix}*.pkl')]
 
-        span_and_embedding_pairs = []
+        self.span_and_embedding_pairs = []
         if len(embedding_files) == len(term_subsets):
             for e in embedding_files:
-                span_and_embedding_pairs += pickle.load(open(e, 'rb'))
+                self.span_and_embedding_pairs += pickle.load(open(e, 'rb'))
         else:
             print(f"Preparing embeddings for {len(list_of_terms)} spans, in groups of: {subset_size}")
             subset_idx = 0  # iterator index outside of tqdm
@@ -288,9 +288,9 @@ class Embedder:
             # Once all embeddings are created; combine them in span_and_embedding_pairs
             embedding_files = [f for f in self.embedding_dir.glob(f'{prefix}*.pkl')]
             for e in embedding_files:
-                span_and_embedding_pairs += pickle.load(open(e, 'rb'))
-
-        self.normalise_embeddings(span_and_embedding_pairs, prefix)
+                self.span_and_embedding_pairs += pickle.load(open(e, 'rb'))
+        
+        self.normalise_embeddings()
 
     def embed_large_number_of_new_terms(self,
                                         max_num_cpu_threads: int = 4,
