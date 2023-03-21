@@ -131,17 +131,16 @@ class EmbeddingHub:
         """ Initializes a Classifier model, may need training. """
         # Grab the latest version of settings/configuration
         settings = self.grab_settings()
-
-        # TODO; figure out how I want to do the classification
-        self.classifier = Classifier(self.embedder,
-                                     self.foreground_term_filepath,
-                                     self.background_term_filepath,
-                                     settings.top_k_semantically_similar
-                                     )
+        self.classifier = Classifier(
+            self.embedder,
+            self.foreground_term_filepath,
+            self.background_term_filepath,
+            settings.top_k_semantically_similar
+        )
         return settings
 
 
-## Set up the Cluster_model and API
+# Set up the Cluster_model and API
 path_to_settings = "/data/information_retrieval_settings.json"
 Classifier_api = FastAPI()
 hub = EmbeddingHub()
@@ -152,7 +151,7 @@ def root() -> dict:
     """
     The 'index' page shows the settings for the current cluster model
     """
-    return hub.settings
+    return hub.grab_settings()
 
 
 @Classifier_api.post("/train/")

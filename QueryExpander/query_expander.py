@@ -5,7 +5,7 @@ from textblob import TextBlob
 
 from typing import List, Dict
 from collections import Counter
-import networkx as nx
+# import networkx as nx
 # https://www.elastic.co/guide/en/elasticsearch/reference/7.17/analysis-synonym-graph-tokenfilter.html
 
 

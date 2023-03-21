@@ -40,7 +40,7 @@ class Settings(BaseSettings):
 
 class QueryExanderFromSettings:
     def __init__(self):
-        self.haystack_endpoint, self.spar_endpoint, self.classifier_endpoint = [None] * 4
+        self.haystack_endpoint, self.spar_endpoint, self.classifier_endpoint = None, None, None
         self.indexing_type = "hybrid"
         self.recreate_index = False
         self.fields_and_weights = {}
@@ -51,9 +51,8 @@ class QueryExanderFromSettings:
         self.bm25_weight = 1        # relative influence of BM25 results
 
         self.update_from_file()
-        self.QE_obj = QueryExpander(self.sparql_endpoint, self.classifier_endpoint, self.spar_endpoint,
-                                    self.prf_weight, self.kg_narrower_weight, self.kg_alternatives_weight,
-                                    self.nn_weight, self.bm25_weight)
+        self.QE_obj = QueryExpander(self.classifier_endpoint, self.spar_endpoint,
+                                    self.prf_weight, self.kg_weight, self.nn_weight, self.bm25_weight)
 
     def update_from_file(self):
         with open("/data/information_retrieval_settings.json") as f:

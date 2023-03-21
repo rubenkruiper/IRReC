@@ -3,6 +3,7 @@ FROM python:3.8
 
 
 RUN apt-get update
+RUN apt-get install vim -y
 
 # install Python and pip
 RUN apt-get install python3-pip -y
