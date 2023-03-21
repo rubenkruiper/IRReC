@@ -325,7 +325,7 @@ class InformationRetrievalHub:
             self.prepare_pipeline_inputs()
             # write documents to document store
             documents_to_write = []
-            processed_document_fps = glob.glob(self.converted_output_dir + "*.json")
+            processed_document_fps = self.foreground_output_dir.glob("*.json")
             logger.info("[DocumentStore] converting to ElasticSearch indexable passages.")
             for doc_fp in tqdm(processed_document_fps):
                 documents_to_write += CustomDocument.load_document(doc_fp).to_list_of_dicts()
@@ -370,7 +370,7 @@ class InformationRetrievalHub:
 
             # write the processed documents to the Documentstore
             documents_to_write = []
-            processed_document_fps = glob.glob(self.converted_output_dir + "*.json")
+            processed_document_fps = self.foreground_output_dir.glob("*.json")
             for doc_fp in processed_document_fps:
                 flat_content_list = CustomDocument.load_document(doc_fp).to_flat_list_of_dicts()
 
