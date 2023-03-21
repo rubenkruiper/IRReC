@@ -214,6 +214,7 @@ class InformationRetrievalHub:
                         # update the document in place
                         only_keep_filtered = [l for l in content.NER_labels if l in filtered_labels]
                         processed_document.all_contents[idx].set_filtered_ner_labels(only_keep_filtered)
+                        print("[DOUBLECHECK: ", only_keep_filtered)
                 # update stored file
                 processed_document.write_document()
 
@@ -347,8 +348,8 @@ class InformationRetrievalHub:
         Set up the various Retrieval nodes that are defined in the configuration.
         """
         # Prepare filepaths for storing the FAISS index
-        faiss_index_path = f'/data/indexes/faiss/{self.conversion}_{field_to_index}_index'
-        faiss_sql_doc_store = f'/data/indexes/faiss/{self.conversion}_{field_to_index}_document_store.db'
+        faiss_index_path = f'/data/indexes/faiss/{self.foreground_conversion_type}_{field_to_index}_index'
+        faiss_sql_doc_store = f'/data/indexes/faiss/{self.foreground_conversion_type}_{field_to_index}_document_store.db'
 
         # Prepare FAISS DocumentStore for dense indexing
         if os.path.exists(faiss_index_path) and not recreate_index:
