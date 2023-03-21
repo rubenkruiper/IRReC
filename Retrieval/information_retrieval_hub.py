@@ -8,7 +8,6 @@ import time
 import requests
 import subprocess
 from tqdm import tqdm
-from collections import Counter
 from typing import List, Dict
 from pathlib import Path
 
@@ -23,7 +22,7 @@ from haystack.document_stores import ElasticsearchDocumentStore, FAISSDocumentSt
 from haystack.nodes import ElasticsearchRetriever, DensePassageRetriever
 from haystack.pipelines import DocumentSearchPipeline
 
-logger = logging
+logging.basicConfig(filename=Path("/data/latest.log"), level=logging.INFO)
 
 
 class InformationRetrievalHub:
@@ -161,16 +160,16 @@ class InformationRetrievalHub:
         # (1) identify NER labels
         if self.ner_url not in ["no", "No", "None", "none", ""]:
             all_NER_labels = []
-            print("[Preprocessor] Running SPaR.txt to collect potential NER labels.")
+            logger.info("[Preprocessor] Running SPaR.txt to collect potential NER labels.")
             for converted_document_filepath in tqdm(converted_document_filepaths):
                 converted_document = CustomDocument.load_document(converted_document_filepath)
                 if not converted_document:
                     raise Exception(f"Issue loading converted document: {converted_document_filepath}")
 
                 if any([len(c.NER_labels) > 1 for c in converted_document.all_contents]):
-                    print(f"[Preprocessor] skipping, NER outputs already found in: {converted_document_filepath}")
+                    logger.info(f"[Preprocessor] skipping, NER outputs already found in: {converted_document_filepath}")
                 else:
-                    print(f"[Preprocessor] Preprocessing classifier_data for: {converted_document_filepath}")
+                    logger.info(f"[Preprocessor] Identifying NER labels for: {converted_document_filepath}")
                     processed_list_of_dicts = self.preprocessor.process(converted_document.to_list_of_dicts())
                     converted_document.replace_contents(processed_list_of_dicts)
                     converted_document.write_document()
@@ -186,7 +185,7 @@ class InformationRetrievalHub:
             filtered_labels = set(pickle.load(open(term_output_path, 'rb')))
 
         # (2) identify which NER labels remain after cleaning
-        print("[Preprocessor] Retaining the filtered/cleaned SPaR.txt labels separately.")
+        logger.info("[Preprocessor] Retaining the filtered/cleaned SPaR.txt labels separately.")
         for filepath in tqdm(converted_document_filepaths):
             processed_document = CustomDocument.load_document(filepath)
             if any([len(c.filtered_NER_labels) > 1 for c in processed_document.all_contents]):
@@ -300,17 +299,17 @@ class InformationRetrievalHub:
                 sparse_document_store_plain.client.indices.exists(self.sparse_index_name + "_bm25f") and \
                 not recreate_index:
             # don't load up the clusterer and SPaR
-            print('[DocumentStore] Using existing indices')
+            logger.info('[DocumentStore] Using existing indices')
         else:
             # prepare documents to be stored in the document store
             self.prepare_pipeline_inputs()
             # write documents to document store
             documents_to_write = []
             processed_document_fps = glob.glob(self.converted_output_dir + "*.json")
-            print("[DocumentStore] converting to ElasticSearch indexable passages.")
+            logger.info("[DocumentStore] converting to ElasticSearch indexable passages.")
             for doc_fp in tqdm(processed_document_fps):
                 documents_to_write += CustomDocument.load_document(doc_fp).to_list_of_dicts()
-            print(
+            logger.info(
                 '[DocumentStore] Index and classifier_data will be created from scratch -- this will take a long time, \n'
                 '                but only has to be done once.')
             sparse_document_store_plain.write_documents(documents_to_write)
