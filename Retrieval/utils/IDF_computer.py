@@ -7,6 +7,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from textblob import TextBlob
 from transformers import BertTokenizer
 
+from utils.customdocument import CustomDocument
+
 
 class IdfComputer:
     def __init__(self,
@@ -60,7 +62,7 @@ class IdfComputer:
         )
         vectorizer.fit_transform(corpus)
         idf_Y = vectorizer.idf_
-        test_Y = dict(zip([str(x) for x in vectorizer.get_feature_names()], idf_Y))
+        test_Y = dict(zip([str(x) for x in vectorizer.get_feature_names_out()], idf_Y))
 
         return test_Y
 
@@ -86,12 +88,12 @@ class IdfComputer:
                 IDF = json.load(f)
         else:
             print("Computing IDF weights.")
-            files = []
+            documents = []
             for path in corpus_directories:
-                files += glob.glob(path + '*json')
+                documents += [CustomDocument.load_document(p) for p in path.glob('*json')]
 
             corpus_sentences = []
-            for custom_document in files:
+            for custom_document in documents:
                 texts = [c.text for c in custom_document.all_contents]
                 corpus_sentences += [str(s) for text in texts for s in TextBlob(text).sentences]
 

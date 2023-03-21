@@ -31,7 +31,7 @@ def predict_objects(input_str: Optional[str] = Query(default=Required, max_lengt
     if input_str:
         # prepare instance and run model on single instance
         docid = ''  # ToDo - add doc_id during pre_processing?
-        token_list = predictor._dataset_reader.tokenizer.tokenize(input_str)
+        token_list = spar_predictor.predictor._dataset_reader.tokenizer.tokenize(input_str)
 
         # truncating the input to SPaR.txt to maximum 512 tokens
         token_length = len(token_list)
@@ -39,10 +39,9 @@ def predict_objects(input_str: Optional[str] = Query(default=Required, max_lengt
             token_list = token_list[:511] + [token_list[-1]]
             token_length = 512
 
-        instance = predictor._dataset_reader.text_to_instance(docid,
-                                                              input_str,
-                                                              token_list,
-                                                              predictor._dataset_reader._token_indexer)
+        instance = spar_predictor.predictor._dataset_reader.text_to_instance(
+            docid, input_str, token_list, spar_predictor.predictor._dataset_reader._token_indexer
+        )
         res = predictor.predict_instance(instance)
         printable_result, spans_token_length = su.parse_spar_output(res, ['obj'])
         return {

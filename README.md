@@ -14,6 +14,7 @@ graph in [the standard (free) GraphDB docker container](https://github.com/Ontot
 ---
 **To use the IR system**:
 * **Elasticsearch**: should be running on the default port 9200, which will provide sparse indexing and retrieval.
+  * To enable localhost HTTP calls on ES 8 and later, disable SSL, e.g., `./elasticsearch -E xpack.security.enabled=false`
 * **GraphDB** should be running on on the default port 7200, which enables using the Knowledge Graph / vocabularies 
 for Query Expansion. The expected repository name is `BRE`.
 * **British Standards**: make sure the PDF-files are available to the system at the path `datavolume/ir_data/pdf/`.

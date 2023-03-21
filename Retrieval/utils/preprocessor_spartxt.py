@@ -122,8 +122,10 @@ class SparPreProcessor(BasePreProcessor):
 
     def predict_objects(self, text_to_process):
         # todo;
+        #  - would I want to have multiple predictors ready to go?
+        #  - maybe change to post, rather than get
         #  - speed up NER processing by providing a (batch_size) number of sentences in one go
-        # todo ; somehow key error prediction sometimes
+        # todo ;
         response = requests.get(f"{self.ner_url}predict_objects/{text_to_process}").json()
         try:
             response["prediction"]
@@ -400,8 +402,8 @@ class SparPreProcessor(BasePreProcessor):
             tag_splits = []
             for sl, tl in zip(list_splits, list_tag_splits):
                 txt = ' '.join(sl)
-                print(f"[TL]: {tl}")
-                print(f"[tags]: {[t for tl_ in tl for t in tl_]}")
+                # print(f"[TL]: {tl}")
+                # print(f"[tags]: {[t for tl_ in tl for t in tl_]}")
                 if tl:
                     tags = [t for tl_ in tl for t in tl_]
                 else:

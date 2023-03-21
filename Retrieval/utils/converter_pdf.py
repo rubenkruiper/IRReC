@@ -26,6 +26,10 @@ def process_pdf_files_in_directory(input_directory: Path = "data/ir_data/pdf/",
         output_path = output_directory.joinpath(pdf_filepath.stem + ".json")
         if not output_path.exists():
             converted_document = convert_pdf_to_customdocument(pdf_filepath, output_path)
+            if not converted_document:
+                # raise Exception(f"Issue converting document: {pdf_filepath}")
+                # Some of the input pdf documents simply cannot be converted, e.g., they are empty or permission denied
+                print(f"Issue converting document: {pdf_filepath}")
             converted_document.write_document()
         else:
             pass
