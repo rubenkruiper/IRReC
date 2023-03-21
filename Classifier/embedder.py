@@ -50,11 +50,11 @@ class Embedder:
         self.not_found_idf_value = not_found_idf_value
 
         self.embedding_prefix = "embeddings"
-        self.embedding_dir = embedding_dir
+        self.embedding_dir = Path(embedding_dir)
         self.standardised_embedding_data = []
         self.new_embedding_data = []
-        self.emb_mean_fp = embedding_dir.joinpath("standardisation_mean.pkl")
-        self.emb_std_fp = embedding_dir.joinpath("standardisation_std.pkl")
+        self.emb_mean_fp = self.embedding_dir.joinpath("standardisation_mean.pkl")
+        self.emb_std_fp = self.embedding_dir.joinpath("standardisation_std.pkl")
         self.emb_mean = "None"  # initialise to specific value, later will hold an array (without truth value blabla)
         self.emb_std = "None"
 
