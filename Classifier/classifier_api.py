@@ -158,6 +158,7 @@ def root() -> dict:
 def train_classifier(classifier_settings: Dict[str, Any] = None):
     if not hub.embedder:
         hub.initialize_embeddings_from_settings()
+        hub.embed_list_of_terms()
 
     if not hub.classifier:
         hub.initialize_classifier_from_settings()
