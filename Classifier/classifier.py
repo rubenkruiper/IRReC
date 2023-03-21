@@ -80,7 +80,7 @@ class Classifier:
         else:
             # (1) compute the knn graph for the standardised embedding data [(span, embedding), (span, embedding), ...]
             spans, embeddings = zip(*self.standardised_embedding_data)
-            knn_graph = kneighbors_graph(embeddings
+            knn_graph = kneighbors_graph(embeddings,
                                          classifier_nr_neighbours,
                                          metric=self.metric,
                                          n_jobs=8)
