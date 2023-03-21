@@ -1,4 +1,5 @@
 import re
+import time
 import nltk
 import logging
 import requests
@@ -124,8 +125,16 @@ class SparPreProcessor(BasePreProcessor):
         # todo;
         #  - would I want to have multiple predictors ready to go?
         #  - speed up NER processing by providing a (batch_size) number of sentences in one go
-        response = requests.post(f"{self.ner_url}predict_objects/",
-                                 json={"sentence": sentence}).json()
+        response = None
+        while not response:
+            try:
+                response = requests.post(f"{self.ner_url}predict_objects/",
+                                         json={"sentence": sentence}).json()
+            except ConnectionError:
+                # the SPaR container isn't ready yet, simply wait 10 seconds and try again
+                time.sleep(10)
+
+        # once we have a response, check if we actually got results
         try:
             response["prediction"]
             return response
