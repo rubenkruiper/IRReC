@@ -53,6 +53,8 @@ class InformationRetrievalHub:
         self.IDF_path = Path(configs["IDF_path"])
         self.idf_computer = IdfComputer(Path(configs["IDF_path"]))
         self.classifier_dir = Path(configs["classifier_dir"])
+        self.foreground_terms_filename = configs["classifier_settings"]["foreground_corpus_terms"]
+        self.background_terms_filename = configs["classifier_settings"]["background_corpus_terms"]
         self.embedding_dir = Path(configs["embedding_settings"]['embedding_folder_name'])
 
         # urls for SPaR and Classifier APIs
@@ -139,8 +141,8 @@ class InformationRetrievalHub:
 
         # (3) Preprocess (run SPaR.txt, filter extracted terms, split everything into index-able chunks)
         #  - can pass custom split_length here, but avoiding this for now
-        self.preprocess_inputs(self.foreground_output_dir, self.classifier_dir.joinpath("foreground_terms.pkl"))
-        self.preprocess_inputs(self.background_output_dir, self.classifier_dir.joinpath("background_terms.pkl"))
+        self.preprocess_inputs(self.foreground_output_dir, self.classifier_dir.joinpath(self.foreground_terms_filename))
+        self.preprocess_inputs(self.background_output_dir, self.classifier_dir.joinpath(self.background_terms_filename))
 
         # (4) SPaR.txt is done, we'll do some domain classification and find NNs
         # todo; do I want to pass specific settings here? json= {'num_neighbours':x, etc...}
@@ -149,7 +151,7 @@ class InformationRetrievalHub:
 
     def preprocess_inputs(self,
                           converted_documents_dir: Path,
-                          term_output_path: Path = Path("/data/classifier_data/foreground_terms.pkl"),
+                          term_output_path: Path,
                           split_length: int = 100) -> List[CustomDocument]:
         """
         Splits and labels the text found in pdfs during the conversion step. Splits long texts into passages and

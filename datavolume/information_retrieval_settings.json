@@ -58,8 +58,8 @@
     "classifier_nr_neighbours": 500,
     "tfidf_cutoff": 0.6,
     "num_neighbours_cutoff": 375,
-    "foreground_corpus_terms": "foreground_objects.pkl",
-    "background_corpus_terms": "background_objects.pkl",
+    "foreground_corpus_terms": "foreground_terms.pkl",
+    "background_corpus_terms": "background_terms.pkl",
     "top_k_semantically_similar": 5,
     "metric": "cosine"
   },

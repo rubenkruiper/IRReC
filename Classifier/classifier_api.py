@@ -29,8 +29,8 @@ class Settings(BaseSettings):
     classifier_nr_neighbours: Optional[int] = 500
     tfidf_cutoff: Optional[float] = 0.6
     num_neighbours_cutoff: Optional[float] = 375
-    foreground_corpus_terms: Optional[str] = "foreground_objects.pkl"
-    background_corpus_terms: Optional[str] = "background_objects.pkl"
+    foreground_corpus_terms: Optional[str] = "foreground_terms.pkl"
+    background_corpus_terms: Optional[str] = "background_terms.pkl"
     top_k_semantically_similar: Optional[int] = 5
     metric: Optional[str] = "cosine"
 
