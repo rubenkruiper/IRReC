@@ -177,10 +177,22 @@ class Embedder:
         standardised_embeddings = (detached_embeddings - self.emb_mean) / self.emb_std
         return np.mean(standardised_embeddings, axis=0)   # average over the tokens for now. old >> torch.mean(x, dim=0)
 
+    # def embed_a_span(self, span: str) -> torch.tensor:
+    #     """
+    #     Use to simply embed a span, BEFORE the mean and std of all spans are computed
+    #     """
+    #     embeddings = self.embed_text(span)
+    #     try:
+    #         return (span, torch.stack(embeddings).detach().numpy().squeeze())
+    #     except RuntimeError:
+    #         # can happen if the tensor for the span is empty somehow
+    #         print(f"Empty tensor! Not sure why, but will drop the span: {span}")
+    #         return None
+
     def embed_and_stack(self, span: str) -> torch.tensor:
         """
         Combination of above function to simplify calls from the a threadpool executor. Returns tuple of span and its
-        corresponding embedding.
+        corresponding embedding. Use to simply embed a span, BEFORE the mean and std of all spans are computed.
         """
         embeddings = self.embed_text(span)
         return (span, self.combine_token_embeddings(embeddings))
@@ -272,7 +284,7 @@ class Embedder:
                     continue
 
                 with concurrent.futures.ThreadPoolExecutor(max_workers=max_num_cpu_threads) as executor:
-                    futures = [executor.submit(self.embed_a_span, subset[idx]) for idx in range(len(subset))]
+                    futures = [executor.submit(self.embed_and_stack, subset[idx]) for idx in range(len(subset))]
 
                 subset_embeddings += [f.result() for f in futures if f.result()]
 
