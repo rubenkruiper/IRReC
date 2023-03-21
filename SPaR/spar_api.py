@@ -1,8 +1,7 @@
-from fastapi import FastAPI, Query
-from pydantic import Required
+from fastapi import FastAPI
+from pydantic import BaseModel
 
 ## set up SPaR predictor
-from typing import Optional
 from spar_predictor import SparPredictor
 from allennlp.common.util import import_module_and_submodules
 import spar_serving_utils as su
@@ -10,6 +9,9 @@ import spar_serving_utils as su
 # Set up a SPaR.txt predictor
 import_module_and_submodules("spar_lib")
 default_path = "/data/spar_trained_models/debugger_train/model.tar.gz"
+
+class ToPredict(BaseModel):
+    sentence: str
 
 spar_predictor = SparPredictor(default_path)
 predictor = spar_predictor.predictor
@@ -23,15 +25,20 @@ SPaR_api = FastAPI()
 #
 
 
-@SPaR_api.post("/predict_objects/{input_str}")
-def predict_objects(input_str: Optional[str]):
+@SPaR_api.post("/predict_objects/")
+def predict_objects(to_be_predicted: ToPredict):
     """
     Predict the object in a given string (expecting a single sentence usually).
     """
-    if input_str:
+    if to_be_predicted.sentence:
+        sentence = to_be_predicted.sentence
+        # SPaR doesn't handle all uppercase sentences well, which the OCR system sometimes outputs
+        if sentence.isupper():
+            sentence = sentence.lower()
+
         # prepare instance and run model on single instance
         docid = ''  # ToDo - add doc_id during pre_processing?
-        token_list = spar_predictor.predictor._dataset_reader.tokenizer.tokenize(input_str)
+        token_list = spar_predictor.predictor._dataset_reader.tokenizer.tokenize(sentence)
 
         # truncating the input to SPaR.txt to maximum 512 tokens
         token_length = len(token_list)
@@ -40,7 +47,7 @@ def predict_objects(input_str: Optional[str]):
             token_length = 512
 
         instance = spar_predictor.predictor._dataset_reader.text_to_instance(
-            docid, input_str, token_list, spar_predictor.predictor._dataset_reader._token_indexer
+            docid, sentence, token_list, spar_predictor.predictor._dataset_reader._token_indexer
         )
         res = predictor.predict_instance(instance)
         printable_result, spans_token_length = su.parse_spar_output(res, ['obj'])

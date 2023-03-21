@@ -120,13 +120,12 @@ class SparPreProcessor(BasePreProcessor):
         cleaned_terms = [t for t in cleaned_terms if cleaned_counter[t] >= minimum_count]
         return cleaned_terms
 
-    def predict_objects(self, text_to_process):
+    def predict_objects(self, sentence: str):
         # todo;
         #  - would I want to have multiple predictors ready to go?
-        #  - maybe change to post, rather than get
         #  - speed up NER processing by providing a (batch_size) number of sentences in one go
-        # todo ;
-        response = requests.get(f"{self.ner_url}predict_objects/{text_to_process}").json()
+        response = requests.post(f"{self.ner_url}predict_objects/",
+                                 json={"sentence": sentence}).json()
         try:
             response["prediction"]
             return response
@@ -316,23 +315,12 @@ class SparPreProcessor(BasePreProcessor):
             current_tags_slice: List[str] = []
 
             for sen in sentences:
-                if sen.isupper():
-                    # SPaR doesn't handle all uppercase sentences well, which the OCR system sometimes outputs
-                    url_sen = urllib.parse.quote(sen.lower())
-                    prediction_dict = self.predict_objects(url_sen)
-                    if not prediction_dict:
-                        continue
-                    pred_labels = prediction_dict["prediction"]
-                    current_token_count = prediction_dict["num_input_tokens"]
-                    span_token_count = prediction_dict["num_output_tokens"]
-                else:
-                    url_sen = urllib.parse.quote(sen)
-                    prediction_dict = self.predict_objects(url_sen)
-                    if not prediction_dict:
-                        continue
-                    pred_labels = prediction_dict["prediction"]
-                    current_token_count = prediction_dict["num_input_tokens"]
-                    span_token_count = prediction_dict["num_output_tokens"]
+                prediction_dict = self.predict_objects(sen)
+                if not prediction_dict:
+                    continue
+                pred_labels = prediction_dict["prediction"]
+                current_token_count = prediction_dict["num_input_tokens"]
+                span_token_count = prediction_dict["num_output_tokens"]
 
                 # ways of combining text with labels #todo deprecate
                 # -- Prep context todo; consider removing the choice of output type
