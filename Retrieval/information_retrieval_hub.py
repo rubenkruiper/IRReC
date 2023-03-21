@@ -345,8 +345,8 @@ class InformationRetrievalHub:
         Set up the various Retrieval nodes that are defined in the configuration.
         """
         # Prepare filepaths for storing the FAISS index
-        faiss_index_path = f'/data/indexes/faiss/{field_to_index}_index'
-        faiss_sql_doc_store = f'/data/indexes/faiss/{field_to_index}_document_store.db'
+        faiss_index_path = f'/data/indexes/{field_to_index}_index'
+        faiss_sql_doc_store = f'/data/indexes/{field_to_index}_document_store.db'
 
         # Prepare FAISS DocumentStore for dense indexing
         if os.path.exists(faiss_index_path) and not self.recreate_index:
