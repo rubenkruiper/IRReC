@@ -184,7 +184,10 @@ class InformationRetrievalHub:
                     converted_document.replace_contents(processed_list_of_dicts)
                     converted_document.write_document()
                 # keep track of all the NER labels
-                all_NER_labels += [label for c in converted_document.all_contents for label in c.NER_labels]
+                labels_in_document = [label for c in converted_document.all_contents for label in c.NER_labels]
+                # if not labels_in_document:
+                # todo we should probably delete files without labels, retaining for now
+                all_NER_labels += labels_in_document
 
             # group all the (cleaned) terms extracted for a corpus and store for classification later
             cleaned_terms = self.preprocessor.cleaning_helper(all_NER_labels)
@@ -227,20 +230,26 @@ class InformationRetrievalHub:
         if self.classifier_url not in ["no", "No", "None", "none", ""]:
             for converted_document_filepath in converted_document_filepaths:
                 converted_document = CustomDocument.load_document(converted_document_filepath)
-                new_contents = []
-                for content in converted_document.all_contents:
-                    if content.filtered_NER_labels:
-                        domain_spans = requests.post(f"{self.classifier_url}filter_non_domain_spans/",
-                                                     json={"spans": content.filtered_NER_labels}).json()
-                        content.set_filtered_ner_label_domains(domain_spans["domain_spans"])
-                        neighbours = requests.post(f"{self.classifier_url}get_neighbours/",
-                                                   json={"spans": content.filtered_NER_labels}).json()
-                        content.set_neighbours(neighbours["neighbours"])
-                    new_contents.append(content)
+                # make sure neighbours do not exist anywhere yet
+                if any([len(c.neighbours) > 1 for c in converted_document.all_contents]):
+                    logger.info(
+                        f"[Classifier] skipping, classes and NNs already found in: {converted_document_filepath}")
+                    continue
+                else:
+                    new_contents = []
+                    for content in converted_document.all_contents:
+                        if content.filtered_NER_labels:
+                            domain_spans = requests.post(f"{self.classifier_url}filter_non_domain_spans/",
+                                                         json={"spans": content.filtered_NER_labels}).json()
+                            content.set_filtered_ner_label_domains(domain_spans["domain_spans"])
+                            neighbours = requests.post(f"{self.classifier_url}get_neighbours/",
+                                                       json={"spans": content.filtered_NER_labels}).json()
+                            content.set_neighbours(neighbours["neighbours"])
+                        new_contents.append(content)
 
-                # update the CustomDocument and save changes to file
-                converted_document.replace_contents(new_contents)
-                converted_document.write_document()
+                    # update the CustomDocument and save changes to file
+                    converted_document.replace_contents(new_contents)
+                    converted_document.write_document()
 
     def initialize_sparse_docstore(self, index_name: str):
         fields = ["content", "doc_title", "SPaR_labels", "filtered_SPaR_labels",
