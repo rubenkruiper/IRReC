@@ -173,7 +173,7 @@ class Embedder:
         weighted_token_embeddings = torch.stack(embeddings)
         detached_embeddings = weighted_token_embeddings.detach().numpy()
         # Standardise PLM representation
-        if self.emb_mean == "None" and self.emb_mean_fp.exists():
+        if type(self.emb_mean) == str and self.emb_mean_fp.exists():
             self.emb_mean = pickle.load(open(self.emb_mean_fp, 'rb'))
             self.emb_std = pickle.load(open(self.emb_std_fp, 'rb'))
 
