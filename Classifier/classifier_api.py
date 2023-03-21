@@ -165,7 +165,7 @@ def train_classifier(classifier_settings: Dict[str, Any] = None):
     classifier_nr_neighbours = classifier_settings['classifier_nr_neighbours'] if classifier_settings else 500
     tfidf_cutoff = classifier_settings['tfidf_cutoff'] if classifier_settings else .6
     num_neighbours_cutoff = classifier_settings['num_neighbours_cutoff'] if classifier_settings else 250
-    hub.classifier.train_classifier_from_heuristics(n_neighbours=classifier_nr_neighbours,
+    hub.classifier.train_classifier_from_heuristics(classifier_nr_neighbours=classifier_nr_neighbours,
                                                     min_tfidf_value=tfidf_cutoff,
                                                     min_num_foreground_neighbours=num_neighbours_cutoff)
 
