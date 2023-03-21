@@ -198,8 +198,7 @@ class Classifier:
         settings may have changed and, overall, it doesn't take too long.
         """
         all_embedding_data = self.embedder.standardised_embedding_data + self.embedder.new_embedding_data
-        unique_spans, unique_embeddings = zip(*all_embedding_data)
-        self.unique_spans = list([str(s) for s in unique_spans])
+        self.unique_spans, unique_embeddings = zip(*all_embedding_data)
         stacked_embeddings = np.stack([np.mean(e, axis=0) if len(e.shape) > 1 else e for e in unique_embeddings])
         self.nearest_neighbours = NearestNeighbors(n_neighbors=self.top_k_semantic_similarity,
                                                    metric=self.metric,
@@ -226,7 +225,7 @@ class Classifier:
             neighbour_indices = self.nearest_neighbours.kneighbors(embedding.reshape(1, -1),
                                                                    self.top_k_semantic_similarity,
                                                                    return_distance=False)
-            neighbour_spans = [self.unique_spans[idx] for idx in neighbour_indices]
+            neighbour_spans = [self.unique_spans[int(idx)] for idx in neighbour_indices]
             neighbours_lists.append(neighbour_spans)
         else:
             neighbours_lists.append([])
