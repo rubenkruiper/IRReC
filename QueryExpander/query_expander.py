@@ -25,6 +25,7 @@ class QueryExpander:
 
         # todo - create this graph from the IR system; too much work for now
         self.network = pickle.load(open("/data/undirected_weighted_graph.pkl", 'rb'))
+        self.lower_cased_nodes = list(self.network.nodes)   # assuming all lower-cased already
 
     def expand_query(self,
                      initial_query: str,
