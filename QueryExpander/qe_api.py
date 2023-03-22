@@ -16,10 +16,6 @@ logging.getLogger("requests").setLevel(logging.WARNING)
 logging.getLogger("urllib3").setLevel(logging.WARNING)
 
 
-class PlainQuery(BaseModel):
-    query: str
-
-
 class FieldsAndWeights(BaseSettings):
     content: float = 1.0
     doc_title: float = 1.0
@@ -180,15 +176,15 @@ def quick_duplicate_finder(combined_pred):
     return deduplicated_combined_pred
 
 
-def regular_query(query: PlainQuery):
-    if not query.query.strip():
+def regular_query(query: str):
+    if not query.strip():
         # empty query
         return []
     chars_to_remove = """'"[]{}()\\/"""
     for char in chars_to_remove:
-        query.query = query.query.replace(char, '')
+        query = query.replace(char, '')
     response = requests.post(f"{QE_s.haystack_endpoint}search/",
-                             json={"query": query.query.strip()}).json()
+                             json={"query": query.strip()}).json()
     pipeline_predictions, query_time = response["result"], response["query_time"]
     combined_pred = combine_results_from_various_indices(pipeline_predictions, QE_s.all_weights)
 
