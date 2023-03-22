@@ -172,11 +172,7 @@ class QueryExpander:
         :return nearest_neighbours_for_spans:    List of strings, flattened from a list of lists -- where each nested
                                                  list holds neighbours of the input spans
         """
-        params = {
-            'data': spans,
-            'cosine_sim_threshold': 0.7,
-            'max_results': top_k
-        }
+
         response = requests.post(f"{self.classifier_url}get_neighbours/", json=params).json()
         return [nn for nn_list in response['neighbours'] for nn in nn_list]
 

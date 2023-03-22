@@ -26,6 +26,10 @@ class RetrievalSettings(BaseModel):
     neighbours: float = 1.0
     bm25_weight: float = 1.0
     top_k: int = 10
+    recreate_sparse_index: bool = False
+    recreate_dense_index: bool = False
+    ner_url: str = 'http://spar:8501/'
+    classifier_url: str = 'http://classifier:8502/'
 
 
 # Set up the Pipeline
@@ -65,6 +69,10 @@ def set_field_weights(retrieval_settings: RetrievalSettings):
     my_pipeline.fields_and_weights = new_fields_and_weights
     my_pipeline.indexing_type = retrieval_settings.indexing_type
     my_pipeline.top_k_per_retriever = retrieval_settings.top_k
+    my_pipeline.recreate_sparse_index = retrieval_settings.recreate_sparse_index
+    my_pipeline.recreate_dense_index = retrieval_settings.recreate_dense_index
+    my_pipeline.ner_url = retrieval_settings.ner_url
+    my_pipeline.classifier_url = retrieval_settings.classifier_url
 
     # re-init the sparse pipeline and retriever:
     if retrieval_settings.indexing_type in ['sparse', 'hybrid']:

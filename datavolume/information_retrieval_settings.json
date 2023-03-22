@@ -8,7 +8,7 @@
   "classifier_dir": "/data/classifier_data/",
   "IDF_path": "/data/classifier_data/IDF_values.json",
   "retrieval": {
-    "ner_url": "",               // set to empty "", "no" or "No" to avoid preprocessing labels
+    "ner_url": "no", // set to empty "", "no" or "No" to avoid preprocessing labels
     "classifier_url": "",  // set to empty "", "no" or "No" to avoid preprocessing neighbours
     "top_k": 10
   },

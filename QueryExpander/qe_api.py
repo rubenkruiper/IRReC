@@ -39,6 +39,8 @@ class Settings(BaseSettings):
     indexing_type: str = "hybrid"
     sparse_type: str = "bm25f"
     top_k: int = 10
+    recreate_sparse_index: bool = False
+    recreate_dense_index: bool = False
     fields_and_weights: FieldsAndWeights
     query_expansion: QueryExpansionWeights
 
@@ -68,6 +70,8 @@ class QueryExanderFromSettings:
         self.haystack_url = settings["query_expansion"]["haystack_url"]
         self.ner_url = settings["retrieval"]["ner_url"]
         self.classifier_url = settings["retrieval"]["classifier_url"]
+        if self.classifier_url not in ["", "no", "No", "None", "none"]:
+            requests.post(f"{self.classifier_url}train/")
         self.indexing_type = settings["indexing"]["sparse_settings"]["type"]
 
         self.fields_and_weights = settings["indexing"]["fields_to_index_and_weights"]
@@ -147,7 +151,12 @@ def update_weights(pydantic_settings: Settings = None) -> dict:
             "filtered_NER_labels_domains": pydantic_settings.fields_and_weights.filtered_NER_labels_domains,
             "neighbours": pydantic_settings.fields_and_weights.neighbours,
             "bm25_weight": pydantic_settings.fields_and_weights.bm25_weight,
-            "top_k": pydantic_settings.top_k
+            "top_k": pydantic_settings.top_k,
+            "recreate_sparse_index": pydantic_settings.recreate_sparse_index,
+            "recreate_dense_index": pydantic_settings.recreate_dense_index,
+            'ner_url': pydantic_settings.ner_url,
+            'classifier_url': pydantic_settings.classifier_url
+
         }
 
     r = requests.post(f"{QE_s.haystack_url}set_field_weights/", json=retriever_settings).json()
