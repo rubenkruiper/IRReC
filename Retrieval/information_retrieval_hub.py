@@ -251,8 +251,8 @@ class InformationRetrievalHub:
                     converted_document.write_document()
 
     def initialize_sparse_docstore(self, index_name: str):
-        fields = ["content", "doc_title", "SPaR_labels", "filtered_SPaR_labels",
-                  "filtered_SPaR_labels_domain", "neighbours"]
+        fields = ["content", "doc_title", "NER_labels", "filtered_NER_labels",
+                  "filtered_NER_labels_domains", "neighbours"]
 
         # 'skip', 'overwrite' or 'fail'
         duplicate_documents = 'overwrite' if self.recreate_sparse_index else 'skip'
@@ -270,9 +270,9 @@ class InformationRetrievalHub:
         if sparse_type == "bm25f":           # "combined_fields"]: dropped for now
             fields = [f"content^{self.fields_and_weights['content']}",
                       f"doc_title^{self.fields_and_weights['doc_title']}",
-                      f"SPaR_labels^{self.fields_and_weights['SPaR_labels']}",
-                      f"filtered_SPaR_labels^{self.fields_and_weights['filtered_SPaR_labels']}",
-                      f"filtered_SPaR_labels_domain^{self.fields_and_weights['filtered_SPaR_labels_domain']}",
+                      f"NER_labels^{self.fields_and_weights['NER_labels']}",
+                      f"filtered_NER_labels^{self.fields_and_weights['filtered_NER_labels']}",
+                      f"filtered_NER_labels_domains^{self.fields_and_weights['filtered_NER_labels_domains']}",
                       f"neighbours^{self.fields_and_weights['neighbours']}"]
 
             custom_query = {

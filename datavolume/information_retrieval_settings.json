@@ -29,7 +29,7 @@
     "sparse_settings": {
       "type": "bm25",  // bm25f with "bm25f", otherwise regular bm25
       "index_name": "bm25",
-      "recreate_sparse_index": false
+      "recreate_sparse_index": true
     },
     "dense_settings": {
       "recreate_dense_index":  false, // even if not recreating, reinitializing takes a lot of time

@@ -46,9 +46,9 @@ def apply_weights(result_dict: List[Any], weights: Dict[str, int]):
     """
     possible_fields = ['content', 'doc_title', 'NER_labels', 'filtered_NER_labels',
                        'filtered_NER_labels_domains', 'neighbours', 'bm25_weight']
-    results = ((field, predictions) for field, predictions in result_dict.items() if field not in possible_fields)
+    results = ((field, predictions) for field, predictions in result_dict.items() if field in possible_fields)
     for field_to_index, predictions in results:
-        if field_to_index == "bm25_weight":
+        if field_to_index.startswith("bm25"):
             field_to_index = "bm25"
         field_specific_weight = weights[field_to_index]
         for idx, pred in enumerate(predictions['documents']):
