@@ -88,13 +88,8 @@ class QueryExpander:
             candidates_and_weights["nearest_neighbours"] = {"candidates": nn_candidates,
                                                             "weight": self.nn_weight}
         if kg_candidates:
-            candidates_and_weights["kg_broader_terms"] = {"candidates": kg_candidates['broader_terms'],
-                                                          "weight": self.kg_broader_weight}
-            candidates_and_weights["kg_narrower_terms"] = {"candidates": kg_candidates['narrower_terms'],
-                                                           "weight": self.kg_narrower_weight}
-            candidates_and_weights["kg_alternative_matches"] = {"candidates": kg_candidates['other_labels'],
-                                                                "weight": self.kg_alternatives_weight}
-
+            candidates_and_weights["kg_candidates"] = {"candidates": kg_candidates,
+                                                       "weight": self.kg_weight}
         if prf_candidates_and_counts:
             candidates_and_weights["pseudo_relevant_terms"] = {
                 "candidates": [l for l, c in zip(*prf_candidates_and_counts)],
