@@ -24,7 +24,6 @@ class FieldsAndWeights(BaseSettings):
     filtered_NER_labels_domains: float = 1.0
     neighbours: float = 0.0
     bm25_weight: float = 1.0        # relative influence of BM25 results
-    top_k: int = 50
 
 
 class QueryExpansionWeights(BaseSettings):
@@ -39,18 +38,15 @@ class Settings(BaseSettings):
     classifier_url: str = 'http://classifier:8502/'
     indexing_type: str = "hybrid"
     sparse_type: str = "bm25f"
-    recreate_sparse_index: bool = False
-    recreate_dense_index: bool = False
     fields_and_weights: FieldsAndWeights
     query_expansion: QueryExpansionWeights
+    top_k: int = 50
 
 
 class QueryExanderFromSettings:
     def __init__(self):
         self.haystack_url, self.ner_url, self.classifier_url = None, None, None
         self.indexing_type = "hybrid"
-        self.recreate_sparse_index = False
-        self.recreate_dense_index = False
         self.fields_and_weights = {}
         # initialize which QE candidates/results to use
         self.prf_weight = 0         # relative influence of prf candidates
@@ -73,9 +69,6 @@ class QueryExanderFromSettings:
         self.ner_url = settings["retrieval"]["ner_url"]
         self.classifier_url = settings["retrieval"]["classifier_url"]
         self.indexing_type = settings["indexing"]["sparse_settings"]["type"]
-        # todo; are these even used now? I don't think so; neither do we want to update the haystack indices...
-        self.recreate_sparse_index = settings["indexing"]["sparse_settings"]["recreate_sparse_index"]
-        self.recreate_dense_index = settings["indexing"]["dense_settings"]["recreate_dense_index"]
 
         self.fields_and_weights = settings["indexing"]["fields_to_index_and_weights"]
         self.prf_weight = settings["query_expansion"]["prf_weight"]
@@ -113,20 +106,18 @@ def update_weights(pydantic_settings: Settings = None) -> dict:
     if not pydantic_settings:
         QE_s.update_from_file()
     else:
-        # TODO; change this dict! so it makes senese... or just load from file?
-        # TODO; change this dict! so it makes senese...
-        # TODO; change this dict! so it makes senese...
-        # TODO; change this dict! so it makes senese...
+        # condensed version of the settings that actually apply
         settings = {
-            'sparse_type': pydantic_settings.sparse_type,
-            'recreate_sparse_index': pydantic_settings.recreate_sparse_index,
-            'recreate_dense_index': pydantic_settings.recreate_dense_index,
             'retrieval': {
                 'ner_url': pydantic_settings.ner_url,
                 'classifier_url': pydantic_settings.classifier_url,
+                'top_k': pydantic_settings.top_k
             },
             'indexing': {
-                'sparse_settings': {'type': pydantic_settings.indexing_type}
+                'indexing_type':  pydantic_settings.sparse_type,
+                'sparse_settings': {
+                    'type': pydantic_settings.indexing_type
+                }
             },
             'query_expansion': {
                 'haystack_url': pydantic_settings.haystack_url,
