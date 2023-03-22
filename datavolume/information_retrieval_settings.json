@@ -65,7 +65,7 @@
     "metric": "cosine"
   },
   "query_expansion": {
-      "haystack_endpoint": "http://haystack:8500/",
+      "haystack_url": "http://haystack:8500/",
       "concept_extraction": "spar", // currently not providing other options
       "nearest_neighours": "yes", // simply yes no?
       "pseudo_relevance_feedback" : "no", // `yes` or `no`

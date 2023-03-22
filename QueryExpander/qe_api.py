@@ -34,9 +34,9 @@ class QueryExpansionWeights(BaseSettings):
 
 
 class Settings(BaseSettings):
-    haystack_endpoint: str = 'http://haystack:8500/'
-    ner_endpoint: str = 'http://spar:8501/'
-    classifier_endpoint: str = 'http://classifier:8502/'
+    haystack_url: str = 'http://haystack:8500/'
+    ner_url: str = 'http://spar:8501/'
+    classifier_url: str = 'http://classifier:8502/'
     indexing_type: str = "hybrid"
     sparse_type: str = "bm25f"
     recreate_sparse_index: bool = False
@@ -47,7 +47,7 @@ class Settings(BaseSettings):
 
 class QueryExanderFromSettings:
     def __init__(self):
-        self.haystack_endpoint, self.ner_endpoint, self.classifier_endpoint = None, None, None
+        self.haystack_url, self.ner_url, self.classifier_url = None, None, None
         self.indexing_type = "hybrid"
         self.recreate_sparse_index = False
         self.recreate_dense_index = False
@@ -58,7 +58,7 @@ class QueryExanderFromSettings:
         self.nn_weight = 0          # relative influence of NN candidates
 
         self.update_from_file()
-        self.QE_obj = QueryExpander(self.classifier_endpoint, self.ner_endpoint,
+        self.QE_obj = QueryExpander(self.classifier_url, self.ner_url,
                                     prf_weight=self.prf_weight,
                                     kg_weight=self.kg_weight,
                                     nn_weight=self.nn_weight)
@@ -69,19 +69,20 @@ class QueryExanderFromSettings:
         self.update_from_dict(settings_from_file)
 
     def update_from_dict(self, settings):
-        self.haystack_endpoint = settings["haystack_endpoint"]
-        self.ner_endpoint = settings["ner_endpoint"]
-        self.classifier_endpoint = settings["classifier_endpoint"]
-        self.indexing_type = settings["indexing_type"]
-        self.recreate_sparse_index = settings["recreate_sparse_index"]     # TODO are these even used? I don't think so
-        self.recreate_dense_index = settings["recreate_dense_index"]       # TODO are these even used? I don't think so
+        self.haystack_url = settings["query_expansion"]["haystack_url"]
+        self.ner_url = settings["retrieval"]["ner_url"]
+        self.classifier_url = settings["retrieval"]["classifier_url"]
+        self.indexing_type = settings["indexing"]["sparse_settings"]["type"]
+        # todo; are these even used now? I don't think so; neither do we want to update the haystack indices...
+        self.recreate_sparse_index = settings["indexing"]["sparse_settings"]["recreate_sparse_index"]
+        self.recreate_dense_index = settings["indexing"]["dense_settings"]["recreate_dense_index"]
 
         self.fields_and_weights = settings["indexing"]["fields_to_index_and_weights"]
         self.prf_weight = settings["query_expansion"]["prf_weight"]
         self.kg_weight = settings["query_expansion"]["kg_weight"]
         self.nn_weight = settings["query_expansion"]["nn_weight"]
 
-        self.QE_obj = QueryExpander(self.classifier_endpoint, self.ner_endpoint,
+        self.QE_obj = QueryExpander(self.classifier_url, self.ner_url,
                                     prf_weight=self.prf_weight,
                                     kg_weight=self.kg_weight,
                                     nn_weight=self.nn_weight)
@@ -117,14 +118,18 @@ def update_weights(pydantic_settings: Settings = None) -> dict:
         # TODO; change this dict! so it makes senese...
         # TODO; change this dict! so it makes senese...
         settings = {
-            'haystack_endpoint': pydantic_settings.haystack_endpoint,
-            'ner_endpoint': pydantic_settings.ner_endpoint,
-            'classifier_endpoint': pydantic_settings.classifier_endpoint,
-            'indexing_type': pydantic_settings.indexing_type,
             'sparse_type': pydantic_settings.sparse_type,
             'recreate_sparse_index': pydantic_settings.recreate_sparse_index,
             'recreate_dense_index': pydantic_settings.recreate_dense_index,
+            'retrieval': {
+                'ner_url': pydantic_settings.ner_url,
+                'classifier_url': pydantic_settings.classifier_url,
+            },
+            'indexing': {
+                'sparse_settings': {'type': pydantic_settings.indexing_type}
+            },
             'query_expansion': {
+                'haystack_url': pydantic_settings.haystack_url,
                 'prf_weight': pydantic_settings.query_expansion.prf_weight,
                 'kg_weight': pydantic_settings.query_expansion.kg_weight,
                 'nn_weight': pydantic_settings.query_expansion.nn_weight
@@ -141,7 +146,7 @@ def update_weights(pydantic_settings: Settings = None) -> dict:
         }
         QE_s.update_from_dict(settings)
 
-    r = requests.post(f"{QE_s.haystack_endpoint}set_field_weights/", json=QE_s.retrieval_settings).json()
+    r = requests.post(f"{QE_s.haystack_url}set_field_weights/", json=QE_s.retrieval_settings).json()
     r["prf_weight"] = QE_s.prf_weight
     r["kg_weight"] = QE_s.kg_weight
     r["nn_weight"] = QE_s.nn_weight
@@ -183,7 +188,7 @@ def regular_query(query: str):
     chars_to_remove = """'"[]{}()\\/"""
     for char in chars_to_remove:
         query = query.replace(char, '')
-    response = requests.post(f"{QE_s.haystack_endpoint}search/",
+    response = requests.post(f"{QE_s.haystack_url}search/",
                              json={"query": query.strip()}).json()
     pipeline_predictions, query_time = response["result"], response["query_time"]
     combined_pred = combine_results_from_various_indices(pipeline_predictions, QE_s.fields_and_weights)
@@ -216,7 +221,7 @@ def expanded_query_search(query: str) -> Dict:
     """
     IR using expanded query
     """
-    if QE_s.ner_endpoint in ["", "No", "no", "None", "none"]:
+    if QE_s.ner_url in ["", "No", "no", "None", "none"]:
         return {"query": "You do not have an NER endpoint set"}
 
     if QE_s.prf_weight:
