@@ -112,7 +112,7 @@ def update_weights(pydantic_settings: Settings = None) -> dict:
     if not pydantic_settings:
         QE_s.update_from_file()
     else:
-        # TODO; change this dict! so it makes senese... or just load from file
+        # TODO; change this dict! so it makes senese... or just load from file?
         # TODO; change this dict! so it makes senese...
         # TODO; change this dict! so it makes senese...
         # TODO; change this dict! so it makes senese...
@@ -122,11 +122,13 @@ def update_weights(pydantic_settings: Settings = None) -> dict:
             'classifier_endpoint': pydantic_settings.classifier_endpoint,
             'indexing_type': pydantic_settings.indexing_type,
             'sparse_type': pydantic_settings.sparse_type,
+            'recreate_sparse_index': pydantic_settings.recreate_sparse_index,
+            'recreate_dense_index': pydantic_settings.recreate_dense_index,
             'query_expansion': {
                 'prf_weight': pydantic_settings.query_expansion.prf_weight,
                 'kg_weight': pydantic_settings.query_expansion.kg_weight,
-                'nn_weight': pydantic_settings.query_expansion.nn_weight,
-                'bm25_weight': pydantic_settings.query_expansion.bm25_weight},
+                'nn_weight': pydantic_settings.query_expansion.nn_weight
+            },
             'fields_to_index_and_weights': {
                 'content': pydantic_settings.fields_and_weights.content,
                 'doc_title': pydantic_settings.fields_and_weights.doc_title,
@@ -134,7 +136,9 @@ def update_weights(pydantic_settings: Settings = None) -> dict:
                 'filtered_NER_labels': pydantic_settings.fields_and_weights.filtered_NER_labels,
                 'filtered_NER_labels_domains': pydantic_settings.fields_and_weights.filtered_NER_labels_domains,
                 'neighbours': pydantic_settings.fields_and_weights.neighbours,
-                'top_k': pydantic_settings.fields_and_weights.top_k}}
+                'bm25_weight': pydantic_settings.query_expansion.bm25_weight,
+                'top_k': pydantic_settings.fields_and_weights.top_k}
+        }
         QE_s.update_from_dict(settings)
 
     r = requests.post(f"{QE_s.haystack_endpoint}set_field_weights/", json=QE_s.retrieval_settings).json()
@@ -212,6 +216,9 @@ def expanded_query_search(query: str) -> Dict:
     """
     IR using expanded query
     """
+    if QE_s.ner_endpoint in ["", "No", "no", "None", "none"]:
+        return {"query": "You do not have an NER endpoint set"}
+
     if QE_s.prf_weight:
         combined_pred = regular_query(query)
         expanded_query, qe_insight = QE_s.QE_obj.expand_query(query, combined_pred)
