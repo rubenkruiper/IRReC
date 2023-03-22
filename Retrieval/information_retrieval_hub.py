@@ -1,16 +1,12 @@
-import glob
 import json
 import os
 import logging
-import itertools
 import pickle
-import time
 import requests
 import subprocess
 from tqdm import tqdm
 from typing import List, Dict
 from pathlib import Path
-from requests.adapters import HTTPAdapter, Retry
 
 # my utilities
 from utils.IDF_computer import IdfComputer

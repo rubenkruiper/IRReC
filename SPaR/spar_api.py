@@ -1,3 +1,4 @@
+import logging
 from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -5,6 +6,12 @@ from pydantic import BaseModel
 from spar_predictor import SparPredictor
 from allennlp.common.util import import_module_and_submodules
 import spar_serving_utils as su
+
+
+# set requests and urllib3 logging to Warnings only todo; not sure if this helps if implemented here only
+logging.getLogger("requests").setLevel(logging.WARNING)
+logging.getLogger("urllib3").setLevel(logging.WARNING)
+
 
 # Set up a SPaR.txt predictor
 import_module_and_submodules("spar_lib")

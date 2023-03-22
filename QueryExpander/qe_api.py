@@ -1,5 +1,6 @@
 import json5
 import requests
+import logging
 from urllib import parse
 
 from fastapi import FastAPI
@@ -8,6 +9,11 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from query_expander import QueryExpander
 from query_utils import *
+
+
+# set requests and urllib3 logging to Warnings only todo; not sure if this helps if implemented here only
+logging.getLogger("requests").setLevel(logging.WARNING)
+logging.getLogger("urllib3").setLevel(logging.WARNING)
 
 
 class FieldsAndWeights(BaseSettings):

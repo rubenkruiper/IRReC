@@ -1,5 +1,5 @@
 from typing import Optional, Dict, List, Union, Any
-import json5, pickle
+import json5, pickle, logging
 
 from pathlib import Path
 from fastapi import FastAPI, HTTPException, Query
@@ -9,6 +9,11 @@ from transformers import BertModel, BertTokenizer
 
 from embedder import Embedder
 from classifier import Classifier
+
+
+# set requests and urllib3 logging to Warnings only todo; not sure if this helps if implemented here only
+logging.getLogger("requests").setLevel(logging.WARNING)
+logging.getLogger("urllib3").setLevel(logging.WARNING)
 
 
 class Settings(BaseSettings):

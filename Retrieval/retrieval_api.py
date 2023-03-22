@@ -1,9 +1,13 @@
-import json5, time
+import json5, time, logging
 from typing import Optional
 from fastapi import FastAPI, Query
 from pydantic import Required, BaseModel
 
 from information_retrieval_hub import InformationRetrievalHub
+
+# set requests and urllib3 logging to Warnings only todo; not sure if this helps if implemented here only
+logging.getLogger("requests").setLevel(logging.WARNING)
+logging.getLogger("urllib3").setLevel(logging.WARNING)
 
 
 class RetrievalSettings(BaseModel):
