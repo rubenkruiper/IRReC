@@ -40,20 +40,21 @@ def split_doc_title_and_doc_id(doc_id, title):
     return identifier + " # " + title
 
 
-def apply_weights(pred_dict: List[Any], weights: Dict[str, int]):
+def apply_weights(result_dict: List[Any], weights: Dict[str, int]):
     """
     Applies field specific weights to scores of field specific results.
     """
     possible_fields = ['content', 'doc_title', 'NER_labels', 'filtered_NER_labels',
-                       'filtered_NER_labels_domains', 'neighbours']
-    for field_to_index, predictions in pred_dict.items() if field_to_index in possible_fields:
-        if field_to_index == "bm25f":
+                       'filtered_NER_labels_domains', 'neighbours', 'bm25_weight']
+    results = (field, predictions for field, predictions in result_dict.items() if field not in possible_fields)
+    for field_to_index, predictions in results:
+        if field_to_index == "bm25_weight":
             field_to_index = "bm25"
         field_specific_weight = weights[field_to_index]
         for idx, pred in enumerate(predictions['documents']):
-            pred_dict[field_to_index]['documents'][idx]['score'] = pred['score'] * field_specific_weight
+            result_dict[field_to_index]['documents'][idx]['score'] = pred['score'] * field_specific_weight
 
-    return pred_dict
+    return result_dict
 
 
 def combine_results_from_various_indices(pred_dict: List[Any], weights: Dict[str, int]):
