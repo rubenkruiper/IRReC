@@ -179,16 +179,18 @@ class QueryExpander:
         KG expansion → candidate set 2
         """
         query_nodes = [n for n in spans if n.lower() in self.lower_cased_nodes]
-        expanded_nodes_dict = {}
+        kg_neighbour_candidates = []
+        # expanded_nodes_dict = {}  # todo consider grouping QE candidates per span?
         for node in query_nodes:
-            NNs = []
+            kg_neighbours = []
             for n in self.network.neighbors(node):
                 distance = self.network.get_edge_data(node, n)
                 # negative degree; so we sort them with highest degree first (most common terms)
-                NNs.append([distance['weight'], -self.network.degree[n], n])
+                kg_neighbours.append([distance['weight'], -self.network.degree[n], n])
 
-            expanded_nodes_dict[node] = [n for distance, degree, n in sorted(NNs)[:top_k]]
-        return expanded_nodes_dict
+            # expanded_nodes_dict[node] = [n for distance, degree, n in sorted(kg_neighbours)[:top_k]]
+            kg_neighbour_candidates += [n for distance, degree, n in sorted(kg_neighbours)[:top_k]]
+        return kg_neighbour_candidates
 
     def pseudo_relevance_feedback(self, initial_search_results, spans):
         """
