@@ -102,8 +102,7 @@ class QueryExpander:
             current_candidates_counter = Counter()
             qe_insight[k] = {'weight': v['weight']}
             for idx, candidate in enumerate(v['candidates']):
-                url_candidate = parse.quote(candidate)
-                response = requests.get(f"{self.classifier_url}get_idf_weights/{url_candidate}")
+                response = requests.get(f"{self.classifier_url}get_idf_weights/", json={"spans": candidate})
                 if response:
                     idf_weights = response.json()["idf_weights"]
                     # assuming average IDF weights over the tokens for now

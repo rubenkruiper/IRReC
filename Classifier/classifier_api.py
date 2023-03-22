@@ -200,13 +200,18 @@ def get_neighbours(to_be_predicted: ToPredict):
     return {'neighbours': []}
 
 
-@Classifier_api.get("/get_idf_weights/")
-def get_idf_weights(input_str: Optional[str] = Query(default=Required, max_length=1000)):
+@Classifier_api.post("/get_idf_weights/")
+def get_idf_weights(input_span: ToPredict):
     """
     Returns the query and it's corresponding idf_weights
     """
-    if input_str:
-        tokens, indices = hub.embedder.prepare_tokens(input_str)
+    if type(input_span.spans) == list:
+        span = input_span.spans[0]
+    else:
+        span = input_span.spans
+
+    if span:
+        tokens, indices = hub.embedder.prepare_tokens(span)
         idf_weights = hub.embedder.get_idf_weights_for_indices(tokens, indices).tolist()
         return {"idf_weights": idf_weights}
     return {"idf_weights": []}
