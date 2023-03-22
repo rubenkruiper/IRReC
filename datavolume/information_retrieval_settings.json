@@ -10,13 +10,13 @@
   "retrieval": {
     "ner_url": "no", // set to empty "", "no" or "No" to avoid preprocessing labels
     "classifier_url": "",  // set to empty "", "no" or "No" to avoid preprocessing neighbours
-    "top_k": 10
+    "top_k": 15
   },
   "filtering": {
       "regex_filter": "yes", // Yes, Y, yes or y means the regex filter will run (recommended)
   },
   "indexing": {
-    "indexing_type": "sparse", // `sparse`, `hybrid` or `dense`
+    "indexing_type": "hybrid", // `sparse`, `hybrid` or `dense`
     "fields_to_index_and_weights": {
       "content": 2,
       "doc_title":  1.0,
@@ -29,10 +29,10 @@
     "sparse_settings": {
       "type": "bm25",  // bm25f with "bm25f", otherwise regular bm25
       "index_name": "bm25",
-      "recreate_sparse_index": false
+      "recreate_sparse_index": true
     },
     "dense_settings": {
-      "recreate_dense_index":  false, // even if not recreating, reinitializing takes a lot of time
+      "recreate_dense_index":  true, // even if not recreating, reinitializing takes a lot of time
       "weigh_fields": true,
       "model_format": "transformers",
       "hidden_dims": 768,
@@ -70,7 +70,7 @@
       "nearest_neighours": "yes", // simply yes no?
       "pseudo_relevance_feedback" : "no", // `yes` or `no`
       "prf_weight": 0,
-      "kg_weight": 0,
-      "nn_weight": 2
+      "kg_weight": 2,
+      "nn_weight": 1
   }
 }
