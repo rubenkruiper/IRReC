@@ -154,7 +154,8 @@ class QueryExpander:
         :param initial_query:   String that holds the original input query.
         :return spans:    List of objects (strings) identified in the query using SPaR.txt
         """
-        response = requests.get(f"{self.ner_url}predict_objects/", json=initial_query).json()
+        response = requests.post(f"{self.ner_url}predict_objects/",
+                                 json={"sentence": initial_query}).json()
         try:
             return response['prediction']['obj']
         except KeyError as e:
