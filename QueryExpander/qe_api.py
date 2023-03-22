@@ -136,7 +136,7 @@ def update_weights(pydantic_settings: Settings = None) -> dict:
                 'filtered_NER_labels': pydantic_settings.fields_and_weights.filtered_NER_labels,
                 'filtered_NER_labels_domains': pydantic_settings.fields_and_weights.filtered_NER_labels_domains,
                 'neighbours': pydantic_settings.fields_and_weights.neighbours,
-                'bm25_weight': pydantic_settings.query_expansion.bm25_weight,
+                'bm25_weight': pydantic_settings.fields_and_weights.bm25_weight,
                 'top_k': pydantic_settings.fields_and_weights.top_k}
         }
         QE_s.update_from_dict(settings)
