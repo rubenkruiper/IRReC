@@ -115,6 +115,15 @@ def update_weights(pydantic_settings: Settings = None) -> dict:
                 'indexing_type':  pydantic_settings.sparse_type,
                 'sparse_settings': {
                     'type': pydantic_settings.indexing_type
+                },
+                'fields_to_index_and_weights': {
+                    'content': pydantic_settings.fields_and_weights.content,
+                    'doc_title': pydantic_settings.fields_and_weights.doc_title,
+                    'NER_labels': pydantic_settings.fields_and_weights.NER_labels,
+                    'filtered_NER_labels': pydantic_settings.fields_and_weights.filtered_NER_labels,
+                    'filtered_NER_labels_domains': pydantic_settings.fields_and_weights.filtered_NER_labels_domains,
+                    'neighbours': pydantic_settings.fields_and_weights.neighbours,
+                    'bm25_weight': pydantic_settings.fields_and_weights.bm25_weight
                 }
             },
             'query_expansion': {
@@ -122,15 +131,6 @@ def update_weights(pydantic_settings: Settings = None) -> dict:
                 'prf_weight': pydantic_settings.query_expansion.prf_weight,
                 'kg_weight': pydantic_settings.query_expansion.kg_weight,
                 'nn_weight': pydantic_settings.query_expansion.nn_weight
-            },
-            'fields_to_index_and_weights': {
-                'content': pydantic_settings.fields_and_weights.content,
-                'doc_title': pydantic_settings.fields_and_weights.doc_title,
-                'NER_labels': pydantic_settings.fields_and_weights.NER_labels,
-                'filtered_NER_labels': pydantic_settings.fields_and_weights.filtered_NER_labels,
-                'filtered_NER_labels_domains': pydantic_settings.fields_and_weights.filtered_NER_labels_domains,
-                'neighbours': pydantic_settings.fields_and_weights.neighbours,
-                'bm25_weight': pydantic_settings.fields_and_weights.bm25_weight
             }
         }
         QE_s.update_from_dict(settings)
