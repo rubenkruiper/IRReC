@@ -40,7 +40,6 @@ class Settings(BaseSettings):
     sparse_type: str = "bm25f"
     fields_and_weights: FieldsAndWeights
     query_expansion: QueryExpansionWeights
-    top_k: int = 50
 
 
 class QueryExanderFromSettings:
@@ -110,8 +109,7 @@ def update_weights(pydantic_settings: Settings = None) -> dict:
         settings = {
             'retrieval': {
                 'ner_url': pydantic_settings.ner_url,
-                'classifier_url': pydantic_settings.classifier_url,
-                'top_k': pydantic_settings.top_k
+                'classifier_url': pydantic_settings.classifier_url
             },
             'indexing': {
                 'indexing_type':  pydantic_settings.sparse_type,
@@ -132,8 +130,8 @@ def update_weights(pydantic_settings: Settings = None) -> dict:
                 'filtered_NER_labels': pydantic_settings.fields_and_weights.filtered_NER_labels,
                 'filtered_NER_labels_domains': pydantic_settings.fields_and_weights.filtered_NER_labels_domains,
                 'neighbours': pydantic_settings.fields_and_weights.neighbours,
-                'bm25_weight': pydantic_settings.fields_and_weights.bm25_weight,
-                'top_k': pydantic_settings.fields_and_weights.top_k}
+                'bm25_weight': pydantic_settings.fields_and_weights.bm25_weight
+            }
         }
         QE_s.update_from_dict(settings)
 
