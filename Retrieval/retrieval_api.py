@@ -24,7 +24,7 @@ class RetrievalSettings(BaseModel):
     filtered_NER_labels: float = 1.0
     filtered_NER_labels_domains: float = 1.0
     neighbours: float = 1.0
-    bm25: float = 1.0
+    bm25_weight: float = 1.0
     top_k: int = 10
 
 

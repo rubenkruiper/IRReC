@@ -38,6 +38,7 @@ class Settings(BaseSettings):
     classifier_url: str = 'http://classifier:8502/'
     indexing_type: str = "hybrid"
     sparse_type: str = "bm25f"
+    top_k: int = 10
     fields_and_weights: FieldsAndWeights
     query_expansion: QueryExpansionWeights
 
@@ -109,7 +110,8 @@ def update_weights(pydantic_settings: Settings = None) -> dict:
         settings = {
             'retrieval': {
                 'ner_url': pydantic_settings.ner_url,
-                'classifier_url': pydantic_settings.classifier_url
+                'classifier_url': pydantic_settings.classifier_url,
+                "top_k": pydantic_settings.top_k
             },
             'indexing': {
                 'indexing_type':  pydantic_settings.sparse_type,
@@ -135,7 +137,20 @@ def update_weights(pydantic_settings: Settings = None) -> dict:
         }
         QE_s.update_from_dict(settings)
 
-    r = requests.post(f"{QE_s.haystack_url}set_field_weights/", json=QE_s.retrieval_settings).json()
+        retriever_settings = {
+            "indexing_type": pydantic_settings.indexing_type,
+            "sparse_type": pydantic_settings.sparse_type,
+            "content": pydantic_settings.fields_and_weights.content,
+            "doc_title": pydantic_settings.fields_and_weights.doc_title,
+            "NER_labels": pydantic_settings.fields_and_weights.NER_labels,
+            "filtered_NER_labels": pydantic_settings.fields_and_weights.filtered_NER_labels,
+            "filtered_NER_labels_domains": pydantic_settings.fields_and_weights.filtered_NER_labels_domains,
+            "neighbours": pydantic_settings.fields_and_weights.neighbours,
+            "bm25_weight": pydantic_settings.fields_and_weights.bm25_weight,
+            "top_k": pydantic_settings.top_k
+        }
+
+    r = requests.post(f"{QE_s.haystack_url}set_field_weights/", json=retriever_settings).json()
     r["prf_weight"] = QE_s.prf_weight
     r["kg_weight"] = QE_s.kg_weight
     r["nn_weight"] = QE_s.nn_weight
