@@ -42,7 +42,8 @@ class Settings(BaseSettings):
     classifier_endpoint: str = 'http://classifier:8502/'
     indexing_type: str = "hybrid"
     sparse_type: str = "bm25f"
-    recreate_index: bool = False
+    recreate_sparse_index: bool = False
+    recreate_dense_index: bool = False
     bm25_weight: float = 1.0
     fields_and_weights: FieldsAndWeights
     query_expansion: QueryExpansionWeights
@@ -52,7 +53,8 @@ class QueryExanderFromSettings:
     def __init__(self):
         self.haystack_endpoint, self.ner_endpoint, self.classifier_endpoint = None, None, None
         self.indexing_type = "hybrid"
-        self.recreate_index = False
+        self.recreate_sparse_index = False
+        self.recreate_dense_index = False
         self.fields_and_weights = {}
         # initialize which QE candidates/results to use
         self.prf_weight = 0         # relative influence of prf candidates
@@ -77,7 +79,8 @@ class QueryExanderFromSettings:
         self.ner_endpoint = settings["retrieval"]["ner_url"]
         self.classifier_endpoint = settings["retrieval"]["classifier_url"]
         self.indexing_type = settings["indexing"]["sparse_settings"]["type"]
-        self.recreate_index = settings["indexing"]["sparse_settings"]["recreate_index"]
+        self.recreate_index = settings["indexing"]["sparse_settings"]["recreate_sparse_index"]
+        self.recreate_index = settings["indexing"]["dense_settings"]["recreate_dense_index"]
 
         self.fields_and_weights = settings["indexing"]["fields_to_index_and_weights"]
         self.prf_weight = settings["query_expansion"]["prf_weight"]
