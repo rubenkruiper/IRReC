@@ -4,7 +4,7 @@ import logging
 from urllib import parse
 
 from fastapi import FastAPI
-from pydantic import BaseSettings
+from pydantic import BaseSettings, BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
 from query_expander import QueryExpander
@@ -14,6 +14,10 @@ from query_utils import *
 # set requests and urllib3 logging to Warnings only todo; not sure if this helps if implemented here only
 logging.getLogger("requests").setLevel(logging.WARNING)
 logging.getLogger("urllib3").setLevel(logging.WARNING)
+
+
+class PlainQuery(BaseModel):
+    query: str
 
 
 class FieldsAndWeights(BaseSettings):
@@ -173,13 +177,15 @@ def quick_duplicate_finder(combined_pred):
     return deduplicated_combined_pred
 
 
-def regular_query(query):
-    if not query.strip():
+def regular_query(query: PlainQuery):
+    if not query.query.strip():
         # empty query
         return []
-    query = query.replace('"', '').replace("'", '').replace('(', '').replace(')', '').replace('/', '').replace('\\', '')
-    url_query = parse.quote(query)
-    response = requests.get(f"{QE_s.haystack_endpoint}search/{url_query}").json()
+    chars_to_remove = """'"[]{}()\\/"""
+    for char in chars_to_remove:
+        query.query = query.query.replace(char, '')
+    response = requests.post(f"{QE_s.haystack_endpoint}search/",
+                             json={"query": query.query.strip()}).json()
     pipeline_predictions, query_time = response["result"], response["query_time"]
     combined_pred = combine_results_from_various_indices(pipeline_predictions, QE_s.all_weights)
 

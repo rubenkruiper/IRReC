@@ -84,15 +84,15 @@ class InformationRetrievalHub:
         # determine the type of indexing, which fields to index, and the name of the index
         self.indexing_type = configs["indexing"]["indexing_type"]  # sparse, hybrid or dense
         self.fields_and_weights = configs["indexing"]["fields_to_index_and_weights"]
-        self.recreate_index = configs["indexing"]["recreate_index"]
         if self.indexing_type in ['hybrid', 'sparse']:
             self.sparse_type = configs["indexing"]["sparse_settings"]["type"]  # multi_match or plain
             self.sparse_index_name = configs["indexing"]["sparse_settings"]["index_name"]
-            self.recreate_sparse_index = configs["indexing"]["sparse_settings"]["recreate_index"]
+            self.recreate_sparse_index = configs["indexing"]["sparse_settings"]["recreate_sparse_index"]
 
         # whether to apply weights to the fields indexed with FAISS
         self.dense_field_weights = configs["indexing"]["dense_settings"]["weigh_fields"]
         if self.indexing_type in ['hybrid', 'dense']:
+            self.recreate_dense_index = configs["indexing"]["dense_settings"]["recreate_dense_index"]
             # dense config: FAISS standard configs from Retrieval
             self.hidden_dims = configs["indexing"]["dense_settings"]["hidden_dims"]
             self.faiss_index_type = configs["indexing"]["dense_settings"]["faiss_index"]
@@ -185,31 +185,32 @@ class InformationRetrievalHub:
                 all_NER_labels += labels_in_document
 
             # group all the (cleaned) terms extracted for a corpus and store for classification later
-            cleaned_terms = self.preprocessor.cleaning_helper(all_NER_labels)
-            with open(term_output_path, 'wb') as f:
-                pickle.dump(cleaned_terms, f)
-            filtered_labels = set(cleaned_terms)
-        else:
-            filtered_labels = set(pickle.load(open(term_output_path, 'rb')))
-
-        # (2) identify which NER labels remain after cleaning
-        logger.info("[Preprocessor] Retaining the filtered/cleaned SPaR.txt labels separately.")
-        for filepath in tqdm(converted_document_filepaths):
-            processed_document = CustomDocument.load_document(filepath)
-            if any([len(c.filtered_NER_labels) > 1 for c in processed_document.all_contents]):
-                logger.info("[Filtering] Skipping filtering, since filtered labels found in: {}".format(
-                    processed_document.output_fp
-                ))
+            if not term_output_path.exists():
+                cleaned_terms = self.preprocessor.cleaning_helper(all_NER_labels)
+                with open(term_output_path, 'wb') as f:
+                    pickle.dump(cleaned_terms, f)
+                filtered_labels = set(cleaned_terms)
             else:
-                logger.info("[Filtering] Running regex and IDF-based filters on SPaR labels.")
-                # Filtering based on regex and IDF
-                for idx, content in enumerate(processed_document.all_contents):
-                    if content.NER_labels:
-                        # update the document in place
-                        only_keep_filtered = [l for l in content.NER_labels if l in filtered_labels]
-                        processed_document.all_contents[idx].set_filtered_ner_labels(only_keep_filtered)
-                # update stored file
-                processed_document.write_document()
+                filtered_labels = set(pickle.load(open(term_output_path, 'rb')))
+
+            # (2) identify which NER labels remain after cleaning
+            logger.info("[Preprocessor] Retaining the filtered/cleaned SPaR.txt labels separately.")
+            for filepath in tqdm(converted_document_filepaths):
+                processed_document = CustomDocument.load_document(filepath)
+                if any([len(c.filtered_NER_labels) > 1 for c in processed_document.all_contents]):
+                    logger.info("[Filtering] Skipping filtering, since filtered labels found in: {}".format(
+                        processed_document.output_fp
+                    ))
+                else:
+                    logger.info("[Filtering] Running regex and IDF-based filters on SPaR labels.")
+                    # Filtering based on regex and IDF
+                    for idx, content in enumerate(processed_document.all_contents):
+                        if content.NER_labels:
+                            # update the document in place
+                            only_keep_filtered = [l for l in content.NER_labels if l in filtered_labels]
+                            processed_document.all_contents[idx].set_filtered_ner_labels(only_keep_filtered)
+                    # update stored file
+                    processed_document.write_document()
 
     def expand_documents(self, converted_documents_dir: Path):
         """
@@ -225,7 +226,7 @@ class InformationRetrievalHub:
         if self.classifier_url not in ["no", "No", "None", "none", ""]:
             # make sure the classifier is trained, or the previously trained model is loaded
             requests.post(f"{self.classifier_url}train/")
-            
+
             for converted_document_filepath in converted_document_filepaths:
                 converted_document = CustomDocument.load_document(converted_document_filepath)
                 # make sure neighbours do not exist anywhere yet
@@ -346,7 +347,7 @@ class InformationRetrievalHub:
         faiss_sql_doc_store = f'/data/indexes/{field_to_index}_document_store.db'
 
         # Prepare FAISS DocumentStore for dense indexing
-        if os.path.exists(faiss_index_path) and not self.recreate_index:
+        if os.path.exists(faiss_index_path) and not self.recreate_dense_index:
             save_updated_document_store = False
             dense_document_store = FAISSDocumentStore.load(index_path=faiss_index_path)
         else:

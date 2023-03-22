@@ -10,6 +10,11 @@ logging.getLogger("requests").setLevel(logging.WARNING)
 logging.getLogger("urllib3").setLevel(logging.WARNING)
 
 
+
+class PlainQuery(BaseModel):
+    query: str
+
+
 class RetrievalSettings(BaseModel):
     indexing_type: str = "hybrid"
     sparse_type: str = "bm25f"
@@ -34,10 +39,10 @@ my_pipeline.set_up_pipelines()
 Retrieval_api = FastAPI()
 
 
-@Retrieval_api.get("/search/{input_str}")
-def search(input_str: Optional[str] = Query(default=Required, max_length=1000)):
+@Retrieval_api.post("/search/")
+def search(query: PlainQuery):
     start_time = time.time()
-    result = my_pipeline.run_query(input_str)
+    result = my_pipeline.run_query(query.query)
     query_time = time.time() - start_time
     return {"result": result, "query_time": query_time}
 

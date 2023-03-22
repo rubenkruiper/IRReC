@@ -17,7 +17,6 @@
   },
   "indexing": {
     "indexing_type": "sparse", // `sparse`, `hybrid` or `dense`
-    "recreate_index":  true,
     "fields_to_index_and_weights": {
       "content": 2,
       "doc_title":  1.0,
@@ -29,9 +28,10 @@
     "sparse_settings": {
       "type": "bm25",  // bm25f with "bm25f", otherwise regular bm25
       "index_name": "bm25",
-      "recreate_index": true
+      "recreate_sparse_index": false
     },
     "dense_settings": {
+      "recreate_dense_index":  false, // even if not recreating, reinitializing takes a lot of time
       "weigh_fields": true,
       "model_format": "transformers",
       "hidden_dims": 768,
