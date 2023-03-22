@@ -161,7 +161,7 @@ class QueryExpander:
         except KeyError as e:
             raise Exception(e, f"NER labeling issue for {initial_query}\n -->{response}")
 
-    def nearest_neighbours(self, spans: List[str], top_k=3) -> List[str]:
+    def nearest_neighbours(self, spans: List[str], top_k: int = 3) -> List[str]:
         """
         identify nearest neighbours → candidate set 1
         As the input consists of a list of strings, the output would be a list of lists; I think
@@ -169,12 +169,14 @@ class QueryExpander:
         we
 
         :param spans:   List of strings, representing objects that SPaR identified in the query
+        :param top_k:   Max nr of neighbours to identify as candidate, per span.
         :return nearest_neighbours_for_spans:    List of strings, flattened from a list of lists -- where each nested
                                                  list holds neighbours of the input spans
         """
 
-        response = requests.post(f"{self.classifier_url}get_neighbours/", json=params).json()
-        return [nn for nn_list in response['neighbours'] for nn in nn_list]
+        response = requests.post(f"{self.classifier_url}get_neighbours/",
+                                 json={"spans": spans}).json()
+        return [nn for nn_list in response['neighbours'] for nn in nn_list[:top_k]]
 
     def span_KG_mapping(self, spans: List[str], top_k: int = 3):
         """
