@@ -122,10 +122,10 @@ class RetrievedContent:
         self.doc_title = content_dict['meta']['doc_title']
         self.split_size = content_dict['meta']['split_size']
         self.split_id = content_dict['meta']['split_id']
-        self.SPaR_labels = content_dict['meta']['SPaR_labels']
-        self.filtered_SPaR_labels = content_dict['meta']['filtered_SPaR_labels']
-        self.cluster_neighbours = content_dict['meta']['cluster_neighbours']
-        self.cluster_filtered = content_dict['meta']['cluster_filtered']
+        self.NER_labels = content_dict['meta']['NER_labels']
+        self.filtered_NER_labels = content_dict['meta']['filtered_NER_labels']
+        self.filtered_NER_labels_domains = content_dict['meta']['filtered_NER_labels_domains']
+        self.neighbours = content_dict['meta']['neighbours']
 
     def as_dict(self):
         """ Convert back to dict again... """
@@ -138,10 +138,10 @@ class RetrievedContent:
             "doc_title": self.doc_title,
             "split_size": self.split_size,
             "split_id": self.split_id,
-            "SPaR_labels": self.SPaR_labels,
-            "filtered_SPaR_labels": self.filtered_SPaR_labels,
-            "cluster_neighbours": self.cluster_neighbours,
-            "cluster_filtered": self.cluster_filtered
+            "NER_labels": self.NER_labels,
+            "filtered_NER_labels": self.filtered_NER_labels,
+            "filtered_NER_labels_domains": self.filtered_NER_labels_domains,
+            "neighbours": self.neighbours
         }
 
 
@@ -151,7 +151,7 @@ class RetrievedDoc:
                  content_dict,
                  score,
                  retrieval_field,
-                 label_types=["SPaR_labels", "filtered_SPaR_labels", "cluster_neighbours", "cluster_filtered"]):
+                 label_types=["NER_labels", "filtered_NER_labels", "filtered_NER_labels_domains", "neighbours"]):
         # Aggregated stats for document
         self.doc_title = doc_title
         self.potential_id = self.find_document_identifier(doc_title)
