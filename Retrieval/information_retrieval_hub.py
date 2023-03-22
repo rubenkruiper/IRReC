@@ -142,8 +142,6 @@ class InformationRetrievalHub:
         self.preprocess_inputs(self.background_output_dir, self.classifier_dir.joinpath(self.background_terms_filename))
 
         # (4) SPaR.txt is done, we'll do some domain classification and find NNs
-        # todo; do I want to pass specific settings here? json= {'num_neighbours':x, etc...}
-        requests.post(f"{self.classifier_url}train/")
         self.expand_documents(self.foreground_output_dir)
 
     def preprocess_inputs(self,
@@ -225,6 +223,9 @@ class InformationRetrievalHub:
         converted_document_filepaths = [filepath for filepath in converted_documents_dir.glob("*.json")]
 
         if self.classifier_url not in ["no", "No", "None", "none", ""]:
+            # make sure the classifier is trained, or the previously trained model is loaded
+            requests.post(f"{self.classifier_url}train/")
+            
             for converted_document_filepath in converted_document_filepaths:
                 converted_document = CustomDocument.load_document(converted_document_filepath)
                 # make sure neighbours do not exist anywhere yet
