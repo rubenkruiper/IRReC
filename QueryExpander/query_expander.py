@@ -183,7 +183,7 @@ class QueryExpander:
         """
         KG expansion → candidate set 2
         """
-        query_nodes = [n for n in spans if n.lower() in self.lowercased_nodes]
+        query_nodes = [n for n in spans if n.lower() in self.lower_cased_nodes]
         expanded_nodes_dict = {}
         for node in query_nodes:
             NNs = []
