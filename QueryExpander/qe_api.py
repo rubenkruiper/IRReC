@@ -69,12 +69,12 @@ class QueryExanderFromSettings:
         self.update_from_dict(settings_from_file)
 
     def update_from_dict(self, settings):
-        self.haystack_endpoint = settings["query_expansion"]["haystack_endpoint"]
-        self.ner_endpoint = settings["retrieval"]["ner_url"]
-        self.classifier_endpoint = settings["retrieval"]["classifier_url"]
-        self.indexing_type = settings["indexing"]["sparse_settings"]["type"]
-        self.recreate_index = settings["indexing"]["sparse_settings"]["recreate_sparse_index"]
-        self.recreate_index = settings["indexing"]["dense_settings"]["recreate_dense_index"]
+        self.haystack_endpoint = settings["haystack_endpoint"]
+        self.ner_endpoint = settings["ner_endpoint"]
+        self.classifier_endpoint = settings["classifier_endpoint"]
+        self.indexing_type = settings["indexing_type"]
+        self.recreate_sparse_index = settings["recreate_sparse_index"]     # TODO are these even used? I don't think so
+        self.recreate_dense_index = settings["recreate_dense_index"]       # TODO are these even used? I don't think so
 
         self.fields_and_weights = settings["indexing"]["fields_to_index_and_weights"]
         self.prf_weight = settings["query_expansion"]["prf_weight"]
