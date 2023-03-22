@@ -23,6 +23,7 @@ class FieldsAndWeights(BaseSettings):
     filtered_NER_labels: float = 0.0
     filtered_NER_labels_domains: float = 1.0
     neighbours: float = 0.0
+    bm25_weight: float = 1.0        # relative influence of BM25 results
     top_k: int = 50
 
 
@@ -40,7 +41,6 @@ class Settings(BaseSettings):
     sparse_type: str = "bm25f"
     recreate_sparse_index: bool = False
     recreate_dense_index: bool = False
-    bm25_weight: float = 1.0
     fields_and_weights: FieldsAndWeights
     query_expansion: QueryExpansionWeights
 
@@ -56,14 +56,12 @@ class QueryExanderFromSettings:
         self.prf_weight = 0         # relative influence of prf candidates
         self.kg_weight = 0          # relative influence of KG candidates
         self.nn_weight = 0          # relative influence of NN candidates
-        self.bm25_weight = 1        # relative influence of BM25 results
 
         self.update_from_file()
         self.QE_obj = QueryExpander(self.classifier_endpoint, self.ner_endpoint,
                                     prf_weight=self.prf_weight,
                                     kg_weight=self.kg_weight,
-                                    nn_weight=self.nn_weight,
-                                    bm25_weight=self.bm25_weight)
+                                    nn_weight=self.nn_weight)
 
     def update_from_file(self):
         with open("/data/information_retrieval_settings.json") as f:
@@ -82,13 +80,11 @@ class QueryExanderFromSettings:
         self.prf_weight = settings["query_expansion"]["prf_weight"]
         self.kg_weight = settings["query_expansion"]["kg_weight"]
         self.nn_weight = settings["query_expansion"]["nn_weight"]
-        self.bm25_weight = settings["query_expansion"]["bm25_weight"]
 
         self.QE_obj = QueryExpander(self.classifier_endpoint, self.ner_endpoint,
                                     prf_weight=self.prf_weight,
                                     kg_weight=self.kg_weight,
-                                    nn_weight=self.nn_weight,
-                                    bm25_weight=self.bm25_weight)
+                                    nn_weight=self.nn_weight)
 
 
 # Set up the Query Expander object from settings file, as well as the API
@@ -186,7 +182,7 @@ def regular_query(query: str):
     response = requests.post(f"{QE_s.haystack_endpoint}search/",
                              json={"query": query.strip()}).json()
     pipeline_predictions, query_time = response["result"], response["query_time"]
-    combined_pred = combine_results_from_various_indices(pipeline_predictions, QE_s.all_weights)
+    combined_pred = combine_results_from_various_indices(pipeline_predictions, QE_s.fields_and_weights)
 
     # remove duplicate results, if any
     combined_pred = quick_duplicate_finder(combined_pred)

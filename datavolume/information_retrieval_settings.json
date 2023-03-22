@@ -23,7 +23,8 @@
       "NER_labels":  1.0,
       "filtered_NER_labels":  1.0,
       "filtered_NER_labels_domains":  1.0,
-      "neighbours":  1.0
+      "neighbours":  1.0,
+      "bm25_weight": 1
     },
     "sparse_settings": {
       "type": "bm25",  // bm25f with "bm25f", otherwise regular bm25
@@ -70,7 +71,6 @@
       "pseudo_relevance_feedback" : "no", // `yes` or `no`
       "prf_weight": 0,
       "kg_weight": 0,
-      "nn_weight": 2,
-      "bm25_weight": 1
+      "nn_weight": 2
   }
 }

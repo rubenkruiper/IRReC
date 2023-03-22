@@ -44,7 +44,9 @@ def apply_weights(pred_dict: List[Any], weights: Dict[str, int]):
     """
     Applies field specific weights to scores of field specific results.
     """
-    for field_to_index, predictions in pred_dict.items():
+    possible_fields = ['content', 'doc_title', 'NER_labels', 'filtered_NER_labels',
+                       'filtered_NER_labels_domains', 'neighbours']
+    for field_to_index, predictions in pred_dict.items() if field_to_index in possible_fields:
         if field_to_index == "bm25f":
             field_to_index = "bm25"
         field_specific_weight = weights[field_to_index]

@@ -15,15 +15,13 @@ class QueryExpander:
                  ner_url: str,
                  prf_weight=0,
                  kg_weight=0,
-                 nn_weight=0,
-                 bm25_weight=1):
+                 nn_weight=0):
         self.ner_url = ner_url
         self.classifier_url = classifier_url
 
         self.prf_weight = prf_weight
         self.kg_weight = kg_weight
         self.nn_weight = nn_weight
-        self.bm25_weight = bm25_weight
 
         # todo - create this graph from the IR system; too much work for now
         self.network = pickle.load(open("/data/undirected_weighted_graph.pkl", 'rb'))
