@@ -154,12 +154,11 @@ class QueryExpander:
         :param initial_query:   String that holds the original input query.
         :return spans:    List of objects (strings) identified in the query using SPaR.txt
         """
-        url_query = parse.quote(initial_query)
-        response = requests.get(f"{self.ner_url}predict_objects/{url_query}").json()
+        response = requests.get(f"{self.ner_url}predict_objects/", json=initial_query).json()
         try:
             return response['prediction']['obj']
         except KeyError as e:
-            raise Exception(e, f"{self.ner_url}predict_objects/{url_query} \n\t gives key 'prediction' not in {response}")
+            raise Exception(e, f"NER labeling issue for {initial_query}\n -->{response}")
 
     def nearest_neighbours(self, spans: List[str], top_k=3) -> List[str]:
         """
