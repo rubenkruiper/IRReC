@@ -113,8 +113,11 @@ class InformationRetrievalHub:
             self.pipelines['bm25'], self.pipelines['bm25f'] = self.set_up_sparse_pipelines(self.recreate_sparse_index)
 
         if self.indexing_type in ['dense', 'hybrid']:
-            for field_to_index in self.fields_and_weights.keys():
-                # set up a pipeline for each dense index
+            for field_to_index, weight in self.fields_and_weights.items():
+                if field_to_index.startswith("bm25") or weight <= 0:
+                    continue
+
+                # set up a pipeline for this dense index
                 self.pipelines[field_to_index] = self.set_up_dense_pipeline(field_to_index)
 
         # make sure next iteration the system checks that all SPaR labels are computed, before we start clustering
