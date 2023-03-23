@@ -355,14 +355,14 @@ class InformationRetrievalHub:
             save_updated_document_store = False
             dense_document_store = FAISSDocumentStore.load(index_path=faiss_index_path)
             # todo; figure out how to load the gdamn dpr bullshit models
-            retriever = DensePassageRetriever.load(self.cache_dir,
-                                                   document_store=dense_document_store,
-                                                   max_seq_len_query=self.max_seq_len_query,
-                                                   max_seq_len_passage=self.max_seq_len_passage,
-                                                   batch_size=self.batch_size,
-                                                   use_gpu=self.use_gpu,
-                                                   embed_title=True,
-                                                   use_fast_tokenizers=True)
+            # retriever = DensePassageRetriever.load(self.cache_dir,
+            #                                        document_store=dense_document_store,
+            #                                        max_seq_len_query=self.max_seq_len_query,
+            #                                        max_seq_len_passage=self.max_seq_len_passage,
+            #                                        batch_size=self.batch_size,
+            #                                        use_gpu=self.use_gpu,
+            #                                        embed_title=True,
+            #                                        use_fast_tokenizers=True)
 
         else:
             save_updated_document_store = True
@@ -419,7 +419,7 @@ class InformationRetrievalHub:
         if save_updated_document_store:
             # Save the document_store for reloading
             dense_document_store.save(index_path=faiss_index_path)
-            retriever.save(self.cache_dir) # todo; figure out how to save the gdamn dpr bullshit models
+            # retriever.save(self.cache_dir) # todo; figure out how to save the gdamn dpr bullshit models
 
         return DocumentSearchPipeline(retriever)
 
