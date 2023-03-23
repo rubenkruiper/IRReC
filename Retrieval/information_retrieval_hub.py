@@ -409,6 +409,7 @@ class InformationRetrievalHub:
         if save_updated_document_store:
             # Save the document_store for reloading
             dense_document_store.save(index_path=faiss_index_path)
+            # retriever.save(self.cache_dir) # todo; figure out how to save the gdamn dpr bullshit models
 
         return DocumentSearchPipeline(retriever)
 
