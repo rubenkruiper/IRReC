@@ -80,7 +80,7 @@ class InformationRetrievalHub:
                                                                                "_converted")
         self.background_output_dir = self.background_input_dir.parent.joinpath(self.background_input_dir.stem +
                                                                                "_converted")
-        self.index_name = configs["indexing"]["index_name"]
+        self.index_name = configs["indexing"]["index_name"].lower()     # ES require lowercase name
 
         # determine the type of indexing, which fields to index, and the name of the index
         self.indexing_type = configs["indexing"]["indexing_type"]  # sparse, hybrid or dense
