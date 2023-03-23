@@ -59,7 +59,9 @@ class InformationRetrievalHub:
         self.classifier_url = configs["retrieval"]["classifier_url"]
 
         # SPaR.txt preprocessor
-        self.preprocessor = SparPreProcessor(self.ner_url, configs['filtering']['regex_filter'])
+        self.preprocessor = SparPreProcessor(self.ner_url,
+                                             configs["indexing"]["fields_to_index_and_weights"]["NER_labels"],
+                                             configs['filtering']['regex_filter'])
 
         # check GPU availability
         try:

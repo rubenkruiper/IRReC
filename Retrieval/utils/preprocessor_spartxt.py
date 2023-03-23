@@ -42,7 +42,9 @@ iso639_to_nltk = {
 
 class SparPreProcessor(BasePreProcessor):
     def __init__(
-        self, ner_url: str = 'http://0.0.0.0:8501/',
+        self,
+        ner_url: str = 'http://0.0.0.0:8501/',
+        ner_weight: int = 1,
         regex_filter: str = 'yes',
         clean_whitespace: bool = True,
         clean_header_footer: bool = False,
@@ -83,6 +85,7 @@ class SparPreProcessor(BasePreProcessor):
         :param language: The language used by "nltk.tokenize.sent_tokenize" in iso639 format. Available options: "en", "es", "de", "fr" & many more.
         """
         self.ner_url = ner_url
+        self.ner_weight = ner_weight
 
         # Note: respecting sentence boundaries is statically set to True, to avoid degrading SPaRtxt results.
         split_respect_sentence_boundary = True
@@ -125,6 +128,13 @@ class SparPreProcessor(BasePreProcessor):
         # todo;
         #  - would I want to have multiple predictors ready to go?
         #  - speed up NER processing by providing a (batch_size) number of sentences in one go
+        if self.ner_weight <= 0:
+            return {
+                "prediction": {'obj': []},
+                "num_input_tokens": 0,
+                "num_output_tokens": 0
+            }
+
         response = None
         while not response:
             try:
@@ -132,7 +142,7 @@ class SparPreProcessor(BasePreProcessor):
                                          json={"sentence": sentence}).json()
             except ConnectionError:
                 # the SPaR container isn't ready yet, simply wait 10 seconds and try again
-                time.sleep(10)
+                time.sleep(100)
 
         # once we have a response, check if we actually got results
         try:
