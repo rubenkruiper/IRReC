@@ -354,6 +354,17 @@ class InformationRetrievalHub:
         if os.path.exists(faiss_index_path) and not self.recreate_dense_index:
             save_updated_document_store = False
             dense_document_store = FAISSDocumentStore.load(index_path=faiss_index_path)
+            # todo; figure out how to load the gdamn dpr bullshit models
+            retriever = DensePassageRetriever.load(self.cache_dir,
+                                                   dense_document_store,
+                                                   document_store=dense_document_store,
+                                                   max_seq_len_query=self.max_seq_len_query,
+                                                   max_seq_len_passage=self.max_seq_len_passage,
+                                                   batch_size=self.batch_size,
+                                                   use_gpu=self.use_gpu,
+                                                   embed_title=True,
+                                                   use_fast_tokenizers=True)
+
         else:
             save_updated_document_store = True
 
@@ -389,27 +400,27 @@ class InformationRetrievalHub:
             logger.info("[DENSE] Writing {} to dense document store".format(field_to_index))
             dense_document_store.write_documents(documents_to_write)
 
-        # -- Dense Retriever(FAISS) https://docs.haystack.deepset.ai/reference/document-store-api#faissdocumentstore
-        retriever = DensePassageRetriever(
-            document_store=dense_document_store,
-            query_embedding_model="facebook/dpr-question_encoder-single-nq-base",
-            passage_embedding_model="facebook/dpr-ctx_encoder-single-nq-base",
-            max_seq_len_query=self.max_seq_len_query,
-            max_seq_len_passage=self.max_seq_len_passage,
-            batch_size=self.batch_size,
-            use_gpu=self.use_gpu,
-            embed_title=True,
-            use_fast_tokenizers=True
-        )
-        # Seems like we always have to update the embeddings after the DPR retriever init (takes a couple of minutes)
-        # - https://haystack.deepset.ai/tutorials/dense-passage-retrieval
-        logger.info("[Document Store] updating retriever embeddings for field: {}".format(field_to_index))
-        dense_document_store.update_embeddings(retriever)
+            # -- Dense Retriever(FAISS) https://docs.haystack.deepset.ai/reference/document-store-api#faissdocumentstore
+            retriever = DensePassageRetriever(
+                document_store=dense_document_store,
+                query_embedding_model="facebook/dpr-question_encoder-single-nq-base",
+                passage_embedding_model="facebook/dpr-ctx_encoder-single-nq-base",
+                max_seq_len_query=self.max_seq_len_query,
+                max_seq_len_passage=self.max_seq_len_passage,
+                batch_size=self.batch_size,
+                use_gpu=self.use_gpu,
+                embed_title=True,
+                use_fast_tokenizers=True
+            )
+            # Seems like we always have to update the embeddings after the DPR retriever init (takes a couple of minutes)
+            # - https://haystack.deepset.ai/tutorials/dense-passage-retrieval
+            logger.info("[Document Store] updating retriever embeddings for field: {}".format(field_to_index))
+            dense_document_store.update_embeddings(retriever)
 
         if save_updated_document_store:
             # Save the document_store for reloading
             dense_document_store.save(index_path=faiss_index_path)
-            # retriever.save(self.cache_dir) # todo; figure out how to save the gdamn dpr bullshit models
+            retriever.save(self.cache_dir) # todo; figure out how to save the gdamn dpr bullshit models
 
         return DocumentSearchPipeline(retriever)
 
