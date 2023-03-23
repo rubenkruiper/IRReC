@@ -356,7 +356,6 @@ class InformationRetrievalHub:
             dense_document_store = FAISSDocumentStore.load(index_path=faiss_index_path)
             # todo; figure out how to load the gdamn dpr bullshit models
             retriever = DensePassageRetriever.load(self.cache_dir,
-                                                   dense_document_store,
                                                    document_store=dense_document_store,
                                                    max_seq_len_query=self.max_seq_len_query,
                                                    max_seq_len_passage=self.max_seq_len_passage,
