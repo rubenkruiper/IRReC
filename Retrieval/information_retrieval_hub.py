@@ -80,13 +80,13 @@ class InformationRetrievalHub:
                                                                                "_converted")
         self.background_output_dir = self.background_input_dir.parent.joinpath(self.background_input_dir.stem +
                                                                                "_converted")
+        self.index_name = configs["indexing"]["index_name"]
 
         # determine the type of indexing, which fields to index, and the name of the index
         self.indexing_type = configs["indexing"]["indexing_type"]  # sparse, hybrid or dense
         self.fields_and_weights = configs["indexing"]["fields_to_index_and_weights"]
         if self.indexing_type in ['hybrid', 'sparse']:
             self.sparse_type = configs["indexing"]["sparse_settings"]["type"]  # multi_match or plain
-            self.sparse_index_name = configs["indexing"]["sparse_settings"]["index_name"]
             self.recreate_sparse_index = configs["indexing"]["sparse_settings"]["recreate_sparse_index"]
 
         # whether to apply weights to the fields indexed with FAISS
@@ -300,7 +300,7 @@ class InformationRetrievalHub:
         """
         # todo; assuming we always need/want to recreate the sparse index for now
         sparse_type = "bm25f" if self.sparse_type == "bm25f" else "bm25"
-        sparse_document_store = self.initialize_sparse_docstore(self.sparse_index_name + "_" + sparse_type)
+        sparse_document_store = self.initialize_sparse_docstore(self.index_name + "_" + sparse_type)
         sparse_retriever = self.initialize_sparse_retriever(self.sparse_type, sparse_document_store)
         self.pipelines[sparse_type] = DocumentSearchPipeline(sparse_retriever)
 
@@ -309,12 +309,13 @@ class InformationRetrievalHub:
         :param recreate_sparse_index:  Whether to recreate the ElasticSearch index from scratch (default=False). Useful for
                                 debugging.
         """
-        sparse_document_store_plain = self.initialize_sparse_docstore(self.sparse_index_name + "_bm25")
-        sparse_document_store_multimatch = self.initialize_sparse_docstore(self.sparse_index_name + "_bm25f")
+        # todo; might want to distinguish between bm25 and bm25f using self.sparse_type
+        sparse_document_store_plain = self.initialize_sparse_docstore(self.index_name + "_bm25")
+        sparse_document_store_multimatch = self.initialize_sparse_docstore(self.index_name + "_bm25f")
 
         # TODO: very first step; check if index already exists and then simply load it, without initialising models
-        if sparse_document_store_plain.client.indices.exists(self.sparse_index_name + "_bm25") and \
-                sparse_document_store_plain.client.indices.exists(self.sparse_index_name + "_bm25f") and \
+        if sparse_document_store_plain.client.indices.exists(self.index_name + "_bm25") and \
+                sparse_document_store_plain.client.indices.exists(self.index_name + "_bm25f") and \
                 not recreate_sparse_index:
             # don't load up the clusterer and SPaR
             logger.info('[DocumentStore] Using existing indices')
@@ -343,8 +344,8 @@ class InformationRetrievalHub:
         Set up the various Retrieval nodes that are defined in the configuration.
         """
         # Prepare filepaths for storing the FAISS index
-        faiss_index_path = f'/data/indexes/{field_to_index}_index'
-        faiss_sql_doc_store = f'/data/indexes/{field_to_index}_document_store.db'
+        faiss_index_path = f'/data/indexes/{self.index_name}_{field_to_index}_index'
+        faiss_sql_doc_store = f'/data/indexes/{self.index_name}_{field_to_index}_document_store.db'
 
         # Prepare FAISS DocumentStore for dense indexing
         if os.path.exists(faiss_index_path) and not self.recreate_dense_index:

@@ -16,6 +16,7 @@
       "regex_filter": "yes", // Yes, Y, yes or y means the regex filter will run (recommended)
   },
   "indexing": {
+    "index_name": "no_DE", // prefix for the names of indices, becomes e.g. [index_name]_[type]
     "indexing_type": "hybrid", // `sparse`, `hybrid` or `dense`
     "fields_to_index_and_weights": {
       "content": 2,
@@ -28,7 +29,6 @@
     },
     "sparse_settings": {
       "type": "bm25",  // bm25f with "bm25f", otherwise regular bm25
-      "index_name": "bm25", // prefix for the index name, becomes [index_name]_[type]
       "recreate_sparse_index": true
     },
     "dense_settings": {
