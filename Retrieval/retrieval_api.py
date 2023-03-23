@@ -64,7 +64,7 @@ def set_field_weights(retrieval_settings: RetrievalSettings):
         "filtered_NER_labels": retrieval_settings.filtered_NER_labels,
         "filtered_NER_labels_domains": retrieval_settings.filtered_NER_labels_domains,
         "neighbours": retrieval_settings.neighbours,
-        "bm25": retrieval_settings.bm25,
+        "bm25": retrieval_settings.bm25_weight,
         "top_k": retrieval_settings.top_k
     }
     my_pipeline.fields_and_weights = new_fields_and_weights
