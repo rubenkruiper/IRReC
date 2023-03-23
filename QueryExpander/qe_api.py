@@ -37,6 +37,7 @@ class Settings(BaseSettings):
     ner_url: str = 'http://spar:8501/'
     classifier_url: str = 'http://classifier:8502/'
     indexing_type: str = "hybrid"
+    index_name: str = "no_de"
     sparse_type: str = "bm25f"
     top_k: int = 10
     recreate_sparse_index: bool = False
@@ -119,6 +120,7 @@ def update_weights(pydantic_settings: Settings = None) -> dict:
             },
             'indexing': {
                 'indexing_type':  pydantic_settings.sparse_type,
+                'index_name':  pydantic_settings.index_name.lower(),
                 'sparse_settings': {
                     'type': pydantic_settings.indexing_type
                 },

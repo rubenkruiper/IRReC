@@ -17,6 +17,7 @@ class PlainQuery(BaseModel):
 
 class RetrievalSettings(BaseModel):
     indexing_type: str = "hybrid"
+    index_name: str = "no_de"
     sparse_type: str = "bm25f"
     content: float = 2.0
     doc_title: float = 1.0
@@ -68,6 +69,7 @@ def set_field_weights(retrieval_settings: RetrievalSettings):
     }
     my_pipeline.fields_and_weights = new_fields_and_weights
     my_pipeline.indexing_type = retrieval_settings.indexing_type
+    my_pipeline.index_name = retrieval_settings.index_name.lower()
     my_pipeline.top_k_per_retriever = retrieval_settings.top_k
     my_pipeline.recreate_sparse_index = retrieval_settings.recreate_sparse_index
     my_pipeline.recreate_dense_index = retrieval_settings.recreate_dense_index
