@@ -16,6 +16,16 @@ logging.getLogger("requests").setLevel(logging.WARNING)
 logging.getLogger("urllib3").setLevel(logging.WARNING)
 
 
+class Retrieval(BaseSettings):
+    ner_url: str = 'http://spar:8501/'
+    classifier_url: str = 'http://classifier:8502/'
+    top_k: int = 15
+
+
+class SparseSettings(BaseSettings):
+    type: str = 'bm25'
+
+
 class FieldsAndWeights(BaseSettings):
     content: float = 1.0
     doc_title: float = 1.0
@@ -26,24 +36,26 @@ class FieldsAndWeights(BaseSettings):
     bm25_weight: float = 1.0        # relative influence of BM25 results
 
 
-class QueryExpansionWeights(BaseSettings):
+class Indexing(BaseSettings):
+    indexing_type: str = 'sparse'
+    index_name: str = 'no_de'
+    sparse_settings: SparseSettings
+    fields_and_weights: FieldsAndWeights
+
+
+class QueryExpansion(BaseSettings):
+    haystack_url: str = 'http://haystack:8500/'
     prf_weight: float = 0.0
     kg_weight: float = 1.0
     nn_weight: float = 1.0
 
 
 class Settings(BaseSettings):
-    haystack_url: str = 'http://haystack:8500/'
-    ner_url: str = 'http://spar:8501/'
-    classifier_url: str = 'http://classifier:8502/'
-    indexing_type: str = "hybrid"
-    index_name: str = "no_de"
-    sparse_type: str = "bm25f"
-    top_k: int = 10
+    retrieval: Retrieval
+    indexing: Indexing
+    query_expansion: QueryExpansion
     recreate_sparse_index: bool = False
     recreate_dense_index: bool = False
-    fields_and_weights: FieldsAndWeights
-    query_expansion: QueryExpansionWeights
 
 
 class QueryExanderFromSettings:
@@ -107,65 +119,64 @@ QE_api.add_middleware(
 
 
 @QE_api.post("/update_weights/")
-def update_weights(pydantic_settings: Settings = None) -> dict:
-    if not pydantic_settings:
+def update_weights(settings: Settings = None) -> dict:
+    if not settings:
         QE_s.update_from_file()
     else:
         # condensed version of the settings that actually apply
-        settings = {
+        setting_dict = {
             'retrieval': {
-                'ner_url': pydantic_settings.ner_url,
-                'classifier_url': pydantic_settings.classifier_url,
-                "top_k": pydantic_settings.top_k
+                'ner_url': settings.retrieval.ner_url,
+                'classifier_url': settings.retrieval.classifier_url,
+                "top_k": settings.retrieval.top_k
             },
             'indexing': {
-                'indexing_type':  pydantic_settings.sparse_type,
-                'index_name':  pydantic_settings.index_name.lower(),
+                'indexing_type':  settings.indexing.indexing_type,
+                'index_name':  settings.indexing.index_name.lower(),
                 'sparse_settings': {
-                    'type': pydantic_settings.indexing_type
+                    'type': settings.indexing.sparse_settings.type
                 },
                 'fields_to_index_and_weights': {
-                    'content': pydantic_settings.fields_and_weights.content,
-                    'doc_title': pydantic_settings.fields_and_weights.doc_title,
-                    'NER_labels': pydantic_settings.fields_and_weights.NER_labels,
-                    'filtered_NER_labels': pydantic_settings.fields_and_weights.filtered_NER_labels,
-                    'filtered_NER_labels_domains': pydantic_settings.fields_and_weights.filtered_NER_labels_domains,
-                    'neighbours': pydantic_settings.fields_and_weights.neighbours,
-                    'bm25_weight': pydantic_settings.fields_and_weights.bm25_weight
+                    'content': settings.indexing.fields_and_weights.content,
+                    'doc_title': settings.indexing.fields_and_weights.doc_title,
+                    'NER_labels': settings.indexing.fields_and_weights.NER_labels,
+                    'filtered_NER_labels': settings.indexing.fields_and_weights.filtered_NER_labels,
+                    'filtered_NER_labels_domains': settings.indexing.fields_and_weights.filtered_NER_labels_domains,
+                    'neighbours': settings.indexing.fields_and_weights.neighbours,
+                    'bm25_weight': settings.indexing.fields_and_weights.bm25_weight
                 }
             },
             'query_expansion': {
-                'haystack_url': pydantic_settings.haystack_url,
-                'prf_weight': pydantic_settings.query_expansion.prf_weight,
-                'kg_weight': pydantic_settings.query_expansion.kg_weight,
-                'nn_weight': pydantic_settings.query_expansion.nn_weight
+                'haystack_url': settings.query_expansion.haystack_url,
+                'prf_weight': settings.query_expansion.prf_weight,
+                'kg_weight': settings.query_expansion.kg_weight,
+                'nn_weight': settings.query_expansion.nn_weight
             }
         }
-        QE_s.update_from_dict(settings)
+        QE_s.update_from_dict(setting_dict)
 
-        retriever_settings = {
-            "indexing_type": pydantic_settings.indexing_type,
-            "sparse_type": pydantic_settings.sparse_type,
-            "content": pydantic_settings.fields_and_weights.content,
-            "doc_title": pydantic_settings.fields_and_weights.doc_title,
-            "NER_labels": pydantic_settings.fields_and_weights.NER_labels,
-            "filtered_NER_labels": pydantic_settings.fields_and_weights.filtered_NER_labels,
-            "filtered_NER_labels_domains": pydantic_settings.fields_and_weights.filtered_NER_labels_domains,
-            "neighbours": pydantic_settings.fields_and_weights.neighbours,
-            "bm25_weight": pydantic_settings.fields_and_weights.bm25_weight,
-            "top_k": pydantic_settings.top_k,
-            "recreate_sparse_index": pydantic_settings.recreate_sparse_index,
-            "recreate_dense_index": pydantic_settings.recreate_dense_index,
-            'ner_url': pydantic_settings.ner_url,
-            'classifier_url': pydantic_settings.classifier_url
-
+        retriever_setting_dict = {
+            "indexing_type": settings.indexing.indexing_type,
+            "sparse_type": settings.indexing.sparse_settings.type,
+            "content": settings.indexing.fields_and_weights.content,
+            "doc_title": settings.indexing.fields_and_weights.doc_title,
+            "NER_labels": settings.indexing.fields_and_weights.NER_labels,
+            "filtered_NER_labels": settings.indexing.fields_and_weights.filtered_NER_labels,
+            "filtered_NER_labels_domains": settings.indexing.fields_and_weights.filtered_NER_labels_domains,
+            "neighbours": settings.indexing.fields_and_weights.neighbours,
+            "bm25_weight": settings.indexing.fields_and_weights.bm25_weight,
+            "top_k": settings.retrieval.top_k,
+            "recreate_sparse_index": settings.recreate_sparse_index,
+            "recreate_dense_index": settings.recreate_dense_index,
+            'ner_url': settings.retrieval.ner_url,
+            'classifier_url': settings.retrieval.classifier_url
         }
 
-    r = requests.post(f"{QE_s.haystack_url}set_field_weights/", json=retriever_settings).json()
-    r["prf_weight"] = QE_s.prf_weight
-    r["kg_weight"] = QE_s.kg_weight
-    r["nn_weight"] = QE_s.nn_weight
-    return r
+        r = requests.post(f"{QE_s.haystack_url}set_field_weights/", json=retriever_setting_dict).json()
+        r["prf_weight"] = QE_s.prf_weight
+        r["kg_weight"] = QE_s.kg_weight
+        r["nn_weight"] = QE_s.nn_weight
+        return r
 
 
 def quick_duplicate_finder(combined_pred):
