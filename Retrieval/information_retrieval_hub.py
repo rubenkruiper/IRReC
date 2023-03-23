@@ -328,8 +328,8 @@ class InformationRetrievalHub:
             for doc_fp in tqdm(processed_document_fps):
                 documents_to_write += CustomDocument.load_document(doc_fp).to_list_of_dicts()
             logger.info(
-                '[DocumentStore] Index and classifier_data will be created from scratch -- this will take a long time, \n'
-                '                but only has to be done once.')
+                '[DocumentStore] SPARSE index and classifier_data will be created from scratch -- this will '\
+                'take a long time, \n            but only has to be done once.')
             sparse_document_store_plain.write_documents(documents_to_write)
             sparse_document_store_multimatch.write_documents(documents_to_write)
 
@@ -399,7 +399,7 @@ class InformationRetrievalHub:
         )
         # Seems like we always have to update the embeddings after the DPR retriever init (takes a couple of minutes)
         # - https://haystack.deepset.ai/tutorials/dense-passage-retrieval
-        logger.info("[Document Store] updating retriever embeddings for field:", field_to_index)
+        logger.info("[Document Store] updating retriever embeddings for field: {}".format(field_to_index))
         dense_document_store.update_embeddings(retriever)
 
         if save_updated_document_store:
