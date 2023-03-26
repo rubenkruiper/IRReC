@@ -60,8 +60,9 @@ class ListToPredict(BaseModel):
     span_lists: List[List[str]]
     spans = None
 
+
 class ToPredict(BaseModel):
-    spans: Union[List[List], str]
+    spans: Union[List[List[str]], str]
 
 
 class EmbeddingHub:

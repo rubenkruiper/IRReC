@@ -93,5 +93,5 @@ for fp in pdf_filepaths:
         number_removed_files += 1
 
 print(f"Number of files before removal: {len(pdf_filepaths)}")
-print(f"Number of files AFTER removal: {len(unique_doc_ids)}")
-print(f"Number of files removed: {number_removed_files} should equal {len(pdf_filepaths) - len(unique_doc_ids)}")
+print(f"Number of files AFTER removal: {len(unique_fps_to_keep)}")
+print(f"Number of files removed: {number_removed_files} should equal {len(pdf_filepaths) - len(unique_fps_to_keep)}")
