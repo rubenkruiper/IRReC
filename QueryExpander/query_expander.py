@@ -181,6 +181,11 @@ class QueryExpander:
         kg_neighbour_candidates = []
         # expanded_nodes_dict = {}  # todo consider grouping QE candidates per span?
         for node in query_nodes:
+
+            if self.network.degree[node] > 100:
+                # We would primarily like to use QE for terms that are not very common
+                continue
+
             kg_neighbours = []
             for n in self.network.neighbors(node):
                 distance = self.network.get_edge_data(node, n)
