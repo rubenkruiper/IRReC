@@ -7,30 +7,40 @@ from typing import List, Dict, Any
 # from embedder import Embedder
 
 
-def split_list(some_list: List, chunk_size: int) -> List[List]:
-    """
-    Helper function to split a list into smaller lists of a given size.
+# def split_list(some_list: List, chunk_size: int) -> List[List]:
+#     """
+#     Helper function to split a list into smaller lists of a given size.
+#
+#     :param some_list:   List that has to be split into chunks.
+#     :param chunk_size:  Size of the sublists that will be returned.
+#     :return list_of_sublists:  A list of sublists, each with a maximum size of `chunk_size`.
+#     """
+#     return [some_list[i:i + chunk_size] for i in range(0, len(some_list), chunk_size)]
+#
+#
+# def subword_insight(subword_units: List[str],
+#                     weights: List[float],
+#                     idf_threshold: float,
+#                     text: str):
+#     """
+#     Function that prints out the text, as well as its tokens and corresponding weights. The tokens will be
+#     represented with strike-through if they weight is below the set idf_threshold.
+#     """
+#     print(f"Text: {text}")
+#     for subword_unit, w in zip(subword_units, weights):
+#         if w < idf_threshold:
+#             subword_unit = ''.join([str(c) + '\u0336' for c in subword_unit])
+#         print("{:.2f}\t{}".format(w, subword_unit))
 
-    :param some_list:   List that has to be split into chunks.
-    :param chunk_size:  Size of the sublists that will be returned.
-    :return list_of_sublists:  A list of sublists, each with a maximum size of `chunk_size`.
-    """
-    return [some_list[i:i + chunk_size] for i in range(0, len(some_list), chunk_size)]
 
-
-def subword_insight(subword_units: List[str],
-                    weights: List[float],
-                    idf_threshold: float,
-                    text: str):
-    """
-    Function that prints out the text, as well as its tokens and corresponding weights. The tokens will be
-    represented with strike-through if they weight is below the set idf_threshold.
-    """
-    print(f"Text: {text}")
-    for subword_unit, w in zip(subword_units, weights):
-        if w < idf_threshold:
-            subword_unit = ''.join([str(c) + '\u0336' for c in subword_unit])
-        print("{:.2f}\t{}".format(w, subword_unit))
+def predict_uniques(list_of_lists, function):
+    flat_spans, list_ids = zip(*[(s, idx) for idx, spans in enumerate(list_of_lists) for s in spans])
+    unique_spans = list(set(flat_spans))
+    unique_neighbours = function(unique_spans)
+    dict_of_lists_to_return = {idx: [] for idx in list_ids}
+    for span, idx in zip(flat_spans, list_ids):
+        dict_of_lists_to_return[idx].append(unique_neighbours[unique_spans.index(span)])
+    return [neighbour_list for neighbour_list in dict_of_lists_to_return.values()]
 
 #
 # ############################################################################################################

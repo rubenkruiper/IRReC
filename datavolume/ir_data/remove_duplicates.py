@@ -86,6 +86,12 @@ for fp, fp_info in file_tracker_dict.items():
         unique_doc_ids.remove(fp_info["doc_id"])
 
 # simply remove all the duplicate files.
+number_removed_files = 0
 for fp in pdf_filepaths:
     if fp not in unique_fps_to_keep:
         os.remove(fp)
+        number_removed_files += 1
+
+print(f"Number of files before removal: {len(pdf_filepaths)}")
+print(f"Number of files AFTER removal: {len(unique_doc_ids)}")
+print(f"Number of files removed: {number_removed_files} should equal {len(pdf_filepaths) - len(unique_doc_ids)}")

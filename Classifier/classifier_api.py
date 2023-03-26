@@ -7,6 +7,7 @@ from pydantic import validator, BaseSettings, BaseModel, Required
 # from torch.cuda import is_available, device_count
 from transformers import BertModel, BertTokenizer
 
+from utils import *
 from embedder import Embedder
 from classifier import Classifier
 
@@ -55,8 +56,12 @@ class Settings(BaseSettings):
     #     return v
 
 
+class ListToPredict(BaseModel):
+    span_lists: List[List[str]]
+    spans = None
+
 class ToPredict(BaseModel):
-    spans: Union[List[str], str]
+    spans: Union[List[List], str]
 
 
 class EmbeddingHub:
@@ -177,25 +182,32 @@ def train_classifier(classifier_settings: Dict[str, Any] = None):
 
 
 @Classifier_api.post("/filter_non_domain_spans/")
-def filter_non_domain_spans(to_be_predicted: ToPredict):
+def filter_non_domain_spans(to_be_predicted:  Union[ToPredict, ListToPredict]):
     """
     Returns a `list` of terms from the assigned cluster.
     """
     if to_be_predicted.spans:
         domain_spans = hub.classifier.predict_domains(to_be_predicted.spans)
         return {'domain_spans': domain_spans}
+    elif to_be_predicted.span_lists:    # todo; put this in a separte helper function
+        lists_to_return = predict_uniques(to_be_predicted.span_lists, hub.classifier.predict_domains())
+        return {'neighbours': lists_to_return}
     # If the input is None, simply return an empty list
     return {'domain_spans': []}
 
 
 @Classifier_api.post("/get_neighbours/")
-def get_neighbours(to_be_predicted: ToPredict):
+def get_neighbours(to_be_predicted: Union[ToPredict, ListToPredict]):
     """
     Returns a `list` of terms from the assigned cluster.
     """
     if to_be_predicted.spans:
         neighbours = hub.classifier.get_nearest_neighbours(to_be_predicted.spans)
         return {'neighbours': neighbours}
+    elif to_be_predicted.span_lists:
+        lists_to_return = predict_uniques(to_be_predicted.span_lists, hub.classifier.get_nearest_neighbours())
+        return {'neighbours': lists_to_return}
+
     # If the input is None, simply return an empty list
     return {'neighbours': []}
 

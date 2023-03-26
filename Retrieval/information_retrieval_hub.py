@@ -241,14 +241,19 @@ class InformationRetrievalHub:
                     continue
                 else:
                     new_contents = []
-                    for content in converted_document.all_contents:
-                        if content.filtered_NER_labels:
-                            domain_spans = requests.post(f"{self.classifier_url}filter_non_domain_spans/",
-                                                         json={"spans": content.filtered_NER_labels}).json()
-                            content.set_filtered_ner_label_domains(domain_spans["domain_spans"])
-                            neighbours = requests.post(f"{self.classifier_url}get_neighbours/",
-                                                       json={"spans": content.filtered_NER_labels}).json()
-                            content.set_neighbours(neighbours["neighbours"])
+                    list_of_filtered_NER_label_lists = [c.filtered_NER_labels for c in converted_document.all_contents]
+                    domain_span_lists = requests.post(f"{self.classifier_url}filter_non_domain_spans/",
+                                                      json={"span_lists": list_of_filtered_NER_label_lists}).json()
+
+                    neighbour_lists = requests.post(f"{self.classifier_url}get_neighbours/",
+                                                    json={"span_lists": list_of_filtered_NER_label_lists}).json()
+
+                    domain_and_neighbour_pairs = zip(domain_span_lists, neighbour_lists)
+
+                    for content, domain_neighbours in zip(converted_document.all_contents, domain_and_neighbour_pairs):
+                        domain_spans, neighbours = domain_neighbours
+                        content.set_filtered_ner_label_domains(domain_spans["domain_spans"])
+                        content.set_neighbours(neighbours["neighbours"])
                         new_contents.append(content)
 
                     # update the CustomDocument and save changes to file
