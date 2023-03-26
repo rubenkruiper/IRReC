@@ -173,27 +173,37 @@ class QueryExpander:
                                  json={"spans": spans}).json()
         return [nn for nn_list in response['neighbours'] for nn in nn_list[:top_k]]
 
-    def span_KG_mapping(self, spans: List[str], top_k: int = 3):
+    def span_KG_mapping(self, spans: List[str], minimum_degree: int = 75, top_k: int = 2) -> List[str]:
         """
         KG expansion → candidate set 2
+        Based on the "distance" between nodes in our graph, grab the top_k QE candidates.
+
+        :param spans:            List of spans.
+        :param minimum_degree:   We will only expand nodes that are 'uncommon' in the graph, e.g.,
+                                 a degree lower than this value.
+        :param top_k:            Number of QE candidates we will return.
+        :return:                 List of candidate spans
         """
         query_nodes = [n for n in spans if n.lower() in self.lower_cased_nodes]
         kg_neighbour_candidates = []
         # expanded_nodes_dict = {}  # todo consider grouping QE candidates per span?
+        dist_weight = 1             # todo consider using weights in changing KG-based QE results
+        degree_weight = 1
         for node in query_nodes:
 
-            if self.network.degree[node] > 100:
+            if self.network.degree[node] > minimum_degree:
                 # We would primarily like to use QE for terms that are not very common
                 continue
 
             kg_neighbours = []
             for n in self.network.neighbors(node):
                 distance = self.network.get_edge_data(node, n)
-                # negative degree; so we sort them with highest degree first (most common terms)
-                kg_neighbours.append([distance['weight'], -self.network.degree[n], n])
+                combination_tuple = [(dist_weight * distance['weight']) * (degree_weight * self.network.degree[n]),
+                                     n]
+                kg_neighbours.append(combination_tuple)
 
             # expanded_nodes_dict[node] = [n for distance, degree, n in sorted(kg_neighbours)[:top_k]]
-            kg_neighbour_candidates += [n for distance, degree, n in sorted(kg_neighbours)[:top_k]]
+            kg_neighbour_candidates += [n for distance_degree, n in sorted(kg_neighbours)[:top_k]]
         return kg_neighbour_candidates
 
     def pseudo_relevance_feedback(self, initial_search_results, spans):
