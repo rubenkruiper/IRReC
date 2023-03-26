@@ -270,10 +270,10 @@ def just_expand(query: str) -> Dict:
     Only expand the query, to see what the output looks like
     """
     if QE_s.prf_weight:
-        print("[Running with PRF]")
-        print("[Running with PRF]")
-        print("[Running with PRF]")
-        print("[Running with PRF]")
+        print("[Running with PRF!]")
+        print("[Running with PRF!]")
+        print("[Running with PRF!]")
+        print("[Running with PRF!]")
         combined_pred = regular_query(query)
         expanded_query, qe_insight = QE_s.QE_obj.expand_query(query, combined_pred)
     else:

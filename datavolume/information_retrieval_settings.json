@@ -17,7 +17,7 @@
   },
   "indexing": {
     "index_name": "with_DE", // prefix for the names of indices, becomes e.g. [index_name]_[type]
-    "indexing_type": "sparse", // `sparse`, `hybrid` or `dense`
+    "indexing_type": "hybrid", // `sparse`, `hybrid` or `dense`
     "fields_to_index_and_weights": {
       "content": 2,
       "doc_title":  1.0,
