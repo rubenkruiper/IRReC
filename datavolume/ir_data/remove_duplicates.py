@@ -1,8 +1,6 @@
 import json, glob, re, os
 from pathlib import Path
 
-input_path = Path("foreground_pdf")
-pdf_filepaths = [x for x in input_path.glob("**/*.pdf")]
 
 def grab_doc_id(doc_fp: Path):
     """ 
@@ -43,8 +41,6 @@ def grab_doc_id(doc_fp: Path):
         while document_name.endswith(("-", "-", " ",":", "+")):
             document_name = document_name[:-1]
     
-    
-    
     return document_name
 
 
@@ -59,6 +55,10 @@ def check_for_tracked_changes(doc_fp: Path):
 
 
 # ---- script
+
+input_path = Path("foreground_pdf")
+pdf_filepaths = [x for x in input_path.glob("**/*.pdf")]
+
 file_tracker_dict = {}
 for pdf_fp in pdf_filepaths:
     file_tracker_dict[str(pdf_fp)] = {
@@ -88,7 +88,7 @@ for fp, fp_info in file_tracker_dict.items():
 # simply remove all the duplicate files.
 number_removed_files = 0
 for fp in pdf_filepaths:
-    if fp not in unique_fps_to_keep:
+    if str(fp) not in unique_fps_to_keep:
         os.remove(fp)
         number_removed_files += 1
 
