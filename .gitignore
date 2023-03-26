@@ -11,7 +11,7 @@ datavolume/classifier_data/*
 !datavolume/classifier_data/*IDF.json
 # indexing
 datavolume/ir_data/*
-!datavolume/ir_data/.gitkeep
+!datavolume/ir_data/remove_duplicates.py
 datavolume/indexes/*
 !datavolume/indexes/.gitkeep
 
