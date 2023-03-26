@@ -58,7 +58,7 @@ class Settings(BaseSettings):
 
 class ListToPredict(BaseModel):
     span_lists: List[List[str]]
-    spans = None
+    spans: Union[List[List[str]], str] = None
 
 
 class ToPredict(BaseModel):
