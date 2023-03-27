@@ -148,6 +148,9 @@ class Classifier:
         if spans_to_predict:
             if type(spans_to_predict) == str:
                 spans_to_predict = [spans_to_predict]
+            elif type(spans_to_predict[0]) == list:
+                spans_to_predict = [s for span_list in spans_to_predict for s in span_list]
+
             # embed each of the spans in the list
             for span in spans_to_predict:
                 if not span:
@@ -160,6 +163,7 @@ class Classifier:
                 stacked_embeddings = np.stack(embedding_list)
             else:
                 stacked_embeddings = embedding_list[0].reshape(1, -1)
+
             # get all predictions for the spans in the list
             predictions = self.knn_classifier.predict(stacked_embeddings)
             for span, prediction in zip(spans_to_predict, predictions):
@@ -220,19 +224,21 @@ class Classifier:
                                                    n_jobs=-1)
         self.nearest_neighbours.fit(stacked_embeddings)
 
-    def get_nearest_neighbours(self, span_list: Union[List[str], str] = None) -> List[List[str]]:
+    def get_nearest_neighbours(self, spans_to_predict: Union[List[str], str] = None) -> List[List[str]]:
         """
         Compute the `self.top_k_semantic_similarity` neighbours for each span in a list.
         """
         if not self.nearest_neighbours:
             self.prep_nearest_neighbours()
 
-        if type(span_list) == str:
-            span_list = [span_list]
+        if type(spans_to_predict) == str:
+            spans_to_predict = [spans_to_predict]
+        elif type(spans_to_predict[0]) == list:
+            spans_to_predict = [s for span_list in spans_to_predict for s in span_list]
 
         # embed each of the spans in the list
         embedding_list = []
-        for span in span_list:
+        for span in spans_to_predict:
             if not span:
                 continue
             _, embedding = self.embedder.embed_and_normalise_span(span)
