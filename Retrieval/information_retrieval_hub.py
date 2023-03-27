@@ -232,7 +232,7 @@ class InformationRetrievalHub:
             # make sure the classifier is trained, or the previously trained model is loaded
             requests.post(f"{self.classifier_url}train/")
 
-            for converted_document_filepath in converted_document_filepaths:
+            for converted_document_filepath in tqdm(converted_document_filepaths):
                 converted_document = CustomDocument.load_document(converted_document_filepath)
                 # make sure neighbours do not exist anywhere yet
                 if any([len(c.neighbours) > 1 for c in converted_document.all_contents]):

@@ -155,7 +155,7 @@ class Classifier:
             self.embedding_helper(spans_to_predict)
 
             # get all predictions for the spans in the list
-            if self.current_stacked_embeddings != "None":
+            if type(self.current_stacked_embeddings) != str:
                 predictions = self.knn_classifier.predict(self.current_stacked_embeddings)
                 for span, prediction in zip(spans_to_predict, predictions):
                     if prediction == 'y':
@@ -209,7 +209,7 @@ class Classifier:
 
         neighbours_lists = []
         # compute neighbours for all of the embedded spans in one go
-        if self.current_stacked_embeddings != "None":
+        if type(self.current_stacked_embeddings) != str:
             neighbour_indices_lists = self.nearest_neighbours.kneighbors(self.current_stacked_embeddings,
                                                                          self.top_k_semantic_similarity,
                                                                          return_distance=False).tolist()
