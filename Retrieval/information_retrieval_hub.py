@@ -248,12 +248,13 @@ class InformationRetrievalHub:
                     neighbour_lists = requests.post(f"{self.classifier_url}get_neighbours/",
                                                     json={"span_lists": list_of_filtered_NER_label_lists}).json()
 
-                    domain_and_neighbour_pairs = zip(domain_span_lists, neighbour_lists)
+                    domain_and_neighbour_pairs = zip(domain_span_lists["domain_spans"],
+                                                     neighbour_lists["neighbours"])
 
                     for content, domain_neighbours in zip(converted_document.all_contents, domain_and_neighbour_pairs):
                         domain_spans, neighbours = domain_neighbours
-                        content.set_filtered_ner_label_domains(domain_spans["domain_spans"])
-                        content.set_neighbours(neighbours["neighbours"])
+                        content.set_filtered_ner_label_domains(domain_spans)
+                        content.set_neighbours(neighbours)
                         new_contents.append(content)
 
                     # update the CustomDocument and save changes to file
