@@ -212,10 +212,9 @@ class QueryExpander:
         """
         prf_candidates = []
         for idx, score_and_dict in enumerate(initial_search_results):
+            print(initial_search_results)
             score, d = score_and_dict
-            domain_d = d['label_counters_dict']['filtered_NER_labels']  # could change which labels to use
-            filtered_NER_labels = [(str(r), int(c)) for r, c in Counter(domain_d).most_common()]
-
+            filtered_NER_labels = [(str(r), int(c)) for r, c in d['label_counters_dict']['filtered_NER_labels'].most_common()]
             prf_candidates += filtered_NER_labels   # can combine multiple sources of labels
 
         prf_counter = Counter()
