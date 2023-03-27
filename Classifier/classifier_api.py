@@ -56,13 +56,9 @@ class Settings(BaseSettings):
     #     return v
 
 
-class ListToPredict(BaseModel):
-    span_lists: List[List[str]]
-    spans: Union[List[List[str]], str] = None
-
-
 class ToPredict(BaseModel):
-    spans: Union[List[List[str]], str]
+    span_lists: List[List[str]] = None
+    spans: Union[List[List[str]], str] = None
 
 
 class EmbeddingHub:
@@ -183,7 +179,7 @@ def train_classifier(classifier_settings: Dict[str, Any] = None):
 
 
 @Classifier_api.post("/filter_non_domain_spans/")
-def filter_non_domain_spans(to_be_predicted:  Union[ToPredict, ListToPredict]):
+def filter_non_domain_spans(to_be_predicted: ToPredict):
     """
     Returns a `list` of terms from the assigned cluster.
     """
@@ -198,7 +194,7 @@ def filter_non_domain_spans(to_be_predicted:  Union[ToPredict, ListToPredict]):
 
 
 @Classifier_api.post("/get_neighbours/")
-def get_neighbours(to_be_predicted: Union[ToPredict, ListToPredict]):
+def get_neighbours(to_be_predicted: ToPredict):
     """
     Returns a `list` of terms from the assigned cluster.
     """
