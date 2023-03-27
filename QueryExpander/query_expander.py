@@ -169,8 +169,7 @@ class QueryExpander:
                                                  list holds neighbours of the input spans
         """
 
-        response = requests.post(f"{self.classifier_url}get_neighbours/",
-                                 json={"spans": spans}).json()
+        response = requests.post(f"{self.classifier_url}get_neighbours/", json={"spans": spans}).json()
         return [nn for nn_list in response['neighbours'] for nn in nn_list[:top_k]]
 
     def span_KG_mapping(self, spans: List[str], minimum_degree: int = 75, top_k: int = 2) -> List[str]:

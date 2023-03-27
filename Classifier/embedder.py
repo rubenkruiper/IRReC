@@ -52,7 +52,9 @@ class Embedder:
         self.embedding_prefix = "embeddings"
         self.embedding_dir = embedding_dir
         self.standardised_embedding_data = []
+        self.unique_spans = []
         self.new_embedding_data = []
+        self.new_unique_spans = []
         self.emb_mean_fp = embedding_dir.joinpath("standardisation_mean.pkl")
         self.emb_std_fp = embedding_dir.joinpath("standardisation_std.pkl")
         self.emb_mean = "None"  # initialise to specific value, later will hold an array (without truth value blabla)
@@ -210,35 +212,34 @@ class Embedder:
         representations (Timkey & van Schijndel, 2021).
         """
         unique_spans, unique_embeddings = zip(*self.span_and_embedding_pairs)
-        standardised_clustering_data_fp = self.embedding_dir.joinpath("standardised_embeddings.pkl")
-
-        if not standardised_clustering_data_fp.exists():
-            print(
-                f"Normalising and combining computed/existing {len(unique_spans)} embeddings from files into single file")
-            with open(self.embedding_dir.joinpath("unique_spans.pkl"), 'wb') as f:
+        self.unique_spans = unique_spans
+        unique_spans_fp = self.embedding_dir.joinpath("unique_spans.pkl")
+        if not unique_spans_fp.exists():
+            with open(unique_spans_fp, 'wb') as f:
                 pickle.dump(unique_spans, f)
 
-            with open(self.embedding_dir.joinpath("unique_embeddings.pkl"), 'wb') as f:
-                # we average over the token embeddings in a term
-                unique_clustering_data = np.stack(
-                    [np.mean(e, axis=0) if len(e.shape) > 1 else e for e in unique_embeddings])
+        standardised_classifier_data_fp = self.embedding_dir.joinpath("standardised_embeddings.pkl")
+        if not standardised_classifier_data_fp.exists():
+            print(
+              f"Normalising and combining computed/existing {len(unique_spans)} embeddings from files into single file"
+            )
+            # we average over the token embeddings in a term
+            unique_clustering_data = np.stack(
+                [np.mean(e, axis=0) if len(e.shape) > 1 else e for e in unique_embeddings])
 
-                # standardise the unique clustering data, as suggested by https://github.com/wtimkey/rogue-dimensions
-                self.emb_mean = unique_clustering_data.mean(axis=0)
-                self.emb_std = unique_clustering_data.std(axis=0)
-                pickle.dump(self.emb_mean, open(self.embedding_dir.joinpath("standardisation_mean.pkl"), 'wb'))
-                pickle.dump(self.emb_std, open(self.embedding_dir.joinpath("standardisation_std.pkl"), 'wb'))
+            # standardise the unique clustering data, as suggested by https://github.com/wtimkey/rogue-dimensions
+            self.emb_mean = unique_clustering_data.mean(axis=0)
+            self.emb_std = unique_clustering_data.std(axis=0)
+            pickle.dump(self.emb_mean, open(self.embedding_dir.joinpath("standardisation_mean.pkl"), 'wb'))
+            pickle.dump(self.emb_std, open(self.embedding_dir.joinpath("standardisation_std.pkl"), 'wb'))
 
-                normalised_embeddings = (unique_clustering_data - self.emb_mean) / self.emb_std
-                self.standardised_embedding_data = [(s, e) for s, e in zip(unique_spans, normalised_embeddings)]
-                pickle.dump(self.standardised_embedding_data, f)
-
-            # Store the standardised embeddings for reuse; could remove all the embedding files (keeping them though)
-            pickle.dump(self.standardised_embedding_data, open(standardised_clustering_data_fp, 'wb'))
-            # spans_and_standardised_embeddings_dict = dict(zip(unique_spans, standardised_embedding_data))
+            # Store the span and normalised embedding pairs
+            # Note: could remove all the embedding files (keeping them though)
+            normalised_embeddings = (unique_clustering_data - self.emb_mean) / self.emb_std
+            self.standardised_embedding_data = [(s, e) for s, e in zip(self.unique_spans, normalised_embeddings)]
+            pickle.dump(self.standardised_embedding_data, open(standardised_classifier_data_fp, 'wb'))
         else:
-            self.standardised_embedding_data = pickle.load(open(standardised_clustering_data_fp, 'rb'))
-            # spans_and_standardised_embeddings_dict = dict(zip(unique_spans, self.standardised_embedding_data))
+            self.standardised_embedding_data = pickle.load(open(standardised_classifier_data_fp, 'rb'))
             print(f"Loaded previously computed normalised embedding files.")
 
     def embed_fore_and_background_terms(self,

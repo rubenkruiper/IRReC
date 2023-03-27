@@ -192,7 +192,7 @@ def filter_non_domain_spans(to_be_predicted:  Union[ToPredict, ListToPredict]):
         return {'domain_spans': domain_spans}
     elif to_be_predicted.span_lists:    # todo; put this in a separte helper function
         lists_to_return = predict_uniques(to_be_predicted.span_lists, hub.classifier.predict_domains())
-        return {'neighbours': lists_to_return}
+        return {'domain_spans': lists_to_return}
     # If the input is None, simply return an empty list
     return {'domain_spans': []}
 

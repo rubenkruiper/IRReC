@@ -197,8 +197,9 @@ class Classifier:
         We will be computing the NNs from scratch every re-initialization of this classifier; since that means the
         settings may have changed and, overall, it doesn't take too long.
         """
-        all_embedding_data = self.embedder.standardised_embedding_data + self.embedder.new_embedding_data
-        self.unique_spans, unique_embeddings = zip(*all_embedding_data)
+        # todo; sort out adding new embedding data for NN computation, not relevant now
+        # all_embedding_data = self.embedder.standardised_embedding_data + self.embedder.new_embedding_data
+        self.unique_spans, unique_embeddings = zip(*self.embedder.standardised_embedding_data)
         stacked_embeddings = np.stack([np.mean(e, axis=0) if len(e.shape) > 1 else e for e in unique_embeddings])
         self.nearest_neighbours = NearestNeighbors(n_neighbors=self.top_k_semantic_similarity,
                                                    metric=self.metric,
