@@ -205,11 +205,14 @@ class RetrievedDoc:
         self.sum_of_scores += score
 
     def update_label_stats(self, retrieved_dict, retrieval_field):
-        # add the label statistics for a specific retrieval_field
+        # add the label statistics for a specific retrieval_field, e.g., bm25
         for label_type in self.label_types:
-            print(f"[QE UTILS] label_type: {label_type}     retrieval_field: {retrieval_field} ")
-            # I only want to count the labels that contributed to the retrieval of the document/content
+
+            # I usually only want to count the labels that contributed to the retrieval of the document/content
             if label_type == retrieval_field:
+                for label in retrieved_dict['meta'][label_type].split(", "):
+                    self.label_counters_dict[label_type][label] += 1
+            elif retrieval_field == "bm25":     # todo; we count them for bm25, at least for now
                 for label in retrieved_dict['meta'][label_type].split(", "):
                     self.label_counters_dict[label_type][label] += 1
 
