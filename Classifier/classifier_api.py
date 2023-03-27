@@ -58,7 +58,7 @@ class Settings(BaseSettings):
 
 class ToPredict(BaseModel):
     span_lists: List[List[str]] = None
-    spans: Union[List[List[str]], str] = None
+    spans: List[str] = None
 
 
 class EmbeddingHub:
@@ -187,7 +187,8 @@ def filter_non_domain_spans(to_be_predicted: ToPredict):
         domain_spans = hub.classifier.predict_domains(to_be_predicted.spans)
         return {'domain_spans': domain_spans}
     elif to_be_predicted.span_lists:    # todo; put this in a separte helper function
-        lists_to_return = predict_uniques_all_contents(to_be_predicted.span_lists, hub.classifier.predict_domains())
+        lists_to_return = predict_uniques_all_contents(to_be_predicted.span_lists,
+                                                       hub.classifier.predict_domains)
         return {'domain_spans': lists_to_return}
     # If the input is None, simply return an empty list
     return {'domain_spans': []}
@@ -202,7 +203,8 @@ def get_neighbours(to_be_predicted: ToPredict):
         neighbours = hub.classifier.get_nearest_neighbours(to_be_predicted.spans)
         return {'neighbours': neighbours}
     elif to_be_predicted.span_lists:
-        lists_to_return = predict_uniques_all_contents(to_be_predicted.span_lists, hub.classifier.get_nearest_neighbours())
+        lists_to_return = predict_uniques_all_contents(to_be_predicted.span_lists,
+                                                       hub.classifier.get_nearest_neighbours)
         return {'neighbours': lists_to_return}
 
     # If the input is None, simply return an empty list
