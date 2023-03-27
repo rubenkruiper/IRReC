@@ -43,7 +43,7 @@ def predict_uniques_all_contents(list_of_lists, function):
             dict_of_lists_to_return[idx].append(computed_values[unique_spans.index(span)])
         except IndexError:
             # this happens in case of domain classification, where the span is regarded as out-of-domain
-            pass
+            dict_of_lists_to_return[idx].append('')         # todo adding empty string for now
     return [neighbour_list for neighbour_list in dict_of_lists_to_return.values()]
 
 #
