@@ -46,6 +46,8 @@ class Classifier:
         self.nearest_neighbours = None
         self.unique_spans = []
         self.knn_sim_dict = {}
+        self.current_spans_to_predict = []
+        self.current_stacked_embeddings = None
 
         self.metric = metric
 
@@ -143,7 +145,6 @@ class Classifier:
         :param spans_to_predict: Spans for which you'd like to predict whether it belongs to the foreground corpus domain.
         :returns:   Returns the input spans that are classified as within domain.
         """
-        embedding_list = []
         domain_spans = []
         if spans_to_predict:
             if type(spans_to_predict) == str:
@@ -151,24 +152,14 @@ class Classifier:
             elif type(spans_to_predict[0]) == list:
                 spans_to_predict = [s for span_list in spans_to_predict for s in span_list]
 
-            # embed each of the spans in the list
-            for span in spans_to_predict:
-                if not span:
-                    continue
-                _, embedding = self.embedder.embed_and_normalise_span(span)
-                embedding_list.append(embedding)
-
-            # stack the embeddings
-            if len(embedding_list) > 1:
-                stacked_embeddings = np.stack(embedding_list)
-            else:
-                stacked_embeddings = embedding_list[0].reshape(1, -1)
+            self.embedding_helper(spans_to_predict)
 
             # get all predictions for the spans in the list
-            predictions = self.knn_classifier.predict(stacked_embeddings)
-            for span, prediction in zip(spans_to_predict, predictions):
-                if prediction == 'y':
-                    domain_spans.append(span)
+            if self.current_stacked_embeddings:
+                predictions = self.knn_classifier.predict(self.current_stacked_embeddings)
+                for span, prediction in zip(spans_to_predict, predictions):
+                    if prediction == 'y':
+                        domain_spans.append(span)
         return domain_spans
 
     def prep_semantic_similarity(self):
@@ -186,28 +177,6 @@ class Classifier:
 
         for span_idx, span in enumerate(unique_spans):
             self.knn_sim_dict[span] = [unique_spans[neighbour_idx] for neighbour_idx in knn_graph[span_idx].indices]
-
-    # def get_semantically_similar_terms(self, span_list: Union[List[str], str] = None) -> List[List[str]]:
-    #     """ # todo; deprecated // not used
-    #     Simply get the `self.top_k_semantic_similarity` neighbours for each span in a list. Note that for a span to be
-    #     assigned a set of semantically similar span, it has to have been considered a domain term in our classifier. If
-    #     the span does not occur in `self.knn_sim_dict`, then it will be assigned an empty list of neighbours.
-    #     """
-    #     if not self.knn_sim_dict:
-    #         self.prep_semantic_similarity()
-    #
-    #     if type(span_list) == str:
-    #         span_list = [span_list]
-    #
-    #     neighbours_lists = []
-    #     for span in span_list:
-    #
-    #         if span in self.knn_sim_dict:
-    #             neighbours_lists.append(self.knn_sim_dict[span])
-    #         else:
-    #             neighbours_lists.append([])
-    #
-    #     return neighbours_lists
 
     def prep_nearest_neighbours(self):
         """
@@ -236,30 +205,43 @@ class Classifier:
         elif type(spans_to_predict[0]) == list:
             spans_to_predict = [s for span_list in spans_to_predict for s in span_list]
 
-        # embed each of the spans in the list
-        embedding_list = []
-        for span in spans_to_predict:
-            if not span:
-                continue
-            _, embedding = self.embedder.embed_and_normalise_span(span)
-            embedding_list.append(embedding)
+        self.embedding_helper(spans_to_predict)
 
-        # stack the embeddings
-        if len(embedding_list) > 1:
-            stacked_embeddings = np.stack(embedding_list)
-        else:
-            stacked_embeddings = embedding_list[0].reshape(1, -1)
-
-        # compute neighbours for all of the embedded spans in one go
-        neighbour_indices_lists = self.nearest_neighbours.kneighbors(stacked_embeddings,
-                                                                     self.top_k_semantic_similarity,
-                                                                     return_distance=False).tolist()
-        # figure out which spans belong to the neighbour indices
         neighbours_lists = []
-        for neighbour_indices in neighbour_indices_lists:
-            neighbour_spans = [self.unique_spans[idx] for idx in neighbour_indices]
-            neighbours_lists.append(neighbour_spans)
-        else:
-            neighbours_lists.append([])
-
+        # compute neighbours for all of the embedded spans in one go
+        if self.current_stacked_embeddings:
+            neighbour_indices_lists = self.nearest_neighbours.kneighbors(self.current_stacked_embeddings,
+                                                                         self.top_k_semantic_similarity,
+                                                                         return_distance=False).tolist()
+            # figure out which spans belong to the neighbour indices
+            for neighbour_indices in neighbour_indices_lists:
+                neighbour_spans = [self.unique_spans[idx] for idx in neighbour_indices]
+                neighbours_lists.append(neighbour_spans)
+            else:
+                neighbours_lists.append([])
+                
         return neighbours_lists
+
+    def embedding_helper(self, list_of_spans: Union[List[str], str]):
+        """
+        Bit of a weird strategy perhaps, but we want to embed each list of spans only once during preprocessing.
+        This was a quick solution; could or maybe should consider other options.
+        """
+        if list_of_spans == self.current_spans_to_predict:
+            pass
+        else:
+            # embed each of the spans in the list #todo save time by using embedding once
+            embedding_list = []
+            for span in list_of_spans:
+                if not span:
+                    continue
+                _, embedding = self.embedder.embed_and_normalise_span(span)
+                embedding_list.append(embedding)
+
+            # stack the embeddings
+            if len(embedding_list) > 1:
+                self.current_stacked_embeddings = np.stack(embedding_list)
+            elif len(embedding_list) == 1:
+                self.current_stacked_embeddings = embedding_list[0].reshape(1, -1)
+            else:
+                self.current_stacked_embeddings = None

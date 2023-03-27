@@ -2,6 +2,8 @@ from typing import Optional, Dict, List, Union, Any
 import json5, pickle, logging
 
 from pathlib import Path
+
+import numpy as np
 from fastapi import FastAPI, HTTPException, Query
 from pydantic import validator, BaseSettings, BaseModel, Required
 # from torch.cuda import is_available, device_count
@@ -77,6 +79,8 @@ class EmbeddingHub:
         self.background_term_filepath = None
         self.embeddings_dir = None
         self.path_to_settings = path_to_settings
+
+        self.current_embeddings = None
 
     def grab_settings(self):
         with open(self.path_to_settings) as f:
