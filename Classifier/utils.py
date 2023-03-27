@@ -36,10 +36,14 @@ def subword_insight(subword_units: List[str],
 def predict_uniques_all_contents(list_of_lists, function):
     flat_spans, list_ids = zip(*[(s, idx) for idx, spans in enumerate(list_of_lists) for s in spans])
     unique_spans = list(set(flat_spans))
-    unique_neighbours = function(unique_spans)
+    computed_values = function(unique_spans)
     dict_of_lists_to_return = {idx: [] for idx in list_ids}
     for span, idx in zip(flat_spans, list_ids):
-        dict_of_lists_to_return[idx].append(unique_neighbours[unique_spans.index(span)])
+        try:
+            dict_of_lists_to_return[idx].append(computed_values[unique_spans.index(span)])
+        except IndexError:
+            # this happens in case of domain classification, where the span is regarded as out-of-domain
+            pass
     return [neighbour_list for neighbour_list in dict_of_lists_to_return.values()]
 
 #
