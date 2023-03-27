@@ -47,7 +47,7 @@ class Classifier:
         self.unique_spans = []
         self.knn_sim_dict = {}
         self.current_spans_to_predict = []
-        self.current_stacked_embeddings = None
+        self.current_stacked_embeddings = "None"
 
         self.metric = metric
 
@@ -155,7 +155,7 @@ class Classifier:
             self.embedding_helper(spans_to_predict)
 
             # get all predictions for the spans in the list
-            if self.current_stacked_embeddings:
+            if self.current_stacked_embeddings != "None":
                 predictions = self.knn_classifier.predict(self.current_stacked_embeddings)
                 for span, prediction in zip(spans_to_predict, predictions):
                     if prediction == 'y':
@@ -209,7 +209,7 @@ class Classifier:
 
         neighbours_lists = []
         # compute neighbours for all of the embedded spans in one go
-        if self.current_stacked_embeddings:
+        if self.current_stacked_embeddings != "None":
             neighbour_indices_lists = self.nearest_neighbours.kneighbors(self.current_stacked_embeddings,
                                                                          self.top_k_semantic_similarity,
                                                                          return_distance=False).tolist()
@@ -219,7 +219,7 @@ class Classifier:
                 neighbours_lists.append(neighbour_spans)
             else:
                 neighbours_lists.append([])
-                
+
         return neighbours_lists
 
     def embedding_helper(self, list_of_spans: Union[List[str], str]):
@@ -244,4 +244,4 @@ class Classifier:
             elif len(embedding_list) == 1:
                 self.current_stacked_embeddings = embedding_list[0].reshape(1, -1)
             else:
-                self.current_stacked_embeddings = None
+                self.current_stacked_embeddings = "None"
