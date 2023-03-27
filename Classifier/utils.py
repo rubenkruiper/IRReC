@@ -33,7 +33,7 @@ def subword_insight(subword_units: List[str],
         print("{:.2f}\t{}".format(w, subword_unit))
 
 
-def predict_uniques(list_of_lists, function):
+def predict_uniques_all_contents(list_of_lists, function):
     flat_spans, list_ids = zip(*[(s, idx) for idx, spans in enumerate(list_of_lists) for s in spans])
     unique_spans = list(set(flat_spans))
     unique_neighbours = function(unique_spans)

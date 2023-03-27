@@ -143,15 +143,27 @@ class Classifier:
         :param spans_to_predict: Spans for which you'd like to predict whether it belongs to the foreground corpus domain.
         :returns:   Returns the input spans that are classified as within domain.
         """
+        embedding_list = []
         domain_spans = []
         if spans_to_predict:
             if type(spans_to_predict) == str:
                 spans_to_predict = [spans_to_predict]
+            # embed each of the spans in the list
             for span in spans_to_predict:
-                span, normalised_embedding = self.embedder.embed_and_normalise_span(span)
                 if not span:
                     continue
-                elif self.knn_classifier.predict(normalised_embedding.reshape(1, -1))[0] == 'y':
+                _, embedding = self.embedder.embed_and_normalise_span(span)
+                embedding_list.append(embedding)
+
+            # stack the embeddings
+            if len(embedding_list) > 1:
+                stacked_embeddings = np.stack(embedding_list)
+            else:
+                stacked_embeddings = embedding_list[0].reshape(1, -1)
+            # get all predictions for the spans in the list
+            predictions = self.knn_classifier.predict(stacked_embeddings)
+            for span, prediction in zip(spans_to_predict, predictions):
+                if prediction == 'y':
                     domain_spans.append(span)
         return domain_spans
 
@@ -171,26 +183,27 @@ class Classifier:
         for span_idx, span in enumerate(unique_spans):
             self.knn_sim_dict[span] = [unique_spans[neighbour_idx] for neighbour_idx in knn_graph[span_idx].indices]
 
-    def get_semantically_similar_terms(self, span_list: Union[List[str], str] = None) -> List[List[str]]:
-        """ # todo; deprecated // not used
-        Simply get the `self.top_k_semantic_similarity` neighbours for each span in a list. Note that for a span to be
-        assigned a set of semantically similar span, it has to have been considered a domain term in our classifier. If
-        the span does not occur in `self.knn_sim_dict`, then it will be assigned an empty list of neighbours.
-        """
-        if not self.knn_sim_dict:
-            self.prep_semantic_similarity()
-
-        if type(span_list) == str:
-            span_list = [span_list]
-
-        neighbours_lists = []
-        for span in span_list:
-            if span in self.knn_sim_dict:
-                neighbours_lists.append(self.knn_sim_dict[span])
-            else:
-                neighbours_lists.append([])
-
-        return neighbours_lists
+    # def get_semantically_similar_terms(self, span_list: Union[List[str], str] = None) -> List[List[str]]:
+    #     """ # todo; deprecated // not used
+    #     Simply get the `self.top_k_semantic_similarity` neighbours for each span in a list. Note that for a span to be
+    #     assigned a set of semantically similar span, it has to have been considered a domain term in our classifier. If
+    #     the span does not occur in `self.knn_sim_dict`, then it will be assigned an empty list of neighbours.
+    #     """
+    #     if not self.knn_sim_dict:
+    #         self.prep_semantic_similarity()
+    #
+    #     if type(span_list) == str:
+    #         span_list = [span_list]
+    #
+    #     neighbours_lists = []
+    #     for span in span_list:
+    #
+    #         if span in self.knn_sim_dict:
+    #             neighbours_lists.append(self.knn_sim_dict[span])
+    #         else:
+    #             neighbours_lists.append([])
+    #
+    #     return neighbours_lists
 
     def prep_nearest_neighbours(self):
         """
@@ -214,18 +227,30 @@ class Classifier:
         if not self.nearest_neighbours:
             self.prep_nearest_neighbours()
 
-        # if not self.knn_sim_dict: # todo, could use pre-computed similarity to speed up
-        #     self.prep_semantic_similarity()
-
         if type(span_list) == str:
             span_list = [span_list]
 
-        neighbours_lists = []
+        # embed each of the spans in the list
+        embedding_list = []
         for span in span_list:
+            if not span:
+                continue
             _, embedding = self.embedder.embed_and_normalise_span(span)
-            [neighbour_indices] = self.nearest_neighbours.kneighbors(embedding.reshape(1, -1),
+            embedding_list.append(embedding)
+
+        # stack the embeddings
+        if len(embedding_list) > 1:
+            stacked_embeddings = np.stack(embedding_list)
+        else:
+            stacked_embeddings = embedding_list[0].reshape(1, -1)
+
+        # compute neighbours for all of the embedded spans in one go
+        neighbour_indices_lists = self.nearest_neighbours.kneighbors(stacked_embeddings,
                                                                      self.top_k_semantic_similarity,
                                                                      return_distance=False).tolist()
+        # figure out which spans belong to the neighbour indices
+        neighbours_lists = []
+        for neighbour_indices in neighbour_indices_lists:
             neighbour_spans = [self.unique_spans[idx] for idx in neighbour_indices]
             neighbours_lists.append(neighbour_spans)
         else:
