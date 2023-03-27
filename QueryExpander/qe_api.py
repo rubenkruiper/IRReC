@@ -68,6 +68,7 @@ class QueryExanderFromSettings:
         self.kg_weight = 0          # relative influence of KG candidates
         self.nn_weight = 0          # relative influence of NN candidates
 
+        self.was_initialised = False
         self.update_from_file()
         self.QE_obj = QueryExpander(self.classifier_url, self.ner_url,
                                     prf_weight=self.prf_weight,
@@ -83,8 +84,11 @@ class QueryExanderFromSettings:
         self.haystack_url = settings["query_expansion"]["haystack_url"]
         self.ner_url = settings["retrieval"]["ner_url"]
         self.classifier_url = settings["retrieval"]["classifier_url"]
-        if self.classifier_url not in ["", "no", "No", "None", "none"]:
+        if self.classifier_url not in ["", "no", "No", "None", "none"] and self.was_initialised:
             requests.post(f"{self.classifier_url}train/")
+        else:
+            # When initializing QE, the classifier isn't ready yet. Later we'd like to update the classifier if needed.
+            self.was_initialised = True
         self.indexing_type = settings["indexing"]["sparse_settings"]["type"]
 
         self.fields_and_weights = settings["indexing"]["fields_to_index_and_weights"]

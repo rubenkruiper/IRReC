@@ -23,8 +23,8 @@
       "doc_title":  1.0,
       "NER_labels": 1,
       "filtered_NER_labels":  1,
-      "filtered_NER_labels_domains":  1,
-      "neighbours":  1,
+      "filtered_NER_labels_domains":  0,
+      "neighbours":  0,
       "bm25_weight": 1
     },
     "sparse_settings": {

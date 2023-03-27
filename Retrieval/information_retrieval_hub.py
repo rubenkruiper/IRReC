@@ -228,7 +228,9 @@ class InformationRetrievalHub:
         # grab the converted documents (at this stage expecting pre-processed)
         converted_document_filepaths = [filepath for filepath in converted_documents_dir.glob("*.json")]
 
-        if self.classifier_url not in ["no", "No", "None", "none", ""]:
+        use_classifier = False if (self.fields_and_weights["filtered_NER_labels_domains"] <= 0
+                                   or self.fields_and_weights["neighbours"] <= 0) else True
+        if self.classifier_url not in ["no", "No", "None", "none", ""] and use_classifier:
             # make sure the classifier is trained, or the previously trained model is loaded
             requests.post(f"{self.classifier_url}train/")
 
