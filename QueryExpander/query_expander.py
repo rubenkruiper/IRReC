@@ -106,7 +106,7 @@ class QueryExpander:
                 # todo; speed up by computing idf weights for all candidates in 1 go perhaps
                 response = requests.post(f"{self.classifier_url}get_idf_weights/", json={"spans": [candidate]})
                 if response:
-                    idf_weights = response.json()["idf_weights"]
+                    idf_weights = response.json()["idf_weights"][0]
                     # assuming average IDF weights over the tokens for now
                     weighted_avg_idf_weight = (sum(idf_weights)/len(idf_weights)) * v['weight']
                     if 'counts' in v.keys():
