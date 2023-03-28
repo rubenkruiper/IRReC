@@ -216,20 +216,24 @@ def get_neighbours(to_be_predicted: ToPredict):
 
 
 @Classifier_api.post("/get_idf_weights/")
-def get_idf_weights(input_span: ToPredict):
+def get_idf_weights(to_be_predicted: ToPredict):
     """
     Returns the query and it's corresponding idf_weights
     """
-    if type(input_span.spans) == list:
-        span = input_span.spans[0]
-    else:
-        span = input_span.spans
+    idf_weights = []
+    if to_be_predicted.spans:
+        for span in to_be_predicted.spans:
+            tokens, indices = hub.embedder.prepare_tokens(span)
+            idf_weights.append(hub.embedder.get_idf_weights_for_indices(tokens, indices).tolist())
+    elif to_be_predicted.span_lists:
+        for span_list in to_be_predicted.span_lists:
+            idf_weights_sub_list = []
+            for span in span_list:
+                tokens, indices = hub.embedder.prepare_tokens(span)
+                idf_weights_sub_list.append(hub.embedder.get_idf_weights_for_indices(tokens, indices).tolist())
+            idf_weights.append(idf_weights_sub_list)
 
-    if span:
-        tokens, indices = hub.embedder.prepare_tokens(span)
-        idf_weights = hub.embedder.get_idf_weights_for_indices(tokens, indices).tolist()
-        return {"idf_weights": idf_weights}
-    return {"idf_weights": []}
+    return {"idf_weights": idf_weights}
 
 
 # Would need to pass the new settings as params={}, reading from file for now
