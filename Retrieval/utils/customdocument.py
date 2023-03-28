@@ -130,7 +130,7 @@ class CustomDocument(object):
             self.doc_name = source_filepath.stem
 
         self.split_size = split_size
-        self.all_contents = []  # todo would a set be faster? And do I need to keep order?
+        self.all_contents = []
 
     @classmethod
     def load_document(cls, output_fp):

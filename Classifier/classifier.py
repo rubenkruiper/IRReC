@@ -230,8 +230,8 @@ class Classifier:
         if list_of_spans == self.current_spans_to_predict:
             pass
         else:
-            # embed each of the spans in the list #todo save time by using embedding once
-            embedding_list = []
+            self.current_spans_to_predict = list_of_spans   # update current_spans_to_predict
+            embedding_list = []                             # update current_stacked_embeddings
             for span in list_of_spans:
                 if not span:
                     continue
@@ -245,3 +245,4 @@ class Classifier:
                 self.current_stacked_embeddings = embedding_list[0].reshape(1, -1)
             else:
                 self.current_stacked_embeddings = "None"
+
