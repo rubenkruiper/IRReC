@@ -1,11 +1,11 @@
 import pickle
 import requests
-from urllib import parse
+import numpy as np
 from textblob import TextBlob
 
 from typing import List, Dict
 from collections import Counter
-# import networkx as nx
+import networkx as nx
 # https://www.elastic.co/guide/en/elasticsearch/reference/7.17/analysis-synonym-graph-tokenfilter.html
 
 
@@ -25,6 +25,7 @@ class QueryExpander:
 
         # todo - create this graph from the IR system; too much work for now
         self.network = pickle.load(open("/data/undirected_weighted_graph.pkl", 'rb'))
+        self.avg_degree_dict = nx.average_neighbor_degree(self.network)
         self.lower_cased_nodes = list(self.network.nodes)   # assuming all lower-cased already
 
     def expand_query(self,
@@ -172,7 +173,7 @@ class QueryExpander:
         response = requests.post(f"{self.classifier_url}get_neighbours/", json={"spans": spans}).json()
         return [nn for nn_list in response['neighbours'] for nn in nn_list[:top_k]]
 
-    def span_KG_mapping(self, spans: List[str], minimum_degree: int = 75, top_k: int = 2) -> List[str]:
+    def span_KG_mapping(self, spans: List[str], minimum_degree: int = 100, top_k: int = 2) -> List[str]:
         """
         KG expansion → candidate set 2
         Based on the "distance" between nodes in our graph, grab the top_k QE candidates.
@@ -189,15 +190,22 @@ class QueryExpander:
         dist_weight = 1             # todo consider using weights in changing KG-based QE results
         degree_weight = 1
         for node in query_nodes:
+            avg_degree = self.avg_degree_dict[node]
+            own_degree = self.network.degree[node]
 
-            if self.network.degree[node] > minimum_degree:
+            if own_degree > minimum_degree:
                 # We would primarily like to use QE for terms that are not very common
                 continue
 
             kg_neighbours = []
             for n in self.network.neighbors(node):
                 distance = self.network.get_edge_data(node, n)
-                combination_tuple = [(dist_weight * distance['weight']) * (degree_weight * self.network.degree[n]),
+                degree_measure = np.log(self.network.degree[n]) * self.avg_degree_dict[n]
+                # We'll assume that avg degree represents the connectedness of the node, as well as the nodes it is
+                # connected too. Distance represents the
+                # degree (how common the term is in the KG) -> we would like more common terms
+                # distance (higher distance is worse) -> we would like a small distance
+                combination_tuple = [(dist_weight * distance['weight']) * (degree_measure * degree_weight),
                                      n]
                 kg_neighbours.append(combination_tuple)
 
@@ -213,7 +221,7 @@ class QueryExpander:
         prf_candidates = []
         for idx, score_and_dict in enumerate(initial_search_results):
             score, d = score_and_dict
-            label_counter = d['label_counters_dict']['filtered_NER_labels']    # can change labels here, or use multiple
+            label_counter = d['label_counters_dict']['filtered_NER_labels']     # can change label here, or use multiple
             filtered_NER_labels = [(str(r), int(c)) for r, c in label_counter.most_common()]
             prf_candidates += filtered_NER_labels   # can combine multiple sources of labels
 

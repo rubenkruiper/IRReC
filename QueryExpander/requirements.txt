@@ -5,3 +5,4 @@ requests
 fastapi
 uvicorn
 networkx==3.0
+numpy==1.23.4
