@@ -193,7 +193,10 @@ class QueryExpander:
         dist_weight = 1             # todo consider using weights in changing KG-based QE results
         degree_weight = 1
         for node in query_nodes:
-            avg_degree = self.avg_degree_dict[node]
+            if node not in self.network:
+                # todo if the node doesn't exit in the network, use a back-off strategy maybe
+                continue
+
             own_degree = self.network.degree[node]
 
             if own_degree > minimum_degree:
