@@ -61,7 +61,7 @@
     "num_neighbours_cutoff": 375,
     "foreground_corpus_terms": "foreground_terms.pkl",
     "background_corpus_terms": "background_terms.pkl",
-    "top_k_semantically_similar": 5,
+    "top_k_semantically_similar": 2,
     "metric": "cosine"
   },
   "query_expansion": {
