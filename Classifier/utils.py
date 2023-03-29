@@ -34,20 +34,16 @@ def subword_insight(subword_units: List[str],
 
 
 def predict_uniques_all_contents(list_of_lists, function):
-    print("\n\n[list_of_lists] :", list_of_lists)
     flat_spans, list_ids = map(list, zip(*[(s, idx) for idx, spans in enumerate(list_of_lists) for s in spans]))
-    print("\n\n[flat_spans] :", flat_spans)
-    print("\n\n[list_ids] :", list_ids)
     unique_spans = list(set(flat_spans))
+    print("\n\n[UNIQUE SPANS] :", unique_spans)
     computed_values = function(unique_spans)
-
-    print("\n\n[function] :", function)
-    print("[computed_values] :", computed_values)
+    print("\n\n[COMPUTE VALUES] :", computed_values)
     dict_of_lists_to_return = {idx: [] for idx in list_ids}
     for span, idx in zip(flat_spans, list_ids):
         try:
             dict_of_lists_to_return[idx].append(computed_values[unique_spans.index(span)])
-        except IndexError:
+        except ValueError:
             # this happens when the function is domain classification, and the span is regarded as out-of-domain
             dict_of_lists_to_return[idx].append('')         # todo adding empty string for now
     # make sure to return the lists sorted by the key indices
