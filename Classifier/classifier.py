@@ -160,6 +160,8 @@ class Classifier:
                 for span, prediction in zip(spans_to_predict, predictions):
                     if prediction == 'y':
                         domain_spans.append(span)
+                    else:
+                        domain_spans.append('')
         return domain_spans
 
     def prep_semantic_similarity(self):
@@ -217,8 +219,6 @@ class Classifier:
             for neighbour_indices in neighbour_indices_lists:
                 neighbour_spans = [self.unique_spans[idx] for idx in neighbour_indices]
                 neighbours_lists.append(neighbour_spans)
-            else:
-                neighbours_lists.append([])
 
         return neighbours_lists
 
