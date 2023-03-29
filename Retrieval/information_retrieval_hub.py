@@ -244,6 +244,7 @@ class InformationRetrievalHub:
                 else:
                     new_contents = converted_document.all_contents
                     list_of_filtered_NER_label_lists = [c.filtered_NER_labels for c in new_contents]
+                    print("\n\n[list_of_filtered_NER_label_lists] :", list_of_filtered_NER_label_lists)
                     domain_span_lists = requests.post(f"{self.classifier_url}filter_non_domain_spans/",
                                                       json={"span_lists": list_of_filtered_NER_label_lists}).json()
 
