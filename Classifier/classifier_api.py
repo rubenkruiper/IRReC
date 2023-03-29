@@ -193,7 +193,6 @@ def filter_non_domain_spans(to_be_predicted: ToPredict):
     elif to_be_predicted.span_lists:    # todo; put this in a separte helper function
         lists_to_return = predict_uniques_all_contents(to_be_predicted.span_lists,
                                                        hub.classifier.predict_domains)
-        print("\n\n[lists_to_return] :", lists_to_return)
         return {'domain_spans': lists_to_return}
     # If the input is None, simply return an empty list
     return {'domain_spans': []}
@@ -211,7 +210,6 @@ def get_neighbours(to_be_predicted: ToPredict):
         lists_to_return = predict_uniques_all_contents(to_be_predicted.span_lists,
                                                        hub.classifier.get_nearest_neighbours)
         return {'neighbours': lists_to_return}
-
     # If the input is None, simply return an empty list
     return {'neighbours': []}
 
