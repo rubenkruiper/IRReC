@@ -41,7 +41,7 @@ def predict_uniques_all_contents(list_of_lists, function):
     for span, idx in zip(flat_spans, list_ids):
         try:
             dict_of_lists_to_return[idx].append(computed_values[unique_spans.index(span)])
-        except ValueError:
+        except (IndexError, ValueError) as e:               
             # this happens when the function is domain classification, and the span is regarded as out-of-domain
             dict_of_lists_to_return[idx].append('')         # todo adding empty string for now
     # make sure to return the lists sorted by the key indices
