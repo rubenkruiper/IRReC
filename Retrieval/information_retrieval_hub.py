@@ -99,11 +99,12 @@ class InformationRetrievalHub:
             self.hidden_dims = configs["indexing"]["dense_settings"]["hidden_dims"]
             self.faiss_index_type = configs["indexing"]["dense_settings"]["faiss_index"]
             self.faiss_model_format = configs["indexing"]["dense_settings"]["model_format"]
-            self.max_seq_len_query = configs["indexing"]["dense_settings"]["max_seq_len_query"]
-            self.max_seq_len_passage = configs["indexing"]["dense_settings"]["max_seq_len_passage"]
-            self.batch_size = configs["indexing"]["dense_settings"]["batch_size"]
+            self.max_seq_len_query = int(configs["indexing"]["dense_settings"]["max_seq_len_query"])
+            self.max_seq_len_passage = int(configs["indexing"]["dense_settings"]["max_seq_len_passage"])
+            self.batch_size = int(configs["indexing"]["dense_settings"]["batch_size"])
 
         # container to keep track of our pipelines
+        self.data_ready = False
         self.pipelines = {}
         self.pipelines_to_query = []
 
@@ -132,22 +133,26 @@ class InformationRetrievalHub:
         """
         This method calls the preprocessing functionality (splitting, cleaning, SPaR.txt labelling, NNs, domain class).
         """
-        # (1) Convert foreground corpus and background corpus
-        convert_inputs(self.foreground_input_dir, self.foreground_output_dir, self.foreground_conversion_type)
-        convert_inputs(self.background_input_dir, self.background_output_dir, self.background_conversion_type)
+        if not self.data_ready:        # we want to only run this once; avoid checking all documents and steps everytime
+            # (1) Convert foreground corpus and background corpus
+            convert_inputs(self.foreground_input_dir, self.foreground_output_dir, self.foreground_conversion_type)
+            convert_inputs(self.background_input_dir, self.background_output_dir, self.background_conversion_type)
 
-        # (2) Compute IDF weights over the converted corpora
-        idf_values = self.idf_computer.compute_or_load_idf_weights([self.foreground_output_dir,
-                                                                    self.background_output_dir],
-                                                                   overwrite=False)
+            # (2) Compute IDF weights over the converted corpora
+            idf_values = self.idf_computer.compute_or_load_idf_weights([self.foreground_output_dir,
+                                                                        self.background_output_dir],
+                                                                       overwrite=False)
 
-        # (3) Preprocess (run SPaR.txt, filter extracted terms, split everything into index-able chunks)
-        #  - can pass custom split_length here, but avoiding this for now
-        self.preprocess_inputs(self.foreground_output_dir, self.classifier_dir.joinpath(self.foreground_terms_filename))
-        self.preprocess_inputs(self.background_output_dir, self.classifier_dir.joinpath(self.background_terms_filename))
+            # (3) Preprocess (run SPaR.txt, filter extracted terms, split everything into index-able chunks)
+            #  - can pass custom split_length here, but avoiding this for now
+            self.preprocess_inputs(self.foreground_output_dir,
+                                   self.classifier_dir.joinpath(self.foreground_terms_filename))
+            self.preprocess_inputs(self.background_output_dir,
+                                   self.classifier_dir.joinpath(self.background_terms_filename))
 
-        # (4) SPaR.txt is done, we'll do some domain classification and find NNs
-        self.expand_documents(self.foreground_output_dir)
+            # (4) SPaR.txt is done, we'll do some domain classification and find NNs
+            self.expand_documents(self.foreground_output_dir)
+            self.data_ready = True
 
     def preprocess_inputs(self,
                           converted_documents_dir: Path,
@@ -173,13 +178,14 @@ class InformationRetrievalHub:
             for converted_document_filepath in tqdm(converted_document_filepaths):
                 converted_document = CustomDocument.load_document(converted_document_filepath)
                 if not converted_document:
-                    logger.info(f"Issue loading converted document: {converted_document_filepath}")
+                    logger.debug(f"Issue loading converted document: {converted_document_filepath}")
                     continue
 
                 if any([len(c.NER_labels) > 1 for c in converted_document.all_contents]):
-                    logger.info(f"[Preprocessor] skipping, NER outputs already found in: {converted_document_filepath}")
+                    logger.debug(f"[Preprocessor] skipping, NER outputs already found in: {converted_document_filepath}")
+                    pass
                 else:
-                    logger.info(f"[Preprocessor] Identifying NER labels for: {converted_document_filepath}")
+                    logger.debug(f"[Preprocessor] Identifying NER labels for: {converted_document_filepath}")
                     processed_list_of_dicts = self.preprocessor.process(converted_document.to_list_of_dicts())
                     converted_document.replace_contents(processed_list_of_dicts)
                     converted_document.write_document()
@@ -199,15 +205,15 @@ class InformationRetrievalHub:
                 filtered_labels = set(pickle.load(open(term_output_path, 'rb')))
 
             # (2) identify which NER labels remain after cleaning
-            logger.info("[Preprocessor] Retaining the filtered/cleaned SPaR.txt labels separately.")
+            logger.info("[Filtering] Retaining the filtered/cleaned SPaR.txt labels separately.")
             for filepath in tqdm(converted_document_filepaths):
                 processed_document = CustomDocument.load_document(filepath)
                 if any([len(c.filtered_NER_labels) > 1 for c in processed_document.all_contents]):
-                    logger.info("[Filtering] Skipping filtering, since filtered labels found in: {}".format(
+                    logger.debug("[Filtering] Skipping filtering, since filtered labels found in: {}".format(
                         processed_document.output_fp
                     ))
                 else:
-                    logger.info("[Filtering] Running regex and IDF-based filters on SPaR labels.")
+                    logger.debug("[Filtering] Running regex and IDF-based filters on SPaR labels.")
                     # Filtering based on regex and IDF
                     for idx, content in enumerate(processed_document.all_contents):
                         if content.NER_labels:
@@ -234,11 +240,12 @@ class InformationRetrievalHub:
             # make sure the classifier is trained, or the previously trained model is loaded
             requests.post(f"{self.classifier_url}train/")
 
+            logger.info("[Classifier] adding domain classification and kNNs.")
             for converted_document_filepath in tqdm(converted_document_filepaths):
                 converted_document = CustomDocument.load_document(converted_document_filepath)
                 # make sure neighbours do not exist anywhere yet
                 if any([len(c.neighbours) > 1 for c in converted_document.all_contents]):
-                    logger.info(
+                    logger.debug(
                         f"[Classifier] skipping, classes and NNs already found in: {converted_document_filepath}")
                     continue
                 else:
@@ -317,7 +324,9 @@ class InformationRetrievalHub:
         sparse_retriever = self.initialize_sparse_retriever(self.sparse_type, sparse_document_store)
         self.pipelines[sparse_type] = DocumentSearchPipeline(sparse_retriever)
 
-    def set_up_sparse_pipelines(self, recreate_sparse_index: bool = False) -> (DocumentSearchPipeline, DocumentSearchPipeline):
+    def set_up_sparse_pipelines(self,
+                                recreate_sparse_index: bool = False) -> (DocumentSearchPipeline,
+                                                                         DocumentSearchPipeline):
         """
         :param recreate_sparse_index:  Whether to recreate the ElasticSearch index from scratch (default=False). Useful for
                                 debugging.
@@ -342,7 +351,7 @@ class InformationRetrievalHub:
             for doc_fp in tqdm(processed_document_fps):
                 documents_to_write += CustomDocument.load_document(doc_fp).to_list_of_dicts()
             logger.info(
-                '[DocumentStore] SPARSE index and classifier_data will be created from scratch -- this will '\
+                '[DocumentStore] SPARSE index and classifier_data will be created from scratch -- this will '
                 'take a long time, \n            but only has to be done once.')
             sparse_document_store_plain.write_documents(documents_to_write)
             sparse_document_store_multimatch.write_documents(documents_to_write)
