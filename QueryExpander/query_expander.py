@@ -26,7 +26,7 @@ class QueryExpander:
         # todo - create this graph from the IR system; too much work for now
         self.network = pickle.load(open("/data/undirected_weighted_graph.pkl", 'rb'))
         self.avg_degree_dict = nx.average_neighbor_degree(self.network)
-        self.lower_cased_nodes = list(self.network.nodes)   # assuming all lower-cased already
+        self.graph_nodes = list(self.network.nodes)   # assuming all lower-cased already
 
     def expand_query(self,
                      initial_query: str,
@@ -81,9 +81,7 @@ class QueryExpander:
         """
         Select top X number of candidates; usually ranking is based on IDF values!
         """
-        # ToDo;
-        #  - select not the top X, but a number of terms based on the initial query length
-        #  - pass weights for the different types of candidates
+        # ToDo; select not the top X, but a number of terms based on the initial query length?
         candidates_and_weights = {}
         if nn_candidates:
             candidates_and_weights["nearest_neighbours"] = {"candidates": nn_candidates,
@@ -112,7 +110,7 @@ class QueryExpander:
                     # assuming average IDF weights over the tokens for now
                     weighted_avg_idf_weight = (sum(idf_weights)/len(idf_weights)) * v['weight']
                     if 'counts' in v.keys():
-                        # todo multiply with prf_counts? or not?
+                        # todo; take into account the counts of PRF candidates?
                         weighted_avg_idf_weight = (sum(idf_weights)/len(idf_weights)) * v['weight'] * v['counts'][idx]
                         candidate = candidate + f", ({str(v['counts'][idx])})"
 
@@ -187,7 +185,7 @@ class QueryExpander:
         :param top_k:            Number of QE candidates we will return.
         :return:                 List of candidate spans
         """
-        query_nodes = [n for n in spans if n.lower() in self.lower_cased_nodes]
+        query_nodes = [n for n in spans if n in self.graph_nodes]
         kg_neighbour_candidates = []
         # expanded_nodes_dict = {}  # todo consider grouping QE candidates per span?
         dist_weight = 1             # todo consider using weights in changing KG-based QE results
