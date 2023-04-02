@@ -43,6 +43,7 @@ class InformationRetrievalHub:
         # keep track of original configuration (default settings for querying)
         self.configs = configs
         self.cache_dir = configs["cache_dir"]
+        os.environ['TRANSFORMERS_CACHE'] = self.cache_dir
         self.top_k_per_retriever = configs['retrieval']['top_k']
 
         # initialise the input/output paths and names for models to use
