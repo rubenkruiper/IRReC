@@ -436,12 +436,13 @@ class InformationRetrievalHub:
             embed_title=True,
             use_fast_tokenizers=True
         )
-        # Seems like we always have to update the embeddings after the DPR retriever init (takes a couple of minutes)
-        # - https://haystack.deepset.ai/tutorials/dense-passage-retrieval
-        logger.info("[Document Store] updating retriever embeddings for field: {}".format(field_to_index))
-        dense_document_store.update_embeddings(retriever)
+
 
         if save_updated_document_store:
+            # Seems like we (always?) have to update the embeddings after the DPR retriever init (takes a couple of minutes)
+            # - https://haystack.deepset.ai/tutorials/dense-passage-retrieval
+            logger.info("[Document Store] updating retriever embeddings for field: {}".format(field_to_index))
+            dense_document_store.update_embeddings(retriever)
             # Save the document_store for reloading
             dense_document_store.save(index_path=faiss_index_path)
             # retriever.save(self.cache_dir) # todo; figure out how to save the gdamn dpr bullshit models
