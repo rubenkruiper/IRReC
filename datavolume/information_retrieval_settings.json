@@ -69,8 +69,8 @@
       "concept_extraction": "spar", // currently not providing other options
       "nearest_neighours": "yes", // simply yes no?
       "pseudo_relevance_feedback" : "yes", // `yes` or `no`
-      "prf_weight": 1,
-      "kg_weight": 2,
+      "prf_weight": 0,
+      "kg_weight": 1,
       "nn_weight": 1
   }
 }

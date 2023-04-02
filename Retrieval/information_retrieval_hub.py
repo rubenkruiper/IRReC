@@ -278,12 +278,17 @@ class InformationRetrievalHub:
         duplicate_documents = 'overwrite' if self.recreate_sparse_index else 'skip'
 
         # Start Elasticsearch using Docker via the Haystack utility function
-        sparse_document_store = ElasticsearchDocumentStore(host="host.docker.internal",
-                                                           index=index_name,
-                                                           search_fields=fields,
-                                                           content_field="content",
-                                                           recreate_index=self.recreate_sparse_index,
-                                                           duplicate_documents=duplicate_documents)
+        try:
+            sparse_document_store = ElasticsearchDocumentStore(host="host.docker.internal",
+                                                               index=index_name,
+                                                               search_fields=fields,
+                                                               content_field="content",
+                                                               recreate_index=self.recreate_sparse_index,
+                                                               duplicate_documents=duplicate_documents)
+        except ConnectionError:
+            print("[ELASTICSEARCH] make sure ES is running, or didn't crash again... then retry updating settings")
+            sparse_document_store = None
+
         return sparse_document_store
 
     def initialize_sparse_retriever(self, sparse_type, sparse_document_store: ElasticsearchDocumentStore):
@@ -321,8 +326,9 @@ class InformationRetrievalHub:
         # todo; assuming we always need/want to recreate the sparse index for now
         sparse_type = "bm25f" if self.sparse_type == "bm25f" else "bm25"
         sparse_document_store = self.initialize_sparse_docstore(self.index_name + "_" + sparse_type)
-        sparse_retriever = self.initialize_sparse_retriever(self.sparse_type, sparse_document_store)
-        self.pipelines[sparse_type] = DocumentSearchPipeline(sparse_retriever)
+        if sparse_document_store:
+            sparse_retriever = self.initialize_sparse_retriever(self.sparse_type, sparse_document_store)
+            self.pipelines[sparse_type] = DocumentSearchPipeline(sparse_retriever)
 
     def set_up_sparse_pipelines(self,
                                 recreate_sparse_index: bool = False) -> (DocumentSearchPipeline,
