@@ -28,7 +28,7 @@ def split_doc_title_and_doc_id(doc_id, title):
     if title.startswith("BS") or title.startswith("NA") or title.startswith("+"):
         match = re.match(r"[A-Z +]+(to)?[A-Z ]+([\d\-+:]+)([A-Z ]+[\d\-+:]+)?", title)
     elif title[0].isdigit():
-        match = re.match(r'[0-9: +]([\dA-Z\-+:]+)([A-Z ]+[\d\-+:]+)?')
+        match = re.match(r'[0-9: +]([\dA-Z\-+:]+)([A-Z ]+[\d\-+:]+)?', title)
     elif title.startswith("Eurocode"):
         match = re.match(r"Euro([\w :])+([\d\-+:]+)([A-Z ]+[\d\-+:]+)?", title)
 
