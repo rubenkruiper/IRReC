@@ -43,7 +43,8 @@ class InformationRetrievalHub:
         # keep track of original configuration (default settings for querying)
         self.configs = configs
         self.cache_dir = configs["cache_dir"]
-        os.environ['TRANSFORMERS_CACHE'] = self.cache_dir   # todo; don't think this helps reload DPR
+        os.environ['TRANSFORMERS_CACHE'] = self.cache_dir   # todo; figure out how to properly set this cache for DPR
+        os.environ['HF_HOME'] = self.cache_dir
         self.top_k_per_retriever = configs['retrieval']['top_k']
 
         # initialise the input/output paths and names for models to use
@@ -440,8 +441,8 @@ class InformationRetrievalHub:
 
 
         if save_updated_document_store:
-            # Seems like we (always?) have to update the embeddings after the DPR retriever init (takes a couple of minutes)
-            # - https://haystack.deepset.ai/tutorials/dense-passage-retrieval
+            # Seems like we (always?) have to update the embeddings after the DPR retriever init
+            # (matter of minutes on a GPU, but hours on CPU)
             logger.info("[Document Store] updating retriever embeddings for field: {}".format(field_to_index))
             dense_document_store.update_embeddings(retriever)
             # Save the document_store for reloading

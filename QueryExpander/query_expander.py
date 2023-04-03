@@ -1,12 +1,13 @@
+from typing import List, Dict
 import pickle
 import requests
 import numpy as np
-from textblob import TextBlob
-
-from typing import List, Dict
-from collections import Counter
 import networkx as nx
-# https://www.elastic.co/guide/en/elasticsearch/reference/7.17/analysis-synonym-graph-tokenfilter.html
+
+from textblob import TextBlob
+from collections import Counter
+
+from query_expansion_utils import cleaning_helper, levenshtein
 
 
 class QueryExpander:
@@ -53,6 +54,7 @@ class QueryExpander:
                            initial_search_results: Dict[str, str]):
         # identify which query keywords belong together; currently expecting a sentence or punctuation to help splitting
         spans = self.span_identification_SPaR(initial_query)
+        spans = cleaning_helper(spans)                               # run some basic cleaning on spans before QE
 
         # nearest neighbours of spans # todo; change the manual setting of top_k here
         nn_candidates = self.nearest_neighbours(spans, top_k=2) if self.nn_weight else None
@@ -172,7 +174,10 @@ class QueryExpander:
         """
 
         response = requests.post(f"{self.classifier_url}get_neighbours/", json={"spans": spans}).json()
-        return [nn for nn_list in response['neighbours'] for nn in nn_list[:top_k]]
+        dissimilar_neighbours = []
+        for span, nn_list in zip(spans, response['neighbours']):
+            dissimilar_neighbours += [nn for nn in nn_list if not levenshtein(nn, span)][:top_k]
+        return dissimilar_neighbours
 
     def span_KG_mapping(self, spans: List[str], minimum_degree: int = 100, top_k: int = 2) -> List[str]:
         """
@@ -182,17 +187,21 @@ class QueryExpander:
         :param spans:            List of spans.
         :param minimum_degree:   We will only expand nodes that are 'uncommon' in the graph, e.g.,
                                  a degree lower than this value.
-        :param top_k:            Number of QE candidates we will return.
+        :param top_k:            Number of QE candidates we will return, per span again (like with NNs).
         :return:                 List of candidate spans
         """
+        # check if the query-derived span exists as a node in the network
+        # todo if the node doesn't exit in the network, use a back-off strategy maybe
         query_nodes = [n for n in spans if n in self.graph_nodes]
+
         kg_neighbour_candidates = []
         # expanded_nodes_dict = {}  # todo consider grouping QE candidates per span?
         dist_weight = 1             # todo consider using weights in changing KG-based QE results
         degree_weight = 1
         for node in query_nodes:
             if node not in self.network:
-                # todo if the node doesn't exit in the network, use a back-off strategy maybe
+                # we already filter out spans that do not exist in the network before, here we simply avoid errors
+                # todo; clean -- probably keep this and not the self.graph_nodes comparison
                 continue
 
             own_degree = self.network.degree[node]
@@ -207,15 +216,18 @@ class QueryExpander:
                 degree_measure = np.log(self.network.degree[n]) * self.avg_degree_dict[n]
                 # We'll assume that avg degree represents the connectedness of the node, as well as the nodes it is
                 # connected too. Distance represents the
-                # degree (how common the term is in the KG) -> we would like more common terms
-                # distance (higher distance is worse) -> we would like a small distance
+                # -- degree (how common the term is in the KG) --> we would prefer more commonly used terms
+                # -- distance (higher distance is worse) --> we would like a small distance between nodes
                 combination_tuple = [(dist_weight * distance['weight']) * (degree_measure * degree_weight),
                                      n]
                 kg_neighbours.append(combination_tuple)
 
-            # expanded_nodes_dict[node] = [n for distance, degree, n in sorted(kg_neighbours)[:top_k]]
-            kg_neighbour_candidates += [n for distance_degree, n in sorted(kg_neighbours)[:top_k]]
-        return kg_neighbour_candidates
+            kg_neighbour_candidates.append([n for distance_degree, n in sorted(kg_neighbours)])
+
+        dissimilar_kg_candidates = []
+        for span, kg_candidate_list in zip(query_nodes, kg_neighbour_candidates):
+            dissimilar_kg_candidates += [c for c in kg_candidate_list if not levenshtein(c, span)][:top_k]
+        return dissimilar_kg_candidates
 
     def pseudo_relevance_feedback(self, initial_search_results, spans):
         """
