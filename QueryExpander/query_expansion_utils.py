@@ -156,8 +156,8 @@ def levenshtein(w1: str, w2: str) -> bool:
         short_w, long_w = w1, w2
 
     # Comparison is between lowercased words, in order to ignore case
-    # % 75% character level similarity minimum
-    return 100 - (lev(short_w.lower(), long_w.lower()) / len(long_w) * 100) > 75
+    # % simple intuition is that we check for 70% character level similarity
+    return 100 - (lev(short_w.lower(), long_w.lower()) / len(long_w) * 100) > 70
 
 
 def cleaning_helper(to_be_cleaned: List[str]):
