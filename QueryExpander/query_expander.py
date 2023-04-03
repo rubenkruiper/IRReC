@@ -176,7 +176,8 @@ class QueryExpander:
         response = requests.post(f"{self.classifier_url}get_neighbours/", json={"spans": spans}).json()
         dissimilar_neighbours = []
         for span, nn_list in zip(spans, response['neighbours']):
-            dissimilar_neighbours += [nn for nn in nn_list if not levenshtein(nn, span)][:top_k]
+            # todo; improve dissimilarity check of candidates vs span
+            dissimilar_neighbours += [nn for nn in nn_list if (nn not in span or not levenshtein(nn, span))][:top_k]
         return dissimilar_neighbours
 
     def span_KG_mapping(self, spans: List[str], minimum_degree: int = 100, top_k: int = 2) -> List[str]:
@@ -225,8 +226,9 @@ class QueryExpander:
             kg_neighbour_candidates.append([n for distance_degree, n in sorted(kg_neighbours)])
 
         dissimilar_kg_candidates = []
-        for span, kg_candidate_list in zip(query_nodes, kg_neighbour_candidates):
-            dissimilar_kg_candidates += [c for c in kg_candidate_list if not levenshtein(c, span)][:top_k]
+        for s, kg_candidate_list in zip(query_nodes, kg_neighbour_candidates):
+            # todo; improve dissimilarity check of candidates vs span
+            dissimilar_kg_candidates += [c for c in kg_candidate_list if (c not in s or not levenshtein(c, s))][:top_k]
         return dissimilar_kg_candidates
 
     def pseudo_relevance_feedback(self, initial_search_results, spans):
