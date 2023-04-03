@@ -1,67 +1,8 @@
-from typing import List
+from typing import List, Union
 import re
 import copy
 
 from Levenshtein import distance as lev
-
-
-class RegexFilter:
-    def __init__(self):
-        pass
-
-    def single_regex_pattern(self, some_pattern, texts):
-        """
-        Helper function that applies a single regex pattern to a list of textspans.
-        """
-        no_updated = 0
-        p = re.compile(some_pattern)
-        new_texts = texts
-        removed = []
-        for idx, t in enumerate(texts):
-            # check that the object wasn't already removed in a previous pass
-            if t != '':
-                t_ = re.sub(p, '', t)
-                new_texts[idx] = t_
-
-                if not t_:
-                    # empty str after re.sub
-                    removed.append(t)
-                elif t_ != t:
-                    # different str after re.sub
-                    no_updated += 1
-
-        # print("Removed {} objects, updated {}".format(len(removed), no_updated))
-        return new_texts, removed
-
-    def run_filter(self, to_be_filtered, regex_dict=None):
-        """
-        Function that can be called to run a set of regular expressions to filter out specific spans or parts of spans.
-        Basic regexes are provided for identifying title_numbers, references and gibberish numbers in text.
-        """
-        if not regex_dict:
-            # todo: improve regexes for preprocess-filtering
-            regex_dict = {
-                'title_numbers': '^([A-Z]{1}[. ]{1})?([ \d.+-])*',  # (?<![: ])(?![\D\-:]{1})
-                'references': '[(]+([\d\s.])*[)]?',
-                'gibberish_numbers': '^(\d|\w|_|—|@|=|\/|\\|~|\.|,|<|>|:|°|\*|\||\(|\))(?(1)(\s?(\d|_|—|@|=|\/|\\|~|\.|,|<|>|:|%|\*|\||\(|\))\s?)+(\w(?!\w))?|)',
-                #     'real_numbers': '^\d*((\s)?(.|,)?(\s)?\d)*$',
-            }
-
-        removed_objects = []
-        if type(to_be_filtered) == str:
-            to_be_filtered = [to_be_filtered]
-
-        updated_objects = copy.deepcopy(to_be_filtered)
-
-        for filter_type, pattern in regex_dict.items():
-            # print("Filtering {}".format(filter_type))
-            updated_objects, removed = self.single_regex_pattern(pattern, updated_objects)
-            removed_objects += removed
-
-        if '' in updated_objects:
-            updated_objects.remove('')
-
-        return removed_objects, updated_objects
 
 
 def split_list(some_list: List, chunk_size: int) -> List[List]:
@@ -86,7 +27,7 @@ def repeating(span):
         return False
 
 
-def custom_cleaning_rules(objects):
+def custom_cleaning_rules(objects: Union[List[str], str]):
     """
     objects can be a List[str] or str
     """
@@ -191,7 +132,7 @@ def remove_determiners(text):
     return text
 
 
-def levenshtein(w1, w2):
+def levenshtein(w1: str, w2: str) -> bool:
     """
     Determine the Levenshtein distance between two spans, divided by the length of the longest span. If this
     value is below a given threshold (currently hardcoded to .75) the spans are considered dissimilar. This
@@ -219,16 +160,11 @@ def levenshtein(w1, w2):
     return 100 - (lev(short_w.lower(), long_w.lower()) / len(long_w) * 100) > 75
 
 
-global_regex_filter = RegexFilter()     # todo; improve the ordering etc of this
-
-
 def cleaning_helper(to_be_cleaned: List[str]):
     """
     Helper function to call the basic filtering steps outlined in the cleaning utilities script.
     """
-    _, regex_cleaned = global_regex_filter.run_filter(
-        to_be_cleaned)  # _ would be the list of terms removed by our regex filters
-    basic_cleaned = custom_cleaning_rules(regex_cleaned)
+    basic_cleaned = custom_cleaning_rules(to_be_cleaned)
     determiners_removed = [remove_determiners(t) for t in basic_cleaned]
     cleaned_terms = [t for t in determiners_removed if t]
     return cleaned_terms

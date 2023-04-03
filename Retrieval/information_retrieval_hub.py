@@ -43,7 +43,7 @@ class InformationRetrievalHub:
         # keep track of original configuration (default settings for querying)
         self.configs = configs
         self.cache_dir = configs["cache_dir"]
-        os.environ['TRANSFORMERS_CACHE'] = self.cache_dir   # todo; figure out how to properly set this cache for DPR
+        os.environ['TRANSFORMERS_CACHE'] = self.cache_dir   # this may not be necessary
         os.environ['HF_HOME'] = self.cache_dir
         self.top_k_per_retriever = configs['retrieval']['top_k']
 
