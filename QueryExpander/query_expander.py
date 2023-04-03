@@ -27,7 +27,7 @@ class QueryExpander:
         # todo - create this graph from the IR system; too much work for now
         self.network = pickle.load(open("/data/undirected_weighted_graph.pkl", 'rb'))
         self.avg_degree_dict = nx.average_neighbor_degree(self.network)
-        self.graph_nodes = list(self.network.nodes)   # assuming all lower-cased already
+        self.graph_nodes = list(self.network.nodes)
 
     def expand_query(self,
                      initial_query: str,
