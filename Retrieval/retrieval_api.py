@@ -85,3 +85,10 @@ def set_field_weights(retrieval_settings: RetrievalSettings):
             "sparse_type": my_pipeline.sparse_type,
             "fields_and_weights": my_pipeline.fields_and_weights,
             "top_k_per_retriever": my_pipeline.top_k_per_retriever}
+
+
+@Retrieval_api.post("/compute_idf/")
+def search():
+    my_pipeline.idf_computer.compute_or_load_idf_weights([my_pipeline.foreground_output_dir,
+                                                          my_pipeline.background_output_dir],
+                                                         overwrite=False)
