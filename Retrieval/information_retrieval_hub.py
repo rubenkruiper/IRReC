@@ -50,7 +50,7 @@ class InformationRetrievalHub:
         # initialise the input/output paths and names for models to use
         self.bert_model_name = configs['bert_model']
         self.IDF_path = Path(configs["IDF_path"])
-        self.idf_computer = IdfComputer(Path(configs["IDF_path"]))
+        self.idf_computer = IdfComputer(Path(configs["IDF_path"]), self.bert_model_name)
         self.classifier_dir = Path(configs["classifier_dir"])
         self.foreground_terms_filename = configs["classifier_settings"]["foreground_corpus_terms"]
         self.background_terms_filename = configs["classifier_settings"]["background_corpus_terms"]
