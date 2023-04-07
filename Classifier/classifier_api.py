@@ -142,6 +142,7 @@ class EmbeddingHub:
         """ Initializes a Classifier model, may need training. """
         # Grab the latest version of settings/configuration
         settings = self.grab_settings()
+        self.initialize_embeddings_from_settings()
         self.classifier = Classifier(
             self.embedder,
             self.foreground_term_filepath,
