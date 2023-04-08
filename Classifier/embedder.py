@@ -51,6 +51,7 @@ class Embedder:
 
         self.embedding_prefix = "embeddings"
         self.embedding_dir = embedding_dir
+        self.span_and_embedding_pairs = []
         self.standardised_embedding_data = []
         self.unique_spans = []
         self.new_embedding_data = []
@@ -188,7 +189,7 @@ class Embedder:
         """
         embeddings = self.embed_text(span)
         try:
-            return (span, torch.stack(embeddings).detach().numpy().squeeze())
+            return span, torch.stack(embeddings).detach().numpy().squeeze()
         except RuntimeError:
             # can happen if the tensor for the span is empty somehow
             logger.info(f"Empty tensor! Not sure why, but will drop the span: {span}")
@@ -265,7 +266,6 @@ class Embedder:
 
         embedding_files = [f for f in self.embedding_dir.glob(f'{prefix}*.pkl')]
 
-        self.span_and_embedding_pairs = []
         if len(embedding_files) == len(term_subsets):
             for e in embedding_files:
                 self.span_and_embedding_pairs += pickle.load(open(e, 'rb'))
