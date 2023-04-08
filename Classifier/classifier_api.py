@@ -114,7 +114,7 @@ class EmbeddingHub:
                                  idf_threshold=settings.idf_threshold,
                                  idf_weight_factor=settings.idf_weight_factor,
                                  not_found_idf_value=settings.not_found_idf_value)
-        self.embedder.embed_fore_and_background_terms()     # prepare or load embedding data
+        self.embed_list_of_terms()     # prepare or load embedding data
 
     def embed_list_of_terms(self,
                             max_num_cpu_threads: int = 4,
