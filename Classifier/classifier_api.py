@@ -114,7 +114,8 @@ class EmbeddingHub:
                                  idf_threshold=settings.idf_threshold,
                                  idf_weight_factor=settings.idf_weight_factor,
                                  not_found_idf_value=settings.not_found_idf_value)
-        self.embed_list_of_terms()     # prepare or load embedding data
+        # prepare or load standard embedding data
+        self.embed_list_of_terms()
 
     def embed_list_of_terms(self,
                             max_num_cpu_threads: int = 4,
@@ -143,7 +144,7 @@ class EmbeddingHub:
         # Grab the latest version of settings/configuration
         if not settings:
             settings = self.grab_settings()
-        self.initialize_embeddings_from_settings()
+        self.initialize_embeddings_from_settings(settings)
         self.classifier = Classifier(
             self.embedder,
             self.foreground_term_filepath,
@@ -169,10 +170,6 @@ def root() -> dict:
 
 @Classifier_api.post("/train/")
 def train_classifier(classifier_settings: Dict[str, Any] = None):
-    if not hub.embedder:
-        hub.initialize_embeddings_from_settings()
-        hub.embed_list_of_terms()
-
     if not hub.classifier:
         hub.initialize_classifier_from_settings()
 
