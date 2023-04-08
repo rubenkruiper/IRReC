@@ -109,7 +109,10 @@ class Classifier:
             for span in spans:
                 foreground_cnt = cleaned_foreground_terms_c[span]
                 background_cnt = cleaned_background_terms_c[span]
-                TF_fore_back = np.log(1 + (foreground_cnt / (foreground_cnt + background_cnt)))
+                if foreground_cnt == 0 and foreground_cnt == 0:
+                    print(f"Counts 0 in fore and backgound corpus for: {span}")
+                else:
+                    TF_fore_back = np.log(1 + (foreground_cnt / (foreground_cnt + background_cnt)))
 
                 tokens, indices = self.embedder.prepare_tokens(span)
                 idf_weights = self.embedder.get_idf_weights_for_indices(tokens, indices)
