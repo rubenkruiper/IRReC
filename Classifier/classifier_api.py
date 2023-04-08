@@ -25,10 +25,10 @@ class Settings(BaseSettings):
     Otherwise, it is required. Use None to make it just optional.
     """
     bert_model: Optional[str] = "whaleloops/phrase-bert"
-    cache_dir: Optional[str] = "data/pretrained_embeddings_cache/"
-    classifier_dir: Optional[str] = "data/classifier_data/"
+    cache_dir: Optional[str] = "/data/pretrained_embeddings_cache/"
+    classifier_dir: Optional[str] = "/data/classifier_data/"
     IDF_path: Optional[str] = None
-    embedding_folder_name: Optional[str] = "default_embedding_settings"
+    embedding_folder_name: Optional[str] = "standard_settings"
     layers_to_use: List[int] = [12]
     layer_combination: str = "avg"
     idf_threshold: float = 0.1  # actually, if we omit all tokens due to the idf_threshold we run into an error
@@ -91,10 +91,11 @@ class EmbeddingHub:
         selected_settings.update({sub_k: sub_v for k in s if k in group_to_keep for sub_k, sub_v in s[k].items()})
         return Settings(**selected_settings)
 
-    def initialize_embeddings_from_settings(self):
+    def initialize_embeddings_from_settings(self, settings: Optional[Settings] = None):
         """ Initializes an Embedder model. """
         # Grab the latest version of settings/configuration
-        settings = self.grab_settings()
+        if not settings:
+            settings = self.grab_settings()
         self.classifier_dir = settings.classifier_dir
         self.foreground_term_filepath = Path(self.classifier_dir).joinpath(settings.foreground_corpus_terms)
         self.background_term_filepath = Path(self.classifier_dir).joinpath(settings.background_corpus_terms)
@@ -138,10 +139,11 @@ class EmbeddingHub:
                 max_num_cpu_threads, subset_size, prefix, list_of_terms
             )
 
-    def initialize_classifier_from_settings(self):
+    def initialize_classifier_from_settings(self, settings: Optional[Settings] = None):
         """ Initializes a Classifier model, may need training. """
         # Grab the latest version of settings/configuration
-        settings = self.grab_settings()
+        if not settings:
+            settings = self.grab_settings()
         self.initialize_embeddings_from_settings()
         self.classifier = Classifier(
             self.embedder,
