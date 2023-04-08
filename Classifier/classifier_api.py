@@ -114,6 +114,7 @@ class EmbeddingHub:
                                  idf_threshold=settings.idf_threshold,
                                  idf_weight_factor=settings.idf_weight_factor,
                                  not_found_idf_value=settings.not_found_idf_value)
+        self.embedder.normalise_embeddings()
 
     def embed_list_of_terms(self,
                             max_num_cpu_threads: int = 4,
@@ -122,8 +123,6 @@ class EmbeddingHub:
                             list_of_terms: List[str] = None):
         """
         Call the initialized embedder. This is split into subsets so we don't overload memory (adjust values if needed).
-
-
         """
         if not list_of_terms:
             # if no list of terms is provided, we embed all of the terms from the fore and background corpus
