@@ -242,5 +242,5 @@ def get_idf_weights(to_be_predicted: ToPredict):
 @Classifier_api.post("/update_settings/")
 def update_settings(new_settings: Settings) -> None:
     hub.initialize_classifier_from_settings(new_settings)
-    return hub.settings
+    return new_settings
 
