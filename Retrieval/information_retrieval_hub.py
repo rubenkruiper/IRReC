@@ -27,6 +27,7 @@ ch.setLevel(logging.DEBUG)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 ch.setFormatter(formatter)
 logger.addHandler(ch)
+logger.propagate = False
 
 
 class InformationRetrievalHub:
@@ -372,9 +373,10 @@ class InformationRetrievalHub:
         # Prepare filepaths for storing the FAISS index
         faiss_index_path = f'/data/indexes/{self.index_name}_{field_to_index}_index'
         faiss_sql_doc_store = f'/data/indexes/{self.index_name}_{field_to_index}_document_store.db'
+        sql_doc_store = f"sqlite:///{faiss_sql_doc_store}"
 
         # Prepare FAISS DocumentStore for dense indexing
-        if os.path.exists(faiss_index_path) and not self.recreate_dense_index:
+        if os.path.exists(faiss_index_path) and (not self.recreate_dense_index):
             dense_document_store = FAISSDocumentStore.load(index_path=faiss_index_path)
             retriever = DensePassageRetriever(
                 document_store=dense_document_store,
@@ -392,7 +394,6 @@ class InformationRetrievalHub:
             self.prepare_pipeline_inputs()
 
             # Create the document store
-            sql_doc_store = f"sqlite:///{faiss_sql_doc_store}"
             dense_document_store = FAISSDocumentStore(embedding_dim=self.hidden_dims,
                                                       faiss_index_factory_str=self.faiss_index_type,
                                                       sql_url=sql_doc_store,
@@ -417,10 +418,13 @@ class InformationRetrievalHub:
 
                 documents_to_write += flat_content_list
 
-            logger.info("[DENSE] Writing {} to dense document store".format(field_to_index))
+            logger.debug(f"[DENSE len documents_to_write: {len(documents_to_write)}")
+            logger.debug(f"[DENSE example docs: {documents_to_write[0]}")
+
+            logger.info(f"[DENSE] Writing {field_to_index} to dense document store")
             dense_document_store.write_documents(documents_to_write)
 
-            # -- Dense Retriever(FAISS)
+            # dense retriever (FAISS)
             retriever = DensePassageRetriever(
                 document_store=dense_document_store,
                 query_embedding_model="facebook/dpr-question_encoder-single-nq-base",
