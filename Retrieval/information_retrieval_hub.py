@@ -21,9 +21,9 @@ from haystack.pipelines import DocumentSearchPipeline
 
 # Set up a logger to keep track of where/when the system crashes
 logger = logging.getLogger("IRReC")
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 ch = logging.StreamHandler()
-ch.setLevel(logging.INFO)
+ch.setLevel(logging.DEBUG)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 ch.setFormatter(formatter)
 logger.addHandler(ch)
@@ -387,11 +387,7 @@ class InformationRetrievalHub:
                 embed_title=True,
                 use_fast_tokenizers=True
             )
-
-
         else:
-            save_updated_document_store = True
-
             # Preprocessing inputs where necessary
             self.prepare_pipeline_inputs()
 
@@ -400,7 +396,7 @@ class InformationRetrievalHub:
             dense_document_store = FAISSDocumentStore(embedding_dim=self.hidden_dims,
                                                       faiss_index_factory_str=self.faiss_index_type,
                                                       sql_url=sql_doc_store,
-                                                      duplicate_documents="overwrite",  # instead skip?
+                                                      duplicate_documents="overwrite",  # skip requires a check
                                                       similarity="dot_product")
 
             # write the processed documents to the Documentstore
