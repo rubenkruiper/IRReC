@@ -125,10 +125,6 @@ class InformationRetrievalHub:
                 # set up a pipeline for this dense index
                 self.pipelines[field_to_index] = self.set_up_dense_pipeline(field_to_index)
 
-        # make sure next iteration the system checks that all SPaR labels are computed, before we start clustering
-        with open("/data/spar_process_state.txt", 'w') as f:
-            f.write("running")
-
         self.pipelines_to_query = self.pipelines.keys()
 
     def prepare_pipeline_inputs(self):
@@ -379,17 +375,19 @@ class InformationRetrievalHub:
 
         # Prepare FAISS DocumentStore for dense indexing
         if os.path.exists(faiss_index_path) and not self.recreate_dense_index:
-            save_updated_document_store = False
             dense_document_store = FAISSDocumentStore.load(index_path=faiss_index_path)
-            # todo; figure out how to load the gdamn dpr bullshit models
-            # retriever = DensePassageRetriever.load(self.cache_dir,
-            #                                        document_store=dense_document_store,
-            #                                        max_seq_len_query=self.max_seq_len_query,
-            #                                        max_seq_len_passage=self.max_seq_len_passage,
-            #                                        batch_size=self.batch_size,
-            #                                        use_gpu=self.use_gpu,
-            #                                        embed_title=True,
-            #                                        use_fast_tokenizers=True)
+            retriever = DensePassageRetriever(
+                document_store=dense_document_store,
+                query_embedding_model="facebook/dpr-question_encoder-single-nq-base",
+                passage_embedding_model="facebook/dpr-ctx_encoder-single-nq-base",
+                max_seq_len_query=self.max_seq_len_query,
+                max_seq_len_passage=self.max_seq_len_passage,
+                batch_size=self.batch_size,
+                use_gpu=self.use_gpu,
+                embed_title=True,
+                use_fast_tokenizers=True
+            )
+
 
         else:
             save_updated_document_store = True
@@ -426,28 +424,24 @@ class InformationRetrievalHub:
             logger.info("[DENSE] Writing {} to dense document store".format(field_to_index))
             dense_document_store.write_documents(documents_to_write)
 
-        # -- Dense Retriever(FAISS) https://docs.haystack.deepset.ai/reference/document-store-api#faissdocumentstore
-        retriever = DensePassageRetriever(
-            document_store=dense_document_store,
-            query_embedding_model="facebook/dpr-question_encoder-single-nq-base",
-            passage_embedding_model="facebook/dpr-ctx_encoder-single-nq-base",
-            max_seq_len_query=self.max_seq_len_query,
-            max_seq_len_passage=self.max_seq_len_passage,
-            batch_size=self.batch_size,
-            use_gpu=self.use_gpu,
-            embed_title=True,
-            use_fast_tokenizers=True
-        )
+            # -- Dense Retriever(FAISS)
+            retriever = DensePassageRetriever(
+                document_store=dense_document_store,
+                query_embedding_model="facebook/dpr-question_encoder-single-nq-base",
+                passage_embedding_model="facebook/dpr-ctx_encoder-single-nq-base",
+                max_seq_len_query=self.max_seq_len_query,
+                max_seq_len_passage=self.max_seq_len_passage,
+                batch_size=self.batch_size,
+                use_gpu=self.use_gpu,
+                embed_title=True,
+                use_fast_tokenizers=True
+            )
 
-
-        if save_updated_document_store:
-            # Seems like we (always?) have to update the embeddings after the DPR retriever init
-            # (matter of minutes on a GPU, but hours on CPU)
+            # Update the embeddings after the DPR retriever init  (matter of minutes on a GPU, but hours on CPU)
             logger.info("[Document Store] updating retriever embeddings for field: {}".format(field_to_index))
             dense_document_store.update_embeddings(retriever)
             # Save the document_store for reloading
             dense_document_store.save(index_path=faiss_index_path)
-            # retriever.save(self.cache_dir) # todo; figure out how to save the gdamn dpr bullshit models
 
         return DocumentSearchPipeline(retriever)
 
