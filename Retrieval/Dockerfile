@@ -16,6 +16,16 @@ RUN python3.8 -m pip install pip --upgrade
 COPY requirements.txt app/
 RUN python3.8 -m pip install -r ./app/requirements.txt
 
+# Install miniconda
+ENV CONDA_DIR /opt/conda
+RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
+     /bin/bash ~/miniconda.sh -b -p /opt/conda
+# Put conda in path so we can use conda activate
+ENV PATH=$CONDA_DIR/bin:$PATH
+
+# install faiss cpu through conda
+RUN conda install -c conda-forge faiss-cpu
+
 # RUN git clone https://github.com/deepset-ai/haystack.git && pip install -e haystack/.[sql,only-faiss-gpu,preprocessing]
 
 # install app
