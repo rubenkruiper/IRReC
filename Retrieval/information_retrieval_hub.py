@@ -418,7 +418,7 @@ class InformationRetrievalHub:
 
                 documents_to_write += flat_content_list
 
-            logger.debug(f"[DENSE len documents_to_write: {len(documents_to_write)}")
+            logger.debug(f"[DENSE len documents_to_write: {len(documents_to_write)}")  # 5 769 508
             logger.debug(f"[DENSE example docs: {documents_to_write[0]}")
 
             logger.info(f"[DENSE] Writing {field_to_index} to dense document store")

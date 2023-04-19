@@ -1,6 +1,6 @@
 cffi
 bs4
-farm-haystack==1.2.0
+farm-haystack==1.15.1
 sacremoses
 faiss-cpu>=1.6.3,<2
 sqlalchemy>=1.4.2,<2
