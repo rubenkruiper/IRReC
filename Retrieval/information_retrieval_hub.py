@@ -16,7 +16,7 @@ from utils.preprocessor_spartxt import SparPreProcessor
 
 # Haystack imports
 from haystack.document_stores import ElasticsearchDocumentStore, FAISSDocumentStore
-from haystack.nodes import ElasticsearchRetriever, DensePassageRetriever
+from haystack.nodes import BM25Retriever, DensePassageRetriever
 from haystack.pipelines import DocumentSearchPipeline
 
 # Set up a logger to keep track of where/when the system crashes
@@ -44,7 +44,7 @@ class InformationRetrievalHub:
         # keep track of original configuration (default settings for querying)
         self.configs = configs
         self.cache_dir = configs["cache_dir"]
-        os.environ['TRANSFORMERS_CACHE'] = self.cache_dir   # this may not be necessary
+        os.environ['TRANSFORMERS_CACHE'] = self.cache_dir  # this may not be necessary
         os.environ['HF_HOME'] = self.cache_dir
         self.top_k_per_retriever = configs['retrieval']['top_k']
 
@@ -79,13 +79,13 @@ class InformationRetrievalHub:
         self.background_conversion_type = configs["background_conversion_type"]
         self.background_input_dir = Path(configs["background_corpus_dir"])
         if self.foreground_conversion_type not in ["pdf", "html"] or \
-           self.background_conversion_type not in ["pdf", "html"]:
+                self.background_conversion_type not in ["pdf", "html"]:
             raise Exception("choose conversion that starts with 'pdf' or 'html' (need to update 'xml')")
         self.foreground_output_dir = self.foreground_input_dir.parent.joinpath(self.foreground_input_dir.stem +
                                                                                "_converted")
         self.background_output_dir = self.background_input_dir.parent.joinpath(self.background_input_dir.stem +
                                                                                "_converted")
-        self.index_name = configs["indexing"]["index_name"].lower()     # ES require lowercase name
+        self.index_name = configs["indexing"]["index_name"].lower()  # ES require lowercase name
 
         # determine the type of indexing, which fields to index, and the name of the index
         self.indexing_type = configs["indexing"]["indexing_type"]  # sparse, hybrid or dense
@@ -132,7 +132,7 @@ class InformationRetrievalHub:
         """
         This method calls the preprocessing functionality (splitting, cleaning, SPaR.txt labelling, NNs, domain class).
         """
-        if not self.data_ready:        # we want to only run this once; avoid checking all documents and steps everytime
+        if not self.data_ready:  # we want to only run this once; avoid checking all documents and steps everytime
             # (1) Convert foreground corpus and background corpus
             convert_inputs(self.foreground_input_dir, self.foreground_output_dir, self.foreground_conversion_type)
             convert_inputs(self.background_input_dir, self.background_output_dir, self.background_conversion_type)
@@ -181,7 +181,8 @@ class InformationRetrievalHub:
                     continue
 
                 if any([len(c.NER_labels) > 1 for c in converted_document.all_contents]):
-                    logger.debug(f"[Preprocessor] skipping, NER outputs already found in: {converted_document_filepath}")
+                    logger.debug(
+                        f"[Preprocessor] skipping, NER outputs already found in: {converted_document_filepath}")
                     pass
                 else:
                     logger.debug(f"[Preprocessor] Identifying NER labels for: {converted_document_filepath}")
@@ -291,7 +292,7 @@ class InformationRetrievalHub:
         return sparse_document_store
 
     def initialize_sparse_retriever(self, sparse_type, sparse_document_store: ElasticsearchDocumentStore):
-        if sparse_type == "bm25f":           # "combined_fields"]: dropped for now
+        if sparse_type == "bm25f":  # "combined_fields"]: dropped for now
             fields = [f"content^{self.fields_and_weights['content']}",
                       f"doc_title^{self.fields_and_weights['doc_title']}",
                       f"NER_labels^{self.fields_and_weights['NER_labels']}",
@@ -310,10 +311,10 @@ class InformationRetrievalHub:
             }
 
             custom_query_str = json.dumps(custom_query).replace('"${query}"', '${query}')
-            sparse_retriever = ElasticsearchRetriever(document_store=sparse_document_store,
-                                                      custom_query=custom_query_str)
+            sparse_retriever = BM25Retriever(document_store=sparse_document_store,
+                                             custom_query=custom_query_str)
         else:
-            sparse_retriever = ElasticsearchRetriever(document_store=sparse_document_store)
+            sparse_retriever = BM25Retriever(document_store=sparse_document_store)
 
         return sparse_retriever
 
@@ -457,6 +458,6 @@ class InformationRetrievalHub:
         if self.indexing_type in ['dense', 'hybrid']:
             for field_to_index in self.pipelines_to_query:
                 all_predictions[field_to_index] = self.pipelines[field_to_index].run(query=query, params={
-                                                      "Retriever": {"top_k": self.top_k_per_retriever}
-                                                  })
+                    "Retriever": {"top_k": self.top_k_per_retriever}
+                })
         return all_predictions

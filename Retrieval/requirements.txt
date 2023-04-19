@@ -2,6 +2,7 @@ cffi
 bs4
 farm-haystack==1.15.1
 sacremoses
+faiss-cpu==1.7.2
 sqlalchemy>=1.4.2,<2
 sqlalchemy_utils
 textblob
