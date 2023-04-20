@@ -17,7 +17,7 @@
   },
   "indexing": {
     "index_name": "with_DE", // prefix for the names of indices, becomes e.g. [index_name]_[type]
-    "indexing_type": "dense", // `sparse`, `hybrid` or `dense`
+    "indexing_type": "hybrid", // `sparse`, `hybrid` or `dense`
     "fields_to_index_and_weights": {
       "content": 2,
       "doc_title":  1.0,
@@ -69,7 +69,7 @@
       "concept_extraction": "spar", // currently not providing other options
       "nearest_neighours": "yes", // simply yes no?
       "pseudo_relevance_feedback" : "yes", // `yes` or `no`
-      "prf_weight": 0,
+      "prf_weight": 1,
       "kg_weight": 1,
       "nn_weight": 1
   }
