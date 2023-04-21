@@ -16,7 +16,7 @@
       "regex_filter": "yes", // Yes, Y, yes or y means the regex filter will run (recommended)
   },
   "indexing": {
-    "index_name": "with_DE", // prefix for the names of indices, becomes e.g. [index_name]_[type]
+    "index_name": "with_DE", // prefix for the names of indices, becomes e.g. [index_name]_[type/field]
     "indexing_type": "hybrid", // `sparse`, `hybrid` or `dense`
     "fields_to_index_and_weights": {
       "content": 2,

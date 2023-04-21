@@ -38,7 +38,7 @@ class FieldsAndWeights(BaseSettings):
 
 class Indexing(BaseSettings):
     indexing_type: str = 'sparse'
-    index_name: str = 'no_de'
+    index_name: str = 'with_de'
     sparse_settings: SparseSettings
     fields_and_weights: FieldsAndWeights
 
