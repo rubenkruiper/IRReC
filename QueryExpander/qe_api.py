@@ -38,7 +38,7 @@ class FieldsAndWeights(BaseSettings):
 
 class Indexing(BaseSettings):
     indexing_type: str = 'sparse'
-    index_name: str = 'with_de'
+    index_name: str = 'with_de'         # we lower case this, vaguely remember capitals caused issues with elasticsearch
     sparse_settings: SparseSettings
     fields_and_weights: FieldsAndWeights
 
@@ -161,6 +161,7 @@ def update_weights(settings: Settings = None) -> dict:
 
         retriever_setting_dict = {
             "indexing_type": settings.indexing.indexing_type,
+            "index_name": settings.indexing.index_name,
             "sparse_type": settings.indexing.sparse_settings.type,
             "content": settings.indexing.fields_and_weights.content,
             "doc_title": settings.indexing.fields_and_weights.doc_title,

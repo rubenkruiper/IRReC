@@ -16,7 +16,7 @@ class PlainQuery(BaseModel):
 
 class RetrievalSettings(BaseModel):
     indexing_type: str = "hybrid"
-    index_name: str = "no_de"
+    index_name: str = "with_de"
     sparse_type: str = "bm25f"
     content: float = 2.0
     doc_title: float = 1.0
