@@ -29,7 +29,7 @@
     },
     "sparse_settings": {
       "type": "bm25f",  // bm25f with "bm25f", otherwise regular bm25
-      "recreate_sparse_index": true
+      "recreate_sparse_index": false
     },
     "dense_settings": {
       "recreate_dense_index":  false, // even if not recreating, reinitializing takes a lot of time
@@ -69,7 +69,7 @@
       "concept_extraction": "spar", // currently not providing other options
       "nearest_neighours": "yes", // simply yes no?
       "pseudo_relevance_feedback" : "yes", // `yes` or `no`
-      "prf_weight": 1,
+      "prf_weight": 0,
       "kg_weight": 1,
       "nn_weight": 1
   }
