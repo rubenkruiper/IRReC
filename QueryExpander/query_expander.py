@@ -244,15 +244,17 @@ class QueryExpander:
         prf_counts = [count for label, count in prf_counter.most_common() if (label != '' and label not in spans)]
 
         dissimilar_prf_candidates = []
-        for count, prf_list in zip(prf_counts, prf_labels):
+        for count, label in zip(prf_counts, prf_labels):
             if len(dissimilar_prf_candidates) > top_k:
                 break
 
             if count < 2:
-                # let's assume we want each cnadidate to occur at least twice in all the retrieved documents
+                # let's assume we want each candidate to occur at least twice in all the retrieved documents
                 continue
+                
             for s in spans:
-                dissimilar_prf_candidates += [c for c in prf_list if (c not in s or not levenshtein(c, s))]
+                if label not in s or not levenshtein(label, s):
+                    dissimilar_prf_candidates.append(label)
 
         return dissimilar_prf_candidates[:top_k]
 
