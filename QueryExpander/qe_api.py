@@ -213,12 +213,13 @@ def quick_duplicate_finder(combined_pred):
 
 
 def regular_query(query: str):
-    if not query.strip():
-        # empty query
-        return []
     chars_to_remove = """'"[]{}()\\/"""
     for char in chars_to_remove:
         query = query.replace(char, '')
+
+    if not query.strip():
+        # empty query
+        return []
     response = requests.post(f"{QE_s.haystack_url}search/",
                              json={"query": query.strip()}).json()
     pipeline_predictions, query_time = response["result"], response["query_time"]
@@ -260,10 +261,11 @@ def expanded_query_search(query: str) -> Dict:
         expanded_query, qe_insight = QE_s.QE_obj.expand_query(query, combined_pred)
     else:
         expanded_query, qe_insight = QE_s.QE_obj.expand_query(query)
+        combined_pred = {}
 
     expanded_pred = regular_query(expanded_query)
     return {"query": query,
-            # "combined_prediction": combined_pred,
+            "combined_prediction": combined_pred,
             "expanded_query": expanded_query,
             "qe_insight": qe_insight,
             "expanded_prediction": expanded_pred}
