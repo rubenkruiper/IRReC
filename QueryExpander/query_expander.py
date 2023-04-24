@@ -170,7 +170,7 @@ class QueryExpander:
         response = requests.post(f"{self.classifier_url}get_neighbours/", json={"spans": spans}).json()
         dissimilar_neighbours = []
         for span, nn_list in zip(spans, response['neighbours']):
-            dissimilar_neighbours += [nn for nn in nn_list if (nn not in span or not levenshtein(nn, span))][:top_k]
+            dissimilar_neighbours += [nn for nn in nn_list if (not levenshtein(nn, span))][:top_k]
         return dissimilar_neighbours
 
     def span_KG_mapping(self, spans: List[str], minimum_degree: int = 100, top_k: int = 2) -> List[str]:
@@ -220,7 +220,7 @@ class QueryExpander:
 
         dissimilar_kg_candidates = []
         for s, kg_candidate_list in zip(query_nodes, kg_neighbour_candidates):
-            dissimilar_kg_candidates += [c for c in kg_candidate_list if (c not in s or not levenshtein(c, s))][:top_k]
+            dissimilar_kg_candidates += [c for c in kg_candidate_list if (not levenshtein(c, s))][:top_k]
         return dissimilar_kg_candidates
 
     def pseudo_relevance_feedback(self, initial_search_results, spans, top_k: int = 2):
@@ -251,9 +251,9 @@ class QueryExpander:
             if count < 2:
                 # let's assume we want each candidate to occur at least twice in all the retrieved documents
                 continue
-                
+
             for s in spans:
-                if label not in s or not levenshtein(label, s):
+                if not levenshtein(label, s):
                     dissimilar_prf_candidates.append(label)
 
         return dissimilar_prf_candidates[:top_k]
