@@ -175,7 +175,7 @@ class QueryExpander:
             )][:top_k]
         return dissimilar_neighbours
 
-    def span_KG_mapping(self, spans: List[str], minimum_degree: int = 100, top_k: int = 2) -> List[str]:
+    def span_KG_mapping(self, spans: List[str], minimum_degree: int = 75, top_k: int = 2) -> List[str]:
         """
         KG expansion → candidate set 2
         Based on the "distance" between nodes in our graph, grab the top_k QE candidates.
@@ -194,6 +194,7 @@ class QueryExpander:
         # expanded_nodes_dict = {}  # todo consider grouping QE candidates per span?
         dist_weight = 1             # todo consider using weights in changing KG-based QE results
         degree_weight = 1
+        ego_radius = 5
         for node in query_nodes:
             if node not in self.network:
                 # we already filter out spans that do not exist in the network before, here we simply avoid errors
@@ -206,26 +207,34 @@ class QueryExpander:
                 # We would primarily like to use QE for terms that are not very common
                 continue
 
+            # we will look at the ego_graph neighbours
+            ego_graph = nx.ego_graph(self.network, node, radius=ego_radius)
             kg_neighbours = []
-            for n in self.network.neighbors(node):
+            for n in ego_graph.neighbors(node):
+                if self.avg_degree_dict[n] > minimum_degree:
+                    # We would primarily like to use QE to find terms that are not very common
+                    continue
+
                 distance = self.network.get_edge_data(node, n)
-                degree_measure = np.log(self.network.degree[n]) * self.avg_degree_dict[n]
+                degree_measure = np.log(self.network.degree[n]) + np.log(self.avg_degree_dict[n])
                 # We'll assume that avg degree represents the connectedness of the node, as well as the nodes it is
                 # connected too. Distance represents the
                 # -- degree (how common the term is in the KG) --> we would prefer more commonly used terms
                 # -- distance (higher distance is worse) --> we would like a small distance between nodes
-                combination_tuple = [(dist_weight * distance['weight']) * (degree_measure * degree_weight),
-                                     n]
+                combination_tuple = [(dist_weight * distance['weight']) + (degree_measure * degree_weight), n]
                 kg_neighbours.append(combination_tuple)
 
             kg_neighbour_candidates.append([n for distance_degree, n in sorted(kg_neighbours)])
 
         dissimilar_kg_candidates = []
         for s, kg_candidate_list in zip(query_nodes, kg_neighbour_candidates):
-            dissimilar_kg_candidates += [c for c in kg_candidate_list if (
-                    c.lower() not in s.lower() and not levenshtein(c, s)
-            )][:top_k]
-        return dissimilar_kg_candidates
+            for c in kg_candidate_list:
+                if s in c:
+                    dissimilar_kg_candidates.append(c)
+                elif (not levenshtein(s, c)) and (c.lower() not in s.lower()):
+                    dissimilar_kg_candidates.append(c)
+
+        return dissimilar_kg_candidates[:top_k]
 
     def pseudo_relevance_feedback(self, initial_search_results, spans, top_k: int = 2):
         """
@@ -257,7 +266,7 @@ class QueryExpander:
 
             if not any(sims):
                 dissimilar_prf_candidates.append(label)
-                    
+
             if len(dissimilar_prf_candidates) >= top_k:
                 break
 
