@@ -39,12 +39,12 @@ class QueryExpander:
         :param initial_search_results:   Regular search results to identify PRF candidates, only when using PRF
         """
         # run the different methods that identify candidates
-        spans, nn_candidates, kg_candidates, prf_candidates_and_counts = self.compute_candidates(initial_query,
+        spans, nn_candidates, kg_candidates, prf_candidates = self.compute_candidates(initial_query,
                                                                                                  initial_search_results)
 
         top_candidates, qe_insight = self.score_and_select_candidates(nn_candidates,
                                                                       kg_candidates,
-                                                                      prf_candidates_and_counts,
+                                                                      prf_candidates,
                                                                       spans)
         expanded_query = self.append_spans_to_query(initial_query, spans, top_candidates)
         return expanded_query, qe_insight
@@ -64,11 +64,11 @@ class QueryExpander:
 
         # # PRF ~ spans found in documents that were ranked high based on the initial query
         if self.prf_weight:
-            prf_candidates_and_counts = self.pseudo_relevance_feedback(initial_search_results, spans)
+            prf_candidates = self.pseudo_relevance_feedback(initial_search_results, spans)
         else:
-            prf_candidates_and_counts = None
+            prf_candidates = None
 
-        return spans, nn_candidates, kg_candidates, prf_candidates_and_counts
+        return spans, nn_candidates, kg_candidates, prf_candidates
 
     def clean_candidate(self, candidate):
         """ Some characters in candidates mess up the querying system"""
@@ -78,7 +78,7 @@ class QueryExpander:
 
     def score_and_select_candidates(self, nn_candidates,
                                     kg_candidates,
-                                    prf_candidates_and_counts,
+                                    prf_candidates,
                                     spans, top_k=5):
         """
         Select top X number of candidates; usually ranking is based on IDF values!
@@ -91,10 +91,9 @@ class QueryExpander:
         if kg_candidates:
             candidates_and_weights["kg_candidates"] = {"candidates": kg_candidates,
                                                        "weight": self.kg_weight}
-        if prf_candidates_and_counts:
+        if prf_candidates:
             candidates_and_weights["pseudo_relevant_terms"] = {
-                "candidates": [l for l, c in zip(*prf_candidates_and_counts)],
-                "counts": [c for l, c in zip(*prf_candidates_and_counts)],
+                "candidates": prf_candidates,
                 "weight": self.prf_weight}
 
         score_counter = Counter()
@@ -111,11 +110,6 @@ class QueryExpander:
                     idf_weights = response.json()["idf_weights"][0]
                     # assuming average IDF weights over the tokens for now
                     weighted_avg_idf_weight = (sum(idf_weights)/len(idf_weights)) * v['weight']
-                    if 'counts' in v.keys():
-                        # todo; take into account the counts of PRF candidates?
-                        weighted_avg_idf_weight = (sum(idf_weights)/len(idf_weights)) * v['weight'] * v['counts'][idx]
-                        candidate = candidate + f", ({str(v['counts'][idx])})"
-
                     score_counter[candidate] += weighted_avg_idf_weight
                     current_candidates_counter[candidate] += weighted_avg_idf_weight
                 else:
@@ -176,7 +170,6 @@ class QueryExpander:
         response = requests.post(f"{self.classifier_url}get_neighbours/", json={"spans": spans}).json()
         dissimilar_neighbours = []
         for span, nn_list in zip(spans, response['neighbours']):
-            # todo; improve dissimilarity check of candidates vs span
             dissimilar_neighbours += [nn for nn in nn_list if (nn not in span or not levenshtein(nn, span))][:top_k]
         return dissimilar_neighbours
 
@@ -227,7 +220,6 @@ class QueryExpander:
 
         dissimilar_kg_candidates = []
         for s, kg_candidate_list in zip(query_nodes, kg_neighbour_candidates):
-            # todo; improve dissimilarity check of candidates vs span
             dissimilar_kg_candidates += [c for c in kg_candidate_list if (c not in s or not levenshtein(c, s))][:top_k]
         return dissimilar_kg_candidates
 
@@ -247,8 +239,20 @@ class QueryExpander:
         for r, c in prf_candidates:
             prf_counter[r] += c
 
-        # todo, maybe return the counts as well here, to take into account later on / check them for tweaking?
+        # we grab the top_k most common candidate first
         prf_labels = [label for label, count in prf_counter.most_common() if (label != '' and label not in spans)]
         prf_counts = [count for label, count in prf_counter.most_common() if (label != '' and label not in spans)]
-        return prf_labels, prf_counts
+
+        dissimilar_prf_candidates = []
+        for count, prf_list in zip(prf_counts, prf_labels):
+            if len(dissimilar_prf_candidates) > top_k:
+                break
+
+            if count < 2:
+                # let's assume we want each cnadidate to occur at least twice in all the retrieved documents
+                continue
+            for s in spans:
+                dissimilar_prf_candidates += [c for c in prf_list if (c not in s or not levenshtein(c, s))]
+
+        return dissimilar_prf_candidates[:top_k]
 

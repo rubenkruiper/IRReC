@@ -143,6 +143,9 @@ def levenshtein(w1: str, w2: str) -> bool:
     :return bool:   Returns True for words that share a lot of characters, mediated by the length of the
                     longest input.
      """
+
+    # todo; improve dissimilarity check of candidates vs span
+
     #   More character overlap --> smaller levenshtein distance
     # remove determiner
     if w1.startswith('the ') or w1.startswith('a ') or w1.startswith('The ') or w1.startswith('A '):

@@ -74,6 +74,7 @@ def split_list(some_list: List, chunk_size: int) -> List[List]:
 
 
 def repeating(span):
+    """ Only checking single words now since we're using split(' '). """
     try:
         parts = span.strip().lower().split(' ').strip()
         if len(parts) > 1 and parts[0] == parts[1]:
