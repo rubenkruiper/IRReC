@@ -223,7 +223,7 @@ class QueryExpander:
             dissimilar_kg_candidates += [c for c in kg_candidate_list if (c not in s or not levenshtein(c, s))][:top_k]
         return dissimilar_kg_candidates
 
-    def pseudo_relevance_feedback(self, initial_search_results, spans):
+    def pseudo_relevance_feedback(self, initial_search_results, spans, top_k: int = 2):
         """
         PRF - identify which filtered domain terms occur in initial retrieved docs → candidate set 3
         :input initial_search_results:  This is the `combined_pred` dict that the API's regular query function returns.
