@@ -212,14 +212,14 @@ class QueryExpander:
             kg_neighbours = []
             for n in ego_graph.neighbors(node):
                 if self.avg_degree_dict[n] > minimum_degree:
-                    # We would primarily like to use QE to find terms that are not very common
+                    # We would like to use QE to find terms that are not extremely common
                     continue
 
                 distance = self.network.get_edge_data(node, n)
                 degree_measure = np.log(self.network.degree[n]) + np.log(self.avg_degree_dict[n])
                 # We'll assume that avg degree represents the connectedness of the node, as well as the nodes it is
                 # connected too. Distance represents the
-                # -- degree (how common the term is in the KG) --> we would prefer more commonly used terms
+                # -- degree (how common the term is in the KG)  --> lower degree is less common
                 # -- distance (higher distance is worse) --> we would like a small distance between nodes
                 combination_tuple = [(dist_weight * distance['weight']) + (degree_measure * degree_weight), n]
                 kg_neighbours.append(combination_tuple)
