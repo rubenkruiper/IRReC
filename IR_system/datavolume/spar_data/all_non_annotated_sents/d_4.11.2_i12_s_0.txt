@@ -1,0 +1,1 @@
+Where a group of tanks are sited together, the number of tanks in a group should not exceed 6 and the total storage capacity of the group should not be more than that given for any group of tanks in the table above.

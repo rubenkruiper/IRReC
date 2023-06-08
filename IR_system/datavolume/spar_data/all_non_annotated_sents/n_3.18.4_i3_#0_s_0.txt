@@ -1,0 +1,1 @@
+T400 N1 D V3 (or Vm - Lxxxxx) Gxx, for solid fuel appliances

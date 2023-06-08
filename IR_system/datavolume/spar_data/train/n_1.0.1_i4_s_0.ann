@@ -1,0 +1,22 @@
+T1	Object_span 0 11	Procurement
+T2	Discourse_span 12 13	-
+A1	Confidence T1
+#1	AnnotatorNotes T1	Might be action
+T3	Object_span 14 42	the contractual arrangements
+T4	Action_span 43 47	used
+T5	Discourse_span 48 50	by
+T6	Object_span 51 58	clients
+T7	Action_span 59 69	to procure
+T8	Object_span 70 80	a building
+T9	Object_span 81 89	can have
+T10	Functional_span 90 99	important
+T11	Object_span 100 112	consequences
+T12	Discourse_span 113 116	for
+T13	Object_span 117 132	the reliability
+T14	Discourse_span 133 135	of
+T15	Object_span 136 146	the design
+T16	Discourse_span 147 150	and
+T17	Object_span 151 163	the adequacy
+T18	Discourse_span 164 166	of
+T19	Object_span 167 183	the construction
+T20	Discourse_span 183 184	.

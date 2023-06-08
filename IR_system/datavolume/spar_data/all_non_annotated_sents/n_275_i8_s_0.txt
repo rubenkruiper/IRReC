@@ -1,0 +1,1 @@
+The angle of visible sky from inside a room has been removed so that the standard is not location dependent.

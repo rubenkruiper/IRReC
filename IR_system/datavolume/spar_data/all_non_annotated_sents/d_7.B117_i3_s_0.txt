@@ -1,0 +1,1 @@
+Better design and construction of control mechanisms should make systems more intuitive and reduce the need for guidance, therefore please be very concise if appropriate.

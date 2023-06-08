@@ -1,0 +1,8 @@
+Sentence:
+education centres, schools (nursery, primary, secondary, special)
+
+Object identified:
+primary
+
+Document id:
+n_6.9.3_i4_#5_s_0

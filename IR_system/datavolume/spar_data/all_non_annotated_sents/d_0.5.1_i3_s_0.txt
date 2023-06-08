@@ -1,0 +1,1 @@
+The exceptions are intended to safeguard against changes that might have significant effect, such as the removal of structural walls.

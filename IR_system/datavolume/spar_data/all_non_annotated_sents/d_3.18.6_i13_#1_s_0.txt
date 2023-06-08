@@ -1,0 +1,1 @@
+by a material specification code Vm - Lxxxxx where the first 2 digits represent a material type as quoted in BS EN 1856-1, Table 4 and the last 3 digits represent the material thickness.

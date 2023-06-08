@@ -1,0 +1,1 @@
+Junctions with fire resisting ceilings - where a compartment wall does not extend to the full height of the building, the wall should form a junction with a compartment floor.

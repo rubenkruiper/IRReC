@@ -1,0 +1,19 @@
+T1	Object_span 0 37	The Waste (Scotland) Regulations 2012
+T2	Action_span 38 45	provide
+T3	Object_span 46 64	statutory measures
+T4	Action_span 65 75	to support
+T5	Object_span 76 84	delivery
+T6	Discourse_span 85 87	of
+T7	Object_span 88 109	the zero waste agenda
+T8	Discourse_span 110 112	by
+T9	Action_span 113 122	requiring
+T10	Discourse_span 122 123	,
+T11	Functional_span 124 145	amongst other aspects
+T12	Discourse_span 145 146	,
+T13	Functional_span 147 155	separate
+T14	Object_span 156 166	collection
+T15	Discourse_span 167 170	and
+T16	Object_span 171 180	treatment
+T17	Discourse_span 181 183	of
+T18	Object_span 184 189	waste
+T19	Discourse_span 189 190	.

@@ -1,0 +1,1 @@
+It should include an inductive coupler compatible with the `T' setting on a personal hearing aid, together with a visual indicator that a call made has been received.

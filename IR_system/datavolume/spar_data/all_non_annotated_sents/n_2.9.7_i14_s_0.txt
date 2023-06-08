@@ -1,0 +1,1 @@
+ Single escape stair - it is possible to design a building with part of the upper storey at a height of not more than 7.5m to have only one escape route where the remainder of the storey has two escape routes.

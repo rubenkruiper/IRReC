@@ -1,0 +1,1 @@
+Average DF% = (52 x M x W) / A

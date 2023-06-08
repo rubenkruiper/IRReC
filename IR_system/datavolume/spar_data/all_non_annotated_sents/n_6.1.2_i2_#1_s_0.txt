@@ -1,0 +1,1 @@
+The Target Emissions Rate (TER) for the actual building is generated automatically, with SBEM applying prescribed fabric and services specifications to the notional building (see clause 6.1.4).

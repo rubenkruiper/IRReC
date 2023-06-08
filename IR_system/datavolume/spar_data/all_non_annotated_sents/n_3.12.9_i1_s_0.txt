@@ -1,0 +1,1 @@
+Where there are no toilets on a storey, all occupied parts of that storey should be within 45m of the nearest accessible toilets on an adjacent storey.

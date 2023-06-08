@@ -1,0 +1,1 @@
+Ideally the location of ventilators should be positioned on the building in negative pressure zones and inlets in positive pressure zones however this is difficult to achieve for all wind directions.

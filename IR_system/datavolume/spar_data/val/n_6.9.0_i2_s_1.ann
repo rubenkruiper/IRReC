@@ -1,0 +1,18 @@
+T1	Object_span 0 63	The Energy Performance of Buildings (Scotland) Regulations 2008
+T2	Discourse_span 63 64	,
+T3	Discourse_span 65 67	as
+T4	Action_span 68 75	amended
+T5	Discourse_span 75 76	,
+T6	Action_span 77 82	place
+T7	Object_span 83 89	a duty
+T8	Discourse_span 90 92	on
+T9	Object_span 93 99	owners
+T10	Discourse_span 100 102	to
+T11	Action_span 103 107;113 122	make available
+T12	Object_span 108 112	EPCs
+T13	Discourse_span 123 125	to
+T14	Functional_span 126 137	prospective
+T15	Object_span 138 144	buyers
+T16	Discourse_span 145 148	and
+T17	Object_span 149 156	tenants
+T18	Discourse_span 156 157	.

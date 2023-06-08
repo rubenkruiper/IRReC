@@ -1,0 +1,1 @@
+The performance levels in the table to clause 5.1.2 should be considered as a benchmark, but it may not be possible to achieve these levels in all circumstances.

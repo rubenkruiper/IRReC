@@ -1,0 +1,1 @@
+This is not intended to prohibit the use of locks to secure a room, storey or building when unoccupied.

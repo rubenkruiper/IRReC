@@ -1,0 +1,1 @@
+the simplified approach in the guidance to Standard 6.1, where it is not possible to input the individual U-values for all the windows, doors and rooflights for the proposed new dwelling into the methodology (usually SAP 2012), and

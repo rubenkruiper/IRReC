@@ -1,0 +1,1 @@
+Where solid mineral fuel is proposed for the main space heating system, the TER should be calculated using the values identified for oil as a fuel (package 3).

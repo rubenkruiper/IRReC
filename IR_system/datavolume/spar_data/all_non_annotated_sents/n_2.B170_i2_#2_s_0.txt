@@ -1,0 +1,1 @@
+any storey with more than 300 patient beds should have at least 5 storey exits.

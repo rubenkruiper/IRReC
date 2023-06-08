@@ -1,0 +1,1 @@
+Number of exits - at least 2 exits should be provided from any storey in a residential care building.

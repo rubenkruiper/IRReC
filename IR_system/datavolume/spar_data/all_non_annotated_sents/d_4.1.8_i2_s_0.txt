@@ -1,0 +1,1 @@
+Weather protection - the form that weather protection should take will vary with location and exposure of the building.

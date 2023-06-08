@@ -1,0 +1,1 @@
+When reference is made to European Classification A2, B, C and D throughout this Handbook, the performance criteria should be read as including sub-indices ``s3, d2''.

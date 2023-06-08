@@ -1,0 +1,1 @@
+Alternatively, column (b) U-values may be applied where improvements to the existing building are shown to deliver a reduction in heat loss greater than or equal to the difference between the calculated overall heat loss performance of a notional extension built to column (a) U-values and one built to column (b) U-values (see compensatory approach below).

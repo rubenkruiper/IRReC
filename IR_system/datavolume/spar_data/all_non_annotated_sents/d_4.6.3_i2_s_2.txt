@@ -1,0 +1,1 @@
+Controls should contrast visually with surrounding surfaces and any numeric keypad should follow the 12-button telephone convention, with an embossed locater to the central `5' digit.

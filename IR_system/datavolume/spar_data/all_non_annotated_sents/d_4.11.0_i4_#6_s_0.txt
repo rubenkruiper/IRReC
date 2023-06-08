@@ -1,0 +1,1 @@
+a container that has held LPG and is `empty' may still contain LPG in vapour form and is thus potentially dangerous.

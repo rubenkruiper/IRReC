@@ -1,0 +1,1 @@
+This will allow at least some movement of air within the building and reduce stratification.

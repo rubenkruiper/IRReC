@@ -1,0 +1,1 @@
+a storey should be taken to be the total area of all floors within that storey, including the floor area of any gallery or openwork floor.

@@ -1,0 +1,1 @@
+Where alternative approaches to the structural design are proposed other than using the guidance contained in this section, the structural design should take account of all of the factors identified in clause 1.0.2 above.

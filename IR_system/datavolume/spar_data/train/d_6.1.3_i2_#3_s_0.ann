@@ -1,0 +1,18 @@
+T1	Discourse_span 0 5	where
+T2	Functional_span 6 15	secondary
+T3	Object_span 16 23	heating
+T4	Action_span 24 35	is proposed
+T5	Discourse_span 35 36	,
+T6	Functional_span 37 39	if
+T7	Object_span 40 49	a chimney
+T8	Object_span 40 41;53 57	a flue
+T9	Discourse_span 50 52	or
+T10	Action_span 58 68	is present
+T11	Discourse_span 69 72	but
+T12	Functional_span 73 75	no
+T13	Object_span 76 85	appliance
+T14	Action_span 86 95	installed
+T15	Discourse_span 95 96	,
+T16	Object_span 97 111	the worst case
+T17	Action_span 112 129	should be assumed
+T18	Functional_span 130 134	i.e.

@@ -1,0 +1,1 @@
+Extra-low voltage is defined as not more than 50 volts alternating current or 120 volts direct current, measured between conductors or to earth.

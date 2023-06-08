@@ -1,0 +1,18 @@
+T1	Object_span 0 17	The UK government
+T2	Action_span 18 29	is required
+T3	Discourse_span 30 32	by
+T4	Discourse_span 33 37	this
+T5	Object_span 38 47	directive
+T6	Discourse_span 48 50	to
+T7	Action_span 51 58	prevent
+T8	Object_span 59 76	List I substances
+T9	Discourse_span 77 81	from
+T10	Action_span 82 90	entering
+T11	Object_span 91 102	groundwater
+T12	Discourse_span 103 106	and
+T13	Discourse_span 107 109	to
+T14	Action_span 110 117	prevent
+T15	Object_span 118 139	groundwater pollution
+T16	Discourse_span 140 142	by
+T17	Object_span 143 161	List II substances
+T18	Discourse_span 161 162	.

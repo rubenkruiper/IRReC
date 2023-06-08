@@ -1,0 +1,1 @@
+Where a building contains multiple units a rating can be produced for either the whole building or for each individual unit.

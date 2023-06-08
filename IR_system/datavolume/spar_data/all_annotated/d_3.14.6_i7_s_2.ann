@@ -1,0 +1,14 @@
+T1	Object_span 0 22	The trickle ventilator
+T2	Action_span 23 32	should be
+T3	Functional_span 33 44	independent
+#1	AnnotatorNotes T3	treating as 'independent trickle ventilator'
+T4	Discourse_span 45 47	of
+T5	Object_span 48 70	the mechanical extract
+T6	Discourse_span 71 78	so that
+T7	Functional_span 79 90	replacement
+T8	Object_span 91 94	air
+T9	Action_span 95 110	can be provided
+T10	Discourse_span 111 115	when
+T11	Object_span 116 131	the extract fan
+T12	Action_span 132 144	is operating
+T13	Discourse_span 144 145	.

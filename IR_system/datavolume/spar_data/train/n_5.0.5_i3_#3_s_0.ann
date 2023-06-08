@@ -1,0 +1,17 @@
+T1	Object_span 0 4	mass
+T2	Discourse_span 5 8	and
+T3	Object_span 9 18	stiffness
+T4	Action_span 19 33	help to reduce
+T5	Functional_span 34 47	significantly
+T6	Object_span 48 80	low frequency sound transmission
+T7	Discourse_span 81 88	whereas
+T8	Object_span 89 99	absorption
+T9	Discourse_span 100 103	and
+T10	Object_span 104 114	resilience
+T11	Functional_span 115 128	predominantly
+T12	Action_span 129 135	reduce
+T13	Object_span 136 139;149 177	mid frequency sound transmission
+T14	Discourse_span 140 143	and
+T15	Object_span 144 148;149 177	high frequency sound transmission
+A1	Confidence T6
+#1	AnnotatorNotes T6	low frequency sound... sound transmission... not sure if breaking up makes sense

@@ -1,0 +1,1 @@
+Sound pressure level within other habitable rooms should be at least 60 dB(A) when all doors in the dwelling are closed.

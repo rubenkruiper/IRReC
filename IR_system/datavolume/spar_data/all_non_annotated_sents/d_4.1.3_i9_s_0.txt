@@ -1,0 +1,1 @@
+Gently sloping gradients should be provided with level rest points of not less than 1.5m in length, at intervals dependent on the gradient of the sloping surface.

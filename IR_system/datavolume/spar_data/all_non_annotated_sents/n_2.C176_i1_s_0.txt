@@ -1,0 +1,1 @@
+The mall width should at no point be less than 6m.

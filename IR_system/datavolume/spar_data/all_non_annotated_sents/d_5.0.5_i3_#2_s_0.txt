@@ -1,0 +1,1 @@
+resilience is needed for separating floors in flats where there is direct vibration impact such as footfall noise.

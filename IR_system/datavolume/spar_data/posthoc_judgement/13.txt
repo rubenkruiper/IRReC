@@ -1,0 +1,8 @@
+Sentence:
+a means of two way communication, operable by a person with a hearing impairment, that allows contact with the lift if an alarm is activated, together with visual indicators that alarm has been sounded and received.
+
+Object identified:
+alarm
+
+Document id:
+n_4.2.7_i5_#5_s_0

@@ -1,0 +1,1 @@
+The design and construction of buildings should take into account all contributing factors such as loadings, climatic conditions, partial safety factors for materials and loadings, and design methodology to ensure that there is an acceptable probability that the building will not collapse (ultimate limit state) during its design lifetime.

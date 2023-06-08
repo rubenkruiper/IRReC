@@ -1,0 +1,1 @@
+In order to meet Standard 6.2, the additional heat loss due to the use of the external doors should be compensated for by more demanding U-values in the windows and/or roof-lights so that the average overall U-value of such elements does not exceed 1.6W/m#SUP#2#SUP#K (see table to clause 6.2.11).

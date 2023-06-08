@@ -1,0 +1,1 @@
+short fire resistance duration, if more than 1m from the boundary, or

@@ -1,0 +1,1 @@
+ it must be automatic and not require people to initiate its activation

@@ -1,0 +1,1 @@
+wall, door, window) should have U-values equal or better than the corresponding exposed elements in the rest of the dwelling.

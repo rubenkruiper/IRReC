@@ -1,0 +1,22 @@
+T1	Object_span 0 7	A stair
+T2	Action_span 8 19	should have
+T3	Functional_span 20 31	contrasting
+T4	Object_span 32 39	nosings
+T5	Action_span 40 49	to assist
+T6	Discourse_span 50 52	in
+T7	Action_span 53 64	identifying
+T8	Object_span 65 77	the position
+T9	Discourse_span 78 80	of
+T10	Object_span 81 87	treads
+T11	Discourse_span 88 91	and
+T12	Object_span 92 98	risers
+T13	Action_span 99 108	should be
+T14	Object_span 109 117	profiled
+A1	Confidence T14
+#1	AnnotatorNotes T14	could also be functional
+T15	Action_span 118 129	to minimise
+T16	Action_span 130 138	tripping
+T17	Discourse_span 139 141	as
+T18	Action_span 142 147	shown
+T19	Discourse_span 148 153	below
+T20	Discourse_span 153 154	.

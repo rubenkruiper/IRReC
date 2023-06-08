@@ -1,0 +1,1 @@
+Where this is not available, flues should be constructed for an assumed flue gas temperature of more than 250 degrees C.

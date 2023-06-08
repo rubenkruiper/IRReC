@@ -1,0 +1,1 @@
+Exclusions - cavity barriers are not necessary to divide a cavity:

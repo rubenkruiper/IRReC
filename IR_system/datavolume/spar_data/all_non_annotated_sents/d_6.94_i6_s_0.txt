@@ -1,0 +1,1 @@
+Infill of large openings - the infill of an existing opening of greater area (than approximately 4m#SUP#2#SUP#) in the building fabric should have a U-value which achieves those in column (b) of the table to clause 6.2.9.

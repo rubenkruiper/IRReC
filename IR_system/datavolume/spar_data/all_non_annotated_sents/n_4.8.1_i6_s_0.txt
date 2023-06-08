@@ -1,0 +1,1 @@
+Additional guarding may be needed to prevent collision with, or entrapment by, a powered door leaf (see clause 4.1.8).

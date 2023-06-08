@@ -1,0 +1,1 @@
+Text size should aim to be at least 11pt but can be of smaller sizes in annotations, labels or text boxes if a typeface designed for text reading at small sizes is used.

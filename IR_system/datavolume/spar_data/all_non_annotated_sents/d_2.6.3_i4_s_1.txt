@@ -1,0 +1,1 @@
+In these cases, for the purpose of calculating the enclosing rectangle, a separating wall or separating floor should be regarded as a compartment wall or compartment floor.

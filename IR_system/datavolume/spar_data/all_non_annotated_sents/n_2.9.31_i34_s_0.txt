@@ -1,0 +1,1 @@
+AC is the appropriate capacity and is the sum of the occupancy capacity of the storeys served by the escape stair minus 20% for standing capacity in the stair:

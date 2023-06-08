@@ -1,0 +1,6 @@
+T1	Functional_span 0 8	At least
+T2	Object_span 9 10	2
+T3	Object_span 11 22	storeyexits
+T4	Action_span 23 41	should be provided
+T5	Discourse_span 42 46	from
+T6	Discourse_span 46 47	:

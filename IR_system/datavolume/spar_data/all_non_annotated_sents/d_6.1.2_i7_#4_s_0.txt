@@ -1,0 +1,1 @@
+U is the average U-value of all openings (windows, doors, rooflights) based on one opaque door of area 1.85m#SUP#2#SUP# and U=1.4, any other doors fully glazed.

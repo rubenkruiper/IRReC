@@ -1,0 +1,1 @@
+Further advice on these matters can be found in chapter 5 of the BSD publication `Sound and Air-tightness Testing', 2015 Edition http://www.gov.scot/Topics/Built-Environment/Building/Building-standards/techbooks/ast2015.

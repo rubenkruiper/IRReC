@@ -1,0 +1,1 @@
+In the latter, steps following the curve may be provided if the variation in step rises is uniform within a flight.

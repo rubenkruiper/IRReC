@@ -1,0 +1,1 @@
+The sound source should now be moved to the next position in the source room and the above procedure repeated to determine another level difference.

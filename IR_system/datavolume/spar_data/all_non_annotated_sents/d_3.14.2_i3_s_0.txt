@@ -1,0 +1,1 @@
+CO2 monitoring equipment should be capable of recording and displaying readings within a range of at least 0 - 5,000 parts per million.

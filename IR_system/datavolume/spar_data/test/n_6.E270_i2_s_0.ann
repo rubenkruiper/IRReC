@@ -1,0 +1,32 @@
+T1	Discourse_span 0 6	Whilst
+T2	Functional_span 7 10	new
+T3	Object_span 11 20	buildings
+T4	Action_span 21 23;28 32	do have
+T5	Functional_span 24 27	not
+T6	Discourse_span 33 35	to
+T7	Action_span 36 47	incorporate
+T8	Discourse_span 48 52	such
+T9	Object_span 53 65	technologies
+T10	Discourse_span 65 66	,
+T11	Object_span 67 70;83 92	the standards
+T12	Functional_span 71 82	challenging
+T13	Action_span 93 96	set
+T14	Discourse_span 97 102	under
+T15	Object_span 103 115	Standard 6.1
+T16	Discourse_span 116 117	(
+T17	Object_span 117 141	carbon dioxide emissions
+T18	Discourse_span 141 142	)
+T19	Action_span 143 150	do mean
+T20	Discourse_span 151 155	that
+T21	Discourse_span 156 160	they
+T22	Action_span 161 164	are
+T23	Functional_span 167 178	more common
+T24	Functional_span 179 186	part of
+T25	Object_span 165 166;187 203	a design solutions
+T26	Discourse_span 204 206	in
+A1	Confidence T25
+T27	Functional_span 207 223	energy efficient
+T28	Discourse_span 223 224	,
+T29	Functional_span 225 235	low carbon
+T30	Object_span 236 245	buildings
+T31	Discourse_span 245 246	.

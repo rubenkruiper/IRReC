@@ -1,0 +1,1 @@
+Combined escape routes - where escape routes from a storey consist of a combination of escape stairs and other escape routes (see diagram below) the effective width of any escape stair from that storey should be designed to take into account that proportion of the number of occupants on that storey who may escape by way of the other escape routes.

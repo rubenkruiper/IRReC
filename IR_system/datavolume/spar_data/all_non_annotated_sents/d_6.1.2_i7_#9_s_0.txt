@@ -1,0 +1,1 @@
+For purpose of calculating the benefit of the PV element in the TER reduction, region is `UK average', orientation `SW', pitch `30 degrees ' and overshading `no or little'.

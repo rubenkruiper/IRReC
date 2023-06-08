@@ -1,0 +1,26 @@
+T1	Object_span 1 11	Schedule 5
+T2	Discourse_span 12 13	-
+T3	Object_span 14 20	change
+T4	Discourse_span 21 23	to
+T5	Object_span 24 34	limitation
+T6	Discourse_span 35 37	to
+T7	Object_span 38 64	functional Standard 6.9(c)
+T8	Action_span 65 74	requiring
+T9	Object_span 86 89	EPC
+T10	Discourse_span 90 92	in
+T11	Object_span 93 102	buildings
+T12	Discourse_span 103 107	with
+T13	Object_span 108 120	a floor area
+T14	Discourse_span 121 123	of
+T15	Functional_span 124 133	more than
+T16	Object_span 134 151	500 square meters
+T17	Discourse_span 152 157	which
+T18	Action_span 158 161	are
+T19	Functional_span 162 172	frequently
+T20	Object_span 173 180	visited
+T21	Discourse_span 181 183	by
+T22	Object_span 184 194	the public
+T23	Discourse_span 194 195	.
+A2	Confidence T5
+T24	Discourse_span 83 85	of
+T25	Object_span 75 82	display

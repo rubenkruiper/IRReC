@@ -1,0 +1,18 @@
+T1	Object_span 0 15	A platform lift
+T2	Action_span 16 25	following
+T3	Object_span 26 38	the guidance
+T4	Discourse_span 39 41	in
+T5	Object_span 42 55	BS 6440: 1999
+T6	Discourse_span 56 57	(
+T7	Action_span 57 60	see
+T8	Object_span 61 70;72 78	Section 4 Safety
+T9	Discourse_span 78 79	)
+T10	Discourse_span 79 80	,
+T11	Action_span 81 85;90 101	need be enclosed
+T12	Functional_span 86 89	not
+T13	Discourse_span 102 104	by
+T14	Object_span 105 122	compartment walls
+T15	Discourse_span 123 125	or
+T16	Object_span 126 144	compartment floors
+T17	Discourse_span 144 145	.
+T18	Discourse_span 70 71	,

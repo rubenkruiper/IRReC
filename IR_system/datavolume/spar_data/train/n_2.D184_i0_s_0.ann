@@ -1,0 +1,20 @@
+T1	Discourse_span 0 2	In
+T2	Object_span 3 11	the case
+T3	Discourse_span 12 14	of
+T4	Object_span 15 58	a single storey steel portal frame building
+A1	Confidence T4
+#1	AnnotatorNotes T4	kind of convoluted MWE, might be better to split it up but not sure how
+T5	Action_span 58 69	constructed
+T6	Functional_span 70 88	in accordance with
+T7	Object_span 89 101	the guidance
+T8	Discourse_span 102 104	in
+T9	Object_span 105 117	clause 2.3.1
+T10	Discourse_span 117 118	,
+T11	Object_span 119 130	the columns
+T12	Discourse_span 131 133	of
+T13	Object_span 134 150	the portal frame
+T14	Action_span 151 169	should be designed
+T15	Discourse_span 170 174	with
+T16	Object_span 175 204	fixed column base connections
+#2	AnnotatorNotes T16	could split [fixed column base] [connection]
+T17	Discourse_span 204 205	.

@@ -1,0 +1,13 @@
+T1	Object_span 0 15	The regulations
+T2	Action_span 16 19	are
+T3	Object_span 20 29	mandatory
+T4	Discourse_span 29 30	,
+T5	Discourse_span 31 34	but
+T6	Object_span 35 45	the choice
+T7	Discourse_span 46 48	of
+T8	Functional_span 49 52	how
+T9	Action_span 53 62	to comply
+T10	Action_span 63 67	lies
+T11	Discourse_span 68 72	with
+T12	Object_span 73 91	the building owner
+T13	Discourse_span 91 92	.

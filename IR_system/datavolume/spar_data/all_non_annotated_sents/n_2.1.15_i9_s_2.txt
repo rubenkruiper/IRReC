@@ -1,0 +1,1 @@
+There is currently no fire test from the top-side of a capping system, the assumption being that if the test satisfies the fire resistance duration from the underside then it will also satisfy the same criteria from the top-side using the same construction.

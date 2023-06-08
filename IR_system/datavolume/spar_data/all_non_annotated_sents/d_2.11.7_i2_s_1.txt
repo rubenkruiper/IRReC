@@ -1,0 +1,1 @@
+As the smoke rises and travels horizontally it mixes with air which increases the size of the smoke particles.

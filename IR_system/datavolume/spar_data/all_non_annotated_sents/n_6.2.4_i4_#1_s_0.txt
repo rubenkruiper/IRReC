@@ -1,0 +1,1 @@
+Vehicle access doors and similar large doors should have a maximum U-value of 1.5W/m#SUP#2#SUP# K.

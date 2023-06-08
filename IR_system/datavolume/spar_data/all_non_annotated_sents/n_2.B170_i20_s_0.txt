@@ -1,0 +1,1 @@
+Bed-patients may be moved to another ward in a different compartment or sub-compartment.

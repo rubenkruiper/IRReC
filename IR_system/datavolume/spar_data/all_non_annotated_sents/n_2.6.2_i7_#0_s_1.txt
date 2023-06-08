@@ -1,0 +1,1 @@
+For example, if the unprotected area is 6m2, the distance to the boundary should be at least 1m and if the unprotected area is 12m2, the distance should be at least 2m and so on.

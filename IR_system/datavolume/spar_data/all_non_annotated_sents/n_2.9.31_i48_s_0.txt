@@ -1,0 +1,1 @@
+There are 5 storeys accessing the escape stair and each storey has 300 occupants the appropriate capacity is found by:

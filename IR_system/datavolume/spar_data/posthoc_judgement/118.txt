@@ -1,0 +1,8 @@
+Sentence:
+Treatment processes can be biological, chemical or physical and be undertaken either in-situ (contaminants are treated in the ground) or ex-situ (contaminated material is excavated and then treated before being returned).
+
+Object identified:
+biological
+
+Document id:
+n_3.1.6_i6_s_2

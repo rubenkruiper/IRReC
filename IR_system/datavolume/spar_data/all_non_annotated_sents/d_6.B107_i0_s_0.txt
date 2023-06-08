@@ -1,0 +1,1 @@
+Note: in this example, the fabric performance of the existing building allows use of the U-values within column (b) in the table to clause 6.2.9.

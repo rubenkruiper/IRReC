@@ -1,0 +1,1 @@
+The wall separating the fire-fighting lobby from the remainder of the building should have a long fire resistance duration and the door should be a self-closing fire door with a medium fire resistance duration.

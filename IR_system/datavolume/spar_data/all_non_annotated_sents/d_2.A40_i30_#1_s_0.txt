@@ -1,0 +1,1 @@
+Any door in an external wall, which is not included in the calculation of unprotected area, should have the same fire resistance and the same test exposure as the external wall.

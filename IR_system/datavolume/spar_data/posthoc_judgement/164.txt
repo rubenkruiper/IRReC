@@ -1,0 +1,8 @@
+Sentence:
+rural locations where the population is dispersed and routes to the school are not suitable for walking or cycling.
+
+Object identified:
+the population
+
+Document id:
+n_7.1.6_i52_s_2

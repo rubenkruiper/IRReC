@@ -1,0 +1,1 @@
+Where the system has a power input of less than 45kW, safety devices should be provided in accordance with the recommendations of a relevant standard such as BS EN 12897:2006 or BS 6700:2009 as appropriate.

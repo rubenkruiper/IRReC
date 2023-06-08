@@ -1,0 +1,1 @@
+Individual windows, doors or roof-lights may have U-values that exceed the relevant area-weighted U-values in the guidance to Standard 6.2 provided that the average U-value calculated for all the windows, doors and roof-lights is not greater than that relevant U-value.

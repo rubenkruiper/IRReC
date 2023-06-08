@@ -1,0 +1,1 @@
+The design performance levels in clause 5.2.1 can be achieved by using the Generic Internal Constructions available on the BSD website http://www.scotland.gov.uk/topics/built-environment/building/building-standards.

@@ -1,0 +1,8 @@
+Sentence:
+a floor space in the dwelling on which to set out a clothes horse.
+
+Object identified:
+a clothes horse
+
+Document id:
+d_3.11.6_i4_#2_s_0

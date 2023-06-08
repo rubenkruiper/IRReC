@@ -1,0 +1,1 @@
+In many cases the SBEM calculation tool (http://www.ncm.bre.co.uk/index.jsp) will have been used for the new building.

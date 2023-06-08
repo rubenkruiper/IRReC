@@ -1,0 +1,27 @@
+T1	Object_span 0 15	Travel distance
+T2	Action_span 16 18	is
+T3	Object_span 19 27	the term
+T4	Action_span 28 35	applied
+T5	Discourse_span 36 38	to
+T6	Object_span 39 51	the distance
+T7	Discourse_span 52 56	that
+T8	Object_span 57 66	occupants
+T9	Action_span 67 81	have to travel
+T10	Discourse_span 82 84	to
+T11	Object_span 85 101	a protected door
+T12	Discourse_span 102 105	and
+T13	Action_span 106 117	is measured
+T14	Discourse_span 118 123	along
+T15	Object_span 124 127;135 150	the route of escape
+T16	Functional_span 128 134	actual
+T17	Discourse_span 151 155	from
+T18	Functional_span 156 159	any
+T19	Object_span 160 165	point
+T20	Discourse_span 166 172	within
+T21	Object_span 173 181	a storey
+T22	Discourse_span 181 182	,
+T23	Action_span 183 192	including
+T24	Object_span 193 205	the distance
+T25	Discourse_span 206 212	across
+T26	Object_span 213 218	rooms
+T27	Discourse_span 218 219	.

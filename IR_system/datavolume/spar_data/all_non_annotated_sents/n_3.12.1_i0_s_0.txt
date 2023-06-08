@@ -1,0 +1,1 @@
+The number of sanitary facilities provided within a building should be calculated from the maximum number of persons the building is likely to accommodate at any time, based upon the normal use of the building.

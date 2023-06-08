@@ -1,0 +1,14 @@
+T1	Object_span 0 7	Annex H
+T2	Discourse_span 8 10	of
+T3	Object_span 11 30	BS EN 12354-5: 2009
+T4	Action_span 31 39	provides
+T5	Functional_span 40 53	more detailed
+T6	Object_span 54 62	guidance
+T7	Discourse_span 63 65	on
+T8	Action_span 66 82	the reduction of
+T9	Object_span 83 110	service noise transmittance
+T10	Discourse_span 111 118	through
+T11	Object_span 119 135	separating walls
+T12	Discourse_span 136 139	and
+T13	Object_span 140 157	separating floors
+T14	Discourse_span 157 158	.

@@ -1,0 +1,1 @@
+Where the percolation value (as demonstrated by the percolation test) is more than 100 secs/mm and not more than 140 secs/mm, as:

@@ -1,0 +1,1 @@
+Reference to surfaces in a cavity is intended to include the surface of the enclosing envelope of the cavity (including insulation material) but excludes timber roof trusses or lintols, joist ends, pipes, conduits or cables.

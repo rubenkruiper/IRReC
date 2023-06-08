@@ -1,0 +1,1 @@
+there should be a room thermostat in the living room, at a height more than 1370mm and not more than 1830mm, with an automatic control which will turn off the heater, and actuate any circulation fan should the ambient temperature rise to more than 35 degrees C, and

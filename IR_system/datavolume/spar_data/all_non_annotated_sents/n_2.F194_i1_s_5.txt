@@ -1,0 +1,1 @@
+The angle of the specimen in the test is designated by the prefix 'S' [slope] or `F' [flat].

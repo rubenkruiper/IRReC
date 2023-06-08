@@ -1,0 +1,1 @@
+In these cases, panic exit locks operated by a horizontal bar should be designed and installed in accordance with BS EN 1125: 2008.

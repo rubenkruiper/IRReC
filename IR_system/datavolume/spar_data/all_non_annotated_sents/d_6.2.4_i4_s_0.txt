@@ -1,0 +1,1 @@
+Where no infiltration rate is specified by the designer, a value of 15m#SUP#3#SUP#/h.m#SUP#2#SUP# @ 50 Pa will be assigned to the proposed dwelling for the purpose of the DER.

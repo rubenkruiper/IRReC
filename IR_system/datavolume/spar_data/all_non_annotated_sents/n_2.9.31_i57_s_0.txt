@@ -1,0 +1,1 @@
+As escape is based on phased evacuation, access to each protected zone containing the escape stair should be by way of a protected lobby.

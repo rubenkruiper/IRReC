@@ -1,0 +1,1 @@
+A flue terminal should be protected with a guard if a person could come into contact with it or if it could be damaged.

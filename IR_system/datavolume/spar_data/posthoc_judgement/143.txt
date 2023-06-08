@@ -1,0 +1,8 @@
+Sentence:
+Guidance on this process is given in BR 497, `Conventions For Calculating Linear Thermal Transmittance and Temperature Factors'.
+
+Object identified:
+Conventions For
+
+Document id:
+d_6.2.3_i4_s_2

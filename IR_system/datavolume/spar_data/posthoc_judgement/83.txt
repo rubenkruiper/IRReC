@@ -1,0 +1,8 @@
+Sentence:
+Professional expertise - testing should be carried out by persons who can demonstrate relevant, recognised expertise in acoustics for sound insulation testing.
+
+Object identified:
+Professional expertise
+
+Document id:
+d_5.1.9_i14_s_0

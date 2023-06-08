@@ -1,0 +1,8 @@
+Sentence:
+The guidance to this standard provides the minimum provision necessary to meet the objectives of Article 8 of European Directive 2014/61/EU, with the exception of paragraph 8(3) as there is currently no formal ``broadband ready'' label adopted in the UK.
+
+Object identified:
+paragraph 8 ( 3 ' label
+
+Document id:
+n_4.14.0_i5_s_0

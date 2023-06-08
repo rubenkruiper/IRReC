@@ -1,0 +1,1 @@
+Where a kitchen is within the same room as an apartment, the area of the kitchen should be defined by a rectangle enclosing any floor-standing units, appliances and worktops.

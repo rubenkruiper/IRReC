@@ -1,0 +1,1 @@
+This scenario simulates a fully developed (flashover) fire condition in a room within the flat or maisonette.

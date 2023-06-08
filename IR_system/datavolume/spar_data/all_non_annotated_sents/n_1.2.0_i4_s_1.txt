@@ -1,0 +1,1 @@
+Such accidental design loading should be assumed to act simultaneously with 1/3rd of all normal characteristic loading.

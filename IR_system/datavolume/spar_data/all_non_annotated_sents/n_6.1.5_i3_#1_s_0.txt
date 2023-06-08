@@ -1,0 +1,1 @@
+the amount of glazing in the notional building is not the same as in the actual building.

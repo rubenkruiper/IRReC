@@ -1,0 +1,24 @@
+T1	Discourse_span 0 4	This
+T2	Action_span 5 7	is
+T3	Discourse_span 8 14	due to
+A1	Confidence T3
+#1	AnnotatorNotes T3	adjective, but maybe should be treated as discourse...? "because"
+T4	Functional_span 15 20	large
+T5	Object_span 21 41	occupancy capacities
+T6	Discourse_span 41 42	,
+T7	Object_span 43 62	building complexity
+T8	Discourse_span 62 63	,
+T9	Object_span 64 83	occupant capability
+T10	Discourse_span 84 87	and
+T11	Object_span 88 97	behaviour
+T12	Action_span 98 107	including
+T13	Object_span 108 121	the potential
+T14	Discourse_span 122 125	for
+T15	Object_span 126 131	delay
+T16	Discourse_span 132 134	in
+T17	Object_span 135 154	occupant evacuation
+T18	Action_span 155 164	following
+T19	Object_span 165 185	the outbreak of fire
+T20	Discourse_span 185 186	.
+A2	Confidence T19
+#2	AnnotatorNotes T19	a fire outbreak... ?

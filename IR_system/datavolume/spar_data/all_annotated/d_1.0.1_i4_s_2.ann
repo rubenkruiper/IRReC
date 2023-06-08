@@ -1,0 +1,12 @@
+T1	Object_span 9 15	design
+T2	Discourse_span 16 18	of
+T3	Functional_span 19 29	individual
+T4	Object_span 30 48	structural details
+T5	Discourse_span 49 52	and
+T6	Object_span 53 63	components
+T8	Action_span 64 77	can be passed
+T9	Discourse_span 78 80	to
+T10	Functional_span 81 91	specialist
+T11	Discourse_span 103 104	.
+T12	Functional_span 0 8	Detailed
+T13	Object_span 92 103	contractors

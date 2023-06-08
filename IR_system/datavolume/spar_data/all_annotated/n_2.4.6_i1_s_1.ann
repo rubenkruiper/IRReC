@@ -1,0 +1,47 @@
+T1	Discourse_span 0 7	However
+T2	Discourse_span 7 8	,
+T3	Discourse_span 9 13	this
+T4	Action_span 14 18;23 28	does apply
+T5	Functional_span 19 22	not
+T6	Discourse_span 29 31	to
+T7	Object_span 32 42	insulation
+T8	Discourse_span 43 45	in
+T9	Object_span 46 54	a cavity
+T10	Discourse_span 55 59	that
+T11	Action_span 60 62	is
+T12	Discourse_span 63 70	between
+A1	Confidence T12
+T13	Object_span 71 74	two
+T14	Object_span 75 81	leaves
+T15	Discourse_span 82 84	of
+T16	Object_span 85 92	masonry
+T17	Discourse_span 93 95	or
+T18	Object_span 96 104	concrete
+T19	Functional_span 105 113	at least
+T20	Object_span 114 118	75mm
+T21	Object_span 119 124	thick
+T22	Discourse_span 124 125	,
+T23	Discourse_span 126 129	and
+T24	Discourse_span 130 135	which
+T25	Action_span 136 139	has
+T26	Object_span 140 156	a cavity barrier
+T27	Discourse_span 157 163	around
+T28	Functional_span 164 167	all
+T29	Object_span 168 176	openings
+T30	Discourse_span 177 179	in
+T31	Object_span 180 188	the wall
+T32	Discourse_span 189 192	and
+T33	Discourse_span 193 195	at
+T34	Object_span 196 203	the top
+T35	Discourse_span 204 206	of
+T36	Object_span 207 220	the wall-head
+T37	Discourse_span 221 222	(
+T38	Action_span 222 225	see
+T39	Discourse_span 226 230	also
+T40	Object_span 231 243	the guidance
+T41	Discourse_span 244 246	to
+T42	Object_span 247 259	Standard 2.6
+T43	Discourse_span 260 263	and
+T44	Object_span 264 276	Standard 2.7
+T45	Discourse_span 276 277	)
+T46	Discourse_span 277 278	.

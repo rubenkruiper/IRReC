@@ -1,0 +1,1 @@
+During construction, it should be ensured that the assumptions made in the design are safeguarded or adapted to changed conditions.

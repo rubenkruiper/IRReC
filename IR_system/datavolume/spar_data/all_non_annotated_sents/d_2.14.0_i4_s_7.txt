@@ -1,0 +1,1 @@
+An evacuation alert system should be provided to assist the fire and rescue services in the evacuation of high rise domestic buildings if necessary (see clause 2.14.8).

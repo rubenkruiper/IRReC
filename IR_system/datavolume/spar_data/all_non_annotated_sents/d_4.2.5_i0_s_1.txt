@@ -1,0 +1,1 @@
+There should be an accessible stair between each level of a building.

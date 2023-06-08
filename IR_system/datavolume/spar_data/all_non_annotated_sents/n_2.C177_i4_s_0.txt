@@ -1,0 +1,1 @@
+Mall escape widths - the aggregate unobstructed width, of all escape routes from a mall should be at least 2.65mm multiplied by the occupancy capacity of the entire shopping centre as described above.

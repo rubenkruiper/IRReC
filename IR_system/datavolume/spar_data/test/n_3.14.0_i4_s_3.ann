@@ -1,0 +1,15 @@
+T1	Discourse_span 0 2	If
+T2	Functional_span 3 7	poor
+T3	Object_span 8 17	attention
+T4	Discourse_span 18 20	to
+T5	Object_span 21 27	detail
+T6	Action_span 28 34	occurs
+T7	Object_span 35 46	air leakage
+T8	Action_span 47 58	can account
+T9	Discourse_span 59 62	for
+T11	Functional_span 65 76	substantial
+T12	Functional_span 77 84	part of
+T13	Object_span 85 102	the heating costs
+T10	Discourse_span 63 64	a
+#1	AnnotatorNotes T10	a helps identify start of NP, that's it...
+T14	Discourse_span 102 103	.

@@ -1,0 +1,1 @@
+The evacuation time from a room or storey is controlled by the number of exits and the time taken for occupants to pass through the exits.

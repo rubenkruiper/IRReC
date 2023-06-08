@@ -1,0 +1,1 @@
+The inlet/outlet configuration will vary depending wind direction and designers should take this into account.

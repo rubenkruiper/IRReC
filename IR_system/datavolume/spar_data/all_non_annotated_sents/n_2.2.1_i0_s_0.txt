@@ -1,0 +1,1 @@
+Separating walls and separating floors should have at least a medium fire resistance duration (see annex 2.D).

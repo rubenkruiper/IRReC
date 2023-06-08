@@ -1,0 +1,7 @@
+T1	Discourse_span 0 4	This
+T2	Object_span 5 19	should include
+T3	Discourse_span 20 24	both
+T4	Object_span 25 32;48 55	natural systems
+T5	Object_span 37 47;48 55	mechanical systems
+T6	Discourse_span 33 36	and
+T7	Discourse_span 55 56	.

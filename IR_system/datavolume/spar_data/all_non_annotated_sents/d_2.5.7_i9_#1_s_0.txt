@@ -1,0 +1,1 @@
+ Y = Maximum dimension of the smallest diffuser or rooflight above.

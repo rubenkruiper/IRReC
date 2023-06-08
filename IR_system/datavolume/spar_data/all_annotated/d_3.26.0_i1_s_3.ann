@@ -1,0 +1,23 @@
+T1	Object_span 0 6	Solids
+T2	Action_span 7 17	are stored
+T3	Discourse_span 18 20	in
+T4	Object_span 21 31	dungsteads
+T5	Discourse_span 32 36	that
+T6	Action_span 37 44;54 61	must be drained
+T7	Functional_span 45 53	properly
+T8	Discourse_span 62 65	and
+T9	Object_span 66 78	the effluent
+T10	Action_span 79 88	collected
+T11	Discourse_span 89 91	in
+T12	Object_span 92 98	a tank
+T13	Functional_span 99 104	while
+A1	Confidence T13
+T14	Object_span 105 112	liquids
+T15	Action_span 113 123	are stored
+T16	Discourse_span 124 126	in
+T17	Object_span 127 132	tanks
+T18	Functional_span 133 138	above
+T19	Functional_span 142 147	below
+T20	Object_span 139 141	or
+T21	Object_span 148 154	ground
+T22	Discourse_span 154 155	.

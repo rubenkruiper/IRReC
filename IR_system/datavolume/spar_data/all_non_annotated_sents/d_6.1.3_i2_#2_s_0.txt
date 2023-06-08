@@ -1,0 +1,1 @@
+2 sheltered sides should be assumed if not known.

@@ -1,0 +1,1 @@
+Localised areas of the same building element may be designed to give a poorer performance.

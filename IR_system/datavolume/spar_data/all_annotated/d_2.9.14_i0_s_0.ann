@@ -1,0 +1,22 @@
+T1	Discourse_span 0 8	Although
+T2	Discourse_span 9 14	there
+T3	Action_span 15 18	are
+T4	Object_span 19 36	physical barriers
+T5	Discourse_span 37 39	to
+T6	Object_span 40 44	fire
+T7	Discourse_span 45 52	such as
+T8	Object_span 53 58	walls
+T9	Discourse_span 58 59	,
+T10	Object_span 60 66	floors
+T11	Discourse_span 67 70	and
+T12	Object_span 71 76	doors
+T13	Discourse_span 76 77	,
+T14	Discourse_span 78 83	there
+T15	Action_span 84 86	is
+T16	Functional_span 87 92	still
+T17	Object_span 93 99	a risk
+T18	Discourse_span 100 102	of
+T19	Object_span 103 115	smoke spread
+T20	Discourse_span 116 120	into
+T21	Object_span 121 134	escape routes
+T22	Discourse_span 134 135	.

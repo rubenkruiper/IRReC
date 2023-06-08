@@ -1,0 +1,1 @@
+In cases where escape is by way of a single escape stair, access to the escape stair should be by way of a protected lobby.

@@ -1,0 +1,8 @@
+Sentence:
+Thermal insulation to heating pipes and ducts and hot water storage vessels will improve energy efficiency by preventing:
+
+Object identified:
+heating pipes
+
+Document id:
+d_6.4.0_i0_s_0

@@ -1,0 +1,1 @@
+Further advice on the application of these exceptions and on testing in general is provided in chapter 5 of the BSD publication `Sound and air-tightness testing, 2015 Edition' http://www.scotland.gov.uk/Topics/Built-Environment/Building/Building-standards/techbooks/techhandbooks/ast2015.

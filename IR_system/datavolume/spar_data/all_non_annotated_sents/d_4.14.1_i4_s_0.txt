@@ -1,0 +1,1 @@
+In flats and maisonettes the in-building physical infrastructure should be taken to an individual network termination point within each flat or maisonette.

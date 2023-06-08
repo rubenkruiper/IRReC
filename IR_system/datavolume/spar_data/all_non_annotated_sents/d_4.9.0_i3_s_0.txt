@@ -1,0 +1,1 @@
+It is not intended that this guidance should be applied to storage systems with a capacity of less than 15 litres, to systems used solely for space heating or to any system used for an industrial or commercial process.

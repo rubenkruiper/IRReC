@@ -1,0 +1,1 @@
+A platform lift following the guidance in BS 6440: 1999 (see Section 4, Safety), need not be enclosed by compartment walls or compartment floors.

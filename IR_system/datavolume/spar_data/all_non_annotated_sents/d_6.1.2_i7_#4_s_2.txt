@@ -1,0 +1,1 @@
+a frame factor of 0.7, light transmittance of 0.80 and solar energy transmittance of 0.63 are assumed.

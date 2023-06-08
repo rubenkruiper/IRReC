@@ -1,0 +1,1 @@
+If the BER is more than the TER, then the designer should review and improve the construction and building services data in the actual building and determine what measures would be appropriate to reduce the BER.

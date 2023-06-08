@@ -1,0 +1,1 @@
+Further information on estimation of equivalent static forces for a given characteristic mass and displacement can be obtained in Annex A to BS 6180: 2011.
