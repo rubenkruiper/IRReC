@@ -1,1 +1,0 @@
-The height of the numeral that designates floor number should be at least 75mm.

@@ -1,8 +1,0 @@
-Sentence:
-Therefore, in order to improve redundancy and escape route options in tall buildings, at least two escape stairs should be provided to every domestic building with a storey height more than 18m above the ground level.
-
-Object identified:
-redundancy
-
-Document id:
-d_2.9.9_i2_s_2

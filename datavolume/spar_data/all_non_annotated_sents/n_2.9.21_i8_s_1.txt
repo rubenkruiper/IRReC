@@ -1,1 +1,0 @@
-Therefore `fail unlocked electric locks' should be programmed to fail to the unlocked position:

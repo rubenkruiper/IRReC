@@ -1,8 +1,0 @@
-Sentence:
-Effective width is measured between handrails, or where there are no handrails, the protective barrier or inside face of any wall or guarding kerb, and should be clear of any obstructions.
-
-Object identified:
-Effect width
-
-Document id:
-d_4.3.12_i1_s_1

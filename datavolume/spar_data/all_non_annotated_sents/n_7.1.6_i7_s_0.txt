@@ -1,1 +1,0 @@
-Automatically controlled presence or absence detection should not be used where this may cause a hazard or inconvenience (e.g.

@@ -1,1 +1,0 @@
-The fabric and services specification of the notional building are assigned on a zone by zone basis.

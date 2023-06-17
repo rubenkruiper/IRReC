@@ -1,1 +1,0 @@
-Very slow percolation rates - where the percolation value (as demonstrated by the percolation test) is more than 140 secs/mm:

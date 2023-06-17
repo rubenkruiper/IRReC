@@ -1,8 +1,0 @@
-Sentence:
-Long duct runs, flexible ducting and bends can seriously reduce fan performance and should be carefully considered during design to ensure recommended air flows are achieved.
-
-Object identified:
-air flows
-
-Document id:
-n_3.14.5_i5_#2_s_0

@@ -1,8 +1,0 @@
-Sentence:
-The Scottish Government encourages the use of previously developed land (brownfield) and local authorities may wish to promote brownfield land in preference to greenfield land.
-
-Object identified:
-greenfield land
-
-Document id:
-d_3.0.1_i1_s_4

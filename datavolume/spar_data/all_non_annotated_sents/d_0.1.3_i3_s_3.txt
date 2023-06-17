@@ -1,1 +1,0 @@
-The verifier will make reasonable inquiry to ensure the completion certificate is accurate before accepting the certificate.

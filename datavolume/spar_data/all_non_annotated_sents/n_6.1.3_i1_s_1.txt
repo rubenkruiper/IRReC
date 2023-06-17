@@ -1,1 +1,0 @@
-SBEM has much of the input data already embedded in the calculation tool.

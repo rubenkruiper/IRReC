@@ -1,8 +1,0 @@
-Sentence:
-The registers will expand as new information is identified.
-
-Object identified:
-The registers
-
-Document id:
-d_3.1.0_i1_s_4

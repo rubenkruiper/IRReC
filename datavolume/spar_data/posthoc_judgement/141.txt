@@ -1,8 +1,0 @@
-Sentence:
-At least 5% of the dwelling or domestic building's annual energy demand for water heating should be from:
-
-Object identified:
-annual energy demand
-
-Document id:
-d_7.1.4_i8_s_0

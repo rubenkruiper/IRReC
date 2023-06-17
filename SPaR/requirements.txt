@@ -1,7 +1,0 @@
-overrides
-allennlp==2.5.0
-allennlp-models==2.5.0
-textblob==0.15.3
-pandas
-fastapi
-uvicorn

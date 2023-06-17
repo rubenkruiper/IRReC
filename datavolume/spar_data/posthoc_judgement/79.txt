@@ -1,8 +1,0 @@
-Sentence:
-Good control of space heating is essential for conservation of energy in buildings, as without it, the potential of energy efficient heating plant cannot be realised.
-
-Object identified:
-energy efficient heating plant
-
-Document id:
-n_6.3.0_i1_s_0

@@ -1,8 +1,0 @@
-Sentence:
-Normally the control and indicating equipment operates a fire alarm system and it may perform other signalling or control functions as well.
-
-Object identified:
-the control equipment
-
-Document id:
-n_2.11.3_i0_s_2

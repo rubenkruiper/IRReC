@@ -1,8 +1,0 @@
-Sentence:
-This regulation implements the terms of Articles 15 & 16 of Directive 2010/31/EU on the Energy Performance of Buildings (EPBD).
-
-Object identified:
-Articles 15 & 16
-
-Document id:
-n_0.17.1_i0_s_1

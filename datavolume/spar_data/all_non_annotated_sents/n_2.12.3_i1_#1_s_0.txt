@@ -1,1 +1,0 @@
-be level or not have a gradient more than 1 in 12.

@@ -1,1 +1,0 @@
-It should allow flexibility in setting of a delivery temperature, up to a maximum of 48 degrees C, in a form that is not easily altered by building users.

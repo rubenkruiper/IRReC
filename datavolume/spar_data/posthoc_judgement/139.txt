@@ -1,8 +1,0 @@
-Sentence:
- the ceiling may contain an access hatch which, when closed, will maintain the fire resistance duration of the ceiling.
-
-Object identified:
-an access hatch
-
-Document id:
-d_2.4.3_i1_#3_s_0

@@ -1,8 +1,0 @@
-Sentence:
-a mechanical system capable of at least 3 air changes per hour.
-
-Object identified:
-a mechanical system
-
-Document id:
-n_3.14.9_i1_#1_s_0

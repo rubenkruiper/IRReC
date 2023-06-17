@@ -1,1 +1,0 @@
-Resource use display: Install a real-time resource use monitor that displays electricity use, located in an easily accessible and readable position.

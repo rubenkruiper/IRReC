@@ -1,1 +1,0 @@
-Mesh should prevent an 8mm diameter sphere from passing.

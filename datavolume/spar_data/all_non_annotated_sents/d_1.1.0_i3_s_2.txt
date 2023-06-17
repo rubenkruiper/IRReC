@@ -1,1 +1,0 @@
-The design and construction of a building should ensure that, by taking into account the factors set out above, the building does not fail in normal use (serviceability limit state).

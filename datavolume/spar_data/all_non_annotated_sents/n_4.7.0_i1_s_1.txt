@@ -1,1 +1,0 @@
-The type of system and performance sought should be considered at an early stage in the design process.

@@ -1,1 +1,0 @@
-Facilities should be sufficient in number to prevent queuing, other than in exceptional circumstances.

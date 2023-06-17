@@ -1,8 +1,0 @@
-Sentence:
-The depth of the smoke channel or down-stand should be at least 300mm below the soffit of the balcony.
-
-Object identified:
-down - stand
-
-Document id:
-d_2.9.23_i4_s_3

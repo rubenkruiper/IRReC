@@ -1,8 +1,0 @@
-Sentence:
-Where a smoke ventilation depressurisation system is used, replacement air should be provided for the system to operate effectively.
-
-Object identified:
-a smoke ventilation depressurisation system
-
-Document id:
-n_2.9.13_i10_s_2

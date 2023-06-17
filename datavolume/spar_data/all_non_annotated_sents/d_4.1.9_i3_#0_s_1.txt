@@ -1,1 +1,0 @@
-Details in the DETR publication `Accessible Thresholds in New Housing' gives guidance on how this might be achieved

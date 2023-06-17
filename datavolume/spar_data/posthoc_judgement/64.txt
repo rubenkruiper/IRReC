@@ -1,8 +1,0 @@
-Sentence:
-Fixings - the SCOSS committee has expressed concern that safety critical fixings do not always receive the attention that they deserve.
-
-Object identified:
-concern
-
-Document id:
-d_1.1.1_i3_s_0

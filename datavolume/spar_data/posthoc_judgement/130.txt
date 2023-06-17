@@ -1,8 +1,0 @@
-Sentence:
-a turbulent fire burning above a horizontal pool of vaporising hydrocarbon fuel).
-
-Object identified:
-vaporising hydrocarbon fuel )
-
-Document id:
-d_2.9.18_i4_s_2

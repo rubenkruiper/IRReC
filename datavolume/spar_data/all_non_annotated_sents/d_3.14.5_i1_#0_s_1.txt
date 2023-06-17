@@ -1,1 +1,0 @@
-The fan should be connected through a humidistat set to activate when the relative humidity is between 50 and 65%, or

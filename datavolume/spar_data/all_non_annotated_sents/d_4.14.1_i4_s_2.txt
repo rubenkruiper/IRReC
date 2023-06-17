@@ -1,1 +1,0 @@
-The infrastructure from the common access point to the individual termination points may be either:

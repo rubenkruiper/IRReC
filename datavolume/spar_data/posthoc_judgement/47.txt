@@ -1,8 +1,0 @@
-Sentence:
-The discharge can however still be harmful and will require great care when discharging to ground to ensure a suitable level of protection of the environment is achieved.
-
-Object identified:
-The discharge
-
-Document id:
-d_3.8.1_i1_s_1

@@ -1,1 +1,0 @@
-Food courts forming part of the mall should use an occupancy load factor of 1.0.

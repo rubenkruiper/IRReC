@@ -1,1 +1,0 @@
-Reference throughout this document to a low, medium or high vulnerability, will be satisfied by following the guidance in the table below.

@@ -1,1 +1,0 @@
-Table A should be used for storage buildings, factories (Class 1), shops, and entertainment buildings.

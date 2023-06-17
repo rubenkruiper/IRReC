@@ -1,1 +1,0 @@
-Vehicle access should be provided to at least one elevation of all buildings to assist in fire-fighting operations.

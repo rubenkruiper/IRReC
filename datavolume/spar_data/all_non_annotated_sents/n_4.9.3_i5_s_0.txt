@@ -1,1 +1,0 @@
-Relief valves should provide a combined discharge rating at least equal to the power input of the system.

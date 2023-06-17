@@ -1,1 +1,0 @@
-A protected circuit is a circuit originating at the main incoming switch or distribution board, the conductors of which are protected against fire.

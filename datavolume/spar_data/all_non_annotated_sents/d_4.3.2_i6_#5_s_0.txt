@@ -1,1 +1,0 @@
-The maximum rise and minimum going on a private stair should not be used together as this will result in a pitch greater than the recommended maximum.

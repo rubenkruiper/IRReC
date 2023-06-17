@@ -1,1 +1,0 @@
-Application of these specifications defines a `concurrent notional building', i.e.

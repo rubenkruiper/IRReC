@@ -1,1 +1,0 @@
-This will require improvements in performance within the DER specification for compliance.

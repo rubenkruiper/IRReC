@@ -1,1 +1,0 @@
-The label should describe the recommended maintenance necessary for the system and should include the following:

@@ -1,1 +1,0 @@
-all escalators should come to a controlled halt and lifts should return to the ground storey (or exit level)

@@ -1,8 +1,0 @@
-Sentence:
-Draught stripping for existing windows and doors which are part of the thermal division between the conservatory and the dwelling should be of a similar standard as the exposed windows and doors elsewhere in the dwelling.
-
-Object identified:
-exposed windows
-
-Document id:
-d_6.2.12_i7_s_1

@@ -1,1 +1,0 @@
-The escape routes on the ground storey do not communicate with the escape stairs.

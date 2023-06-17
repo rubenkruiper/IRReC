@@ -1,1 +1,0 @@
-A door swing may open across an activity space.

@@ -1,8 +1,0 @@
-Sentence:
-NHS regulations, SHTM 2045, provide guidance on designing for noise in hospitals and healthcare facilities.
-
-Object identified:
-SHTM 2045
-
-Document id:
-n_5.2.0_i2_s_0

@@ -1,8 +1,0 @@
-Sentence:
-lounges, bedrooms etc) may be asleep during the outbreak of fire.
-
-Object identified:
-the outbreak fire
-
-Document id:
-d_2.9.5_i0_s_1

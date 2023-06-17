@@ -1,1 +1,0 @@
-These percolation tests should be carried out using either of the following methods:

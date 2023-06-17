@@ -1,8 +1,0 @@
-Sentence:
-The use of woody biomass, in the form of wood chips, wood pellets and logs may offer a viable alternative to fossil fuels, particularly in areas not served by the gas grid, although the supply and distribution of chips and pellets is, as yet, poorly developed in Scotland.
-
-Object identified:
-wood pellets
-
-Document id:
-n_3.23.0_i3_s_0

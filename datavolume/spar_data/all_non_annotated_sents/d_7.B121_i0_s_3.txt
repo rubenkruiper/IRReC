@@ -1,1 +1,0 @@
-Avoid small font sizes.

@@ -1,1 +1,0 @@
-Taking into account guidance from BRE publication BR 443:2006 `Conventions for U-value calculations', http://www.bre.co.uk/filelibrary/pdf/rpts/br_443_(2006_edition).pdf individual U-values of building elements forming the insulation envelope can be established by a number of methods, including:

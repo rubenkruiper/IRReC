@@ -1,8 +1,0 @@
-Sentence:
-Advice on fire safety signs is given in the HSE publication, `Safety signs and signals: Guidance on Regulations - The Health and Safety (Safety Signs and Signals) Regulations 1996'.
-
-Object identified:
-Advice
-
-Document id:
-n_2.0.8_i9_s_2

@@ -1,1 +1,0 @@
-For shopping malls, the sum of the sales areas of all the shops in the mall should be calculated and used with this table.

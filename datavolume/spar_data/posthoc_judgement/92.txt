@@ -1,8 +1,0 @@
-Sentence:
-food and drink restaurants, pubs, wine bars, shops for sale of hot food for consumption off premises.
-
-Object identified:
-hot food
-
-Document id:
-n_6.2.2_i4_#3_s_0

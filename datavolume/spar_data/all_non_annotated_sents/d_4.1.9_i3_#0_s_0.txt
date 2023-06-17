@@ -1,1 +1,0 @@
-thresholds should be designed to prevent the ingress of rain.

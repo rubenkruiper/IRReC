@@ -1,8 +1,0 @@
-Sentence:
-False alarms - around 97% of all automatic calls received by the fire and rescue service result in unnecessary attendance due to false alarms.
-
-Object identified:
-attendance
-
-Document id:
-n_2.11.0_i2_s_0

@@ -1,7 +1,0 @@
-T1	Object_span 0 8	Elements
-T2	Discourse_span 9 11	of
-T3	Object_span 12 19;47 56	heating equipment
-T4	Discourse_span 19 20	,
-T5	Object_span 21 30;47 56	hot water equipment
-T6	Discourse_span 31 34	and
-T7	Object_span 35 46;47 56	ventilation equipment

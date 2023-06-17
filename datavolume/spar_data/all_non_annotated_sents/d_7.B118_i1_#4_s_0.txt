@@ -1,1 +1,0 @@
-Use graphic formats that preserve the sharpness of lines, such as PDF

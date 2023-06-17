@@ -1,1 +1,0 @@
-The occupancy capacity can be estimated by assigning a floor area per occupant, this is called the occupancy load factor.

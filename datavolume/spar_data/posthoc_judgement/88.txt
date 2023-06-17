@@ -1,8 +1,0 @@
-Sentence:
-In all cases these courses of action assume that the ground to be covered by the building will have at least 100mm of in-situ concrete cover.
-
-Object identified:
-concrete cover
-
-Document id:
-d_3.1.5_i3_s_3

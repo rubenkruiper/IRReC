@@ -1,1 +1,0 @@
-Constancy of width - an escape route should not narrow in the direction of escape.

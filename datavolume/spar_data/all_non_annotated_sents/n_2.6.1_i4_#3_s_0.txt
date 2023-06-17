@@ -1,1 +1,0 @@
-No fire resistance duration is necessary where the building is a factory (Class 2).

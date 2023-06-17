@@ -1,1 +1,0 @@
- X = Maximum dimension of the largest diffuser or rooflight above.

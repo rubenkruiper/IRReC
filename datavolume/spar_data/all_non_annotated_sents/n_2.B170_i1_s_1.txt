@@ -1,1 +1,0 @@
-The number of storeyexits increases in proportion to the number of patient beds.

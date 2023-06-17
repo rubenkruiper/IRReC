@@ -1,8 +1,0 @@
-Sentence:
-Where a multi-fuel appliance is proposed, assessment of both TER and DER should be based upon the fuel option with the highest carbon factor (e.g.
-
-Object identified:
-a multi - fuel appliance
-
-Document id:
-d_6.1.2_i7_#0_s_0

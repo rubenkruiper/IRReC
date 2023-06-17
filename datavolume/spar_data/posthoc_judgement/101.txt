@@ -1,8 +1,0 @@
-Sentence:
-Escape routes in common areas should be sterile areas.
-
-Object identified:
-erile areas
-
-Document id:
-d_2.9.10_i6_s_0

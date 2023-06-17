@@ -1,1 +1,0 @@
-safely accommodate any likely maximum demand, and

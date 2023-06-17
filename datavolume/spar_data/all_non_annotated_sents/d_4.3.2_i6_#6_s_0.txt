@@ -1,1 +1,0 @@
-Clause 4.2.10 should be referred to for exceptions where a private stair should meet the above recommendations for `any other stair'.

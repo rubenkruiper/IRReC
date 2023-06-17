@@ -1,1 +1,0 @@
-A bicycle stand must be capable of allowing the frame of the bicycle to be locked to the rack.

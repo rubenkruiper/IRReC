@@ -1,1 +1,0 @@
-To establish this, the DER should not exceed zero.

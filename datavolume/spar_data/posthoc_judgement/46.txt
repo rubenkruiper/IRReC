@@ -1,8 +1,0 @@
-Sentence:
- the Enclosing Rectangle (Geometric) Method as set out in clause 2.6.3, or
-
-Object identified:
-Geometric
-
-Document id:
-n_2.6.2_i6_#0_s_0

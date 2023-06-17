@@ -1,1 +1,0 @@
-Clause 6.5.2 provides information on situations not addressed in that document.

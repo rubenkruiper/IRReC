@@ -1,1 +1,0 @@
-Note that a combination of PSI values from these sources can be used to produce a calculated heat loss.

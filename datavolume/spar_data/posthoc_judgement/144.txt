@@ -1,8 +1,0 @@
-Sentence:
-Both the warm deck and warm deck inverted roof constructions, where the insulation is placed above the roof deck, are considered preferable.
-
-Object identified:
-ble
-
-Document id:
-n_3.15.6_i1_s_0

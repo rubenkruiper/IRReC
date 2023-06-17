@@ -1,1 +1,0 @@
-The rate of heat loss from the notional extension is then calculated as follows:

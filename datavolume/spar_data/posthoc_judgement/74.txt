@@ -1,8 +1,0 @@
-Sentence:
- Applicant - name, address and contact details
-
-Object identified:
-address details
-
-Document id:
-n_6.E271_i4_#0_s_0

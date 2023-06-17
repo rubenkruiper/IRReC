@@ -1,8 +1,0 @@
-Sentence:
-The plan includes a 70% recycling rate for household and all other waste streams by 2025.
-
-Object identified:
-plan
-
-Document id:
-d_3.25.0_i1_s_1

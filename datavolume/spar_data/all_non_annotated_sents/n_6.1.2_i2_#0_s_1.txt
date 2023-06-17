@@ -1,1 +1,0 @@
-The notional building has the same size, shape, orientation, conditioning strategy and zone activities as the actual building.

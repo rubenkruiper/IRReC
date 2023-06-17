@@ -1,1 +1,0 @@
-For example, high rise hotels or flats or assembly buildings or grandstands require a different level of robustness than low rise buildings or storage buildings.

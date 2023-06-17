@@ -1,1 +1,0 @@
-The lift control and communication system should be capable of being used under the direct control of the fire and rescue services.

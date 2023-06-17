@@ -1,1 +1,0 @@
-S - is the required storage in m3.

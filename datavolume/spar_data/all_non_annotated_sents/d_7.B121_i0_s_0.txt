@@ -1,1 +1,0 @@
-Provide labels fixed to all components of heating, ventilation and hot water, including controls.

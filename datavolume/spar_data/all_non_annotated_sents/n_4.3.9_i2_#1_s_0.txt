@@ -1,1 +1,0 @@
-the effective width should be as recommended in clause 4.3.3, and

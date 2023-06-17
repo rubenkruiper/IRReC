@@ -1,1 +1,0 @@
-medium fire resistance duration, if not more than 1m from the boundary.

@@ -1,8 +1,0 @@
-Sentence:
-External escape stairs present additional hazards to people escaping from buildings in the case of fire.
-
-Object identified:
-External
-
-Document id:
-d_2.9.22_i2_s_1

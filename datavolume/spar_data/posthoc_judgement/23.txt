@@ -1,8 +1,0 @@
-Sentence:
-Where any dead-end route is more than 20m long, turning facilities should be provided.
-
-Object identified:
-turning facilities
-
-Document id:
-n_2.12.2_i1_s_1

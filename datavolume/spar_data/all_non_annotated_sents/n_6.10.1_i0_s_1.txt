@@ -1,1 +1,0 @@
-These should be located where they can be easily accessed by the building operator.

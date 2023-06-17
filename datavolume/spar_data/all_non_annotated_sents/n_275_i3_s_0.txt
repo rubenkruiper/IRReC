@@ -1,1 +1,0 @@
-M = Correction factor for dirt or ease of cleaning, consisting of:

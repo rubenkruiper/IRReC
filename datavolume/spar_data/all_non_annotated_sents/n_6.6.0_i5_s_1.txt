@@ -1,1 +1,0 @@
-When the external air temperature is higher than the space temperature the system design should allow the provision of a minimum level of fresh air.

@@ -1,8 +1,0 @@
-Sentence:
-One way that can be considered as following the guidance would be by confirming that the leakage testing has achieved the equivalent leakage performance standards specified in BES DW/143 - `Guide to good practice ductwork air leakage testing' .
-
-Object identified:
-the leakage testing
-
-Document id:
-n_6.7.2_i0_s_0

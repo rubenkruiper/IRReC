@@ -1,1 +1,0 @@
-The vehicle access route should be provided to the elevation or/and rescue elevations where the principal entrance, or entrances, are located.

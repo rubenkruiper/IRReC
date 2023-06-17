@@ -1,1 +1,0 @@
-The answer gives the average time in seconds (Vp) required for the water to drop 1mm.

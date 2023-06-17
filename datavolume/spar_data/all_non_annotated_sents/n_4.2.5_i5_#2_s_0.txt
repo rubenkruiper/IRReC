@@ -1,1 +1,0 @@
-A corridor width of less than 1.2m should not be present within new buildings but may be found within some existing buildings.

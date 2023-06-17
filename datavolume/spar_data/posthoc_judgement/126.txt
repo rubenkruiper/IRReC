@@ -1,8 +1,0 @@
-Sentence:
-in the case of a reinforced concrete wall, the distance between lateral supports subject to a length not more than 2.25 x storey height
-
-Object identified:
-a reinforced concrete wall
-
-Document id:
-n_1.2.0_i2_#0_s_0

@@ -1,1 +1,0 @@
-Guidance on this process is given in BR 497, `Conventions For Calculating Linear Thermal Transmittance and Temperature Factors'.

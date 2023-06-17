@@ -1,8 +1,0 @@
-Sentence:
-The remainder of the Directive, which covers the wider network, has been transposed at UK level under The Communications (Access to Infrastructure) Regulations 2016.
-
-Object identified:
-Access to
-
-Document id:
-d_4.14.0_i2_s_0

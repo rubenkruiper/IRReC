@@ -1,8 +1,0 @@
-Sentence:
-Water flows through much of Scotland's bedrock via fissures.
-
-Object identified:
-bedrock
-
-Document id:
-n_3.9.1_i5_s_7

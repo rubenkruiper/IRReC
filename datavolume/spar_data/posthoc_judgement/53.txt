@@ -1,8 +1,0 @@
-Sentence:
-Avoid engineering heating system schematics as many people find these hard to understand.
-
-Object identified:
-Avoid engineering
-
-Document id:
-d_7.B120_i8_s_3

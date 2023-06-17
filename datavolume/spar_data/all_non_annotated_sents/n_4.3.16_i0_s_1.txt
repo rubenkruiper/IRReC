@@ -1,1 +1,0 @@
-This method of access is not for public use and would only be expected to be provided in places such as plant-rooms.

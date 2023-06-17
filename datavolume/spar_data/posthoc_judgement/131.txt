@@ -1,8 +1,0 @@
-Sentence:
-Because of the way it spreads, even a small quantity can cause a lot of harm to the aquatic environment.
-
-Object identified:
-a quantity
-
-Document id:
-d_3.24.0_i0_s_1

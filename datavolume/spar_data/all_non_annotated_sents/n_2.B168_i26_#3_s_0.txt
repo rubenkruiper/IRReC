@@ -1,1 +1,0 @@
-day rooms with a floor area greater than 20m2

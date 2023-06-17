@@ -1,8 +1,0 @@
-Sentence:
-The structural form and concept and any protective measures should then be chosen and the detailed design of the structure and its elements undertaken in accordance with the recommendations in the codes and standards in clause 1.2.4.
-
-Object identified:
-clause 1 . 2 . 4
-
-Document id:
-d_1.2.3_i10_s_0

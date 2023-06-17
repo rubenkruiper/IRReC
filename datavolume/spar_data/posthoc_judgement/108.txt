@@ -1,8 +1,0 @@
-Sentence:
-a non self-resetting thermal cut-out, and
-
-Object identified:
-self - resetting
-
-Document id:
-n_4.9.2_i6_#0_s_0

@@ -1,8 +1,0 @@
-Sentence:
-Schedule 1 - changes to building types 1 and 20.
-
-Object identified:
-changes 1
-
-Document id:
-n_0.2.1_i11_#1_s_0

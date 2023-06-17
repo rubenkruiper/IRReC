@@ -1,8 +1,0 @@
-Sentence:
-UKAS - United Kingdom Accreditation Service is the sole national accreditation body recognised by the UK Government to assess against internationally agreed standards, organisations that provide certification, testing, inspection and calibration services.
-
-Object identified:
-the national accreditation body
-
-Document id:
-d_0.8.2_i10_s_0

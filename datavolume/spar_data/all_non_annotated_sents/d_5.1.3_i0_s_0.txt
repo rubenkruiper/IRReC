@@ -1,1 +1,0 @@
-Example Constructions have been developed that will repeatedly achieve the design performance levels in the table to clause 5.1.2.

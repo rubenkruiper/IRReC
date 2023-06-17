@@ -1,1 +1,0 @@
-N - 1 is the number of escape stairs minus 1, unless it meets exception for protected lobbies above

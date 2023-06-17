@@ -1,1 +1,0 @@
-This should include detailed information on building services plant and controls.

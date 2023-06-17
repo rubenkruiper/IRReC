@@ -1,1 +1,0 @@
-Finally, the heat loss calculated for the proposed building should be not more than that for the 'notional' one.

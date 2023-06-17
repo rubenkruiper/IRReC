@@ -1,1 +1,0 @@
-The enclosing structure of the protected zone should have at least a medium fire resistance duration.

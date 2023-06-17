@@ -1,1 +1,0 @@
-An accessible route should contain no barriers, such as kerbs, steps or similar obstructions that may restrict access.

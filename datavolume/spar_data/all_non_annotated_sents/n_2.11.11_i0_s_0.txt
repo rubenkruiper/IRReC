@@ -1,1 +1,0 @@
-In factory buildings (class 1), factory (class 2), storage buildings (class 1) and storage buildings (class 2) the occupants will be alert and will be familiar with the building, also the numbers of persons in the building will normally be low but can vary for example a large compartment with production lines such as clothes manufacturing.

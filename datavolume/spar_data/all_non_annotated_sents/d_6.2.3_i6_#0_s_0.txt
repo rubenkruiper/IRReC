@@ -1,1 +1,0 @@
-input of default PSI values for each junction listed within Appendix K of SAP 2012

@@ -1,8 +1,0 @@
-Sentence:
-That analysis of alternative systems may be carried out for individual buildings or for groups of similar buildings or for common typologies of buildings in the same area.
-
-Object identified:
-groups
-
-Document id:
-d_6.C109_i2_#2_s_0

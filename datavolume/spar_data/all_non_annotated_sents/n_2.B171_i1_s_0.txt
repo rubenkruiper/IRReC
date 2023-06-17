@@ -1,1 +1,0 @@
-The distribution boards for essential and non-essential circuits may be in the same location but should be in separate cabinets.

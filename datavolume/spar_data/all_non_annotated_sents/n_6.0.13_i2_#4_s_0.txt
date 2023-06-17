@@ -1,1 +1,0 @@
-Clause 6.2.7 - revised list of situations where airtightness testing need not be undertaken

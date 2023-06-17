@@ -1,8 +1,0 @@
-Sentence:
-for earth retaining structures, BS EN 1997-1:2004 (Eurocode 7)
-
-Object identified:
-earth retaining structures
-
-Document id:
-n_1.1.2_i2_#3_s_0

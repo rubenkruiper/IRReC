@@ -1,1 +1,0 @@
-from spar_lib.predictors.span_tagger_predictor import SpanTaggerPredictor

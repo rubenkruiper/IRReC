@@ -1,1 +1,0 @@
- fire detection, warning and suppression

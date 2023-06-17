@@ -1,1 +1,0 @@
-This may be desirable if more than one detector head is installed.

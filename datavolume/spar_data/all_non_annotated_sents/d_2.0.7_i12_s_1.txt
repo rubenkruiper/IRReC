@@ -1,1 +1,0 @@
-BS 7974 and IFEG assume that all aspects of the fire engineering strategy are capable of being maintained and deployed over the lifetime of the building.

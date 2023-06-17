@@ -1,1 +1,0 @@
-Where guarding is provided, it should be designed to conform to BS 6180: 2011.

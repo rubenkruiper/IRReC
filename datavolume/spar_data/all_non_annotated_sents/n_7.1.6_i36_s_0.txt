@@ -1,1 +1,0 @@
-A simplified DF calculation can be found in Annex C.

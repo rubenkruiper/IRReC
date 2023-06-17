@@ -1,1 +1,0 @@
-The wording on each dwelling indicator sign should take the form Flats X-Y, where X is the lowest dwelling number, and Y is the highest dwelling number, accessed via the storey.

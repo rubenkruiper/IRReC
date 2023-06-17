@@ -1,9 +1,0 @@
-T1	Object_span 0 15	A dry fire main
-T2	Functional_span 19 27	commonly
-T3	Action_span 16 18;28 39	is referred to
-T4	Discourse_span 40 42	as
-T5	Object_span 43 44;46 55	a dry riser
-T6	Discourse_span 56 57	.
-T7	Discourse_span 45 46	`
-T8	Discourse_span 55 56	'
-A1	Confidence T4

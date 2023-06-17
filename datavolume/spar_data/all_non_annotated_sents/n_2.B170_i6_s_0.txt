@@ -1,1 +1,0 @@
-Travel distance in a hospital should not exceed 15m in one direction of travel and 32m in more than one direction.

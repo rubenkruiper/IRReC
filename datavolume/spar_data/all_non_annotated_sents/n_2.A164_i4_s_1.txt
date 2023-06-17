@@ -1,1 +1,0 @@
-The maximum travel distance from any point within a compartment should be not more than 64m to:

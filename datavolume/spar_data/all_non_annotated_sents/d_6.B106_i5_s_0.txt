@@ -1,1 +1,0 @@
-Calculate the rate of heat loss from the 'notional attic' as follows:

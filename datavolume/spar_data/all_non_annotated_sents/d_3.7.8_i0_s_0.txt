@@ -1,1 +1,0 @@
-A Wastewater drainage system serving a building should be ventilated to limit the pressure fluctuations within the system and minimise the possibility of foul air entering the building.

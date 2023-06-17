@@ -1,8 +1,0 @@
-Sentence:
-This may mean that the upper levels of a dwelling are not accessible to some occupants.
-
-Object identified:
-the upper levels
-
-Document id:
-d_4.2.8_i0_s_1

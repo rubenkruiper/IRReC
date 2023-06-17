@@ -1,8 +1,0 @@
-Sentence:
-NANDO - New Approach Notified and Designated Organisations is an information system produced by the European Commission.
-
-Object identified:
-Designated Organisations
-
-Document id:
-d_0.8.2_i9_s_0

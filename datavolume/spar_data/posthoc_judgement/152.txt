@@ -1,8 +1,0 @@
-Sentence:
-Liners should be placed with the sockets or rebate ends uppermost to contain moisture and other condensates in the flue.
-
-Object identified:
-the sockets
-
-Document id:
-n_3.18.6_i11_s_3

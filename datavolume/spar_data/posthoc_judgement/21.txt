@@ -1,8 +1,0 @@
-Sentence:
-Floor surfaces within common areas should be uniform, permit ease in manoeuvring and be of a material and finish that, when clean and dry, will provide a level of traction that will minimise the possibility of slipping.
-
-Object identified:
-ease
-
-Document id:
-d_4.2.2_i0_s_0

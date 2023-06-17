@@ -1,8 +1,0 @@
-Sentence:
-The main reason for this is that the battery is either faulty or has been removed from the alarm.
-
-Object identified:
-the alarm
-
-Document id:
-d_2.11.9_i0_s_1

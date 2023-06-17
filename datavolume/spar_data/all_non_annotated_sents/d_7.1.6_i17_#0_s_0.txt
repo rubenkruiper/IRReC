@@ -1,1 +1,0 @@
-produces a Bill of Quantities of the different materials in the building to be demolished

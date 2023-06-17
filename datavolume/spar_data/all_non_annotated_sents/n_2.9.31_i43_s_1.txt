@@ -1,1 +1,0 @@
-For this example it is assumed that the occupants are distributed evenly across each storey, therefore the number of occupants will be split evenly to each escape stair.

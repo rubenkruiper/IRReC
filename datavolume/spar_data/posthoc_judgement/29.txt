@@ -1,8 +1,0 @@
-Sentence:
-Favourable classroom acoustics benefit pupils and teachers alike improving pupils' well-being and educational performance as well as enhance a school's suitability for alternative uses.
-
-Object identified:
-educational performance
-
-Document id:
-n_7.1.6_i43_#0_s_1

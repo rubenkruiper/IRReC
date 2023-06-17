@@ -1,1 +1,0 @@
-The simple Geometry method - if the building is a factory (Class 2), a residential building, an assembly building or an office and is not more than 9m in height and the length of any side facing the boundary is not more than 24m, the unprotected area (in square metres) is six times the distance (in m) to the boundary.

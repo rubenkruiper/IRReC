@@ -1,1 +1,0 @@
-where the pool is contained or a `running' pool.

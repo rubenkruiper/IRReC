@@ -1,8 +1,0 @@
-Sentence:
-All fixed artificial lighting for: classrooms to be automatically controlled using presence or absence detection sensors, with daylight photoelectric switching or dimming devices ancillary spaces to be automatically controlled using presence or absence detection switching or dimming devices classrooms and ancillary spaces to have a time operated switch to allow lighting to be automatically turned off when the school is not in operation.
-
-Object identified:
-ancillary spaces
-
-Document id:
-n_7.1.6_i5_#0_s_1

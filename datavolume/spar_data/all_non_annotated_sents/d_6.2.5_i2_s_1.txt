@@ -1,1 +1,0 @@
-The verifier may request that the frequency of testing be varied as considered appropriate to `reasonable inquiry' and in response to previous test results within a development.
