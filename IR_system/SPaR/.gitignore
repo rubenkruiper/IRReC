@@ -1,3 +1,36 @@
+### IR system data (mostly shared volume between containers)
+# (! means we DO want to keep it)
+# SPaR
+!/spar_lib/
+
+### UI gitignore
+# Logs
+UserInterface/logs
+UserInterface/*.log
+UserInterface/npm-debug.log*
+UserInterface/yarn-debug.log*
+UserInterface/yarn-error.log*
+UserInterface/pnpm-debug.log*
+UserInterface/lerna-debug.log*
+
+UserInterface/node_modules
+UserInterface/dist
+UserInterface/dist-ssr
+UserInterface/*.local
+
+# Editor directories and files
+UserInterface/.vscode/*
+UserInterface/!.vscode/extensions.json
+UserInterface/.idea
+UserInterface/.DS_Store
+UserInterface/*.suo
+UserInterface/*.ntvs*
+UserInterface/*.njsproj
+UserInterface/*.sln
+UserInterface/*.sw?
+
+
+
 ### haystack and standard gitignore stuff
 # Local run files
 qa.db

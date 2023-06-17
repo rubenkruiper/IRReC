@@ -1,3 +1,11 @@
+### Experiments (data)
+**/*.csv
+**/*.json
+!data/annotated_results_top3.csv
+!data/queries.txt
+!data/.gitkeep
+
+
 ### haystack and standard gitignore stuff
 # Local run files
 qa.db

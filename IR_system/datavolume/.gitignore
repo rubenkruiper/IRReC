@@ -1,3 +1,52 @@
+### IR system data (mostly shared volume between containers)
+# (! means we DO want to keep it)
+# SPaR data
+spar_trained_models/*
+!spar_trained_models/.gitkeep
+!/spar_data/
+
+# classifier data
+classifier_data/*
+!classifier_data/*IDF.json
+
+# indexing
+ir_data/*
+!ir_data/remove_duplicates.py
+indexes/*
+!indexes/.gitkeep
+
+# my cache dir for pretrained embeddings
+pretrained_embeddings_cache/*
+!pretrained_embeddings_cache/.gitkeep
+
+### UI gitignore
+# Logs
+UserInterface/logs
+UserInterface/*.log
+UserInterface/npm-debug.log*
+UserInterface/yarn-debug.log*
+UserInterface/yarn-error.log*
+UserInterface/pnpm-debug.log*
+UserInterface/lerna-debug.log*
+
+UserInterface/node_modules
+UserInterface/dist
+UserInterface/dist-ssr
+UserInterface/*.local
+
+# Editor directories and files
+UserInterface/.vscode/*
+UserInterface/!.vscode/extensions.json
+UserInterface/.idea
+UserInterface/.DS_Store
+UserInterface/*.suo
+UserInterface/*.ntvs*
+UserInterface/*.njsproj
+UserInterface/*.sln
+UserInterface/*.sw?
+
+
+
 ### haystack and standard gitignore stuff
 # Local run files
 qa.db

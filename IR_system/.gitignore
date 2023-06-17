@@ -1,3 +1,60 @@
+### Experiments (data)
+Experiments/**/*.csv
+Experiments/**/*.json
+!Experiments/data/annotated_results_top3.csv
+!Experiments/data/queries.txt
+!Experiments/data/.gitkeep
+
+### IR system data (mostly shared volume between containers)
+# (! means we DO want to keep it)
+# SPaR 
+!IR_system/datavolume/spar_data/*
+!IR_system/SPaR/spar_lib/*
+IR_system/datavolume/spar_trained_models/*
+!IR_system/datavolume/spar_trained_models/.gitkeep
+
+# clustering
+IR_system/datavolume/classifier_data/*
+!IR_system/datavolume/classifier_data/*IDF.json
+
+# indexing
+IR_system/datavolume/ir_data/*
+!IR_system/datavolume/ir_data/remove_duplicates.py
+IR_system/datavolume/indexes/*
+!IR_system/datavolume/indexes/.gitkeep
+
+# my cache dir for pretrained embeddings
+IR_system/datavolume/pretrained_embeddings_cache/*
+!IR_system/datavolume/pretrained_embeddings_cache/.gitkeep
+
+### UI gitignore
+# Logs
+UserInterface/logs
+UserInterface/*.log
+UserInterface/npm-debug.log*
+UserInterface/yarn-debug.log*
+UserInterface/yarn-error.log*
+UserInterface/pnpm-debug.log*
+UserInterface/lerna-debug.log*
+
+UserInterface/node_modules
+UserInterface/dist
+UserInterface/dist-ssr
+UserInterface/*.local
+
+# Editor directories and files
+UserInterface/.vscode/*
+UserInterface/!.vscode/extensions.json
+UserInterface/.idea
+UserInterface/.DS_Store
+UserInterface/*.suo
+UserInterface/*.ntvs*
+UserInterface/*.njsproj
+UserInterface/*.sln
+UserInterface/*.sw?
+
+
+
 ### haystack and standard gitignore stuff
 # Local run files
 qa.db
