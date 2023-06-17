@@ -1,0 +1,8 @@
+Sentence:
+Every escape stair opening into the hospital street should be located so that the travel distance from an escape stairexit to a door leading directly to a place of safety is not more than 64m.
+
+Object identified:
+the travel distance
+
+Document id:
+n_2.B170_i16_s_0

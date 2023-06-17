@@ -1,0 +1,1 @@
+f - is the soil infiltration rate, in m/s, determined in accordance with clause 3.9.1.

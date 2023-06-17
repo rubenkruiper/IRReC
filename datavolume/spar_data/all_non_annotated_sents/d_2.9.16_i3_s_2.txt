@@ -1,0 +1,1 @@
+The system design should take account of likely pressure reduction when occupants open doors to escape or when fire-fighters open doors to access the fire.

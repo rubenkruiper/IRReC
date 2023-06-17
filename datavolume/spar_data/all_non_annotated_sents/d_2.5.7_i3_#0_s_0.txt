@@ -1,0 +1,1 @@
+A distance equal to the largest plan dimension of the largest diffuser or rooflight (see figure 2.2)

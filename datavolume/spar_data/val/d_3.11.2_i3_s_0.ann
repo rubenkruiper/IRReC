@@ -1,0 +1,7 @@
+T1	Object_span 0 6	Note 1
+T2	Discourse_span 6 7	:
+T3	Discourse_span 8 10	In
+T4	Functional_span 11 15	some
+T5	Object_span 16 31	small dwellings
+T6	Discourse_span 32 33	(
+T7	Discourse_span 33 37	i.e.

@@ -1,0 +1,1 @@
+Radon risk report - the atlas presented in the report contains simplified maps that are indicative rather that definitive with each 1km grid square coloured according to the highest radon potential found within it.

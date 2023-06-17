@@ -1,0 +1,1 @@
+Shop escape width - the aggregate unobstructed exit width, from each shop and the unobstructed exit width of a route, or routes, which do not enter the mall should be at least 5.3mm x the occupancy capacity of the shop.

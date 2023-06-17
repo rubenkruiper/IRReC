@@ -1,0 +1,8 @@
+Sentence:
+The outlet from a flue should be located externally at a safe distance from any opening, obstruction or flammable or vulnerable materials.
+
+Object identified:
+flammable
+
+Document id:
+n_3.20.17_i0_s_0

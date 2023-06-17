@@ -1,0 +1,1 @@
+Some electric locking devices fail locked on both sides of the door when electrical power is withdrawn and does not give mechanical escape by panic bar, handle or push pad.

@@ -1,0 +1,18 @@
+T1	Functional_span 0 3	Any
+T2	Object_span 4 16	installation
+T3	Action_span 17 30	should enable
+T4	Object_span 31 40	cylinders
+T5	Discourse_span 41 43	to
+T6	Action_span 44 49	stand
+T7	Object_span 50 57	upright
+T8	Discourse_span 57 58	,
+T9	Action_span 59 66	secured
+T10	Discourse_span 67 69	by
+T11	Object_span 70 76	straps
+T12	Discourse_span 77 79	or
+T13	Object_span 80 86	chains
+T14	Discourse_span 87 94	against
+T15	Object_span 95 101	a wall
+T16	Discourse_span 102 109	outside
+T17	Object_span 110 122	the building
+T18	Discourse_span 122 123	.

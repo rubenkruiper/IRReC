@@ -1,0 +1,1 @@
+masonry walls incorporating external rendering which conforms to the relevant recommendations of BS 5262: 1991, to suit the degree of exposure and the type of masonry

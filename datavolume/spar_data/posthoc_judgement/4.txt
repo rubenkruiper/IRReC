@@ -1,0 +1,8 @@
+Sentence:
+Artificial and display lighting can account for a substantial proportion of the electricity used within a building.
+
+Object identified:
+display lighting
+
+Document id:
+n_6.5.0_i0_s_0

@@ -1,0 +1,23 @@
+T1	Discourse_span 0 2	In
+T2	Functional_span 3 6	any
+T3	Object_span 7 15	building
+T4	Discourse_span 16 21	above
+T5	Discourse_span 22 26	this
+T6	Object_span 27 33	height
+T7	Discourse_span 33 34	,
+T8	Discourse_span 35 37	or
+T9	Discourse_span 38 43	where
+T10	Action_span 44 53	there are
+T11	Object_span 54 73	communal facilities
+T12	Discourse_span 74 76	on
+T13	Object_span 77 84	a level
+T14	Functional_span 85 95	other than
+T15	Object_span 96 119	a common entrance level
+T16	Discourse_span 119 120	,
+T17	Discourse_span 121 126	there
+T18	Action_span 127 136	should be
+T19	Object_span 137 144	a means
+T20	Discourse_span 145 147	of
+T21	Functional_span 148 158	unassisted
+T22	Object_span 159 165	access
+T23	Discourse_span 165 166	.

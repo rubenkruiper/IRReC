@@ -1,0 +1,1 @@
+A building should be provided with in-building physical infrastructure to allow for the future installation of a service provider's network cabling and associated equipment to the end user's location, with minimal disruption to the fabric of the building.

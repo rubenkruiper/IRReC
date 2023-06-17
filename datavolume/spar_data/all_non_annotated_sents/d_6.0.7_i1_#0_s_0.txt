@@ -1,0 +1,1 @@
+disregarding the buffering effects and treating the element as if it is directly exposed to the outside

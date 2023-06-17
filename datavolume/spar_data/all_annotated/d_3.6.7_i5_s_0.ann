@@ -1,0 +1,31 @@
+T1	Object_span 0 19	Water storage tanks
+T2	Action_span 20 41	should be constructed
+T3	Discourse_span 42 44	of
+T4	Object_span 45 54	materials
+T5	Functional_span 55 62	such as
+T6	Object_span 63 66	GRP
+T7	Discourse_span 66 67	,
+T9	Object_span 68 93	high-density polyethylene
+T8	Discourse_span 93 94	,
+T10	Object_span 95 100	steel
+T11	Discourse_span 101 103	or
+T12	Object_span 104 112	concrete
+T13	Discourse_span 113 116	and
+T14	Action_span 117 123	sealed
+T15	Discourse_span 124 127	and
+T16	Action_span 128 137	protected
+T17	Discourse_span 138 145	against
+T18	Object_span 146 167	the corrosive effects
+T19	Discourse_span 168 170	of
+T20	Object_span 171 174;182 187	the water
+T21	Functional_span 175 181	stored
+T22	Discourse_span 188 191	and
+T23	Action_span 192 202	to prevent
+T24	Action_span 203 214	the ingress
+T25	Discourse_span 215 217	of
+T26	Object_span 218 230	ground water
+#1	AnnotatorNotes T21	stored water doesn't strike me as a separate class, and the functional 'stored' could help identify which water is referred to later on
+T27	Functional_span 231 233	if
+T28	Action_span 234 241	located
+T29	Object_span 242 253	underground
+T30	Discourse_span 253 254	.

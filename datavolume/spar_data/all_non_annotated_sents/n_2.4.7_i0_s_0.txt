@@ -1,0 +1,1 @@
+A cavity barrier should be fixed so that its performance is not affected by:

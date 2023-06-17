@@ -1,0 +1,1 @@
+This width will depend on the number of stairs provided and whether the escape strategy for the building (or part of the building) is based on:

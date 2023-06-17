@@ -1,0 +1,8 @@
+Sentence:
+They have also been developed from constructions that are in general use in the UK, and that are known to reduce the range of sound frequencies that can generate complaints.
+
+Object identified:
+the range
+
+Document id:
+n_5.1.3_i0_s_1

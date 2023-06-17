@@ -1,0 +1,1 @@
+The detector should incorporate a warning device to alert the users when the working life of the detector is due to expire or, if mains operated, fitted with a sensor failure warning device.

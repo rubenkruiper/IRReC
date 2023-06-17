@@ -1,0 +1,1 @@
+from every part of the mall and from every mall level shop there should be at least 2 directions of travel leading to a place of safety without passing through any space in single occupation.

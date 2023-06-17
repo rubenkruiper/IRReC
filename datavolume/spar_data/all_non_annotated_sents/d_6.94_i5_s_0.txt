@@ -1,0 +1,1 @@
+Infill of small openings - the infill of an existing opening of approximately 4m#SUP#2#SUP# or less in the building fabric should have a U-value which matches at least that of the remainder of the surrounding element.

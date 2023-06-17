@@ -1,0 +1,1 @@
+The volume of any space is the internal cubic capacity of the space.

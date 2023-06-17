@@ -1,0 +1,1 @@
+Associated activity spaces for each item of furniture should be shown as in the diagram below.

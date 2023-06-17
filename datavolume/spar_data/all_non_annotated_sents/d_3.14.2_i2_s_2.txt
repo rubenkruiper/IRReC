@@ -1,0 +1,1 @@
+If the detector/monitor has an audible alarm this should be capable of being permanently deactivated.

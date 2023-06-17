@@ -1,0 +1,1 @@
+Locking devices on final exit doors and on escape windows should not prevent occupants escaping from the building.

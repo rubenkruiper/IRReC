@@ -1,0 +1,30 @@
+T1	Object_span 0 12	Standard 7.1
+T2	Discourse_span 13 14	-
+T3	Object_span 15 25	amendments
+T4	Action_span 26 40	have been made
+T5	Discourse_span 41 43	to
+T6	Object_span 44 52	guidance
+T8	Object_span 68 86	the carbon dioxide
+T9	Discourse_span 87 88	(
+T10	Object_span 88 91	CO2
+T11	Discourse_span 91 92	)
+T12	Object_span 93 109	emissions target
+T13	Discourse_span 110 116	within
+T14	Object_span 117 120;132 170	the Gold level of Sustainability labelling
+T15	Object_span 117 127;137 170	the Silver level of Sustainability labelling
+T16	Discourse_span 128 131	and
+T18	Object_span 186 210	the CO2 emissions target
+T19	Action_span 211 221	introduced
+T20	Discourse_span 222 224	by
+T21	Object_span 225 250	the 2015 energy standards
+T22	Discourse_span 250 251	.
+T7	Discourse_span 53 57	with
+T23	Object_span 58 64	regard
+T24	Discourse_span 65 67	to
+A1	Confidence T23
+#1	AnnotatorNotes T23	'with regard to' as MWE?
+T17	Object_span 174 182	relation
+T25	Discourse_span 171 173	in
+T26	Discourse_span 183 185	to
+A2	Confidence T15
+#2	AnnotatorNotes T15	Annotation issue here w.r.t. number of fragments that can be part of a discontiguous span I think'/?

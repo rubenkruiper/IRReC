@@ -1,0 +1,1 @@
+and kWp is the smaller of:- dwelling total floor area (in m#SUP#2#SUP#) x 0.01, and- roof area limit.The roof area limit is to ensure that the PV area does not exceed 30% of the roof area (based on 30 degrees roof pitch and 0.12kWp per m#SUP#2#SUP# PV area).

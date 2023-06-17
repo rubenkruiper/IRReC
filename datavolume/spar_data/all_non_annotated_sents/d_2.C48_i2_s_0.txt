@@ -1,0 +1,1 @@
+Only test method 4 evaluates penetrability in a satisfactory way to satisfy the fire performance requirements in the United Kingdom.

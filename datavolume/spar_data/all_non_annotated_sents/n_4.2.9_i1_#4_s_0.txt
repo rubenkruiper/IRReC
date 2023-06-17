@@ -1,0 +1,1 @@
+include an assistance alarm that can be operated or reset from a bed space, and is also operable from floor level.

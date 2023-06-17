@@ -1,0 +1,1 @@
+a booklet with page sizes smaller than A4, possibly with double page spreads such as the booklet in the first good practice example.

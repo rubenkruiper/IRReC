@@ -1,0 +1,1 @@
+This does not apply where heat demand can be provided solely from one of the identified generating sources, in which case other identified heat sources should be considered as back-up systems and excluded from assessment.

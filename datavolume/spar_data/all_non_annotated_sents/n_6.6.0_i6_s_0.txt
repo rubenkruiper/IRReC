@@ -1,0 +1,1 @@
+Should natural ventilation fail to achieve the required occupied period temperature, the designer could consider mixed-mode ventilation.

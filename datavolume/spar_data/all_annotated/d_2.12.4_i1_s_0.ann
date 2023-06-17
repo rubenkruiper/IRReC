@@ -1,0 +1,31 @@
+T1	Functional_span 0 11	In order to
+T2	Action_span 12 17	allow
+T3	Object_span 31 37	access
+T4	Discourse_span 38 40	to
+T5	Object_span 41 60	a domestic building
+T6	Discourse_span 61 64	for
+T7	Object_span 65 98	fire and rescue service personnel
+T8	Discourse_span 98 99	,
+T9	Object_span 100 107;124 132	a paved footpath
+T10	Discourse_span 108 109	(
+T11	Discourse_span 122 123	)
+T12	Discourse_span 109 111	or
+T13	Functional_span 112 122	equivalent
+T14	Functional_span 133 141	at least
+T15	Object_span 142 147	900mm
+T17	Discourse_span 153 154	(
+T18	Action_span 154 157	see
+T19	Discourse_span 158 162	also
+T20	Object_span 163 179	Section 4 Safety
+T21	Discourse_span 179 180	)
+T22	Action_span 181 199	should be provided
+T23	Discourse_span 200 202	to
+T24	Object_span 203 206;214 223	the entrances
+T25	Discourse_span 223 224	,
+T26	Discourse_span 225 227	of
+T27	Object_span 228 238	a building
+T28	Discourse_span 238 239	.
+T16	Functional_span 18 30	unobstructed
+T29	Functional_span 207 213	normal
+T30	Object_span 148 152	wide
+A1	Confidence T1

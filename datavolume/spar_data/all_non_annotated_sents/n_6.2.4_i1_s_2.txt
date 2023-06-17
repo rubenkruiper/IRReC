@@ -1,0 +1,1 @@
+Limits on individual element U-values, as discussed in clause 6.2.1, should not be any worse than identified in column (b) of the following table:

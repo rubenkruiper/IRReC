@@ -1,0 +1,1 @@
+Ideally, wiring of the data network should be diverse routed, such that the ``return'' leg of a loop circuit follows a different path from the ``outward'' leg.

@@ -1,0 +1,1 @@
+When a protected lobby is provided, the wall dividing a protected lobby from the remainder of the protected zone should have a short fire resistance duration for integrity only and any door in the wall should be a self-closing fire door with a short fire resistance duration.

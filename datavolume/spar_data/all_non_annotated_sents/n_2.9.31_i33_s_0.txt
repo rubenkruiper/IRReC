@@ -1,0 +1,1 @@
+ EW = 5.3 x AC N − 1 EW = {5.3 x AC} over {N - 1}

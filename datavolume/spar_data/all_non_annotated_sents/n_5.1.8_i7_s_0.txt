@@ -1,0 +1,1 @@
+It is essential that all measurements made in the source and receiving rooms to determine a level difference should be made without moving the sound source or changing the output level of the sound source, once its spectrum has been correctly adjusted (where necessary).

@@ -1,0 +1,1 @@
+All teaching classrooms to have a real-time display monitor that measures the CO2 parts per million (ppm) levels, and temperature (deg C) to alert room occupants when the average concentration of CO2 reaches 1500 ppm when measured at 1500mm above floor level.

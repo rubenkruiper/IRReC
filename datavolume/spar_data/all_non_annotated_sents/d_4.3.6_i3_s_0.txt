@@ -1,0 +1,1 @@
+The minimum length of a stair landing, measured on the centreline of travel, should be either 1.2m or the effective width of the stair, whichever is less.

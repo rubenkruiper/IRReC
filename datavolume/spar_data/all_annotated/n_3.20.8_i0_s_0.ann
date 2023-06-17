@@ -1,0 +1,30 @@
+T1	Object_span 0 8	The size
+T2	Discourse_span 9 11	of
+T3	Object_span 12 18	a flue
+T4	Action_span 19 26	serving
+T5	Object_span 27 49	a solid fuel appliance
+T6	Action_span 50 59	should be
+T7	Functional_span 60 68	at least
+T8	Object_span 69 77	the size
+T9	Action_span 78 83	shown
+T10	Discourse_span 84 86	in
+T11	Object_span 87 96	the table
+T12	Discourse_span 97 102	below
+T13	Discourse_span 103 106	and
+T14	Functional_span 107 110	not
+T15	Functional_span 111 120	less than
+T16	Object_span 121 129	the size
+T17	Discourse_span 130 132	of
+T18	Object_span 133 146	the appliance
+T19	Object_span 147 158	flue outlet
+T20	Discourse_span 159 161	or
+T21	Discourse_span 162 166	that
+T22	Action_span 167 178	recommended
+T23	Discourse_span 179 181	by
+T24	Object_span 182 195	the appliance
+T25	Object_span 196 208	manufacturer
+T26	Discourse_span 208 209	.
+A1	Confidence T18
+#1	AnnotatorNotes T18	don't think this should be treated as one, nor as functional. BUT maybe make "the" part of the flue outlet?
+A2	Confidence T24
+#2	AnnotatorNotes T24	don't think this should be treated as one, nor as functional. BUT maybe make "the" part of the flue outlet?

@@ -1,0 +1,11 @@
+T1	Discourse_span 1 4	For
+T2	Object_span 5 24	open side car parks
+T3	Discourse_span 25 30	there
+T4	Action_span 31 33	is
+T5	Functional_span 34 36	no
+T6	Object_span 37 41	need
+T7	Discourse_span 42 45	for
+T8	Object_span 46 67	fire-fighting lobbies
+T9	Discourse_span 68 70	or
+T10	Object_span 71 85	dry fire mains
+T11	Discourse_span 85 86	.

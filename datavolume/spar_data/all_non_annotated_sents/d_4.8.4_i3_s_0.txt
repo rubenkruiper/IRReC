@@ -1,0 +1,1 @@
+Guarding to a window is not needed where the open window gives access to a fully guarded balcony.

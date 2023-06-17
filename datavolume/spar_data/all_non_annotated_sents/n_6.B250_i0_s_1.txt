@@ -1,0 +1,1 @@
+This is likely to be of use where there is a need to specify one or more constructions with a U-value higher than the recommended maximum area-weighted average U-values given in column (a) of the table to clause 6.2.11.

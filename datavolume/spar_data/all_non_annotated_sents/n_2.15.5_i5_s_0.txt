@@ -1,0 +1,1 @@
+Design criteria - to ensure the suppression system is robust, the automatic fire suppression system should be designed, installed and maintained in accordance with the LPC Rules for Automatic Sprinkler Installation.

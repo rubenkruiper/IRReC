@@ -1,0 +1,26 @@
+T1	Object_span 0 10	The layout
+T2	Discourse_span 11 13	of
+T3	Object_span 14 24	a dwelling
+T4	Discourse_span 24 25	,
+T5	Object_span 26 29;30 34	the size
+T6	Discourse_span 35 38	and
+T7	Object_span 26 29;39 50	the orientation
+T8	Discourse_span 51 53	of
+T9	Object_span 54 65	the windows
+T10	Discourse_span 65 66	,
+T11	Object_span 67 70;71 83	the thermal mass
+T12	Discourse_span 83 84	,
+T13	Object_span 67 70;85 104	the level of insulation
+T14	Discourse_span 104 105	,
+T15	Object_span 106 118;67 70	airtightness the
+T16	Discourse_span 118 119	,
+T17	Discourse_span 120 123	and
+T18	Object_span 124 135;67 70	ventilation the
+T19	Action_span 136 144	can have
+T20	Object_span 145 146;159 165	a affect
+T21	Functional_span 147 158	significant
+T22	Discourse_span 166 168	on
+T23	Object_span 169 179	the demand
+T24	Discourse_span 180 183	for
+T25	Object_span 184 188	heat
+T26	Discourse_span 188 189	.

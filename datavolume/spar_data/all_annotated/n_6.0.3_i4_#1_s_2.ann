@@ -1,0 +1,13 @@
+T1	Action_span 0 4	Note
+T2	Discourse_span 5 10	there
+T3	Action_span 11 14	are
+T4	Functional_span 15 17	no
+T5	Object_span 18 29	concessions
+T6	Discourse_span 30 33	for
+T7	Object_span 34 56	limited life buildings
+T8	Discourse_span 57 62	which
+T9	Action_span 63 78	are constructed
+T10	Discourse_span 79 81	in
+T11	Functional_span 82 103	a conventional manner
+A1	Confidence T11
+#1	AnnotatorNotes T11	describes mannerism... so should be treated as adverb? "conventionally"?

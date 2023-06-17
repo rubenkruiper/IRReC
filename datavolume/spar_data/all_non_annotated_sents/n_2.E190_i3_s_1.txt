@@ -1,0 +1,1 @@
+When a classification includes ``s3, d2'' this means that there is no limit set for smoke production and/or flaming droplets/particles.

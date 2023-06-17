@@ -1,0 +1,1 @@
+This would include fixtures such as sockets, switches, fire alarm call points and timer controls or programmers.

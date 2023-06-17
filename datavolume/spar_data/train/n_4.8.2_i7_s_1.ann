@@ -1,0 +1,7 @@
+T1	Discourse_span 0 4	This
+T2	Action_span 5 7	is
+T3	Functional_span 8 20	particularly
+T4	Object_span 21 30	important
+T5	Discourse_span 31 33	on
+T6	Object_span 34 47	powered doors
+T7	Discourse_span 47 48	.

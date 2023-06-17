@@ -1,0 +1,15 @@
+T1	Object_span 0 5	Walls
+T2	Discourse_span 5 6	,
+T3	Object_span 7 12	roofs
+T4	Discourse_span 13 16	and
+T5	Object_span 17 23	floors
+T6	Action_span 24 42	should be assessed
+T7	Discourse_span 43 49	and/or
+T8	Action_span 50 61	constructed
+T9	Functional_span 62 80	in accordance with
+T10	Object_span 81 90	Section 8
+T11	Discourse_span 91 94	and
+T12	Object_span 95 102	Annex D
+T13	Discourse_span 103 105	of
+T14	Object_span 106 119	BS 5250: 2002
+T15	Discourse_span 119 120	.

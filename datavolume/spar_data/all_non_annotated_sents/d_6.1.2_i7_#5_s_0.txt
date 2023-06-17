@@ -1,0 +1,1 @@
+For the purposes of setting the TER, a y-value of 0.08 is identified.

@@ -1,0 +1,1 @@
+Clause 6.2.9 - improved fabric backstops for extensions, option to consider improvements to existing dwelling when subject to `column (a)' U-values; example provided in Annex 6B

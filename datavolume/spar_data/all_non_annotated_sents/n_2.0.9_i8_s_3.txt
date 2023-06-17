@@ -1,0 +1,1 @@
+This means there is no limit set for smoke production (s3) and/or flaming droplets/particles (d2).

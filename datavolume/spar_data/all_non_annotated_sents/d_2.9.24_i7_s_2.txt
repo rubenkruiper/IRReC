@@ -1,0 +1,1 @@
+In order to assist the fire and rescue service in this task an evacuation alert system for their use should be installed to BS 8629: 2019 (currently under development, see Standard 2.14 for additional guidance).

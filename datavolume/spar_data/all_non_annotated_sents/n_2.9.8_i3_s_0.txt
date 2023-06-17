@@ -1,0 +1,1 @@
+The guidance on the width of exits assumes a unit width of 530mm per person and a rate of discharge of 40 persons per minute.

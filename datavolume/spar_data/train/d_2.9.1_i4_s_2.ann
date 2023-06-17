@@ -1,0 +1,31 @@
+T1	Discourse_span 0 2	In
+T2	Discourse_span 3 13	such cases
+T3	Discourse_span 13 14	,
+T4	Object_span 15 17;30 38	an approach
+T5	Functional_span 18 29	alternative
+T6	Discourse_span 39 40	(
+T7	Action_span 40 43	see
+T8	Object_span 44 56	clause 2.0.8
+T9	Discourse_span 56 57	)
+T10	Action_span 58 66	based on
+T11	Object_span 67 79	the guidance
+T12	Action_span 80 89	contained
+T13	Discourse_span 90 92	in
+T14	Discourse_span 93 97	this
+T15	Object_span 98 106	handbook
+T16	Action_span 107 113	may be
+T17	Object_span 114 125	appropriate
+T18	Discourse_span 126 129	but
+T19	Functional_span 130 142	the need for
+T20	Functional_span 143 153	additional
+A1	Confidence T19
+T21	Object_span 154 159	exits
+T22	Discourse_span 160 163	and
+T23	Functional_span 164 174	additional
+T24	Object_span 175 199	fire protection measures
+T25	Action_span 200 227	would need to be considered
+A2	Confidence T25
+T26	Discourse_span 228 230	on
+T27	Object_span 231 251	a case by case basis
+T28	Discourse_span 251 252	.
+A3	Confidence T27

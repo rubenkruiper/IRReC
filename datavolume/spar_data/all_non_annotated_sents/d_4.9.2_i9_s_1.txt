@@ -1,0 +1,1 @@
+In the event of thermostat failure, heating to the water in the vessel should stop before the temperature rises to the critical level required for operation of the safety relief valve.

@@ -1,0 +1,1 @@
+Heat alarms are used where ambient temperatures are likely to fluctuate rapidly over a short period such as in kitchens and are less likely to produce false alarms.

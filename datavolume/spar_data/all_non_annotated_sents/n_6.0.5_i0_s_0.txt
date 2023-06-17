@@ -1,0 +1,1 @@
+The thermal conductivity lambda (the lambda-value) of a material is a measure of the rate at which that material transmits heat and is expressed in units of watts per metre per degree of temperature difference (W/mK).

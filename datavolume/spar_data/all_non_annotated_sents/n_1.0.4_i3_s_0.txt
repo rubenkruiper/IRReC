@@ -1,0 +1,1 @@
+Dynamic performance and testing of grandstands - in addition to normal static loads permanent grandstand structures must be designed to withstand the dynamic load arising from crowd action.

@@ -1,0 +1,1 @@
+A careful check should be made before breaking into an existing drain to ensure it is the correct one and a further test carried out after connection, such as a dye test, to confirm correct connection.

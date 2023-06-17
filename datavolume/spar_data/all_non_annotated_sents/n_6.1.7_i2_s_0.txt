@@ -1,0 +1,1 @@
+For example, if the total CO#SUB#2#SUB# emissions in a gas heated building were 60kg/m#SUP#2#SUP#/annum and 20kg/m#SUP#2#SUP#/annum are due to electrical energy consumption without power factor correction, the provision of correction equipment to achieve a power factor (pf) of 0.95 would enable the BER to be reduced by 20 x 0.025 = 0.5kg/m#SUP#2#SUP#/annum.

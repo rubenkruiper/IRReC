@@ -1,0 +1,1 @@
+A dry fire main is commonly referred to as a `dry riser'.

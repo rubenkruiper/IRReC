@@ -1,0 +1,1 @@
+The table is intended to provide an estimate of fuel storage based on heat demand and to help with initial studies.

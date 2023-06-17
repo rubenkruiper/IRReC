@@ -1,0 +1,1 @@
+Each case should be considered separately to ensure that smoke will not be transferred from one area to another, particularly where there are distinctly separate entertainment areas, which share common escape routes.

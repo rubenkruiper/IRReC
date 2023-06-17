@@ -1,0 +1,1 @@
+The wall between the protected lobby or fire-fighting lobby and the escape stair should have a short fire resistance duration and any door in the wall should be a self-closing fire door with short fire resistance duration.

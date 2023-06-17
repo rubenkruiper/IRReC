@@ -1,0 +1,10 @@
+T1	Object_span 0 30	Building service installations
+T2	Action_span 31 38	serving
+T4	Object_span 39 51	common areas
+T3	Discourse_span 52 54	in
+T5	Object_span 55 73	domestic buildings
+T6	Action_span 74 78	have
+T7	Object_span 79 92	the potential
+T8	Action_span 93 101	to cause
+T9	Object_span 102 116	noise nuisance
+T10	Discourse_span 116 117	.

@@ -1,0 +1,37 @@
+T1	Discourse_span 0 4	This
+T2	Object_span 5 13	standard
+T3	Discourse_span 14 17	and
+T4	Object_span 18 26	guidance
+T5	Action_span 27 37	implements
+T6	Object_span 38 47	Article 8
+T7	Discourse_span 48 50	of
+T8	Object_span 51 75	the Directive 2014/61/EU
+T9	Discourse_span 75 76	,
+T10	Discourse_span 77 82	which
+T11	Action_span 83 91	requires
+T12	Object_span 92 105	Member States
+T13	Action_span 106 120	to ensure that
+T14	Functional_span 121 126	newly
+T15	Functional_span 127 138	constructed
+T16	Object_span 139 148	buildings
+T17	Action_span 149 161	are equipped
+T18	Discourse_span 162 166	with
+T19	Discourse_span 169 171	``
+T20	Discourse_span 223 225	''
+T21	Object_span 167 168;171 223	a high-speed-ready in-building physical infrastructure
+T22	Action_span 226 239	to facilitate
+T23	Object_span 240 243;259 271	the installation
+T24	Functional_span 244 258	cost-effective
+T25	Discourse_span 272 274	of
+T26	Object_span 275 282	cabling
+T27	Action_span 283 292	providing
+T28	Functional_span 295 302	minimum
+T29	Object_span 293 294;303 318	a broadband speed
+T30	Discourse_span 319 321	of
+T32	Object_span 322 344	30 megabits per second
+T33	Discourse_span 345 346	(
+T34	Discourse_span 350 351	)
+T35	Object_span 346 350	Mbps
+T36	Discourse_span 351 352	.
+A1	Confidence T32
+#1	AnnotatorNotes T32	not sure if this should be spanned together with 30 or not

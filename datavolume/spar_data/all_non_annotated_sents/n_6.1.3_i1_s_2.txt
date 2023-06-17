@@ -1,0 +1,1 @@
+When 'Scottish building regulations' is selected as the `purpose of analysis' within SBEM, Scottish weather data and the embedded values within the calculation tool are applied to the 'notional' building.

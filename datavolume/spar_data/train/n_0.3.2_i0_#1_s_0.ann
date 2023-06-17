@@ -1,0 +1,10 @@
+T1	Object_span 0 12	A paved area
+T2	Action_span 13 20	forming
+T3	Functional_span 21 28	part of
+T4	Object_span 29 38	an access
+T5	Action_span 39 46	to meet
+T6	Object_span 47 60	a requirement
+T7	Discourse_span 61 63	of
+T8	Discourse_span 64 69	these
+T9	Object_span 70 81	regulations
+T10	Discourse_span 81 82	.

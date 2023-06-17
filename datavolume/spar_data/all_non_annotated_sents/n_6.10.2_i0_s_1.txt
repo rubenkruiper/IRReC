@@ -1,0 +1,1 @@
+To enable this, sub-metering should be provided to allow monitoring of fuel and power consumption to the various end-uses (heating, lighting etc).

@@ -1,0 +1,1 @@
+The relief valve should conform to the relevant national standards such as BS 6283 Part 2: 1991 for temperature relief valves or BS EN 1490: 2000 for combined temperature and pressure relief valves which are set to open at temperatures not normally exceeding 90 degrees C.

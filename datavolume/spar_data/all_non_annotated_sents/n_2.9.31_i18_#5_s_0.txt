@@ -1,0 +1,1 @@
+an internal speech communication system should be provided via a control point at the access level to allow the fire and rescue service to converse with a fire warden on every storey.

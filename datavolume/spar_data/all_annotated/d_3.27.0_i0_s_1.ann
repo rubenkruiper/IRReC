@@ -1,0 +1,11 @@
+T1	Discourse_span 0 4	This
+T2	Action_span 5 16	is achieved
+T3	Discourse_span 17 19	by
+T4	Action_span 20 28	reducing
+T5	Object_span 29 39	the energy
+T6	Discourse_span 40 44	that
+T7	Action_span 45 52	is used
+T8	Discourse_span 53 55	in
+T9	Object_span 56 65	key areas
+T10	Functional_span 66 75	including
+T11	Discourse_span 75 76	:

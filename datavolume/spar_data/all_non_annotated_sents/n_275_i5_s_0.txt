@@ -1,0 +1,1 @@
+W = Glazed area of windows or roof lights, taking account of framing, in m2.

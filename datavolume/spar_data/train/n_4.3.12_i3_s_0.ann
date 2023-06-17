@@ -1,0 +1,27 @@
+T1	Functional_span 4 16	unobstructed
+T2	Object_span 0 3;17 23	The length
+T3	Discourse_span 24 26	of
+T4	Object_span 27 36	a landing
+T5	Functional_span 47 50	not
+T6	Action_span 37 46	should be
+T7	Functional_span 51 60	less than
+T8	Object_span 61 65	1.5m
+T9	Discourse_span 65 66	,
+T10	Discourse_span 67 69	to
+T11	Action_span 70 75	allow
+T12	Object_span 76 81	space
+T13	Discourse_span 82 85	for
+T14	Object_span 86 97	wheelchairs
+T15	Discourse_span 98 100	or
+T16	Object_span 101 106	prams
+T17	Discourse_span 107 109	to
+T18	Action_span 110 114	stop
+T19	Discourse_span 115 120	after
+T20	Action_span 121 131	travelling
+T22	Object_span 137 145	a flight
+T21	Discourse_span 132 136	down
+T23	Discourse_span 146 149	and
+T24	Discourse_span 150 152	to
+T25	Action_span 153 160	provide
+T26	Object_span 161 178	manoeuvring space
+T27	Discourse_span 178 179	.

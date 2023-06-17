@@ -1,0 +1,1 @@
+Minimum effective width - to help limit the potential for queuing at the storeyexit which in an emergency may lead to panic and crushing, the effective width of an escape stair should be at least the width of any escape route giving access to it.

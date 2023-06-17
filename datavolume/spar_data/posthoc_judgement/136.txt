@@ -1,0 +1,8 @@
+Sentence:
+Although this is the minimum recommended area, a greater area can provide more comfortable conditions particularly in sunny weather.
+
+Object identified:
+comfortable conditions
+
+Document id:
+d_3.14.4_i0_s_3

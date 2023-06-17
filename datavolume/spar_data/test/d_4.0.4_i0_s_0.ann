@@ -1,0 +1,17 @@
+T1	Action_span 0 6;13 16	Listed are
+T2	Discourse_span 7 12	below
+T3	Functional_span 17 21	some
+T4	Object_span 22 43	pieces of legislation
+T5	Discourse_span 44 48	that
+T6	Action_span 49 64	may be relevant
+T7	Discourse_span 65 71	and/or
+T8	Object_span 72 79	helpful
+T9	Discourse_span 80 82	to
+T10	Discourse_span 83 88	those
+T11	Action_span 89 94	using
+T12	Object_span 95 107	the guidance
+T13	Discourse_span 108 110	in
+T14	Discourse_span 111 115	this
+T15	Functional_span 116 126	particular
+T16	Object_span 127 134	section
+T17	Discourse_span 134 135	.

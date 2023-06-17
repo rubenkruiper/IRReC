@@ -1,0 +1,1 @@
+Similarly, where a building contains a basement, the recommendations become more demanding the greater the depth.

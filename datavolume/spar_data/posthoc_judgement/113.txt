@@ -1,0 +1,8 @@
+Sentence:
+Recommendations for ramps are provided in the guidance to Standard 4.3.
+
+Object identified:
+Recommendations
+
+Document id:
+d_4.1.3_i10_s_0

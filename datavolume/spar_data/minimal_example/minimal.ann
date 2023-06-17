@@ -1,0 +1,5 @@
+T1	Discourse_span 0 4	This
+T2	Action_span 5 7	is
+T3	Object_span 21 25;8 9	span a
+T4	Functional_span 10 20	fragmented
+T5	Discourse_span 25 26	.

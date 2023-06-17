@@ -1,0 +1,20 @@
+T1	Functional_span 0 12	Additionally
+T2	Discourse_span 12 13	,
+T3	Object_span 14 27	organisations
+T4	Functional_span 28 35	such as
+T5	Object_span 36 56	planning authorities
+T6	Discourse_span 57 59	or
+T7	Object_span 60 74	funding bodies
+T8	Action_span 75 85	may choose
+T9	Action_span 86 93	to make
+T10	Action_span 94 106	constructing
+T11	Discourse_span 107 109	to
+T12	Object_span 110 111;119 142	a level of sustainability
+T13	Functional_span 112 118	higher
+T16	Object_span 143 154	a condition
+T17	Discourse_span 155 157	of
+T18	Object_span 158 166	approval
+T19	Discourse_span 167 169	or
+T20	Object_span 170 177	funding
+T21	Discourse_span 177 178	.
+#1	AnnotatorNotes T1	adverb

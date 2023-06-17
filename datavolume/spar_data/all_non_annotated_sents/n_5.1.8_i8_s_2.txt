@@ -1,0 +1,1 @@
+The level differences obtained from each source position should be arithmetically averaged, D as defined in BS EN ISO 140-4: 1998.

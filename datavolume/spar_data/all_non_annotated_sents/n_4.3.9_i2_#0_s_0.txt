@@ -1,0 +1,1 @@
+minimum and maximum rise should be as recommended in clause 4.3.2, and

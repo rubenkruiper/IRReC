@@ -1,0 +1,11 @@
+T1	Functional_span 0 10	The longer
+T2	Object_span 11 29	a pedestrian route
+T3	Discourse_span 29 30	,
+T4	Functional_span 31 42	the greater
+T5	Object_span 43 53	difficulty
+T6	Discourse_span 54 56	it
+T7	Action_span 57 68	can present
+T8	Discourse_span 69 71	to
+T9	Functional_span 72 76	many
+T10	Object_span 77 83	people
+T11	Discourse_span 83 84	.

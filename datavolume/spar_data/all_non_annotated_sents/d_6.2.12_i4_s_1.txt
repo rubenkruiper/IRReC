@@ -1,0 +1,1 @@
+Further guidance and U-value adjustments can be found in BR 443: 2006 `Conventions for U-value calculations'.

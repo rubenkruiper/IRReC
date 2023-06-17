@@ -1,0 +1,1 @@
+In such cases, each compartment should be capable of holding the occupancy capacity of that compartment and the occupancy capacity of the largest adjoining compartment.

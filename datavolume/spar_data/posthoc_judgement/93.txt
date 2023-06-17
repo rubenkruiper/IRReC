@@ -1,0 +1,8 @@
+Sentence:
+The general principle of building tighter to reduce the amount of uncontrolled air movement through the building fabric may have a detrimental effect on the operation of input air ventilation systems and therefore they may not be appropriate for installation in new dwellings.
+
+Object identified:
+a detrimental effect
+
+Document id:
+d_3.14.11_i4_s_2

@@ -1,0 +1,14 @@
+T1	Object_span 0 19	A ventilated cavity
+T2	Action_span 20 25	means
+T3	Object_span 26 34	a cavity
+T4	Discourse_span 35 39	with
+T5	Object_span 40 48	openings
+T6	Discourse_span 49 51	to
+T7	Object_span 52 67	the outside air
+T8	Action_span 68 74	placed
+T9	Discourse_span 75 83	so as to
+T10	Action_span 84 91	promote
+T11	Discourse_span 92 99	through
+T14	Object_span 100 115	movement of air
+T15	Discourse_span 115 116	.
+#1	AnnotatorNotes T14	treating as "air movement" / "moving air"

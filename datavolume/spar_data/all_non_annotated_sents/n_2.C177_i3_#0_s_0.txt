@@ -1,0 +1,1 @@
+Occupancy capacity of the entire shopping centreWhen calculating the occupancy capacity of the entire shopping centre, all mall areas up to a maximum width of 6m should be calculated using an occupancy load factor of 0.7.

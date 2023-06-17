@@ -1,0 +1,1 @@
+In determining this specification, the fabric and services specifications for the actual building should meet or improve upon the benchmark and backstop levels identified in guidance to Standards 6.2 to 6.6.

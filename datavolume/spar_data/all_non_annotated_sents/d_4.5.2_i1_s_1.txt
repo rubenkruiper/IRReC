@@ -1,0 +1,1 @@
+This might include installations for alarm or detection purposes, or for transmission of sound, vision, data or power.

@@ -1,0 +1,38 @@
+T1	Action_span 0 12	To determine
+T2	Object_span 13 22	the value
+T3	Discourse_span 23 26	for
+T4	Object_span 27 36	heat loss
+T5	Action_span 37 44	arising
+T6	Discourse_span 45 49	from
+T7	Functional_span 50 63	non-repeating
+T8	Object_span 64 80	thermal bridging
+T9	Discourse_span 81 82	(
+T10	Object_span 82 120	transmission heat transfer coefficient
+T11	Discourse_span 121 123	or
+T12	Object_span 124 137	H#SUB#tb#SUB#
+T13	Discourse_span 137 138	)
+T14	Discourse_span 139 142	for
+T15	Object_span 143 146;156 164	the dwelling
+T16	Functional_span 147 155	proposed
+T17	Object_span 164 165	,
+T18	Object_span 166 175	designers
+T19	Action_span 176 191	should identify
+T20	Object_span 192 204	the presence
+T21	Discourse_span 205 207	of
+T22	Object_span 208 217	junctions
+T23	Action_span 218 224	listed
+T24	Discourse_span 225 227	in
+T25	Object_span 228 238	Appendix K
+T26	Discourse_span 239 241	of
+T27	Object_span 242 250	SAP 2012
+T28	Discourse_span 251 254	and
+T29	Action_span 255 261	assign
+T30	Object_span 262 272	PSI values
+T31	Discourse_span 273 275	to
+T32	Functional_span 276 280	each
+T33	Object_span 281 289	junction
+T34	Discourse_span 289 290	,
+T35	Action_span 291 301	based upon
+T36	Object_span 302 305;316 323	the options
+T37	Functional_span 306 315	following
+T38	Discourse_span 323 324	:

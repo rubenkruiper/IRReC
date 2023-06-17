@@ -1,0 +1,1 @@
+Where a building has obstructions such as balconies or other projections, the building line should be taken to be the outer edge of the balconies or other projections.

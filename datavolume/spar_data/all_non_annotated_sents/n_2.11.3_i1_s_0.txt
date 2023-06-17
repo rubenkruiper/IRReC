@@ -1,0 +1,1 @@
+At the design stage it is important to take into account the building evacuation factors, in order to specify the alarm category.

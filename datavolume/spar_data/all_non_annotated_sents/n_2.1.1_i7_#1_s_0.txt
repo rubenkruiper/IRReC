@@ -1,0 +1,1 @@
+Medium fire resistance duration for compartment walls.

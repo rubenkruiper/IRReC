@@ -1,0 +1,1 @@
+Next day, refill the test sections of the percolation holes with water to a depth of at least 300mm and observe the time (t) in seconds, for the water to seep away from 75% to 25% full level.

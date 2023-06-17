@@ -1,0 +1,1 @@
+Where a building warrant application is made for a new building shell only, air permeability should not exceed 7m#SUP#3#SUP#/h.m#SUP#2#SUP# @ 50 Pa. Where the shell is subject to a continuing requirement under Standard 6.1, testing should be carried out both at completion of the shell and, again when the fit-out is completed (see clause 6.2.7).

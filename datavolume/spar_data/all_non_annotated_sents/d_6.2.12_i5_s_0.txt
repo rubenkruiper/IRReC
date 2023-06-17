@@ -1,0 +1,1 @@
+Varying U-values - 'Compensating U-values for windows, doors and rooflights' - individual U-values for the glazed and framing elements may exceed 1.8W/m#SUP#2#SUP#K provided that the average U-value for all the glazed and framing elements is no greater than 1.8W/m#SUP#2#SUP#K.

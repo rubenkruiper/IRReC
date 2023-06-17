@@ -1,0 +1,1 @@
+Heat alarms conforming to BS 5446: Part 2: 2003 have fixed-temperature elements and operate on the principle of responding to the temperature of the fire gases in the immediate vicinity of the heat alarm.

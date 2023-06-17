@@ -1,0 +1,1 @@
+Elements (including dividing elements) should have U-values equal to or better than those chosen for the rest of the building, as determined in conjunction with the methodology in Standard 6.1.

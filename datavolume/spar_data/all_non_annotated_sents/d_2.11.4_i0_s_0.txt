@@ -1,0 +1,1 @@
+Ionisation smoke alarms should conform to BS EN 14604: 2005 and operate on the principle that the electrical current flowing between electrodes in an ionisation chamber is reduced when smoke particles enter the chamber.

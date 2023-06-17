@@ -1,0 +1,1 @@
+In general, openings and service penetrations in element of structure need not be protected from fire unless there is the possibility of structural failure.

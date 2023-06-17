@@ -1,0 +1,1 @@
+the system design should accommodate future upgrading with minimal disruption to the building fabric and services.

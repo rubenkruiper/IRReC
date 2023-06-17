@@ -1,0 +1,1 @@
+indoor air quality monitor: provide as for Aspect Silver 5 and, where a room uses mechanical ventilation as the prime means of ventilating the room, this should be linked to automatic controls to make sure the average concentration of CO2 does not exceed 1500 ppm when measured at 1500mm above floor level.

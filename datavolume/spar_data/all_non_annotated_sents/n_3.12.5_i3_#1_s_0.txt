@@ -1,0 +1,1 @@
+ In multi-use buildings, each function should be treated separately when calculating overall provision.

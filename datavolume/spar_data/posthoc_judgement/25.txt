@@ -1,0 +1,8 @@
+Sentence:
+The objectives of any fire safety strategy should be established first and designers and verifiers should be aware of the importance of the design assumptions.
+
+Object identified:
+fire safety strategy
+
+Document id:
+d_2.0.7_i11_s_0

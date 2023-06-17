@@ -1,0 +1,1 @@
+Methods using a single source - for each source position, the average sound pressure level in the source and receiving rooms is measured in one-third-octave bands using either fixed microphone positions (and averaging these values on an energy basis), or using a moving microphone.

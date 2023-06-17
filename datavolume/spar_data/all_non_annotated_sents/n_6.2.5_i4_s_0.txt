@@ -1,0 +1,1 @@
+The SBEM calculation tool referred to in the guidance to Standard 6.1 includes an assessment of heat loss arising from non-repeating thermal bridges in new buildings and large extensions.

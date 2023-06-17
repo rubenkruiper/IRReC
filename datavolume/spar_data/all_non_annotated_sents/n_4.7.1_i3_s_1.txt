@@ -1,0 +1,1 @@
+It should preserve the characteristics of the source whilst suppressing reverberation and extraneous noise and should not be affected by environmental interference such as from lighting or other electrical installations.

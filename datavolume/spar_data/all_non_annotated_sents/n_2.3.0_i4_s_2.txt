@@ -1,0 +1,1 @@
+A roof structure should not be considered as an element of structure unless the roof provides support to an element of structure or which performs the function of a floor.

@@ -1,0 +1,1 @@
+This `thermal bypass' is now identified in the calculation methodology and guidance to Standard 6.1 and in guidance to Standard 6.2.

@@ -1,0 +1,1 @@
+it should be shown by calculation that the `likelihood of high internal temperature in hot weather' in the dwelling is `not significant, slight or medium'.

@@ -1,0 +1,1 @@
+Thermal transmittance (U-value) is a measure of how much heat will pass through one square metre of a structure when the temperature on either side differs by one degree Celsius.

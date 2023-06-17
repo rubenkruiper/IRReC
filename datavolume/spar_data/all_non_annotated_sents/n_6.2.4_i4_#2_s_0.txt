@@ -1,0 +1,1 @@
+There is no maximum U-value for display windows (see clause 6.2.2).

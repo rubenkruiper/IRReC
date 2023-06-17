@@ -1,0 +1,24 @@
+T1	Discourse_span 0 2	It
+T2	Action_span 3 5	is
+T3	Object_span 6 15	important
+T4	Discourse_span 16 20	that
+T5	Discourse_span 21 25	such
+T6	Object_span 26 36	facilities
+T7	Action_span 37 40	are
+T8	Object_span 41 51	accessible
+T9	Discourse_span 51 52	,
+T10	Discourse_span 53 57	both
+T11	Discourse_span 58 60	to
+T12	Action_span 61 72	accommodate
+T13	Object_span 73 74;75 79	a pram
+T14	Discourse_span 80 82	or
+T15	Object_span 73 74;83 88	a buggy
+T16	Discourse_span 89 92	and
+T17	Discourse_span 93 95	to
+T18	Action_span 96 102	permit
+T19	Action_span 103 106	use
+T20	Discourse_span 107 109	by
+T21	Object_span 110 118	a person
+T22	Discourse_span 119 123	with
+T23	Object_span 124 143	mobility impairment
+T24	Discourse_span 143 144	.

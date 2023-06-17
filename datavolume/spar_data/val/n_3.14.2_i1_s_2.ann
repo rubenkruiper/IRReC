@@ -1,0 +1,14 @@
+T1	Object_span 0 9	The areas
+T2	Discourse_span 10 12	of
+T3	Object_span 13 32	trickle ventilation
+T4	Action_span 33 38	shown
+T5	Action_span 39 54	may not suffice
+T6	Discourse_span 55 57	to
+T7	Action_span 58 66	maintain
+T8	Object_span 67 78	air quality
+T9	Discourse_span 79 82	and
+T10	Discourse_span 83 92	therefore
+T11	Object_span 108 128;93 95	ventilation solution an
+T12	Functional_span 96 107	alternative
+T13	Action_span 129 146	should be adopted
+T14	Discourse_span 146 147	.

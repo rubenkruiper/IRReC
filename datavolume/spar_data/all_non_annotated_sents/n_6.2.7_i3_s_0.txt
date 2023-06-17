@@ -1,0 +1,1 @@
+Testing should be in accordance with BS EN 13829:2001 - `Thermal performance of buildings - determination of air permeability of buildings - fan pressurisation method'.

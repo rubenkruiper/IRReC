@@ -1,0 +1,1 @@
+Therefore, in the event of an outbreak of fire, the system should automatically either shut off, or operate in smoke control mode.

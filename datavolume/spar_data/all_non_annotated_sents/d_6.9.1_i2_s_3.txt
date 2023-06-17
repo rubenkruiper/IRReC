@@ -1,0 +1,1 @@
+Note, there will be no need to assume 10% electric secondary heating if secondary heating is not present.

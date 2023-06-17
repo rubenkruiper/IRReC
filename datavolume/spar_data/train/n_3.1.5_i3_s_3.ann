@@ -1,0 +1,20 @@
+T1	Discourse_span 0 2	In
+T2	Functional_span 3 6	all
+T3	Object_span 7 12	cases
+T4	Discourse_span 13 18	these
+T5	Object_span 19 36	courses of action
+T6	Action_span 37 43	assume
+T7	Discourse_span 44 48	that
+T8	Object_span 49 59	the ground
+T9	Action_span 60 73	to be covered
+A1	Confidence T9
+#1	AnnotatorNotes T9	semi-inconsistent with 'to' as part of verb or not, but here it seems necessary
+T10	Discourse_span 74 76	by
+T11	Object_span 77 89	the building
+T12	Action_span 90 99	will have
+T13	Functional_span 100 108	at least
+T14	Object_span 109 114	100mm
+T15	Discourse_span 115 117	of
+T16	Functional_span 118 125	in-situ
+T17	Object_span 126 140	concrete cover
+T18	Discourse_span 140 141	.

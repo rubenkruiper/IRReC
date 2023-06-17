@@ -1,0 +1,1 @@
+The overall heat loss is derived from numerical modelling of individual PSI values calculated in accordance with BS EN ISO 10211: 2007 `Thermal bridges in building construction - heat flows and surface temperatures - detailed calculations'.

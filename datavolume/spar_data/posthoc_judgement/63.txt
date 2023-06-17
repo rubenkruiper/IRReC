@@ -1,0 +1,8 @@
+Sentence:
+In indirectly heated vessels, the non self-resetting thermal cut-out should operate a motorised valve, or other similar device, to shut off the flow from the heat source.
+
+Object identified:
+resetting
+
+Document id:
+d_4.9.2_i10_s_0

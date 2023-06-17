@@ -1,0 +1,1 @@
+A = gross cross-sectional area of the section in m2.

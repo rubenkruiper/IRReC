@@ -1,0 +1,1 @@
+Guarding, as recommended in clause 4.4.2, should include a rail or upstand to 100mm above floor level.

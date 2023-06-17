@@ -1,0 +1,1 @@
+In calculation thermal bridging may be disregarded where the difference in thermal resistance between bridging and bridged material is less than 0.1m2K/W.

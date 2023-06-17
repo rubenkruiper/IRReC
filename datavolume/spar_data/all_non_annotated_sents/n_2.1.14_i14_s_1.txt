@@ -1,0 +1,1 @@
+Sensors should also be fitted that, when activated, temporarily halt the activation of the shutter.

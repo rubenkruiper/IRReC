@@ -1,0 +1,1 @@
+Under these circumstances, when calculating the width of exits, the largest exits should be discounted.

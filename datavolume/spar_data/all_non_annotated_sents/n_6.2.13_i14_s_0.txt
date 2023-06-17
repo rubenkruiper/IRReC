@@ -1,0 +1,1 @@
+Column (a) of the table to clause 6.2.11 gives benchmark U-values and in many cases these can be achieved without technical risk, within the constraints of the existing construction.

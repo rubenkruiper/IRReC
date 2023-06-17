@@ -1,0 +1,1 @@
+Each hole should be 300mm square to a depth of 300mm.
