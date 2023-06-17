@@ -1,0 +1,1 @@
+The occupancy capacity is obtained by dividing the area in square metres by the relevant occupancy load factor.

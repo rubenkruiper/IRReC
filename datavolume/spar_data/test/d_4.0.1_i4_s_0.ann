@@ -1,0 +1,33 @@
+T1	Object_span 0 12	The guidance
+T2	Discourse_span 13 15	in
+T3	Discourse_span 16 20	this
+T4	Object_span 21 28	section
+T5	Discourse_span 28 29	,
+T6	Functional_span 30 43	together with
+A1	Confidence T6
+T7	Object_span 44 56	the guidance
+T8	Discourse_span 57 59	in
+T9	Object_span 60 69;71 82	Section 3 Environment
+T10	Discourse_span 69 70	,
+T11	Object_span 95 108	accessibility
+T12	Action_span 83 94	relating to
+#1	AnnotatorNotes T9	section 3 has the title 'Environment'
+T13	Discourse_span 108 109	,
+T14	Action_span 110 131	has been based around
+T16	Discourse_span 131 132	,
+T17	Discourse_span 133 136	and
+T18	Action_span 137 151	developed from
+T15	Discourse_span 151 152	,
+T19	Object_span 153 159	issues
+T20	Discourse_span 160 164	that
+T21	Action_span 165 177	are included
+T22	Discourse_span 178 180	in
+T23	Discourse_span 181 182	`
+T24	Object_span 182 207	Housing for Varying Needs
+T25	Discourse_span 207 208	'
+T26	Discourse_span 209 212	and
+T27	Object_span 213 239	the Lifetime Homes concept
+T28	Action_span 240 249	developed
+T29	Discourse_span 250 252	by
+T30	Object_span 253 283	the Joseph Rowntree Foundation
+T31	Discourse_span 283 284	.

@@ -1,0 +1,17 @@
+T1	Object_span 0 12	The guidance
+T2	Discourse_span 13 15	in
+T3	Discourse_span 16 20	this
+T4	Object_span 21 27	clause
+T5	Action_span 28 44	takes account of
+T6	Object_span 45 66	the audibility levels
+T7	Discourse_span 67 69	in
+T8	Object_span 70 85	adjoining rooms
+T9	Discourse_span 86 89	and
+T10	Object_span 90 100	the effect
+T11	Discourse_span 101 103	of
+T12	Object_span 104 109	smoke
+T13	Action_span 110 120	travelling
+T14	Discourse_span 121 126	along
+T15	Object_span 127 136	a ceiling
+T16	Discourse_span 136 137	.
+A1	Confidence T8

@@ -1,0 +1,1 @@
+Where the number of occupants using the escape stair is more than 225 then the formula for calculating the effective width of the stair should be used.

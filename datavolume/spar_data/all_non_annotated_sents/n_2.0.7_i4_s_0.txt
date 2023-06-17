@@ -1,0 +1,1 @@
+For many projects it is likely that designers will follow the guidance in the Technical Handbooks and fire engineering techniques will not be necessary.

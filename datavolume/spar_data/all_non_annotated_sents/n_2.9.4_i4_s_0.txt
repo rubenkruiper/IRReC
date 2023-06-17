@@ -1,0 +1,1 @@
+Internal stairs - where a measurement of travel distance includes an internal unenclosed escape stair, the travel distance should be measured along the pitch line from the centre of the nosing of the topmost tread to the lower landing, including the length of any intermediate landings.

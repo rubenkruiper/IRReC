@@ -1,0 +1,13 @@
+T1	Discourse_span 0 3	For
+T2	Object_span 4 12	guidance
+T3	Discourse_span 12 13	,
+T4	Object_span 14 17;25 31	the course
+T5	Functional_span 18 24	normal
+T6	Discourse_span 32 34	of
+T7	Object_span 35 50	remedial action
+T8	Discourse_span 51 53	is
+T9	Action_span 54 60	listed
+T10	Discourse_span 61 68	against
+T11	Functional_span 69 73	each
+T12	Object_span 74 85	contaminant
+T13	Discourse_span 85 86	.

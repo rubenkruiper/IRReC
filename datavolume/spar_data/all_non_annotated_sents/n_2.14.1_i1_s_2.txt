@@ -1,0 +1,1 @@
+For example, the wind direction and velocity (which increases with height) could have a significant impact when fire-fighters open the door to the room or storey of fire origin.

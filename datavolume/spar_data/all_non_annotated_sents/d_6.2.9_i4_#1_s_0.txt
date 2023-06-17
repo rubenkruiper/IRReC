@@ -1,0 +1,1 @@
+Where a building has external wall or roof element with a U-value poorer than 0.7 or 0.25 respectively, then the more demanding U-values in column (a) apply to the extension.

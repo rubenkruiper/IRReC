@@ -1,0 +1,1 @@
+Where a room or storey needs two or more escape stairs, it should be possible to reach 1 alternative escape stair without passing through the other.

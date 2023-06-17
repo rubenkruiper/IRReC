@@ -1,0 +1,1 @@
+Finally, the heat loss for the proposed extension should be less than or equal to that for the 'notional' one.

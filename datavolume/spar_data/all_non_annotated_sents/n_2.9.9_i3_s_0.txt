@@ -1,0 +1,1 @@
+Where more than one room exit is provided, the directions of travel from any point within the room should:

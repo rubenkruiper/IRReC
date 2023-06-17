@@ -1,0 +1,1 @@
+Service pipes or ducts should not pass through a separating wall, unless they are of small diameter, such as lateral pipework from network risers such as gas, electricity, water and telecom.

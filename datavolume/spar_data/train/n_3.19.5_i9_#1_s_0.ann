@@ -1,0 +1,35 @@
+T1	Discourse_span 0 5	There
+T2	Functional_span 11 14	not
+T3	Action_span 15 17;6 10	be need
+T4	Object_span 20 25	150mm
+T5	Object_span 18 19;26 36	a separation
+T6	Discourse_span 37 42	where
+T7	Object_span 43 56	the appliance
+T8	Action_span 57 67	is located
+T9	Discourse_span 68 70	in
+T10	Object_span 71 89	a fireplace recess
+T11	Discourse_span 89 90	,
+T12	Functional_span 91 94	nor
+T13	Discourse_span 95 100	where
+T14	Object_span 101 104;105 109	the back
+T15	Discourse_span 110 112	or
+T16	Object_span 101 104;113 118	the sides
+T17	Discourse_span 119 121	of
+T18	Object_span 122 132	the hearth
+T19	Discourse_span 133 139	either
+T20	Object_span 140 144	abut
+T21	Discourse_span 145 147	or
+T22	Action_span 148 159	are carried
+T23	Discourse_span 160 164	into
+T24	Object_span 165 166;190 194	a wall
+T26	Discourse_span 172 173	,
+T27	Functional_span 167 172	solid
+T25	Functional_span 178 189	combustible
+T28	Discourse_span 177 178	-
+T29	Functional_span 174 177	non
+A1	Confidence T28
+#1	AnnotatorNotes T28	could treat as a whole functional
+T30	Action_span 195 204	complying
+T31	Discourse_span 205 209	with
+T32	Object_span 210 223	clause 3.14.8
+T33	Discourse_span 223 224	.

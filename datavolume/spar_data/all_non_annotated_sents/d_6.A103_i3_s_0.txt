@@ -1,0 +1,1 @@
+The example which follows below illustrates how this trade-off can be calculated.

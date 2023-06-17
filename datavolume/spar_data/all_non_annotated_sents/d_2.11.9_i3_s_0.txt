@@ -1,0 +1,1 @@
+The capacity of the standby supply should be sufficient to power the smoke alarms and heat alarms in the quiescent mode for at least 72 hours whilst giving an audible or visual warning of power supply failure, after which there should remain sufficient capacity to provide a warning for a further 4 minutes or, in the absence of a fire, a fault warning for at least 24 hours.

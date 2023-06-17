@@ -1,0 +1,1 @@
+At least two different loudspeaker positions should be used for the source noise, in accordance with BS EN ISO 140-4: 1998.

@@ -1,0 +1,9 @@
+T1	Object_span 0 6	Aspect
+T2	Action_span 7 9	is
+T3	Object_span 10 16	a term
+T4	Action_span 17 21	used
+T5	Discourse_span 22 25	for
+T6	Object_span 26 40	a subject area
+T7	Discourse_span 41 43	of
+T8	Object_span 44 58	sustainability
+T9	Discourse_span 58 59	.

@@ -1,0 +1,15 @@
+T1	Action_span 0 8	comprise
+T2	Functional_span 9 17	at least
+T3	Object_span 18 19	4
+T4	Object_span 20 32	compartments
+T5	Discourse_span 32 33	,
+T6	Discourse_span 34 47	each of which
+T7	Action_span 48 59	should have
+T8	Object_span 60 67	an area
+T9	Discourse_span 68 70	of
+A1	Confidence T6
+#1	AnnotatorNotes T6	Should be consistent, but I want to properly treat more of these discourse MWEs
+T10	Functional_span 71 79	at least
+T11	Object_span 80 95	500m#SUP#2#SUP#
+T12	Discourse_span 95 96	,
+T13	Discourse_span 97 99	or

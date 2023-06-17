@@ -1,0 +1,1 @@
+When reference is made to European Classification A2, B, C and D, all references include sub-indices ``s3, d2'' and are not repeated to simplify the text.

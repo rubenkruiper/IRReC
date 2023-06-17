@@ -1,0 +1,1 @@
+Monitoring of wiring or faults reduces the amount of time which a system is likely to be disabled before a fault in the system is discovered.

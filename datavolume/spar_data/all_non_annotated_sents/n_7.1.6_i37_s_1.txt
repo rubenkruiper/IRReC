@@ -1,0 +1,1 @@
+However other calculation tools or techniques may be used (such as daylight calculations used in dynamic simulation modelling or Computer Aided Drawing (CAD) software) provided they are based on one of the following methodologies:

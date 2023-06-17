@@ -1,0 +1,1 @@
+Where no data is available, the separation distance for oil or gas applications with a flue gas temperature limit of T250 or less should be 25mm from the outer surface of a single-walled chimney to combustible material.

@@ -1,0 +1,1 @@
+Rw is a single number quantity (weighted) which characterises the airborne sound insulation of a building element from measurements undertaken in a laboratory, in accordance with BS EN ISO 717-1: 1997.

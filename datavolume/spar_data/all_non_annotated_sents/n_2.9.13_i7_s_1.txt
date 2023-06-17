@@ -1,0 +1,1 @@
+More detailed guidance can be found in the BS EN 12101 series of standards, but assuming a minimum pressure difference (over the wall being assessed) of 25 Pa based on a wind speed of 22m/sec.

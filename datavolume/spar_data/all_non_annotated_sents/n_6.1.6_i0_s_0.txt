@@ -1,0 +1,1 @@
+The BER is calculated by using the values and efficiencies input by the designer in the SBEM calculation tool.

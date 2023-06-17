@@ -1,0 +1,1 @@
+An occupancy load factor of 2.0 should be applied to shops.

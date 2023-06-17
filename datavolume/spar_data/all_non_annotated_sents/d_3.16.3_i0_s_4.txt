@@ -1,0 +1,1 @@
+Clause 3.14.8, covering ventilation, also recommends that the existing room and extension are treated as a single space.

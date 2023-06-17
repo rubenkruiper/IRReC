@@ -1,0 +1,41 @@
+T1	Object_span 0 21	The structural design
+T2	Discourse_span 22 25	and
+T3	Object_span 26 38	construction
+T4	Action_span 39 57	to take account of
+T5	Object_span 58 61;73 81	the measures
+T6	Functional_span 62 72	additional
+T7	Action_span 82 91	including
+T8	Object_span 116 120;92 102	ties horizontal
+T9	Discourse_span 103 106	and
+T10	Object_span 107 115;116 120	vertical ties
+T11	Discourse_span 121 126	where
+T12	Object_span 127 138	appropriate
+T13	Discourse_span 139 142	and
+T14	Action_span 143 151	checking
+T15	Object_span 152 165	the integrity
+T16	Discourse_span 166 168	of
+T17	Object_span 169 181	the building
+T18	Discourse_span 182 191	following
+A1	Confidence T18
+T19	Functional_span 196 204	notional
+T20	Object_span 192 195;205 212	the removal
+T21	Discourse_span 213 215	of
+T22	Object_span 216 232	vertical members
+T23	Discourse_span 233 236	and
+T24	Object_span 237 247	the design
+T25	Discourse_span 248 250	of
+T26	Object_span 251 263	key elements
+T27	Discourse_span 263 264	,
+T28	Action_span 265 286	should be carried out
+T30	Object_span 306 332	the design recommendations
+T31	Action_span 333 342	contained
+T32	Discourse_span 343 345	in
+T33	Object_span 346 353	Annex A
+T34	Discourse_span 354 356	of
+T35	Object_span 357 376	BS EN 1991-1-7:2006
+T36	Discourse_span 376 377	.
+A2	Confidence T7
+#1	AnnotatorNotes T7	to include gerund
+T29	Discourse_span 287 289	in
+T37	Object_span 290 300	accordance
+T38	Discourse_span 301 305	with

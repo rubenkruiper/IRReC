@@ -1,0 +1,1 @@
+Clause 8.4.1 of BS 5250 lists various issues that should be considered in the design of roofs to reduce the possibility of excess condensation forming that might damage the building and endanger the health of the occupants.

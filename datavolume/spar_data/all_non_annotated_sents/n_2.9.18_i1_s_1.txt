@@ -1,0 +1,1 @@
+The operation of these locks should be readily apparent, without the use of a key or access control tokens and without having to manipulate more than one mechanism.

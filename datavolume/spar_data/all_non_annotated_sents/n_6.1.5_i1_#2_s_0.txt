@@ -1,0 +1,1 @@
+orientation - the 'notional' and actual building have the same orientation

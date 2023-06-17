@@ -1,0 +1,1 @@
+This allows the difference in rate of heat loss between the column (a) notional extension and the column (b) proposed extension to be identified.

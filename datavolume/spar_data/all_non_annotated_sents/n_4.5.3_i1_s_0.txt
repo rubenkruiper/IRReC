@@ -1,0 +1,1 @@
+Low voltage is defined as not more than 1000 volts alternating current or 1500 volts direct current, measured between conductors or not more than 600 volts alternating current or 900 volts direct current between conductors and earth.

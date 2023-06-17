@@ -1,0 +1,1 @@
+Single burning item test (EN 13823) evaluates the potential contribution of a product to the development of a fire, under a fire situation simulating a single burning item in a room corner near to that product.

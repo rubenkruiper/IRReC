@@ -1,0 +1,1 @@
+A ventilation strategy that incorporates night cooling and the thermal mass of a building should also be considered.

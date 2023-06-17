@@ -1,0 +1,19 @@
+T1	Object_span 0 13	Tapered tread
+T2	Action_span 14 19	means
+T3	Object_span 20 33	a stair tread
+T4	Discourse_span 34 36	in
+T5	Discourse_span 37 42	which
+T6	Object_span 43 53	the nosing
+T7	Action_span 54 56	is
+T8	Functional_span 57 60	not
+T9	Object_span 61 69	parallel
+T10	Discourse_span 70 72	to
+T11	Object_span 73 83	the nosing
+T12	Discourse_span 84 86	of
+T13	Object_span 87 90;91 96	the tread
+T14	Discourse_span 97 99	or
+T15	Object_span 100 107;87 90	landing the
+T16	Functional_span 108 118	next above
+A1	Confidence T16
+A2	Confidence T9
+T17	Discourse_span 118 119	.

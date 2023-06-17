@@ -1,0 +1,5 @@
+T1	Object_span 0 22	The fire-fighting lift
+T3	Action_span 23 29;35 45	should be entered
+T4	Functional_span 30 34	only
+T2	Discourse_span 46 50	from
+T5	Discourse_span 50 51	:

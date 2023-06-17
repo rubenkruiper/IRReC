@@ -1,0 +1,23 @@
+T1	Discourse_span 0 2	In
+T2	Object_span 3 14	conversions
+T3	Functional_span 15 26	for example
+T4	Discourse_span 26 27	,
+T5	Object_span 28 30	it
+T6	Action_span 31 37	may be
+T7	Functional_span 38 44	easier
+T8	Action_span 48 55	install
+T9	Discourse_span 45 47	to
+T10	Object_span 56 91	self-contained emergency luminaries
+T11	Discourse_span 92 96	than
+T12	Discourse_span 97 99	to
+T13	Action_span 100 107	install
+T14	Object_span 108 127	a protected circuit
+T15	Discourse_span 128 130	to
+T16	Object_span 131 134;144 159	the lighting system
+T17	Discourse_span 159 160	.
+T18	Functional_span 135 143	existing
+A1	Confidence T7
+A2	Confidence T9
+#1	AnnotatorNotes T9	might be part of verb here
+A3	Confidence T12
+#2	AnnotatorNotes T12	might be part of verb here

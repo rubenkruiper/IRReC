@@ -1,0 +1,14 @@
+T1	Object_span 0 12	Regulation 5
+T2	Discourse_span 13 16	and
+T3	Object_span 17 27	schedule 3
+T4	Action_span 28 37	specifies
+T5	Discourse_span 38 42	what
+T6	Object_span 43 47	work
+T7	Action_span 48 59	can be done
+T8	Discourse_span 60 67	without
+A1	Confidence T8
+#1	AnnotatorNotes T8	if it was "with", I'd have said discourse... but here it contains a negation
+T9	Object_span 68 76	the need
+T10	Action_span 77 86	to obtain
+T11	Object_span 87 105	a building warrant
+T12	Discourse_span 105 106	.

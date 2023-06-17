@@ -1,0 +1,1 @@
+For example, an element of PV is present in the TER calculation for new non-domestic buildings.

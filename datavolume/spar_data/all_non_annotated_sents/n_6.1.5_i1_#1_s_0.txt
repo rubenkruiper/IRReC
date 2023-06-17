@@ -1,0 +1,1 @@
+activity type and fixed building services for each building zone (and therefore the same activity type parameter values)

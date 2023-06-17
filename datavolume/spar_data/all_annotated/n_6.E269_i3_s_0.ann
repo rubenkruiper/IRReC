@@ -1,0 +1,30 @@
+T1	Discourse_span 0 11	Accordingly
+T2	Discourse_span 11 12	,
+T3	Object_span 13 24	a statement
+T4	Discourse_span 25 27	on
+T5	Functional_span 28 31	how
+T6	Discourse_span 32 37	these
+T7	Object_span 38 50	technologies
+T8	Action_span 51 66	were considered
+T9	Discourse_span 67 69	in
+T10	Action_span 70 78	arriving
+T11	Discourse_span 79 81	at
+T12	Object_span 82 94	the solution
+T13	Discourse_span 95 101	within
+T14	Object_span 102 131	a building warrant submission
+T16	Action_span 132 148	should accompany
+A1	Confidence T14
+#1	AnnotatorNotes T14	is building warrant a type of submission that should be split up.. ?
+T15	Functional_span 149 153	each
+T17	Object_span 154 165	application
+T18	Discourse_span 166 169	for
+T19	Object_span 170 186	building warrant
+T20	Discourse_span 187 190	for
+T21	Functional_span 193 196	new
+T22	Object_span 191 192;197 205	a building
+T23	Action_span 206 210	made
+T24	Discourse_span 211 213	on
+T25	Discourse_span 214 216	or
+T26	Discourse_span 217 222	after
+T27	Object_span 223 237	9 January 2013
+T28	Discourse_span 237 238	.

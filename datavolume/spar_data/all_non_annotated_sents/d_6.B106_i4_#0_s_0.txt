@@ -1,0 +1,1 @@
+The internal exposed surface areas of each of the elements of the proposed buildinginsulation envelope that have different area weighted U-values are calculated.

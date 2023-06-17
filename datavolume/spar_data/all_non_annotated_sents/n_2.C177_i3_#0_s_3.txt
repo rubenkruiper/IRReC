@@ -1,0 +1,1 @@
+An additional factor of safety is also applied when calculating the occupancy capacity of the entire shopping centre and a nominal occupancy loading is applied to all non-mall areas.

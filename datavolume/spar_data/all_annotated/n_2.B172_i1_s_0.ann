@@ -1,0 +1,16 @@
+T1	Object_span 0 35	The automatic fire detection system
+T2	Action_span 36 45;46 54	should be designed
+T3	Discourse_span 55 58	and
+T4	Action_span 36 45;59 68	should be installed
+T8	Object_span 88 100	the guidance
+T9	Discourse_span 101 103	in
+T10	Object_span 104 137	BS 5839: Part 1: 2002 Category L1
+A1	Confidence T10
+T11	Discourse_span 138 141	and
+T5	Functional_span 69 87	in accordance with
+#1	AnnotatorNotes T5	describes a manner / way (treating as adverbial MWE)
+T6	Functional_span 142 160	in accordance with
+#2	AnnotatorNotes T6	describes a manner / way (treating as adverbial MWE)
+T7	Object_span 161 180	the recommendations
+T12	Discourse_span 181 186	below
+T13	Discourse_span 186 187	:

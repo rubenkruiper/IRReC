@@ -1,0 +1,1 @@
+Normal percolation rates - where the percolation value (as demonstrated by the percolation test) is more than 15 secs/mm and not more than 100 secs/mm as:

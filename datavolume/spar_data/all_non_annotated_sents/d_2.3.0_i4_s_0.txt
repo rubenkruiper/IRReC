@@ -1,0 +1,1 @@
+An element of structure is part of a building which is part of a structural frame (beams and columns), load-bearing (other than part which is only self load-bearing), a floor, or supports a floor.

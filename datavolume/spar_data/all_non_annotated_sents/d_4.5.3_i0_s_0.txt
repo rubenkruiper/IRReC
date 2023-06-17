@@ -1,0 +1,1 @@
+To avoid the risk of harm, any circuit which is designed to operate at a voltage higher than low voltage should be provided with a cut-off switch for use in emergency in accordance with the recommendations of BS 7671: 2008.

@@ -1,0 +1,31 @@
+T1	Object_span 0 49	The Heating Equipment Testing and Approval Scheme
+T2	Action_span 58 60	is
+T3	Object_span 61 88	an independent organisation
+T4	Discourse_span 89 92	for
+T5	Action_span 93 100	setting
+T6	Object_span 101 113;114 120	standards of safety
+T7	Discourse_span 120 121	,
+T8	Object_span 101 113;122 132	standards of efficiency
+T9	Discourse_span 133 136	and
+T10	Object_span 101 113;137 148	standards of performance
+T11	Discourse_span 149 152	for
+T12	Action_span 153 160	testing
+T13	Discourse_span 161 164	and
+T14	Action_span 165 173	approval
+T15	Discourse_span 174 176	of
+T16	Object_span 177 188	solid fuels
+T17	Discourse_span 188 189	,
+T18	Object_span 190 208	solid mineral fuel
+T19	Discourse_span 209 212	and
+T20	Object_span 213 236	wood burning appliances
+T21	Discourse_span 237 240	and
+T22	Functional_span 241 251	associated
+T23	Object_span 252 261	equipment
+T24	Discourse_span 262 265	and
+T25	Object_span 266 274	services
+T26	Discourse_span 275 278	for
+T27	Object_span 279 322	the UK solid fuel domestic heating industry
+T28	Discourse_span 322 323	.
+T29	Discourse_span 50 51	(
+T30	Object_span 51 56	HETAS
+T31	Discourse_span 56 57	)

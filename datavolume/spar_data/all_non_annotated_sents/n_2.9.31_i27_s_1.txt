@@ -1,0 +1,1 @@
+For that reason one stair should be discounted for calculation purposes, unless a protected lobby is provided on every storey between each escape stair in a protected zone and any part of the building at any storey from which there is access to the escape stair.

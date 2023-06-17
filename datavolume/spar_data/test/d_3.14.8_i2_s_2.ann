@@ -1,0 +1,31 @@
+T1	Discourse_span 0 5	where
+T2	Discourse_span 6 11	there
+T3	Action_span 12 14	is
+T4	Functional_span 15 17	no
+T5	Object_span 18 31	external wall
+T6	Discourse_span 31 32	,
+T7	Object_span 33 36;41 50	the extension
+T8	Functional_span 37 40	new
+T9	Action_span 51 71	should be treated as
+T10	Object_span 72 76	part
+T11	Discourse_span 77 79	of
+T12	Object_span 80 83;93 97	the room
+T13	Functional_span 84 92	existing
+T14	Discourse_span 98 109	rather than
+T15	Action_span 110 125	the creation of
+T16	Object_span 126 127;146 150	a room
+T17	Functional_span 128 136	separate
+T18	Functional_span 137 145	internal
+T19	Discourse_span 151 158	because
+T20	Object_span 159 172	the extension
+T21	Action_span 173 180	will be
+T22	Functional_span 181 185	more
+T23	Object_span 186 194	airtight
+T24	Discourse_span 195 199	than
+T25	Object_span 200 214	a conservatory
+T26	Discourse_span 215 218	and
+T27	Discourse_span 219 228	therefore
+T31	Action_span 252 271	will be compromised
+T28	Object_span 229 251	the rate of air change
+#1	AnnotatorNotes T28	https://www.designingbuildings.co.uk/wiki/Air_change_rates
+T29	Discourse_span 271 272	.

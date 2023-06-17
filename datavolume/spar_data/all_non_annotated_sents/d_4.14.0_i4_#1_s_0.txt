@@ -1,0 +1,1 @@
+a combination of fibre and telephone wiring - where fibre is provided between an exchange and a cabinet, and the existing twisted pair copper phone wire line is used to deliver speeds of up to 76 Mbps, and

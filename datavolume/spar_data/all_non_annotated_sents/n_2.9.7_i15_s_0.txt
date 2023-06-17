@@ -1,0 +1,1 @@
+Room exits to storey exits - where a room is located on a storey, which, due to the occupancy capacity, height of the storey or travel distance, is recommended to have 2 or more storeyexits, the escape routes from the roomexits to the storeyexits should be designed as follows:

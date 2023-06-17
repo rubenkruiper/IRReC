@@ -1,0 +1,1 @@
+Note: for DER, this element of calculation must use Htb calculated from length of junctions and individual psi values (see clause 6.2.3).

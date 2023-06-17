@@ -1,0 +1,1 @@
+The aggregate unobstructed width in mm of all escape routes from a room, or storey, should be at least 5.3 x the occupancy capacity of the room or storey.

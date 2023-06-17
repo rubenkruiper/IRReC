@@ -1,0 +1,1 @@
+Localised areas of the same type of element may be designed to give poorer performance.

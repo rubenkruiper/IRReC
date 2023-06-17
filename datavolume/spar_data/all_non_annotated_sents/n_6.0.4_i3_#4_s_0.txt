@@ -1,0 +1,1 @@
+for metal cladding systems using Finite Element Analysis, the method of calculation should be made in accordance with BS ISO 10211:2007.

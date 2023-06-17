@@ -1,0 +1,1 @@
+Software vendors providing BRE approved SAP 2012 software [http://www.bre.co.uk/] will incorporate a function that, with `Scotland' selected, automatically generates the target CO#SUB#2#SUB# emissions level once the fuel type is selected and the `notional dwelling' dimensions and 'living area fraction' have been input into the programme.

@@ -1,0 +1,1 @@
+ it should be a fire suppression system, one designed specifically to deal with fires rather than other hazards.

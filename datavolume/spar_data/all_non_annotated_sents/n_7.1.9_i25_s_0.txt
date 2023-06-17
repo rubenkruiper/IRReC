@@ -1,0 +1,1 @@
+A typical CPT installation should include the following key elements:

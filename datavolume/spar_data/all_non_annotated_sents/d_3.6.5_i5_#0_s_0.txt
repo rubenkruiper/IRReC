@@ -1,0 +1,1 @@
+a - is the internal surface area of the soakaway to 50% effective depth, excluding the base in m2.

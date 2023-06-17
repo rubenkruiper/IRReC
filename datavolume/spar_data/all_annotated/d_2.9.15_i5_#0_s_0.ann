@@ -1,0 +1,28 @@
+T1	Object_span 1 2;11 31	a cross-sectional area
+T2	Functional_span 3 10	minimum
+T3	Object_span 32 37	1.5m2
+T4	Discourse_span 38 39	(
+T5	Functional_span 39 46	minimum
+T6	Object_span 47 56	dimension
+T7	Object_span 57 62	0.85m
+T8	Discourse_span 63 65	in
+T9	Functional_span 66 69	any
+T10	Object_span 70 79	direction
+T11	Discourse_span 79 80	)
+T12	Discourse_span 80 81	,
+T13	Action_span 82 89	opening
+T14	Discourse_span 90 92	at
+T15	Object_span 93 103	roof level
+T16	Functional_span 104 112	at least
+T17	Object_span 113 117	0.5m
+T18	Discourse_span 118 123	above
+A1	Confidence T18
+T19	Functional_span 124 127	any
+T20	Object_span 128 150	surrounding structures
+A2	Confidence T20
+T21	Discourse_span 151 157	within
+T22	Object_span 158 179	a horizontal distance
+T23	Discourse_span 180 182	of
+T24	Object_span 183 187	2.0m
+T25	Discourse_span 187 188	,
+T26	Discourse_span 189 192	and

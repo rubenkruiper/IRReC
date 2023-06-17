@@ -1,0 +1,17 @@
+T1	Object_span 0 20	A fire-fighting lift
+T2	Action_span 21 38	should be located
+T3	Discourse_span 39 45	within
+T4	Object_span 46 62	a protected zone
+T5	Discourse_span 63 66	and
+T6	Action_span 67 78	constructed
+T7	Discourse_span 79 85	within
+T8	Discourse_span 90 93	own
+T9	Object_span 94 105	compartment
+T10	Action_span 106 112	having
+T11	Functional_span 113 121	at least
+T12	Object_span 122 123;131 155	a fire resistance duration
+T13	Discourse_span 155 156	.
+T14	Functional_span 124 130	medium
+A1	Confidence T8
+T15	Discourse_span 86 89	its
+#1	AnnotatorNotes T8	own refers to ownership of something... so maybe discourse, rather than functional?

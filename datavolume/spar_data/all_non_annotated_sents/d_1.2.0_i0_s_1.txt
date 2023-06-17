@@ -1,0 +1,1 @@
+Buildings should be designed so that they are robust which is defined in BS EN-1991-1-7:2006 as the ability of a structure to withstand events like fire, explosions, impact or the consequences of human error without being damaged to an extent disproportionate to the original cause.

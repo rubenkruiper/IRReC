@@ -1,0 +1,1 @@
+Note Roof type (D) is not suitable for sheet metal coverings that require joints to allow for thermal movement.

@@ -1,0 +1,1 @@
+The strength of a pipeline should be determined, decided or specified before construction work is undertaken.

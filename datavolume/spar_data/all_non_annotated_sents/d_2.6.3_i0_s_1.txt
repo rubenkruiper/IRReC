@@ -1,0 +1,1 @@
+Therefore if the distance to the boundary is at least 1m, the unprotected area should not exceed 6m2, if the distance to the boundary is at least 2m, the unprotected area is 12m2, and so on.

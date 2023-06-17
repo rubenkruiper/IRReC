@@ -1,0 +1,1 @@
+For example, in the diagram, where the combined area of building A plus building B exceeds the maximum allowable area of any compartment as set in the tables to clause 2.1.1, then a notional boundary calculation is necessary.

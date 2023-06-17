@@ -1,0 +1,16 @@
+T1	Action_span 0 7	Testing
+T2	Action_span 8 29	should be carried out
+T3	Discourse_span 30 32	by
+T4	Object_span 33 40	persons
+T5	Discourse_span 41 44	who
+T6	Action_span 45 60	can demonstrate
+T7	Functional_span 61 69	relevant
+T8	Discourse_span 69 70	,
+T9	Functional_span 71 81	recognised
+T10	Object_span 82 91	expertise
+T11	Discourse_span 92 94	in
+T12	Action_span 95 104	measuring
+T13	Object_span 105 125	the air permeability
+T14	Discourse_span 126 128	of
+T15	Object_span 129 138	buildings
+T16	Discourse_span 138 139	.

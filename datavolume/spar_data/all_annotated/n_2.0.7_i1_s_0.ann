@@ -1,0 +1,29 @@
+T1	Discourse_span 0 7	However
+T2	Discourse_span 7 8	,
+T3	Discourse_span 9 11	it
+T4	Action_span 12 33	should be appreciated
+T5	Discourse_span 34 38	that
+T6	Discourse_span 38 39	,
+T7	Discourse_span 40 46	due to
+T8	Object_span 47 50;59 65	the nature
+T9	Functional_span 51 58	generic
+T10	Discourse_span 66 68	of
+T11	Object_span 69 81	the guidance
+T12	Discourse_span 82 84	it
+T13	Action_span 92 97	cover
+T15	Functional_span 98 101	all
+T16	Object_span 102 118	building designs
+T17	Discourse_span 119 121	or
+T18	Discourse_span 121 122	,
+T19	Functional_span 123 134	for example
+T20	Discourse_span 134 135	,
+T21	Functional_span 136 146	innovative
+T22	Discourse_span 147 149	or
+T23	Functional_span 150 153	new
+T24	Object_span 154 177	methods of construction
+T25	Discourse_span 177 178	.
+A1	Confidence T24
+#1	AnnotatorNotes T24	construction methods/ might want to split up
+A2	Confidence T7
+#2	AnnotatorNotes T7	adjective, but maybe should be treated as discourse...? "because"
+T14	Functional_span 85 91	cannot

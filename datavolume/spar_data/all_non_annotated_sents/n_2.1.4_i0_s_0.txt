@@ -1,0 +1,1 @@
+Buildings with different uses should be divided by compartment walls and compartment floors.

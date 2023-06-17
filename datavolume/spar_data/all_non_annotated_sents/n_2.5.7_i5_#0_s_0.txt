@@ -1,0 +1,1 @@
+ Smaller panels can be grouped together provided that the overall size of the group and the space between any others, satisfies the dimensions shown in figure 2.1 below.

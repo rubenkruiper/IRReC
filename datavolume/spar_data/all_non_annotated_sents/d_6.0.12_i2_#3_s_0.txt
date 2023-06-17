@@ -1,0 +1,1 @@
+Clause 6.2.3 - revisions to calculation of heat loss from linear thermal bridging

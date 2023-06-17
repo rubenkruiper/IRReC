@@ -1,0 +1,1 @@
+Fast percolation rates - where the percolation value (as demonstrated by the percolation test) is not more than 15 secs/mm, in accordance with the requirements of SEPA

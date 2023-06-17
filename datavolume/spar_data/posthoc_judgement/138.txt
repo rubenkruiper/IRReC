@@ -1,0 +1,8 @@
+Sentence:
+The IFEG sub-systems bear a very close resemblance to the subsystems used in BS: 7974: 2019 and are set out below:
+
+Object identified:
+The IFEG sub - systems
+
+Document id:
+n_2.0.7_i20_s_0

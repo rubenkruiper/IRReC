@@ -1,0 +1,7 @@
+T1	Object_span 0 4	tank
+T2	Discourse_span 5 11	within
+T3	Object_span 12 15	50m
+T4	Discourse_span 16 18	of
+T5	Object_span 19 29	a borehole
+T6	Discourse_span 30 32	or
+T7	Object_span 33 39	spring

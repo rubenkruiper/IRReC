@@ -1,0 +1,1 @@
+Likewise, if some elements offer poorer performance and others offer higher performance, the simplified approach should not be used.

@@ -1,0 +1,21 @@
+T1	Functional_span 3 12	inclusive
+T2	Object_span 0 2;13 21	An approach
+T3	Discourse_span 22 24	to
+T4	Object_span 25 31	design
+T5	Action_span 32 47	should be taken
+T6	Action_span 48 62	to ensure that
+A1	Confidence T6
+T7	Object_span 63 72	buildings
+T8	Action_span 73 76	are
+T9	Functional_span 120 131	as possible
+T10	Object_span 80 90	accessible
+T11	Discourse_span 91 93	to
+T12	Functional_span 77 79	as
+T13	Functional_span 94 96	as
+T14	Object_span 97 101	wide
+T15	Object_span 102 109	a range
+T16	Discourse_span 110 112	of
+T17	Object_span 113 119	people
+T18	Discourse_span 131 132	.
+#1	AnnotatorNotes T9	as 'many' (object X) as possible
+#2	AnnotatorNotes T6	'that' is optional

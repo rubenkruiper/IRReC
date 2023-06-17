@@ -1,0 +1,1 @@
+Due to the coverage of building standards and the position of the warrant process in the overall development process, aspects covering resource use and performance are more prominent in this standard.

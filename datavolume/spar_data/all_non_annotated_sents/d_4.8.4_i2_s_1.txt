@@ -1,0 +1,1 @@
+All guarding should be permanently fixed and should not be detachable to permit windows to open.

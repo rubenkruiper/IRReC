@@ -1,0 +1,1 @@
+All wiring, other than the wiring of power supplies, should comprise cables of enhanced fire resistance, as specified in BS 8629: 2019.

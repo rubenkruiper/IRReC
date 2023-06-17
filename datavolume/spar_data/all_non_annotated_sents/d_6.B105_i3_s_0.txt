@@ -1,0 +1,1 @@
+Note that this method can only be used in conversions, if the recommended U-values are met in full, not where values are being met as far as is reasonably practicable.

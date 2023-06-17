@@ -1,0 +1,1 @@
+The location of the trickle ventilator and the extract fan should be located to prevent short-circuiting of the air.

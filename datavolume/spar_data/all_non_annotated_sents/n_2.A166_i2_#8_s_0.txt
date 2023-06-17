@@ -1,0 +1,1 @@
+on the actuation of the fire alarm, a signal should be transmitted automatically to the fire service, either directly or by way of a remote centre, designed and operated in accordance with BS 5979: 2000.

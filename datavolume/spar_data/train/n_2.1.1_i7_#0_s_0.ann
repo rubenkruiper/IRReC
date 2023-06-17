@@ -1,0 +1,11 @@
+T1	Object_span 1 6	Areas
+T2	Action_span 7 21	may be doubled
+T3	Discourse_span 22 27	where
+T4	Discourse_span 28 33	there
+T5	Action_span 34 36	is
+T6	Object_span 37 73	an automatic fire suppression system
+T7	Discourse_span 74 75	(
+T8	Action_span 75 78	see
+T9	Object_span 79 91	clause 2.1.2
+T10	Discourse_span 91 92	)
+T11	Discourse_span 92 93	.

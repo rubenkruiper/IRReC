@@ -1,0 +1,1 @@
+A connection to allow direct access to internet services (unless such a provision is made elsewhere in the dwelling).

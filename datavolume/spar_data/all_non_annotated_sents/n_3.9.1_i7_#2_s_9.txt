@@ -1,0 +1,1 @@
+To obtain consistent results carry out the test at least 3 times for each percolation hole and take the average figure.

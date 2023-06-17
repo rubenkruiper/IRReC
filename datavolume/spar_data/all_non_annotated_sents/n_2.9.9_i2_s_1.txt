@@ -1,0 +1,1 @@
+For example, there may be only one exit from a room to a corridor, from which point escape is possible in two directions.

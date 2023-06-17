@@ -1,0 +1,1 @@
+Satisfactory specification of chimneys and flue-pipes depends upon the gas temperature to be expected in normal service.

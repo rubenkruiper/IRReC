@@ -1,0 +1,1 @@
+It is the responsibility of the chimney manufacturer to declare a distance `XX', as stipulated in BS EN 1856-1: 2003 and BS EN 1858: 2003 as being a safe distance from the chimney to combustible material.

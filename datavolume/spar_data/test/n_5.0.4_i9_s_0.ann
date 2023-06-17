@@ -1,0 +1,23 @@
+T1	Object_span 0 2	Rw
+T2	Action_span 3 5	is
+T3	Object_span 6 30	a single number quantity
+#1	AnnotatorNotes T3	not sure how to break this up...
+T4	Discourse_span 31 32	(
+T5	Action_span 32 40	weighted
+T6	Discourse_span 40 41	)
+A1	Confidence T5
+#2	AnnotatorNotes T5	might be a state, so maybe obj?
+T7	Discourse_span 42 47	which
+T8	Action_span 48 61	characterises
+T9	Object_span 62 91	the airborne sound insulation
+T10	Discourse_span 92 94	of
+T11	Object_span 95 113	a building element
+T12	Discourse_span 114 118	from
+T13	Object_span 119 131	measurements
+T14	Action_span 132 142	undertaken
+T15	Discourse_span 143 145	in
+T16	Object_span 146 158	a laboratory
+T17	Discourse_span 158 159	,
+T18	Discourse_span 160 178	in accordance with
+T19	Object_span 179 200	BS EN ISO 717-1: 1997
+T20	Discourse_span 200 201	.

@@ -1,0 +1,1 @@
+It can manage the indoor air quality by both diluting the indoor air with less contaminated outdoor air and removing the indoor contaminants with the exhaust air.

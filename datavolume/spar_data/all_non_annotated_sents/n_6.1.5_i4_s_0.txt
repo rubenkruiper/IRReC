@@ -1,0 +1,1 @@
+Low carbon equipment element of the TER - the concurrent specification for the `notional' building includes an element of low carbon equipment (LCE) represented, as a proxy, by the inclusion of roof mounted photovoltaic panels, expressed as a fixed percentage of the building gross internal area.

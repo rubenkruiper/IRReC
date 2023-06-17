@@ -1,0 +1,11 @@
+T1	Object_span 0 12	The verifier
+T2	Action_span 13 22;34 41	will make inquiry
+T3	Functional_span 23 33	reasonable
+T4	Action_span 42 51	to ensure
+T5	Object_span 52 78	the completion certificate
+T6	Action_span 79 81	is
+T7	Object_span 82 90	accurate
+T8	Discourse_span 91 97	before
+T9	Action_span 98 107	accepting
+T10	Object_span 108 123	the certificate
+T11	Discourse_span 123 124	.

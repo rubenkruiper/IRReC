@@ -1,0 +1,1 @@
+The tables below state the minimum number of exits that should be considered for a room depending on its occupancy capacity.

@@ -1,0 +1,1 @@
+For the purpose of performance, the recommended areas in the table to clause 3.14.3 should be achieved by the use of ventilators that are sized by the equivalent area, as determined using BS EN 13141-1:2004.

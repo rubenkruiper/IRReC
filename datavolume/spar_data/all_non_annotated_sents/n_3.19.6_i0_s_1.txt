@@ -1,0 +1,1 @@
+The base may be provided separately from the appliance.

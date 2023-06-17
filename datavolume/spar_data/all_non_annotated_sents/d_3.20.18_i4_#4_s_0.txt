@@ -1,0 +1,1 @@
+Terminating positions should be at least 1800mm from an oil storage tank unless a wall with a non-combustibleconstruction type 7, short duration (see table to 2.B.1) and more than 300mm higher and wider each side than the tank is provided between the tank and the terminating position.

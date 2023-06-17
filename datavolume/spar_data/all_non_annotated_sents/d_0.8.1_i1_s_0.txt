@@ -1,0 +1,1 @@
+It also implements the European Regulation 305/2011/EU Construction Products Regulation (CPR), in force on 1 July 2013 that replaces the current Construction Products Directive (89/106/EEC).

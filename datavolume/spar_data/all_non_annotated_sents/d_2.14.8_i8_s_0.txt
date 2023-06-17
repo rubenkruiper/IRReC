@@ -1,0 +1,1 @@
+BS 8629: 2019 does not provide recommendations for networked systems, in which evacuation alert sounders are connected to a number of local control panels (``sub-panels''), all connected on a data network.

@@ -1,0 +1,1 @@
+This method of calculating the escape stair width can be used to reduce the width of the stair as it rises up the building although this would not be a typical form of construction.

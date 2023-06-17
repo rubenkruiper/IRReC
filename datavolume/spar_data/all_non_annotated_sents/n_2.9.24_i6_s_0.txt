@@ -1,0 +1,1 @@
+The wall separating the rooms/cupboards from the protected zone should have a short fire resistance duration and any door in the wall should be a self-closing fire door.

@@ -1,0 +1,11 @@
+T1	Discourse_span 0 11	Accordingly
+T2	Discourse_span 11 12	,
+T3	Functional_span 13 17	each
+T4	Object_span 18 26	building
+T5	Action_span 27 53	will have to be dealt with
+T6	Discourse_span 54 56	on
+T7	Discourse_span 57 60	its
+T8	Discourse_span 61 64	own
+T9	Object_span 65 71	merits
+T10	Discourse_span 71 72	.
+A1	Confidence T5

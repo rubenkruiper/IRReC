@@ -1,0 +1,1 @@
+As phased evacuation relies on some occupants remaining where they are until instructed to leave, it is only suitable for buildings where the occupants are awake and familiar with the building, for example, offices.

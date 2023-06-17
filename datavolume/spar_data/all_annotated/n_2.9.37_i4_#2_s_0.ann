@@ -1,0 +1,17 @@
+T1	Discourse_span 0 2	in
+T2	Object_span 3 11	the case
+A1	Confidence T2
+#1	AnnotatorNotes T2	could treat this prepositional phrase as a MWE maybe
+T3	Discourse_span 12 14	of
+T4	Object_span 15 42	a residential care building
+T5	Discourse_span 43 45	or
+T6	Object_span 46 56	a hospital
+T7	Discourse_span 56 57	,
+T8	Object_span 58 67	the stair
+T9	Action_span 68 79	is intended
+T10	Discourse_span 80 82	to
+T11	Action_span 83 90	be used
+T12	Discourse_span 91 93	by
+T13	Object_span 94 99	staff
+T14	Functional_span 100 104	only
+T15	Discourse_span 104 105	.

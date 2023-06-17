@@ -1,0 +1,83 @@
+---
+version: "3.9"
+
+services:
+  spar:
+    build: ./SPaR
+    ports:
+      - 8501:8501
+    volumes:
+      - ./datavolume:/data/
+    networks:
+      - my_network
+    container_name: irrec_spar
+    image: spar
+#    deploy:
+#      resources:
+#        reservations:
+#          devices:
+#            - capabilities: [ gpu ]
+#              driver: nvidia
+  classifier:
+    build: Classifier
+    ports:
+      - 8502:8502
+    volumes:
+      - ./datavolume:/data/
+    environment:
+    - NVIDIA_VISIBLE_DEVICES=1
+    networks:
+      - my_network
+    container_name: irrec_classifier
+    image: classifier
+#    deploy:
+#      resources:
+#        reservations:
+#          devices:
+#            - capabilities: [ gpu ]
+#              driver: nvidia
+  haystack:
+    build: ./Retrieval
+    ports:
+      - 8500:8500
+    volumes:
+      - ./datavolume:/data/
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - my_network
+      - host_network
+    container_name: irrec_haystack
+    image: haystack
+#    deploy:
+#      resources:
+#        reservations:
+#          devices:
+#            - capabilities: [ gpu ]
+#              driver: nvidia
+  query_expansion:
+    build: ./QueryExpander
+    ports:
+      - 8503:8503
+    volumes:
+      - ./datavolume:/data/
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - my_network
+      - host_network
+    container_name: irrec_qe
+    image: qe
+
+networks:
+  my_network:
+    driver: bridge
+  host_network:
+    name: host_network
+    attachable: true
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.99.0.0/16
+          ip_range: 172.99.5.0/24
+          gateway: 172.99.0.1

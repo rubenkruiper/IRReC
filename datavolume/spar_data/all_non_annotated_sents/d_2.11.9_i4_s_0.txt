@@ -1,0 +1,1 @@
+Interconnection - all smoke alarms and heat alarms in a dwelling should be interconnected so that detection of a fire in any alarm, operates the alarm signal in all of them.

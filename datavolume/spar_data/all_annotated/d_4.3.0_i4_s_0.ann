@@ -1,0 +1,8 @@
+T1	Object_span 0 13	Private stair
+T2	Action_span 14 19	means
+T3	Object_span 20 27	a stair
+T4	Functional_span 28 34	wholly
+T5	Discourse_span 35 41	within
+T6	Object_span 42 52	a dwelling
+T7	Discourse_span 52 53	.
+A1	Confidence T4

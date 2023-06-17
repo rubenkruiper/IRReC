@@ -1,0 +1,31 @@
+T1	Discourse_span 0 5	Where
+T2	Object_span 6 24	the topmost storey
+#1	AnnotatorNotes T2	the top floor
+T3	Discourse_span 25 27	of
+T4	Object_span 28 29;43 62	a open sided car park
+T5	Functional_span 30 42	steel framed
+T6	Action_span 63 65	is
+T7	Discourse_span 66 68	at
+T8	Object_span 69 77	a height
+T9	Discourse_span 78 80	of
+T10	Functional_span 81 84	not
+T11	Functional_span 85 94	more than
+T12	Object_span 95 98	18m
+T13	Discourse_span 99 104	above
+T14	Object_span 105 111	ground
+T15	Discourse_span 111 112	,
+T16	Object_span 113 116;139 147	the guidance
+T17	Discourse_span 117 126	following
+A1	Confidence T17
+#2	AnnotatorNotes T17	might actually be an action
+T18	Functional_span 127 138	alternative
+T19	Discourse_span 148 150	to
+T20	Object_span 151 163	Standard 2.1
+T21	Action_span 164 177	could be used
+T22	Discourse_span 178 181	for
+T23	Object_span 182 185;186 202	the structural frame
+T24	Discourse_span 202 203	,
+T25	Object_span 182 185;204 211	the columns
+T26	Discourse_span 212 215	and
+T27	Object_span 182 185;216 221	the beams
+T28	Discourse_span 221 222	:

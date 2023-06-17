@@ -1,0 +1,1 @@
+A free swing device, which only has a closing action when activated by an alarm system, should not be fitted to a door across a circulation route as this permits the door to be left open at any angle, creating a collision hazard.

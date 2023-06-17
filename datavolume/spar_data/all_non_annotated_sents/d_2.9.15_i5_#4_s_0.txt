@@ -1,0 +1,1 @@
+on detection of smoke in the protected lobby, the ventilator on the fire floor, the ventilator at the top of the smoke shaft and the 1m2 ventilator at the head of the stairway should all open simultaneously.

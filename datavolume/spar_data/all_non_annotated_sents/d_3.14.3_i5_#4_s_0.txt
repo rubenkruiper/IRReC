@@ -1,0 +1,1 @@
+Long duct runs, flexible ducting and bends can reduce fan performance and should be carefully considered during design.

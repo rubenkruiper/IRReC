@@ -1,0 +1,11 @@
+T1	Object_span 0 12	T250 N2 D V1
+T2	Discourse_span 13 14	(
+T3	Discourse_span 14 16	or
+T4	Object_span 17 28	Vm - Lxxxxx
+T5	Discourse_span 28 29	)
+T6	Object_span 30 33	Oxx
+T7	Discourse_span 34 39	where
+T8	Discourse_span 40 42	it
+T9	Action_span 43 49	serves
+T10	Object_span 50 65	a gas appliance
+T11	Discourse_span 65 66	.

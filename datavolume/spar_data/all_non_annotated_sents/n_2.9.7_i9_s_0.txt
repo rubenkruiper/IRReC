@@ -1,0 +1,1 @@
+The table below states the minimum number of exits that should be provided for a storey related to its occupancy capacity.

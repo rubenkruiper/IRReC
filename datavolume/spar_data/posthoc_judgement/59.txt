@@ -1,0 +1,8 @@
+Sentence:
+the two forms of liquefied petroleum gases that are generally available in the UK are commercial butane and commercial propane
+
+Object identified:
+propane
+
+Document id:
+d_4.11.0_i4_#0_s_0

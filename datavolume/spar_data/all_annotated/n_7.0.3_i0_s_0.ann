@@ -1,0 +1,25 @@
+T1	Object_span 0 8	Measures
+T2	Discourse_span 9 11	on
+T3	Object_span 12 26	sustainability
+T4	Action_span 27 30	are
+T5	Functional_span 31 38	broadly
+T6	Action_span 39 46	related
+T7	Discourse_span 47 49	to
+T8	Object_span 50 64	the built form
+T9	Discourse_span 64 65	,
+T10	Discourse_span 66 69	but
+T11	Functional_span 70 74	some
+T12	Object_span 75 82	matters
+T13	Discourse_span 83 87	that
+T14	Action_span 88 102	are associated
+T15	Discourse_span 103 107	with
+T16	Object_span 108 131	sustainable development
+T17	Functional_span 132 139	such as
+T18	Object_span 140 148	location
+T19	Discourse_span 149 152	and
+T20	Object_span 153 162	transport
+T21	Action_span 163 172;184 193	cannot be delivered
+T22	Functional_span 173 183	adequately
+T23	Discourse_span 194 196	by
+T24	Object_span 197 226	the building standards system
+T25	Discourse_span 226 227	.

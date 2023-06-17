@@ -1,0 +1,1 @@
+A layout, which only follows the recommendations for travel distance and number of storey exits, may still result in an undesirable layout.

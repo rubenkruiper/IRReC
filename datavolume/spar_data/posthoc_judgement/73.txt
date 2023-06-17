@@ -1,0 +1,8 @@
+Sentence:
+Rooms intended for sleeping should be separated by a door that will act as a sound barrier and reduce noise transference.
+
+Object identified:
+sleeping
+
+Document id:
+n_5.2.5_i1_s_0

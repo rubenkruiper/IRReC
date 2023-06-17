@@ -1,0 +1,1 @@
+A stair or ladder should be constructed in accordance with:

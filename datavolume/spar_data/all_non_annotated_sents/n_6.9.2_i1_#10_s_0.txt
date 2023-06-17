@@ -1,0 +1,1 @@
+the approximate current energy use expressed in kWh per m2 of floor area per annum

@@ -1,0 +1,1 @@
+However, as there is no obligation to adopt any particular solution contained in the Technical Handbooks in order to meet functional requirements, the references are not exclusive and other materials may be suitable in the particular circumstances.

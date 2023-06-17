@@ -1,0 +1,1 @@
+ the wall should contain no pipes, wires or other services.

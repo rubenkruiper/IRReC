@@ -1,0 +1,1 @@
+The equipment should also be capable of logging data at no more than 15 minute intervals, over a 24 hour period.

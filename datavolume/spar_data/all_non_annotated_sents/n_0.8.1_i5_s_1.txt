@@ -1,0 +1,1 @@
+For example, a self contained smoke alarm, manufactured in accordance with the Electro Magnetic Compatibility Directive should be accepted as satisfying requirements only insofar as they relate to prevention of electromagnetic disturbances by, and prevention against disturbances to, such smoke alarms.

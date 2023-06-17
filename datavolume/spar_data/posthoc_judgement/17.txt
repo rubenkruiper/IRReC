@@ -1,0 +1,8 @@
+Sentence:
+This is to give occupants and staff the earliest possible warning of an outbreak of fire and allow time for assisting occupants in an emergency to evacuate the building or for horizontal progressive evacuation initially to an adjacent sub-compartment which leads to a compartmentexit.
+
+Object identified:
+the warning
+
+Document id:
+n_2.11.5_i0_s_1

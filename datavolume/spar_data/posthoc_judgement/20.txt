@@ -1,0 +1,8 @@
+Sentence:
+Common systems - in a building containing flats or maisonettes, a common fire alarm and detection system that interlinks all dwellings and common spaces is not recommended due to the risk of unwanted false alarms.
+
+Object identified:
+a common fire alarm and detection system
+
+Document id:
+d_2.11.1_i8_s_0

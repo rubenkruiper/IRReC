@@ -1,0 +1,8 @@
+Sentence:
+Whilst this method of water distribution is quite common, it should be avoided for new developments because of the time delay in supplying water to the fire-fighters.
+
+Object identified:
+developments
+
+Document id:
+n_2.13.2_i8_s_1

@@ -1,0 +1,1 @@
+example 6.B.1 shows use of better U-values to some elements to compensate for lack of headroom in an attic conversion where column (b) U-values apply

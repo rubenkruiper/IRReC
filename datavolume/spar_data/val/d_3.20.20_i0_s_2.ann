@@ -1,0 +1,14 @@
+T1	Object_span 0 7	The gas
+T2	Action_span 8 19	is produced
+T3	Discourse_span 20 22	in
+T4	Functional_span 23 27	high
+T5	Object_span 28 34	levels
+T6	Discourse_span 35 39	from
+T7	Object_span 40 50	appliances
+T8	Discourse_span 51 56	where
+T9	Functional_span 57 67	incomplete
+T10	Object_span 68 78	combustion
+T11	Discourse_span 79 81	of
+T12	Object_span 82 101	a carbon based fuel
+T13	Action_span 102 108	occurs
+T14	Discourse_span 108 109	.

@@ -1,0 +1,1 @@
+by using insulation to a thickness derived from manufacturers' data relating to thermal conductivities (W/mK) and thermal transmittances (U-values: W/m#SUP#2#SUP#K) certified by a notified body

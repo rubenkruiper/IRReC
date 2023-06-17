@@ -1,0 +1,1 @@
+The intention is to assist escape, but not to exclude the use of locks or other safety devices (see Section 4 Safety).

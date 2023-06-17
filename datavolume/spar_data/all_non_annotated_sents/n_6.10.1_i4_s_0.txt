@@ -1,0 +1,1 @@
+CIBSE Technical Memorandum 39 (TM39) `Building energy metering' provides guidance on preparing a metering strategy.

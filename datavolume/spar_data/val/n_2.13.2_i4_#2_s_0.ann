@@ -1,0 +1,11 @@
+T1	Object_span 8 16	hydrants
+T3	Action_span 17 20	are
+T4	Functional_span 21 29	at least
+T5	Object_span 30 32	6m
+T6	Object_span 33 37	away
+T7	Discourse_span 38 42	from
+T8	Object_span 43 55	the building
+T9	Discourse_span 55 56	,
+T10	Discourse_span 57 60	and
+T2	Discourse_span 3 7	that
+T11	Discourse_span 0 2	so

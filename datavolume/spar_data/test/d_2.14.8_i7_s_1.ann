@@ -1,0 +1,11 @@
+T1	Object_span 0 19	Power supply cables
+T2	Action_span 20 32	may comprise
+T3	Functional_span 43 51	standard
+T4	Discourse_span 51 52	,
+T5	Discourse_span 53 55	or
+T7	Discourse_span 64 65	,
+T8	Discourse_span 81 82	.
+T6	Functional_span 56 64	enhanced
+T9	Object_span 66 81	fire resistance
+T10	Object_span 33 39	cables
+T11	Discourse_span 40 42	of

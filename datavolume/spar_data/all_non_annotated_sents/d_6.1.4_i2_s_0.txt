@@ -1,0 +1,1 @@
+{(emissions1 x floor area1) + (emissions2 x floor area2) + (emissions3 x floor area3) + ...)} / {(floor area1 + floor area2 + floor area3) + ...}

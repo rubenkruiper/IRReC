@@ -1,0 +1,1 @@
+There should be a clear visible warning identifying any part of a roof that is not capable of bearing a concentrated load of 0.9 kN on a 130mm by 130mm square.

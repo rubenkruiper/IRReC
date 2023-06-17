@@ -1,0 +1,8 @@
+T1	Object_span 0 25	A depressurisation system
+T2	Action_span 26 37	is based on
+T3	Functional_span 38 54	the principle of
+T5	Action_span 55 65	extracting
+T6	Object_span 66 71	smoke
+T7	Discourse_span 72 74	to
+T8	Object_span 75 90	the outside air
+T9	Discourse_span 90 91	.

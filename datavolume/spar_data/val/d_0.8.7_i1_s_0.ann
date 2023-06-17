@@ -1,0 +1,23 @@
+T1	Object_span 0 9	Materials
+T2	Discourse_span 10 14	that
+T3	Action_span 15 33	are susceptible to
+T4	Object_span 34 41	changes
+A1	Confidence T4 Low
+T5	Discourse_span 42 44	in
+T6	Discourse_span 45 50	their
+T7	Object_span 51 61	properties
+T8	Action_span 62 73	may be used
+T9	Discourse_span 74 76	in
+T10	Object_span 77 90	building work
+T11	Discourse_span 91 94	and
+T12	Action_span 95 104	will meet
+T13	Object_span 105 121	the requirements
+T14	Discourse_span 122 124	of
+T15	Object_span 125 140	the regulations
+T16	Discourse_span 141 143	if
+T17	Object_span 144 167	the residual properties
+T18	Discourse_span 167 168	,
+T19	Discourse_span 169 178	including
+T20	Object_span 179 204	the structural properties
+T21	Discourse_span 204 205	:
+A2	Confidence T19
