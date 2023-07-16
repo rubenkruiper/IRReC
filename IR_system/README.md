@@ -22,7 +22,9 @@ for Query Expansion. The expected repository name is `BRE`.
 
 Clone this repository and cd into it. Prepare the SPaR.txt container:
 1. build: `docker compose build spar`
-2. run to train a model: `docker-compose up --no-deps spar`
+2. run to train a model: `docker-compose up --no-deps spar`, this takes about 20 minutes on a cpu.
+
+
 Then simply run `docker compose up` to build and start all containers. We have been running our final tests with the system on a VPS server running Ubuntu 22.04 and 24GB of RAM, but without a GPU. The system should be able to set up and run faster when running with a GPU. 
 <!-- ; the assumption is that you have one of the following:
 1. One or several pre-trained clustering models, enabling clustering of unseen text on a CPU. To this end copy the contents
