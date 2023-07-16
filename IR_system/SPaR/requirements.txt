@@ -4,5 +4,5 @@ allennlp-models==2.5.0
 textblob==0.15.3
 pandas
 pydantic==1.*
-fastapi
+fastapi==0.99.1
 uvicorn
