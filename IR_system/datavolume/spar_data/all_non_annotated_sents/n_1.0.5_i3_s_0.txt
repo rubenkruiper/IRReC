@@ -1,0 +1,1 @@
+Where alternative approaches use design methods or codes other than those listed in this guidance then these must be used within the context of the assumptions set out in Section 1.1.3.

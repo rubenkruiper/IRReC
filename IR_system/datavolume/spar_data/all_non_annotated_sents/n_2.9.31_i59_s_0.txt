@@ -1,0 +1,1 @@
+AC is the appropriate capacity of each of the 2 adjacent upper storeys, with the greater occupancy capacity, minus 20% for standing capacity in each of the stairs:

@@ -1,0 +1,1 @@
+Where the dedicated drying space is not passively heated a heat source should be provided that is independent from the primary heating system and capable of maintaining a temperature of 180C when the outside temperature is -10C and controlled by a time switch.

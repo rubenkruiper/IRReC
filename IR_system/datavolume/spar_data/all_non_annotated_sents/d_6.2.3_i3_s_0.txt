@@ -1,0 +1,1 @@
+Whilst repeating thermal bridges are taken into account in the BS EN ISO 6946: 2007 U-value calculation, a separate assessment of non-repeating thermal bridging should be carried out for new buildings which are subject to Standard 6.1.

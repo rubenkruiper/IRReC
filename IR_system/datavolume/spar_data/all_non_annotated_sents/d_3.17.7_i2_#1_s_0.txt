@@ -1,0 +1,1 @@
+a chimney designation string in accordance with BS EN 1443: 2003 (see clause 3.18.2) for products whose performance characteristics have been assessed in accordance with a European Standard and that has been supplied and marked with a designation as described in the relevant European Standard

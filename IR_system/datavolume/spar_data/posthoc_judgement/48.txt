@@ -1,0 +1,8 @@
+Sentence:
+changes in groundwater level
+
+Object identified:
+groundwater level
+
+Document id:
+d_1.1.5_i2_#3_s_0

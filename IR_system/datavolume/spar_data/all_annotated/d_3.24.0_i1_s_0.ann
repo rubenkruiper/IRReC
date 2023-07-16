@@ -1,0 +1,15 @@
+T1	Object_span 0 3	Oil
+T2	Action_span 4 6	is
+T3	Object_span 18 27;7 8	substance a
+A1	Confidence T3
+T4	Discourse_span 28 34	within
+T5	Object_span 35 46	the meaning
+T6	Discourse_span 47 49	of
+T7	Object_span 50 78	the EC Groundwater Directive
+T8	Discourse_span 79 80	(
+T9	Object_span 80 89	80/68/EEC
+T10	Discourse_span 89 90	)
+T11	Discourse_span 90 91	.
+T12	Discourse_span 9 10	`
+T13	Discourse_span 16 17	'
+T14	Object_span 10 16	List I

@@ -1,0 +1,1 @@
+adoption of a default y-value of 0.10 (adding 10% to the calculated heat loss for all planar elements of the building)

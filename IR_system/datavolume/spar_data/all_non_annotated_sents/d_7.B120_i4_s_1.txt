@@ -1,0 +1,1 @@
+Plans should be simple and clear, generally `planning application' standard with walls blacked in, dimensions and unnecessary annotation removed in the CAD program.

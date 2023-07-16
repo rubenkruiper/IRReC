@@ -1,0 +1,1 @@
+by calculation taking into account thermal bridging effects of, e.g.

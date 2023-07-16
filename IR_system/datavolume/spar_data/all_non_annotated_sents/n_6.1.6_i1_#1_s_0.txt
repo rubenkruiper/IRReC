@@ -1,0 +1,1 @@
+when display windows are present in the actual building, they are not copied across into the `notional' building.

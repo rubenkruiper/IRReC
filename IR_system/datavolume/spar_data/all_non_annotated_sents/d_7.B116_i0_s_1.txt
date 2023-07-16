@@ -1,0 +1,1 @@
+Where there are a number of houses or flats of the same type, it is likely that the information could be repeated for each type, taking care to ensure correct orientation of plans and correct positions of installed items on the plan.

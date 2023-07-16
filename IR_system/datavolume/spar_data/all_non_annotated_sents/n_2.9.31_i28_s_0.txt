@@ -1,0 +1,1 @@
+If the escape stair contains any of the rooms listed in clause 2.9.24 the stair should be discounted from the stair width calculation.

@@ -1,0 +1,1 @@
+Clear opening width - the projection of ironmongery which extends across the width of a door leaf, such as an emergency push bar for escape or a horizontal grab rail, should be subtracted when calculating the clear opening width.

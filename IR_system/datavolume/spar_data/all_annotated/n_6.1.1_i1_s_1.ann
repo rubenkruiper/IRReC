@@ -1,0 +1,14 @@
+T1	Object_span 0 6	A list
+T2	Discourse_span 7 9	of
+T3	Functional_span 10 18	approved
+T4	Object_span 19 36	calculation tools
+T5	Action_span 37 49	can be found
+T6	Discourse_span 50 52	on
+T7	Object_span 58 76	Section 6 software
+T8	Discourse_span 83 85	of
+T9	Object_span 86 117	the Building Standards Division
+T10	Object_span 118 125	website
+T11	Discourse_span 125 126	.
+T12	Discourse_span 76 77	'
+T13	Discourse_span 57 58	'
+T14	Object_span 53 56;78 82	the page

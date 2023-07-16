@@ -1,0 +1,1 @@
+Work on existing buildings - where infiltration rates in a dwelling exceed 10m#SUP#3#SUP#/h/m#SUP#2#SUP# @ 50 Pa, which may often be the case in existing buildings, the size of trickle ventilation may be reduced to 8000mm#SUP#2#SUP# for apartments and 4000mm#SUP#2#SUP# for all other rooms.

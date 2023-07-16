@@ -1,0 +1,28 @@
+T1	Discourse_span 0 5	Where
+T2	Discourse_span 6 11	there
+T3	Action_span 12 15	are
+A1	Confidence T2
+#1	AnnotatorNotes T2	consistently annotated?
+T4	Functional_span 16 27	alternative
+T5	Object_span 28 41	escape stairs
+T6	Discourse_span 42 46	from
+T7	Object_span 47 55	a storey
+T8	Discourse_span 55 56	,
+T9	Discourse_span 57 62	there
+T10	Action_span 63 65	is
+T11	Object_span 66 74	the risk
+A2	Confidence T9
+#2	AnnotatorNotes T9	consistently annotated?
+T12	Discourse_span 75 79	that
+T13	Object_span 80 83	one
+T14	Discourse_span 84 86	of
+T15	Object_span 87 104	the escape stairs
+T16	Action_span 105 113	could be
+T17	Object_span 114 126	smoke logged
+T18	Action_span 127 137	preventing
+T19	Object_span 138 144	access
+T20	Discourse_span 145 152	through
+T21	Discourse_span 153 155	to
+T22	Object_span 156 159;172 184	the escape stair
+T23	Functional_span 160 171	alternative
+T24	Discourse_span 184 185	.

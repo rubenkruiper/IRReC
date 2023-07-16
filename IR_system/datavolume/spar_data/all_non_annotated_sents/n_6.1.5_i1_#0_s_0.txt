@@ -1,0 +1,1 @@
+size and shape, internal layout and dimensions (see clause 6.0.12)

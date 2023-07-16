@@ -1,0 +1,35 @@
+T1	Discourse_span 0 3	For
+T2	Functional_span 4 10	seated
+T3	Object_span 11 16	users
+T4	Discourse_span 16 17	,
+T5	Discourse_span 18 22	this
+T6	Object_span 23 32	should be
+T7	Functional_span 33 46	approximately
+T8	Object_span 47 52	750mm
+T9	Discourse_span 53 58	above
+T10	Object_span 59 70	floor level
+T11	Discourse_span 70 71	,
+T12	Discourse_span 72 76	with
+T13	Object_span 77 90	a knee recess
+T16	Functional_span 100 108	at least
+T17	Object_span 109 114	500mm
+T14	Discourse_span 91 96	below
+T15	Discourse_span 97 99	of
+T18	Object_span 115 119	deep
+T19	Discourse_span 120 123	and
+T20	Functional_span 124 132	at least
+T21	Object_span 133 138	700mm
+T22	Object_span 139 143	high
+T23	Discourse_span 144 147	and
+T24	Object_span 148 149;156 173	a manoeuvring space
+T25	Functional_span 150 155	clear
+A1	Confidence T25
+#1	AnnotatorNotes T25	clear manouvring space might be a defined term
+T26	Discourse_span 174 182	in front
+T27	Discourse_span 183 185	of
+T28	Object_span 186 197	the surface
+T29	Discourse_span 198 200	of
+T30	Functional_span 201 209	at least
+T31	Object_span 210 214	1.2m
+T32	Object_span 215 219	deep
+T33	Discourse_span 219 220	.

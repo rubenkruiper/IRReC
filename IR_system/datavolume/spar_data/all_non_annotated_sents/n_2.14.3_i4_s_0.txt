@@ -1,0 +1,1 @@
+A self-closing fire door in the enclosing structure of a protected zone should have at least a medium fire resistance duration.

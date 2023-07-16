@@ -1,0 +1,26 @@
+T1	Discourse_span 0 2	To
+T2	Action_span 3 9	reduce
+T3	Object_span 10 18	the risk
+T4	Discourse_span 18 19	,
+T5	Functional_span 20 23	all
+T6	Functional_span 24 27	new
+T7	Object_span 28 37	buildings
+T8	Discourse_span 37 38	,
+T9	Object_span 39 49	extensions
+T10	Discourse_span 50 53	and
+T11	Object_span 54 65	conversions
+T12	Discourse_span 65 66	,
+T13	Action_span 67 72	built
+T14	Discourse_span 73 75	in
+T15	Object_span 76 81	areas
+T16	Discourse_span 82 87	where
+T17	Discourse_span 88 93	there
+T18	Action_span 94 102	might be
+T19	Object_span 103 122	radon concentration
+T20	Discourse_span 122 123	,
+T21	Action_span 124 147	may need to incorporate
+#1	AnnotatorNotes T21	treating as "should incorporate"
+T22	Object_span 148 159	precautions
+T23	Discourse_span 160 167	against
+T24	Object_span 168 173	radon
+T25	Discourse_span 173 174	.

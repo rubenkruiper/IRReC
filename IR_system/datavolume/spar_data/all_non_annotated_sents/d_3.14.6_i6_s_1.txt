@@ -1,0 +1,1 @@
+In these cases, noise transmission may need to be limited, see Section 5.

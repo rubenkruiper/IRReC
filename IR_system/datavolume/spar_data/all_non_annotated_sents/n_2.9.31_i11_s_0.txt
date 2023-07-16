@@ -1,0 +1,1 @@
+ In a building in which the escape stair serves more than 1 storey the appropriate capacity for each storey should be calculated and the total appropriate capacity for all the storeys served by the escape stair should then be used in the formula for calculating the effective width of the escape stair.

@@ -1,0 +1,1 @@
+The actions on the building will comprise a set of loads applied directly to the structure that will include dynamic, concentrated and peak load effects, together with a set of imposed deformations caused for example by temperature changes or uneven settlement.

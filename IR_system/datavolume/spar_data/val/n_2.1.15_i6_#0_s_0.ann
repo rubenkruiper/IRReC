@@ -1,0 +1,21 @@
+T1	Discourse_span 1 6	where
+T2	Object_span 7 15	the roof
+T3	Action_span 16 19	has
+T4	Object_span 20 43	a combustible substrate
+T5	Discourse_span 43 44	,
+T6	Object_span 45 53	the wall
+T7	Action_span 54 68	should project
+T8	Discourse_span 69 76	through
+T9	Object_span 77 85	the roof
+T10	Discourse_span 86 88	to
+T11	Object_span 89 99	a distance
+T12	Discourse_span 100 102	of
+T13	Functional_span 103 111	at least
+T14	Object_span 112 117	375mm
+T15	Discourse_span 118 123	above
+T16	Object_span 124 127;132 139	the surface
+T17	Functional_span 128 131	top
+T18	Discourse_span 140 142	of
+T19	Object_span 143 151	the roof
+T20	Discourse_span 151 152	,
+T21	Discourse_span 153 155	or

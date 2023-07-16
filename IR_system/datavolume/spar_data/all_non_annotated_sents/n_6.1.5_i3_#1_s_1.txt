@@ -1,0 +1,1 @@
+It is assigned on a zone by zone basis as a percentage of the external wall and roof based upon the glazing type for that activity within the NCM activity database.

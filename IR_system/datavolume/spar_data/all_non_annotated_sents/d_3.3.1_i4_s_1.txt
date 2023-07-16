@@ -1,0 +1,1 @@
+Field drains, where provided, should be laid in accordance with the recommendations in clause 10 of BS 8301: 1985.

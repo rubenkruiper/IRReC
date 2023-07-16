@@ -1,0 +1,1 @@
+Escape route lighting utilises the artificial lighting within the building, but should be supplied by a fire protected circuit.

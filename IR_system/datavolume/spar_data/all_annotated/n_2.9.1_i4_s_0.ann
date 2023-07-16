@@ -1,0 +1,17 @@
+T1	Discourse_span 0 5	There
+T2	Action_span 23 32;6 9	available are
+A1	Confidence T1
+#1	AnnotatorNotes T1	consistently annotated?
+T3	Functional_span 10 14	many
+T4	Object_span 15 22	options
+T5	Discourse_span 33 35	to
+T6	Object_span 36 45	designers
+T7	Discourse_span 46 50	when
+T8	Action_span 51 62	considering
+T9	Object_span 63 69	escape
+T10	Discourse_span 70 74	from
+T11	Object_span 75 84	buildings
+T12	Discourse_span 85 87	to
+T13	Object_span 88 105	a place of safety
+T14	Discourse_span 105 106	.
+#2	AnnotatorNotes T13	safe place

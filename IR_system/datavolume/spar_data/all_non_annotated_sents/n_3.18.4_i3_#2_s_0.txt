@@ -1,0 +1,1 @@
+T250 N2 D V2 (or Vm - Lxxxxx) Oxx where it serves an oil-firing appliance producing a flue gas temperature of not more than 250 degrees C, e.g.

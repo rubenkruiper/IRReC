@@ -1,0 +1,8 @@
+Sentence:
+Provision of sanitary accommodation for customers is not sought in shops below the area limits given above.
+
+Object identified:
+the area limits
+
+Document id:
+n_3.12.4_i3_#4_s_0

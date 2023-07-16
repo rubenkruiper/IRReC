@@ -1,0 +1,1 @@
+The following assertions are applied within the NCM when calculating the carbon dioxide emission rate for the `notional' building:

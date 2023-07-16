@@ -1,0 +1,1 @@
+An alternative way of meeting Standard 6.1 which avoids the use of the calculation methodology is to design to the set of values used for the `notional dwelling'.

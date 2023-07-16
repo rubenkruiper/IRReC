@@ -1,0 +1,1 @@
+an escape stair which connects 2 or more levels within a single-storey where the difference in height between the highest and lowest level is not more than 1.8m

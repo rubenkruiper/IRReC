@@ -1,0 +1,1 @@
+Optical smoke alarms should conform to BS EN 14604: 2005 and operate on the principle of detecting the scattering or absorption of light within the detector chamber.

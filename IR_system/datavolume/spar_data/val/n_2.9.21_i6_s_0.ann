@@ -1,0 +1,7 @@
+T1	Discourse_span 0 1	`
+T2	Object_span 1 29	Fail unlocked electric locks
+T3	Discourse_span 29 30	'
+T4	Action_span 31 37;42 54	should be installed
+T5	Functional_span 38 41	not
+T6	Discourse_span 55 57	on
+T7	Discourse_span 57 58	:

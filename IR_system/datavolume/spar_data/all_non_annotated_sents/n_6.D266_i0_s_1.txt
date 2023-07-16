@@ -1,0 +1,1 @@
+The intent of this limitation is to avoid replacement of elements where installations are both recent and relatively energy efficient as this will generally be less cost-effective.

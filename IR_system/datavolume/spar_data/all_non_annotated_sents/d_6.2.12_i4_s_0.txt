@@ -1,0 +1,1 @@
+U-values of glazing elements forming the roof are usually quoted in the vertical plane and should therefore be adjusted allowing for the angle of the roof.

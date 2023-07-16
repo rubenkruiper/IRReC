@@ -1,0 +1,8 @@
+Sentence:
+resilience is often required for separating floors in residential buildings where there is direct vibration impact such as footfall noise.
+
+Object identified:
+direct vibration impact
+
+Document id:
+n_5.0.5_i3_#2_s_0

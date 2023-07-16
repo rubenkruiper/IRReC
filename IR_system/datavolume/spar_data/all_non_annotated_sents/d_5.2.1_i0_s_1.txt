@@ -1,0 +1,1 @@
+A door located in such a wall provides a path for sound to bypass a wall under test.

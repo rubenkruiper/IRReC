@@ -1,0 +1,1 @@
+Similarly, use of extension leads can create a trip hazard.

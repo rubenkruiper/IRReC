@@ -1,0 +1,1 @@
+For example, a smoke exhaust fan in a smoke reservoir within an atrium space fails to operate but the smoke layer height continues to be maintained by the activation of a stand-by fan.

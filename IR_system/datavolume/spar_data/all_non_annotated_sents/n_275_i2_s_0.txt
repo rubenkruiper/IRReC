@@ -1,0 +1,1 @@
+A = The sum of the area of all room surfaces (ceiling, floor, walls, doors, windows and roof lights), in m2

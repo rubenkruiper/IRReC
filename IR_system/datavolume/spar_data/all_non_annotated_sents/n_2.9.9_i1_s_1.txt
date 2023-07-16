@@ -1,0 +1,1 @@
+For example if two exits are placed close together it may make it impossible for all occupants to reach either exit if the fire is close to the exits.

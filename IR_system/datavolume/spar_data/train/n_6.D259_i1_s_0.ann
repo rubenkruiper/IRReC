@@ -1,0 +1,17 @@
+T1	Discourse_span 0 4	This
+T2	Object_span 5 10	power
+T3	Action_span 11 13	is
+T4	Discourse_span 14 17	now
+T5	Action_span 18 27	exercised
+T6	Discourse_span 28 30	to
+T7	Action_span 31 37	direct
+T8	Object_span 38 55	local authorities
+T9	Discourse_span 56 58	to
+T10	Action_span 59 65	secure
+T11	Object_span 66 77	improvement
+T12	Discourse_span 78 80	to
+T13	Object_span 81 103	the energy performance
+T14	Discourse_span 104 106	of
+T15	Functional_span 107 115	existing
+T16	Object_span 116 138	non-domestic buildings
+T17	Discourse_span 138 139	.

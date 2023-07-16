@@ -1,0 +1,1 @@
+For example, normal mortar joints need not be taken into account in calculations for brickwork, but should be taken into account for lightweight insulating blockwork.

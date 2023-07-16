@@ -1,0 +1,1 @@
+SHEVS should be designed in accordance with the principles set out in the Building Research Establishment Report, BR 368, `Design methodologies for smoke and heat exhaust ventilation' (1999), as read in association with CIBSE Technical Memorandum 19 (1995) and in accordance with the following where appropriate:

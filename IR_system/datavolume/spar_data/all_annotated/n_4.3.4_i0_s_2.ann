@@ -1,0 +1,9 @@
+T1	Functional_span 4 11	maximum
+T2	Object_span 0 3;12 18	The number
+T3	Discourse_span 19 21	of
+T4	Object_span 22 27	rises
+T5	Discourse_span 28 35	between
+T6	Object_span 36 44	landings
+T7	Action_span 45 51;62 72	should be limited
+T8	Discourse_span 52 61	therefore
+T9	Discourse_span 72 73	.

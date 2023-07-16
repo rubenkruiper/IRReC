@@ -1,0 +1,1 @@
+*A dead band thermostat has a function where no conditioning occurs between a specific temperature range, proposals include energy required for fans.

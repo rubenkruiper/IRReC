@@ -1,0 +1,21 @@
+T1	Object_span 0 1;2 6	A wall
+T2	Discourse_span 6 7	,
+T3	Object_span 0 1;8 17	A partition
+T4	Discourse_span 18 20	or
+T5	Object_span 0 1;21 25	A area
+T6	Discourse_span 26 28	of
+T7	Object_span 35 42	glazing
+T8	Functional_span 29 34	fixed
+A1	Confidence T8
+#1	AnnotatorNotes T8	not sure if fixed glazing could/should be a defined term
+T9	Discourse_span 42 43	,
+T10	Action_span 44 55	constructed
+T11	Functional_span 56 74	in accordance with
+T12	Object_span 75 94	the recommendations
+T13	Discourse_span 95 97	of
+T14	Object_span 98 110	clause 4.4.2
+T15	Discourse_span 110 111	,
+T16	Action_span 112 119	may act
+T17	Object_span 123 143	a protective barrier
+T18	Discourse_span 120 122	as
+T19	Discourse_span 143 144	.

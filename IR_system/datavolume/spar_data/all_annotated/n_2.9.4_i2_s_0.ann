@@ -1,0 +1,22 @@
+T1	Discourse_span 0 14	In the case of
+#1	AnnotatorNotes T1	When
+T2	Object_span 15 25	a building
+T3	Discourse_span 26 31	which
+T4	Object_span 32 35	has
+T5	Functional_span 36 40	only
+T6	Object_span 41 42	1
+T7	Object_span 43 52	direction
+T8	Discourse_span 53 55	of
+T9	Action_span 56 62	travel
+T10	Discourse_span 62 63	,
+T11	Object_span 64 83	the travel distance
+T12	Action_span 84 102	should be measured
+T13	Discourse_span 103 105	to
+T14	Object_span 106 122	a protected door
+T15	Action_span 123 136	giving access
+T16	Discourse_span 137 139	to
+T17	Object_span 140 155	an escape stair
+T18	Discourse_span 156 158	or
+T19	Object_span 159 176	a place of safety
+#2	AnnotatorNotes T19	a safe place
+T20	Discourse_span 176 177	.

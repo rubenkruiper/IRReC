@@ -1,0 +1,1 @@
+In particular, references to building classes should be risk groups and the building types and occupancy should be interpreted as the building types set out in the table to clause 1.2.2.

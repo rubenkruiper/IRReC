@@ -1,0 +1,1 @@
+fitting variable speed motor control for fans and pumps.

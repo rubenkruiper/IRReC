@@ -1,0 +1,1 @@
+In specifying the building shell, reference should be made to the maximum U-values and air-tightness levels identified in clauses 6.2.4 and 6.2.6.

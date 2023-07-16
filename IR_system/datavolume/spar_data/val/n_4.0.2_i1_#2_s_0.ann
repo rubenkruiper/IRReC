@@ -1,0 +1,28 @@
+T1	Action_span 0 6	ensure
+T2	Discourse_span 7 11	that
+T3	Object_span 12 36	electrical installations
+T4	Action_span 37 40	are
+T5	Object_span 41 45	safe
+T6	Discourse_span 46 48	in
+T7	Object_span 49 54	terms
+T8	Discourse_span 55 57	of
+T9	Object_span 58 69	the hazards
+T10	Functional_span 70 76	likely
+T11	Discourse_span 77 79	to
+T12	Object_span 80 85	arise
+T13	Discourse_span 86 90	from
+T14	Functional_span 91 100	defective
+T15	Object_span 101 114	installations
+T16	Discourse_span 114 115	,
+T17	Discourse_span 116 122	namely
+T18	Object_span 123 127	fire
+T19	Discourse_span 128 131	and
+T20	Object_span 132 144	loss of life
+T21	Discourse_span 145 147	or
+T22	Object_span 148 154	injury
+T23	Discourse_span 155 159	from
+T24	Object_span 160 174	electric shock
+T25	Discourse_span 175 177	or
+T26	Object_span 178 183	burns
+T27	Discourse_span 183 184	,
+T28	Discourse_span 185 188	and

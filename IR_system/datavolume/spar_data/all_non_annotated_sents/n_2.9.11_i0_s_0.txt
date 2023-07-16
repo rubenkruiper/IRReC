@@ -1,0 +1,1 @@
+Storage areas of buildings with fixed obstructions should provide unobstructed access to an exit.

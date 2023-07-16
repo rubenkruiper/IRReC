@@ -1,0 +1,1 @@
+Generally the system should have sufficient zone, time and temperature controls to ensure that the heating system only provides the desired temperature when the building is occupied.

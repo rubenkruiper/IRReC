@@ -1,0 +1,1 @@
+Design should also address the issue of appropriate guarding, where a level change is made, and seek to eliminate any possible trip hazards.

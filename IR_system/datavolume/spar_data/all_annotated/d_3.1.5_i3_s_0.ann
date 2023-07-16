@@ -1,0 +1,15 @@
+T1	Discourse_span 0 2	If
+T2	Functional_span 3 6	any
+T3	Object_span 7 12	signs
+T4	Discourse_span 13 15	of
+T5	Functional_span 16 24	possible
+T6	Object_span 25 37	contaminants
+T7	Action_span 38 41	are
+T8	Object_span 42 49	present
+A1	Confidence T8
+T9	Discourse_span 49 50	,
+T10	Object_span 51 63	the verifier
+T11	Action_span 64 78	should be told
+T12	Functional_span 79 86	at once
+T13	Object_span 86 87	.
+A2	Confidence T12

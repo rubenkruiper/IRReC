@@ -1,0 +1,17 @@
+T1	Object_span 0 11	Penetration
+#1	AnnotatorNotes T1	treating as 'a break/failure'
+T2	Action_span 12 18	occurs
+T3	Functional_span 19 29	most often
+T4	Discourse_span 30 37	through
+T5	Object_span 38 43	walls
+T6	Action_span 44 51	exposed
+T7	Discourse_span 52 54	to
+T8	Object_span 55 58;70 79	the wet winds
+T9	Functional_span 59 69	prevailing
+T10	Discourse_span 79 80	,
+#2	AnnotatorNotes T8	wet might be separate/functional, but it seems like a specific type of winds here.. even prevailing could be part of this as an MWE
+T11	Functional_span 81 88	usually
+T12	Functional_span 89 103	south-westerly
+T13	Discourse_span 104 106	or
+T14	Functional_span 107 116	southerly
+T15	Discourse_span 116 117	.

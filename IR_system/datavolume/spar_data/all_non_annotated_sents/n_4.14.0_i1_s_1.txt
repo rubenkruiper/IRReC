@@ -1,0 +1,1 @@
+This standard and guidance implements Article 8 of the Directive 2014/61/EU, which requires Member States to ensure that newly constructed buildings are equipped with a ``high-speed-ready in-building physical infrastructure'' to facilitate the cost-effective installation of cabling providing a minimum broadband speed of 30 Mbps.

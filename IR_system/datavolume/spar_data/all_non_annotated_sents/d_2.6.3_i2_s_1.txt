@@ -1,0 +1,1 @@
+Any external side of a building which makes an angle of more than 800 with the plane of reference can be ignored in the calculation of unprotected area.

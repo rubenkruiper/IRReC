@@ -1,0 +1,1 @@
+Unless determined otherwise by a fire engineering calculation, natural exhaust ventilators over an open stage should have a combined total aerodynamic free area of at least 10% of the area of the stage.

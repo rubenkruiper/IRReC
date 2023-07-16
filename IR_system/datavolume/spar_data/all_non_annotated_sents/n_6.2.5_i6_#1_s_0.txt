@@ -1,0 +1,1 @@
+ input of default PSI values for each junction assigned by SBEM (listed in the NCM Modelling Guide for Scotland)http://www.scotland.gov.uk/Topics/Built-Environment/Building/Building-standards/techbooks/techhandbooks/ncmg2015

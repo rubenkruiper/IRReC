@@ -1,0 +1,1 @@
+Any opening between adjacent treads in a flight should be small enough to prevent the passage of a 100mm sphere.

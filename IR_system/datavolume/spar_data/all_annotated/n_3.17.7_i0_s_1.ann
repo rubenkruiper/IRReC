@@ -1,0 +1,12 @@
+T1	Discourse_span 0 4	This
+T2	Functional_span 5 9	also
+T3	Action_span 10 17	applies
+T4	Discourse_span 18 20	to
+T5	Object_span 21 26	cases
+T6	Discourse_span 27 32	where
+T7	Object_span 33 45	a flue liner
+T8	Action_span 46 57	is provided
+T9	Discourse_span 58 60	as
+T10	Functional_span 61 68	part of
+T11	Object_span 69 87	refurbishment work
+T12	Discourse_span 87 88	.

@@ -1,0 +1,1 @@
+It should be noted that, unless the SBEM methodology is being used to demonstrate compliance, air-tightness testing is not necessary for work to existing buildings.

@@ -1,0 +1,1 @@
+Vp - is the percolation value obtained, as described above, in secs /mm.

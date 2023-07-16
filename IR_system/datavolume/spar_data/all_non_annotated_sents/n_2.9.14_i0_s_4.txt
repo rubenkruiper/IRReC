@@ -1,0 +1,1 @@
+Occupants should be able to move directly away from the opening or continue their evacuation at a safe distance away from the edge of the opening.

@@ -1,0 +1,8 @@
+Sentence:
+Withdrawal of a standard implies that while documents will still be available there will be no support or five-year review by a BSI committee to consider the currency of the standard and to decide whether it should be confirmed, revised or withdrawn.
+
+Object identified:
+five - year review
+
+Document id:
+n_1.0.5_i1_s_1

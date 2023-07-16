@@ -1,0 +1,1 @@
+This allows a U-value of 0.2 to be assigned to such walls.

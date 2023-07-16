@@ -1,0 +1,1 @@
+Automatic fire shutters should not be activated by a fire alarm signal from a remote location or out-with the fire alarm zone.

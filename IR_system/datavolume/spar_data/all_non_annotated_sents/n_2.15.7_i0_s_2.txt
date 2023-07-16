@@ -1,0 +1,1 @@
+These building types are identified in the tables to clause 2.1.1; the intention is to allow design flexibility.

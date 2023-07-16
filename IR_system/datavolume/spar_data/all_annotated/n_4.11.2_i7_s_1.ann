@@ -1,0 +1,28 @@
+T1	Object_span 0 15	Ground features
+T2	Functional_span 16 23	such as
+T3	Object_span 24 35	open drains
+A1	Confidence T2
+#1	AnnotatorNotes T2	this has been consistenlty tagged as functional, but really it should be discourse I think
+T4	Discourse_span 35 36	,
+T5	Object_span 37 45	manholes
+T6	Discourse_span 45 46	,
+T7	Object_span 47 54	gullies
+T8	Discourse_span 55 58	and
+T9	Object_span 59 73	cellar hatches
+T10	Discourse_span 73 74	,
+T11	Discourse_span 75 81	within
+T12	Object_span 82 106	the separation distances
+T13	Action_span 107 112	given
+T14	Discourse_span 113 115	in
+T15	Object_span 116 126	column (A)
+T16	Discourse_span 127 129	of
+T17	Object_span 130 148	the table overleaf
+T18	Action_span 149 158;159 165	should be sealed
+T19	Discourse_span 166 168	or
+T20	Action_span 149 158;169 176	should be trapped
+T21	Discourse_span 177 179	to
+T22	Action_span 180 187	prevent
+T23	Object_span 188 199	the passage
+T24	Discourse_span 200 202	of
+T25	Object_span 203 213	LPG vapour
+T26	Discourse_span 213 214	.

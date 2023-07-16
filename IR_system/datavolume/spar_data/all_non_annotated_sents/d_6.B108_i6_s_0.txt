@@ -1,0 +1,1 @@
+Rate of heat loss to be addressed: 20.69 - 18.0 = 2.69 W/K

@@ -1,0 +1,1 @@
+The `notional' extension should be the same size and shape as the proposed extension, with U-values for elements as in column (a) of the table above, where the area of openings in the walls (excluding separating walls where it is considered that zero heat loss occurs) and roof of the 'notional' building extension are as the percentages given above.

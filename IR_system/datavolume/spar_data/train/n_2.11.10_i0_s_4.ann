@@ -1,0 +1,11 @@
+T1	Discourse_span 0 13	In such cases
+T2	Discourse_span 13 14	,
+T3	Object_span 15 27	the guidance
+A1	Confidence T1
+#1	AnnotatorNotes T1	Treat prepositional phrases like this as functional/discourse? broken up?
+T4	Discourse_span 28 33	under
+T5	Object_span 34 37;47 61	the building types
+T6	Functional_span 38 46	relevant
+T7	Action_span 62 68;74 85	should be followed
+T8	Functional_span 69 73	also
+T9	Discourse_span 85 86	.

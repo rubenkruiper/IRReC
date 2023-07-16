@@ -1,0 +1,28 @@
+T1	Object_span 0 3;9 19	The evacuation
+T2	Functional_span 4 8	safe
+T3	Discourse_span 20 22	of
+T4	Object_span 23 32	occupants
+T5	Discourse_span 33 37	with
+T6	Object_span 38 45;73 84	sensory impairments
+T7	Discourse_span 45 46	,
+T8	Object_span 47 56;73 84	cognitive impairments
+T9	Discourse_span 57 63	and/or
+T10	Object_span 64 72;73 84	mobility impairments
+T11	Action_span 85 87	is
+T12	Object_span 88 106	the responsibility
+T13	Discourse_span 107 109	of
+T14	Object_span 110 122	the employer
+T15	Discourse_span 123 125	or
+T16	Functional_span 126 131	other
+T17	Object_span 132 138	person
+T19	Action_span 139 153	having control
+#1	AnnotatorNotes T19	have control ~ interpreted as "to be in charge", with having an unnecessary auxiliary verb
+A1	Confidence T19
+T18	Discourse_span 154 156	of
+T20	Object_span 157 169	the building
+T21	Discourse_span 170 173	and
+T22	Functional_span 174 177	not
+T23	Discourse_span 178 182	that
+T24	Discourse_span 183 185	of
+T25	Object_span 186 213	the fire and rescue service
+T28	Discourse_span 213 214	.

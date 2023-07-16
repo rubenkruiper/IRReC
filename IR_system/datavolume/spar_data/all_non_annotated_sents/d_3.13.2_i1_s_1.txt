@@ -1,0 +1,1 @@
+Since it is not possible to determine the occupants at design stage the heating system should be designed with the capability of being easily upgraded at a later date.

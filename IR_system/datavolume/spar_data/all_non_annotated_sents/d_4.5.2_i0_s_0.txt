@@ -1,0 +1,1 @@
+To avoid the risk of harm, any circuit which is designed to operate at or below extra-low voltage should be protected against both direct and indirect contact with any other circuit operating at higher than extra-low voltage.

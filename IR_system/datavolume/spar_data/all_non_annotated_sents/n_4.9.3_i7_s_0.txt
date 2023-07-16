@@ -1,0 +1,1 @@
+Discharge pipework should be provided as noted in clause 4.9.4, noting that the size of piping should be designed to accommodate the required discharge capacity and may exceed the guidance given in the table to clause 4.9.4.

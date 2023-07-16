@@ -1,0 +1,1 @@
+Short fire resistance duration is sufficient where the building is single-storey.

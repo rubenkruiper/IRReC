@@ -1,0 +1,18 @@
+T1	Object_span 0 13	The standards
+T2	Discourse_span 14 24	themselves
+T3	Action_span 25 37	can be found
+T4	Discourse_span 38 40	in
+T5	Object_span 41 51	schedule 5
+T6	Discourse_span 52 54	to
+T7	Object_span 55 67	regulation 9
+T8	Discourse_span 69 72	and
+T9	Action_span 73 76	are
+T11	Object_span 93 122	expanded functional standards
+T12	Discourse_span 123 124	.
+T13	Discourse_span 67 68	,
+T14	Discourse_span 92 93	`
+T15	Discourse_span 122 123	'
+A2	Confidence T2
+T10	Discourse_span 77 79	in
+T16	Object_span 80 88	the form
+T17	Discourse_span 89 91	of

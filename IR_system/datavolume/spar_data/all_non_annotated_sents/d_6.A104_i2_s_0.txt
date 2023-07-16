@@ -1,0 +1,1 @@
+Specifying windows and rooflights with a U-value of 1.5W/m#SUP#2#SUP#K can achieve this requirement, as shown by the following table and subsequent calculation:

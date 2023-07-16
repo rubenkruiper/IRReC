@@ -1,0 +1,28 @@
+T1	Discourse_span 0 4	When
+T2	Action_span 5 11	sizing
+T3	Discourse_span 12 15	and
+T4	Action_span 16 25	selecting
+T5	Object_span 26 56	the wastewater treatment plant
+T6	Object_span 57 69	the designer
+T7	Action_span 70 81;87 94	should take account
+T8	Functional_span 82 86	full
+T9	Discourse_span 95 97	of
+T10	Functional_span 98 101	all
+T11	Object_span 102 121	population loadings
+T12	Discourse_span 121 122	,
+T13	Object_span 123 150	effluent treatment standard
+T14	Discourse_span 150 151	,
+T15	Discourse_span 152 155	and
+T16	Functional_span 156 160	also
+A1	Confidence T16
+#1	AnnotatorNotes T16	i think i'm consistent here, but maybe wrong
+T17	Discourse_span 161 166	where
+T18	Object_span 167 178	appropriate
+T19	Discourse_span 178 179	,
+T20	Functional_span 180 183	any
+T21	Functional_span 184 191	unusual
+T22	Object_span 192 207	pollution loads
+T23	Functional_span 208 215	such as
+T24	Object_span 216 236	waste disposal units
+T25	Discourse_span 236 237	.
+A2	Confidence T18

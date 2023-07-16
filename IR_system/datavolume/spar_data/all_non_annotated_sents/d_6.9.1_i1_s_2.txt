@@ -1,0 +1,1 @@
+However if the simplified approach referred to in clause 6.1.6 has been adopted for the new dwelling, the construction specification for the building, as constructed, will require to be input in full to enable generation of the EPC.

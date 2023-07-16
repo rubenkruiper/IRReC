@@ -1,0 +1,22 @@
+T1	Discourse_span 0 3	For
+T2	Object_span 4 32	heated stand-alone buildings
+A1	Confidence T2
+#1	AnnotatorNotes T2	heated maybe separate from stand-alone
+T3	Discourse_span 33 35	of
+T4	Functional_span 36 45	less than
+T5	Object_span 46 60	50m#SUP#2#SUP#
+T6	Discourse_span 60 61	,
+T7	Object_span 62 79	the fabric values
+T8	Action_span 80 90	identified
+T9	Discourse_span 91 93	in
+T10	Object_span 102 105;94 101	(b) columns
+T11	Object_span 110 113;94 101	(c) columns
+T12	Discourse_span 106 109	and
+T13	Discourse_span 114 116	of
+T14	Object_span 117 126	the table
+T15	Discourse_span 127 129	to
+T16	Object_span 130 142	clause 6.2.9
+T17	Object_span 147 160	clause 6.2.10
+T18	Discourse_span 143 146	and
+T19	Action_span 161 179	should be followed
+T20	Discourse_span 179 180	.

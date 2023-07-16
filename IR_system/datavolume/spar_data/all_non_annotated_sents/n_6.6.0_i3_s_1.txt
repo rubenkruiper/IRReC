@@ -1,0 +1,1 @@
+CIBSE Technical Memorandum 37 (TM37) `Design for Improved Solar Shading Control'(http://www.cibse.org/) gives guidance on this issue.

@@ -1,0 +1,1 @@
+If all the scheme rules are followed then post-completion testing (see clauses 5.1.9 and 5.1.10) is not necessary.

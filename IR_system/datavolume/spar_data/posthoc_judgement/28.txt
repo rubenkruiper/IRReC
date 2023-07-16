@@ -1,0 +1,8 @@
+Sentence:
+Where a separating wall or floor or protected route of escape abuts a structure containing a cavity, a fire barrier should be installed in the cavity so as to extend the line, and maintain the fire resistance, of the wall or floor.
+
+Object identified:
+protected route of escape
+
+Document id:
+d_2.2.10_i1_s_0

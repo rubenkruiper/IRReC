@@ -1,0 +1,1 @@
+Installation of sub-metering should be based upon guidance on the development and implementation of a metering strategy within CIBSE TM 39 - `building energy metering' (2009) (http://www.cibse.org/).

@@ -1,0 +1,1 @@
+The closed room heater included within the fuel package table should be capable of burning wood only, not multi-fuel.

@@ -1,0 +1,1 @@
+The IFEG sub-systems bear a very close resemblance to the subsystems used in BS: 7974: 2019 and are set out below:

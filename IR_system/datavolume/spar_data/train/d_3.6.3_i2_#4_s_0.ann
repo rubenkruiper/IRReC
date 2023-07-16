@@ -1,0 +1,22 @@
+T1	Object_span 0 10	an outfall
+T2	Discourse_span 11 13	to
+T3	Object_span 14 27	a watercourse
+T4	Discourse_span 27 28	,
+T5	Functional_span 29 36	such as
+T6	Object_span 37 44	a river
+T7	Discourse_span 44 45	,
+T8	Object_span 46 52	stream
+T9	Discourse_span 53 55	or
+T10	Object_span 56 60	loch
+T11	Discourse_span 61 63	or
+T12	Object_span 64 78	coastal waters
+T13	Discourse_span 78 79	,
+T14	Discourse_span 80 84	that
+T15	Action_span 85 98	complies with
+T16	Functional_span 99 102	any
+T17	Object_span 103 109	notice
+T18	Discourse_span 110 116	and/or
+T19	Object_span 117 124	consent
+T20	Discourse_span 125 127	by
+T21	Object_span 128 132	SEPA
+T22	Discourse_span 132 133	.

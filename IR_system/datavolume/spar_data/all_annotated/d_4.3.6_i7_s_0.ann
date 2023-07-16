@@ -1,0 +1,14 @@
+T1	Object_span 0 12	Obstructions
+T2	Discourse_span 13 14	-
+T3	Discourse_span 15 17	on
+T4	Object_span 18 33	a private stair
+T5	Discourse_span 33 34	,
+T6	Functional_span 35 45	other than
+T7	Discourse_span 46 48	on
+T8	Object_span 49 72	an intermediate landing
+T9	Discourse_span 72 73	,
+T10	Action_span 74 80	common
+T11	Discourse_span 81 83	to
+T12	Object_span 84 85	2
+T13	Object_span 86 93	flights
+T14	Discourse_span 93 94	:

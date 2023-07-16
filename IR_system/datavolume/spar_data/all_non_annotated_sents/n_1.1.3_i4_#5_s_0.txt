@@ -1,0 +1,1 @@
+the structure will be used in accordance with the design assumptions.

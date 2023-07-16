@@ -1,0 +1,1 @@
+To establish this, the TER from the NCM calculation should be multiplied by 0.62, to give a revised figure that the BER should not exceed.

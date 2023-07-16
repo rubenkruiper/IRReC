@@ -1,0 +1,10 @@
+textblob
+SPARQLWrapper
+json5
+requests
+pydantic==1.*
+fastapi
+uvicorn
+networkx==3.0
+numpy==1.23.4
+Levenshtein

@@ -1,0 +1,1 @@
+The width of a pedestrian route to a building should reflect how it will be used.

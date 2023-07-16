@@ -1,0 +1,1 @@
+An extension may also be built over a ventilator but a new ventilator should be provided to the room.

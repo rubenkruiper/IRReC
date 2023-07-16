@@ -1,0 +1,12 @@
+T1	Object_span 1 4;16 26	The separation
+T2	Discourse_span 27 29	in
+T3	Object_span 30 41	the diagram
+T4	Action_span 48 68	should be maintained
+T5	Discourse_span 69 76	between
+T7	Functional_span 5 12	minimum
+T8	Functional_span 77 81	each
+T9	Object_span 82 85	5m2
+T10	Object_span 86 91	panel
+T6	Discourse_span 91 92	.
+T11	Object_span 13 15	3m
+T12	Discourse_span 42 47	below

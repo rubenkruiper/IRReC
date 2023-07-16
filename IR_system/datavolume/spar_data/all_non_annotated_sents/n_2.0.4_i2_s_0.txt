@@ -1,0 +1,1 @@
+Plant storeys - for the purpose of measuring the height above ground to the top most storey of a building, roof-top plant areas and any top storeys consisting solely of plant rooms, should be excluded.

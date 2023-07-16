@@ -1,0 +1,1 @@
+a combination of fibre and what was originally cable television wiring - where fibre is provided between an exchange and a cabinet, and the existing copper coaxial cable is used to deliver speeds of up to 152 Mbps

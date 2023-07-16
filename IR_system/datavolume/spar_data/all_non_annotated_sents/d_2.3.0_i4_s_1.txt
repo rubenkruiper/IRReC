@@ -1,0 +1,1 @@
+An example of part of the structure that is only self load-bearing could be a lintel in a non load-bearing wall.

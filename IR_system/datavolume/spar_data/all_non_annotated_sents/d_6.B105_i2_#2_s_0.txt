@@ -1,0 +1,1 @@
+example 6.B.3, based on the extension shown in 6.B.2, shows a building where column (a) area-weighted U-values apply and target the heat loss limit being met by a combination of an extension which meets or exceeds column (b) U-values and fabric improvements to the existing building.

@@ -1,0 +1,1 @@
+Occupants should be able to reach a protected door before there is a noticeable accumulation of smoke in the route of escape.

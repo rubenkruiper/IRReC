@@ -1,0 +1,13 @@
+T1	Discourse_span 0 2	It
+T2	Action_span 3 14	is proposed
+T3	Action_span 15 21	to use
+T4	Object_span 22 23	2
+T5	Functional_span 24 32	external
+T6	Functional_span 33 40	quality
+T7	Object_span 57 67	fire doors
+T8	Functional_span 41 56	timber finished
+T9	Discourse_span 68 72	with
+T10	Object_span 73 82	a U-value
+T11	Discourse_span 83 85	of
+T12	Object_span 86 104	1.9W/m#SUP#2#SUP#K
+T13	Discourse_span 104 105	.

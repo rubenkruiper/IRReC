@@ -1,0 +1,1 @@
+Multi-occupied building - however it is possible to have no separating walls or separating floors between the different occupiers of a multi-occupied building when the building is under a single management regime.

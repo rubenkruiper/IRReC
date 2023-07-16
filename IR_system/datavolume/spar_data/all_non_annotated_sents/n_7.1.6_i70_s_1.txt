@@ -1,0 +1,1 @@
+Convenient access to the contents of the container should be provided to allow removal.

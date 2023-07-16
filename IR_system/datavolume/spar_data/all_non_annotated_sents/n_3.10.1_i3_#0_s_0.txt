@@ -1,0 +1,1 @@
+BS EN ISO 15927-3: 2009 - This methodology, which is based closely on BS 8104, uses two procedures to analyse hourly wind and rain data, collected for any location over a minimum 10 year period, to calculate a driving rain index.

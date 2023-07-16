@@ -1,0 +1,8 @@
+Sentence:
+Measurements should be made when external noise levels are representative of conditions during normal school operation.
+
+Object identified:
+external noise levels
+
+Document id:
+n_7.1.9_i19_s_2

@@ -1,0 +1,1 @@
+The Simplified Building Energy Model (SBEM) is a calculation tool which forms part of the UK National Calculation Methodology which conforms with Article 3 of Directive 2010/31/EU on the Energy Performance of Buildings.

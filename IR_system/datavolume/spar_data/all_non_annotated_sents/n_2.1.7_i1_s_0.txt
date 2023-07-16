@@ -1,0 +1,1 @@
+Where a building has a basement storey at a depth of more than 10m, every basement storey should form a separate compartment.

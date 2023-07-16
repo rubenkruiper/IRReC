@@ -1,0 +1,1 @@
+If any signs of possible contaminants are present, the verifier should be told at once.

@@ -1,0 +1,1 @@
+To calculate the emissions for the proposed dwelling (DER) a second calculation is carried out where the proposed values are input into the methodology.

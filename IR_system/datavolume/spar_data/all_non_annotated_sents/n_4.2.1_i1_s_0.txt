@@ -1,0 +1,1 @@
+Every storey and level of a building should be accessible.

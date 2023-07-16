@@ -1,0 +1,1 @@
+Thermal bridges provide a ready passage of heat transfer to the outside air and allow a heat flow entirely disproportionate to their surface area resulting in excessive heat losses.

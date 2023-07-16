@@ -1,0 +1,38 @@
+T1	Action_span 0 9	Extending
+T2	Object_span 10 33	the insulation envelope
+T3	Discourse_span 34 35	-
+T4	Object_span 36 45	reference
+T5	Action_span 46 60	should be made
+T6	Discourse_span 61 63	to
+T7	Object_span 64 76	the guidance
+T8	Discourse_span 77 79	on
+T9	Object_span 80 90	extensions
+T10	Discourse_span 91 93	to
+T11	Object_span 94 117	the insulation envelope
+T12	Discourse_span 118 119	(
+T13	Object_span 119 132	clause 6.2.11
+T14	Discourse_span 132 133	)
+T15	Discourse_span 134 137	for
+T16	Object_span 138 149	alterations
+T17	Discourse_span 150 154	that
+T18	Action_span 155 162	involve
+T19	Action_span 163 173	increasing
+T20	Object_span 174 188	the floor area
+T21	Discourse_span 189 195	and/or
+A1	Confidence T4
+T22	Action_span 196 204	bringing
+T23	Functional_span 205 213	parts of
+T24	Object_span 214 217;227 235	the building
+T25	Functional_span 218 226	existing
+T26	Discourse_span 236 240	that
+T27	Action_span 241 245	were
+T28	Functional_span 246 256	previously
+T29	Discourse_span 257 264	outwith
+T30	Object_span 265 288	the insulation envelope
+T31	Discourse_span 289 293	into
+T32	Discourse_span 294 297	the
+T33	Functional_span 298 309	conditioned
+T34	Functional_span 310 317	part of
+T35	Object_span 318 330	the building
+T36	Discourse_span 330 331	.
+A2	Confidence T32

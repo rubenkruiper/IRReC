@@ -1,0 +1,1 @@
+Some elements are further varied based upon the activity type defined for each zone within SBEM.

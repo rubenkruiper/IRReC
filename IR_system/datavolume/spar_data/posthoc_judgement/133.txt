@@ -1,0 +1,8 @@
+Sentence:
+These `bridges' commonly occur around openings such as lintels, jambs and sills and at wall/roof junctions, wall/floor junctions and where internal walls penetrate the outer fabric.
+
+Object identified:
+wall / roof junctions
+
+Document id:
+d_3.15.4_i0_s_1

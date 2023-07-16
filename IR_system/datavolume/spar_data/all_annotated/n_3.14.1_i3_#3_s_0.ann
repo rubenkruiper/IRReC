@@ -1,0 +1,7 @@
+T1	Functional_span 0 7	rapidly
+T2	Action_span 8 14	dilute
+T3	Object_span 15 31	pollutant odours
+T4	Discourse_span 31 32	,
+T5	Discourse_span 33 38	where
+T6	Object_span 39 48	necessary
+T7	Discourse_span 48 49	.

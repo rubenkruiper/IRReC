@@ -1,0 +1,20 @@
+T1	Discourse_span 0 4	This
+T2	Action_span 5 10	means
+T3	Discourse_span 11 15	that
+T4	Object_span 16 23	a range
+T5	Discourse_span 24 26	of
+T6	Discourse_span 27 28	`
+T7	Object_span 28 63	high-efficiency alternative systems
+T8	Discourse_span 63 64	'
+T9	Action_span 65 83	will be considered
+T10	Discourse_span 84 86	as
+T11	Object_span 87 105	a matter of course
+T12	Discourse_span 106 108	as
+T13	Functional_span 109 116	part of
+T14	Object_span 117 135	the design process
+A1	Confidence T13
+#1	AnnotatorNotes T13	Probably not consistent...
+T15	Discourse_span 136 139	for
+T16	Functional_span 140 143	new
+T17	Object_span 144 149	homes
+T18	Discourse_span 149 150	.

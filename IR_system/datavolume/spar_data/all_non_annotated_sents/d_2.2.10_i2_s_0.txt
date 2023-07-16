@@ -1,0 +1,1 @@
+Junctions with walls - where a separating wall or separating floor forms a junction with an external wall, another separating wall, or a wall or screen used to protect routes of escape (see clause 2.0.6), the junction should maintain the fire resistance of the separating wall or separating floor.

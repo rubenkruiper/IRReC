@@ -1,0 +1,1 @@
+In locations used by both vehicles and pedestrians, such as parking areas, additional barrier criteria may apply to edges and changes in level as described in clauses 4.4.1 and 4.4.2.

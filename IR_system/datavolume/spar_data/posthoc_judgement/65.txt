@@ -1,0 +1,8 @@
+Sentence:
+There may be horizontal `tidemarks' sometimes several feet above the floor; below it the wall is discoloured with general darkening and patchiness.
+
+Object identified:
+tidemarks
+
+Document id:
+d_3.4.0_i0_s_3

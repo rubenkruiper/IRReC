@@ -1,0 +1,1 @@
+Areas of the same building element may have a poorer than average performance provided the area-weighted average U-value for all elements of the same type is maintained (e.g.

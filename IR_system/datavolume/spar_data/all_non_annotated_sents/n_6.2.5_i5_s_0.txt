@@ -1,0 +1,1 @@
+For the `actual' building, heat loss is calculated automatically from the building geometry input by the designer, based upon the following options:

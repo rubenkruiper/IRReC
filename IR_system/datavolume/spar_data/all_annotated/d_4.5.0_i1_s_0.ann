@@ -1,0 +1,11 @@
+T1	Object_span 0 7	Concern
+T2	Action_span 8 26	has been expressed
+T3	Discourse_span 27 31	that
+T4	Object_span 32 37	risks
+T5	Action_span 38 58	have been increasing
+T6	Discourse_span 59 61	in
+T8	Object_span 62 74	recent years
+T7	Discourse_span 75 81	due to
+A1	Confidence T7
+#1	AnnotatorNotes T7	treating as a functional expression
+T9	Discourse_span 81 82	:

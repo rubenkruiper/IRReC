@@ -1,0 +1,36 @@
+T1	Object_span 0 15	The requirement
+T2	Action_span 16 26	to inspect
+T3	Object_span 27 34	systems
+T4	Discourse_span 35 37	in
+T5	Functional_span 38 46	existing
+T6	Object_span 47 56	buildings
+T7	Action_span 57 71	was introduced
+T8	Discourse_span 72 74	in
+T9	Object_span 75 81	stages
+T10	Discourse_span 81 82	,
+T11	Action_span 83 91	starting
+T12	Discourse_span 92 96	with
+T13	Functional_span 97 102	first
+T14	Action_span 103 113	inspection
+T15	Discourse_span 114 116	of
+T16	Functional_span 117 120	all
+T17	Functional_span 121 127	larger
+T18	Object_span 128 135	systems
+T19	Functional_span 136 140	over
+T20	Object_span 141 146	250kW
+T21	Discourse_span 147 149	by
+T22	Object_span 150 164	4 January 2011
+T23	Discourse_span 164 165	,
+T24	Action_span 166 174	followed
+T25	Discourse_span 175 177	by
+T26	Functional_span 178 183	first
+T27	Action_span 184 194	inspection
+T28	Discourse_span 195 197	of
+T29	Functional_span 198 201	all
+T30	Functional_span 202 211	remaining
+T31	Object_span 212 219	systems
+T32	Functional_span 220 224	over
+T33	Object_span 225 229	12kW
+T34	Discourse_span 230 232	by
+T35	Object_span 233 247	4 January 2013
+T36	Discourse_span 247 248	.

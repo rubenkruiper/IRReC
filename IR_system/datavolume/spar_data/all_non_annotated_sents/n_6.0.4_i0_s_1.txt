@@ -1,0 +1,1 @@
+It is expressed in units of watts per square metre per degree of temperature difference (W/m2K).

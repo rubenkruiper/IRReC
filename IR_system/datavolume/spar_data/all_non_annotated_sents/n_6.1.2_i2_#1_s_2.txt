@@ -1,0 +1,1 @@
+Values are assigned automatically based upon both the activity and the conditioning strategy for each zone of the actual building, as input by the designer.

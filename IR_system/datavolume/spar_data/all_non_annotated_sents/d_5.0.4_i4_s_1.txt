@@ -1,0 +1,1 @@
+A single-number quantity (weighted) which characterises the airborne sound insulation between two rooms, in accordance with BS EN ISO 717-1: 1997.

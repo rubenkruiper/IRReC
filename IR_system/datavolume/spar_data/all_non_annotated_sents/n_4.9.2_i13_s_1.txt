@@ -1,0 +1,1 @@
+In the case of an indirectly heated unit or package, the valve should be tested to discharge water at a rate not less than 500kg/h for systems up to 45kW.

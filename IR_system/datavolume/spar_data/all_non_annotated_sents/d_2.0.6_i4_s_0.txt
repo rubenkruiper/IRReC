@@ -1,0 +1,1 @@
+A sleeping deck within a room should be regarded as being part of that room.

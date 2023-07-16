@@ -1,0 +1,1 @@
+Alternative approach - an alternative to the use of the area-weighted U-values described above is use of SBEM to demonstrate compliance with Standard 6.1 for:

@@ -1,0 +1,1 @@
+all areas should be measured in square metres (m2), unless stated otherwise in this guidance

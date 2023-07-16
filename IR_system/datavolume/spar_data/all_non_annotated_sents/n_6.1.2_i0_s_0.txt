@@ -1,0 +1,1 @@
+To comply with the requirements of Standard 6.1, designers should demonstrate that the calculated carbon dioxide emissions for the `actual' building (Building Emissions Rate or BER) do not exceed those which are calculated for a `notional' building (Target Emissions Rate or TER).

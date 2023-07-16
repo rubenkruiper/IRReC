@@ -1,0 +1,1 @@
+Both the primary heating and secondary heating systems are taken account of in SAP 2012.

@@ -1,0 +1,1 @@
+To ensure that doors on an escape route do not unduly delay escape they should open in the direction of escape.

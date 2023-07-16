@@ -1,0 +1,1 @@
+Airborne and sound impact insulation testing - for both types of testing it is possible to use fixed microphone positions, rotating booms or manual moving microphones (mmm), in accordance with BS EN ISO 140-4: 1998 and BS EN ISO 140-7: 1998.

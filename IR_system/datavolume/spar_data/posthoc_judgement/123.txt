@@ -1,0 +1,8 @@
+Sentence:
+An approved Certifier of Construction, who has been assessed to have the professional skills and relevant experience, can certify compliance of plumbing, heating or drainage installations.
+
+Object identified:
+drainage installations
+
+Document id:
+d_3.27.2_i7_s_0

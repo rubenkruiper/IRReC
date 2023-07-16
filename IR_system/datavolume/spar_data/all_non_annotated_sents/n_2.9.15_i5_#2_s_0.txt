@@ -1,0 +1,1 @@
+opens automatically from any position in the event of actuation of any fire alarm in the fire alarm zone within which the door is situated.

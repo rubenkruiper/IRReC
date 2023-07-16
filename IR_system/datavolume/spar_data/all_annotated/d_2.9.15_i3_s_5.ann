@@ -1,0 +1,10 @@
+T1	Object_span 0 30	The inlet/outlet configuration
+T2	Action_span 31 40	will vary
+T3	Action_span 41 50	depending
+T4	Object_span 51 65	wind direction
+T5	Discourse_span 66 69	and
+T6	Object_span 70 79	designers
+T7	Action_span 80 91;97 109	should take into account
+T8	Discourse_span 92 96	this
+T9	Discourse_span 109 110	.
+A1	Confidence T3

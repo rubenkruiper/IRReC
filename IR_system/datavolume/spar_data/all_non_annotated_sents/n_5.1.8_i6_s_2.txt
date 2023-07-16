@@ -1,0 +1,1 @@
+If the condition is met, the average sound pressure level in the receiving room, and hence a level difference, should be determined.

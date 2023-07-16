@@ -1,0 +1,1 @@
+a system which permits adjustment of the dwell time after which the lift doors close, once fully opened, to suit the level of use.

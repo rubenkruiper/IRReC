@@ -1,0 +1,8 @@
+Sentence:
+ Number of customers should be calculated at the rate of 4 persons per 3m#SUP#2#SUP# of effective drinking area (i.e.
+
+Object identified:
+Number of customers
+
+Document id:
+n_3.12.5_i3_#8_s_0

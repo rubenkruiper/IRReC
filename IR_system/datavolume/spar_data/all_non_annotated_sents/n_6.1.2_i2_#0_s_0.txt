@@ -1,0 +1,1 @@
+The data defining the actual building is input into an approved software tool and the notional building is generated automatically by applying the National Calculation Methodology (NCM) for Scotland.

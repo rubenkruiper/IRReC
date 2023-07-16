@@ -1,0 +1,13 @@
+IH-obj
+BH-dis
+BH-obj
+BH-act
+PD-pad
+BH-func
+IH-act
+IH-func
+BD-obj
+ID-obj
+IH-dis
+BD-act
+ID-act

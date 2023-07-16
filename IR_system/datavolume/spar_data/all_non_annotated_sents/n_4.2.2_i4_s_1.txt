@@ -1,0 +1,1 @@
+Level rest points on gently sloping routes should be provided as recommended in clause 4.1.3.

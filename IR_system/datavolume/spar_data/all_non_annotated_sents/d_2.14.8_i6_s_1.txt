@@ -1,0 +1,1 @@
+Normally, only one sounder is likely to be necessary, but the sound pressure level of the alarm signal at each open bedroom doorway should be at least 85 dB(A).

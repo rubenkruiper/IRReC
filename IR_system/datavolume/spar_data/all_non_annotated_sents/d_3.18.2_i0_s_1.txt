@@ -1,0 +1,1 @@
+The designation string prescribes limiting values or categories for temperature, pressure, condensate resistance, corrosion resistance, soot fire resistance and distance to combustibles.

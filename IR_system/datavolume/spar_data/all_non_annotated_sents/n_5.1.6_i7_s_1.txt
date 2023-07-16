@@ -1,0 +1,1 @@
+Lightweight structures need special consideration and it may be necessary to support noisy plant on a separate, rigid structure.
