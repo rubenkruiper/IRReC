@@ -20,7 +20,10 @@ for Query Expansion. The expected repository name is `BRE`.
 * **SPaR.txt**: copy the SPaR.txt data to `datavolume/spar_data/`
 * **Docker**: make sure docker and docker compose are available.
 
-Clone this repository and simply run `docker compose up`. We have been running our final tests with the system on a VPS server running Ubuntu 22.04 and 24GB of RAM, but without a GPU. The system should be able to set up and run faster when running with a GPU. 
+Clone this repository and cd into it. Prepare the SPaR.txt container:
+1. build: `docker compose build spar`
+2. run to train a model: `docker-compose up --no-deps spar`
+Then simply run `docker compose up` to build and start all containers. We have been running our final tests with the system on a VPS server running Ubuntu 22.04 and 24GB of RAM, but without a GPU. The system should be able to set up and run faster when running with a GPU. 
 <!-- ; the assumption is that you have one of the following:
 1. One or several pre-trained clustering models, enabling clustering of unseen text on a CPU. To this end copy the contents
   the `cluster_data.zip` file to the path: `datavolume/cluster_data`
